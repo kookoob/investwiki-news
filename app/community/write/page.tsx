@@ -274,8 +274,12 @@ export default function WritePage() {
             {/* 사용자 정보 */}
             <div className="mb-6 flex items-center justify-between pb-4 border-b border-gray-200">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
-                  {user?.username?.charAt(0).toUpperCase()}
+                <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold overflow-hidden">
+                  {user?.avatar_url ? (
+                    <img src={user.avatar_url} alt="프로필" className="w-full h-full object-cover" />
+                  ) : (
+                    user?.username?.charAt(0).toUpperCase()
+                  )}
                 </div>
                 <span className="font-medium text-gray-900">{user?.username}</span>
               </div>

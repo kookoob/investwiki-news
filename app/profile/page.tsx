@@ -182,8 +182,12 @@ export default function ProfilePage() {
         {/* 프로필 카드 */}
         <div className="bg-white rounded-lg p-6 text-center border border-gray-200">
           {/* 아바타 */}
-          <div className="w-20 h-20 mx-auto mb-4 bg-blue-500 rounded-full flex items-center justify-center text-white text-3xl font-bold">
-            {profile?.display_name?.[0] || profile?.username?.[0] || '?'}
+          <div className="w-20 h-20 mx-auto mb-4 bg-blue-500 rounded-full flex items-center justify-center text-white text-3xl font-bold overflow-hidden">
+            {user?.avatar_url ? (
+              <img src={user.avatar_url} alt="프로필" className="w-full h-full object-cover" />
+            ) : (
+              profile?.display_name?.[0] || profile?.username?.[0] || '?'
+            )}
           </div>
 
           {/* 뱃지 */}
@@ -240,9 +244,9 @@ export default function ProfilePage() {
           <h3 className="px-6 py-4 font-bold text-gray-900 border-b border-gray-200">설정</h3>
           
           {/* 일반 설정 */}
-          <button
-            onClick={() => alert('준비 중입니다')}
-            className="w-full flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
+          <Link
+            href="/profile/edit"
+            className="flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
           >
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
@@ -251,14 +255,14 @@ export default function ProfilePage() {
                 </svg>
               </div>
               <div>
-                <p className="font-medium text-gray-900">일반 설정</p>
-                <p className="text-sm text-gray-500">관심 태그 관리 관리</p>
+                <p className="font-medium text-gray-900">닉네임 & 프로필 이미지</p>
+                <p className="text-sm text-gray-500">닉네임 변경, 프로필 이미지 업로드</p>
               </div>
             </div>
             <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </button>
+          </Link>
 
           {/* 회원 정보 수정 */}
           <button
