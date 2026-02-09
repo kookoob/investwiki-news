@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
+import Header from '../components/Header';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -50,12 +51,14 @@ export default function NoticePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      
       <div className="container mx-auto px-4 py-12">
         {/* 헤더 */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">📢 공지사항</h1>
-          <p className="text-blue-200">StockHub의 새로운 소식을 확인하세요</p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">📢 공지사항</h1>
+          <p className="text-gray-600">StockHub의 새로운 소식을 확인하세요</p>
         </div>
 
         {/* 공지사항 리스트 */}

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
+import Header from '../components/Header';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -54,12 +55,14 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      
       <div className="container mx-auto px-4 py-12">
         {/* 헤더 */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">📨 문의하기</h1>
-          <p className="text-blue-200">궁금한 점이나 제안사항을 남겨주세요</p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">📨 문의하기</h1>
+          <p className="text-gray-600">궁금한 점이나 제안사항을 남겨주세요</p>
         </div>
 
         {/* 문의 폼 */}

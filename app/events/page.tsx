@@ -80,9 +80,35 @@ export default async function EventsPage() {
         {/* 기업 실적 발표 */}
         <div className="bg-white rounded-lg p-6 border border-gray-200">
           <h2 className="text-xl font-bold text-gray-900 mb-4">💼 기업 실적 발표</h2>
-          {events.length === 0 ? (
-            <p className="text-center text-gray-500 py-8">예정된 실적 발표가 없습니다.</p>
-          ) : (
+          <div className="overflow-hidden rounded-lg border border-gray-200 mb-4">
+            <iframe
+              src="https://ssltools.investing.com/earnings-calendar/?columns=earnDate,ticker,actualEPS,forecastEPS,prevEPS,actualRevenue,forecastRevenue&features=datepicker&countries=5&calType=week&timeZone=28&lang=18"
+              width="100%"
+              height="600"
+              frameBorder="0"
+              allowTransparency={true}
+              marginWidth={0}
+              marginHeight={0}
+              className="w-full"
+            />
+          </div>
+          <p className="text-xs text-gray-500">
+            Powered by{' '}
+            <a
+              href="https://www.investing.com"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              className="text-blue-600 hover:underline"
+            >
+              Investing.com
+            </a>
+          </p>
+        </div>
+
+        {/* 추가 실적 발표 (events.json) */}
+        {events.length > 0 && (
+          <div className="bg-white rounded-lg p-6 border border-gray-200">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">📋 추가 실적 일정</h2>
             <div className="space-y-3">
             {events.map((event) => (
               <a
@@ -141,8 +167,8 @@ export default async function EventsPage() {
               </a>
             ))}
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </main>
     </div>
   );
