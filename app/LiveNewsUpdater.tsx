@@ -14,27 +14,50 @@ export default function LiveNewsUpdater({ initialNewsIds }: { initialNewsIds: st
   const [latestNewsIds, setLatestNewsIds] = useState<string[]>(initialNewsIds)
   const [newNews, setNewNews] = useState<NewsItem[]>([])
   const audioRef = useRef<HTMLAudioElement | null>(null)
+  const audioContextRef = useRef<AudioContext | null>(null)
   const router = useRouter()
 
   useEffect(() => {
-    // 알림 사운드 생성 (간단한 비프음)
-    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)()
-    const createBeep = () => {
+    // 알림음 준비
+    if (typeof window !== 'undefined') {
+      // AudioContext 생성 (사용자 인터랙션 후)
+      const initAudio = () => {
+        if (!audioContextRef.current) {
+          audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)()
+        }
+        document.removeEventListener('click', initAudio)
+      }
+      document.addEventListener('click', initAudio, { once: true })
+    }
+  }, [])
+
+  const playNotificationSound = () => {
+    try {
+      if (!audioContextRef.current || audioContextRef.current.state === 'suspended') {
+        audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)()
+      }
+      
+      const audioContext = audioContextRef.current
       const oscillator = audioContext.createOscillator()
       const gainNode = audioContext.createGain()
       
       oscillator.connect(gainNode)
       gainNode.connect(audioContext.destination)
       
-      oscillator.frequency.value = 800 // 주파수
+      oscillator.frequency.value = 800
       oscillator.type = 'sine'
       
-      gainNode.gain.setValueAtTime(0.3, audioContext.currentTime)
+      gainNode.gain.setValueAtTime(0.5, audioContext.currentTime)
       gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5)
       
       oscillator.start(audioContext.currentTime)
       oscillator.stop(audioContext.currentTime + 0.5)
+    } catch (error) {
+      console.error('알림음 재생 실패:', error)
     }
+  }
+
+  useEffect(() => {
 
     // 30초마다 새 뉴스 체크
     const interval = setInterval(async () => {
@@ -58,7 +81,7 @@ export default function LiveNewsUpdater({ initialNewsIds }: { initialNewsIds: st
           
           if (newItems.length > 0) {
             // 사운드 재생
-            createBeep()
+            playNotificationSound()
             
             // 새 뉴스 표시
             setNewNews(newItems)
