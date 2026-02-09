@@ -15,6 +15,7 @@ export default function WritePage() {
   const [form, setForm] = useState({
     title: '',
     content: '',
+    author: '',
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -22,8 +23,8 @@ export default function WritePage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!form.title.trim() || !form.content.trim()) {
-      setError('제목과 내용을 입력해주세요.');
+    if (!form.title.trim() || !form.content.trim() || !form.author.trim()) {
+      setError('닉네임, 제목, 내용을 모두 입력해주세요.');
       return;
     }
 
@@ -31,21 +32,18 @@ export default function WritePage() {
     setError('');
 
     try {
-      const { data: { user } } = await supabase.auth.getUser();
-      
-      if (!user) {
-        setError('로그인이 필요합니다.');
-        return;
-      }
+      // 임시 user_id 생성 (익명 게시)
+      const tempUserId = `anon_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
       const { data, error } = await supabase
         .from('posts')
         .insert([
           {
-            user_id: user.id,
+            user_id: tempUserId,
             title: form.title.trim(),
             content: form.content.trim(),
             category: 'free',
+            author_name: form.author.trim(),
           },
         ])
         .select()
@@ -147,6 +145,19 @@ export default function WritePage() {
               {error}
             </div>
           )}
+
+          {/* 닉네임 */}
+          <div className="mb-6">
+            <input
+              type="text"
+              value={form.author}
+              onChange={(e) => setForm({ ...form, author: e.target.value })}
+              placeholder="닉네임 (익명 게시)"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
+              maxLength={20}
+              required
+            />
+          </div>
 
           {/* 제목 */}
           <div className="mb-6">

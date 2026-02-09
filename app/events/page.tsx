@@ -111,8 +111,15 @@ export default async function EventsPage() {
                     <h3 className="text-xl font-bold text-gray-900 mb-1">
                       {event.ticker} {event.company && `- ${event.company}`}
                     </h3>
-                    <div className="flex items-center gap-3 text-sm text-gray-600">
-                      <span className="font-medium">📅 {event.time_kr || `${event.date} ${event.time || ''}`}</span>
+                    <div className="text-sm text-gray-600">
+                      <div className="font-semibold text-gray-900 mb-1">
+                        📅 {new Date(event.date).toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' })}
+                      </div>
+                      {event.time && (
+                        <div className="text-blue-600 font-medium">
+                          ⏰ {event.time} (한국 시간)
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
