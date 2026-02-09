@@ -205,7 +205,7 @@ export default async function Home() {
           </div>
           
           {/* PC 사이드바 */}
-          <EventsSidebar />
+          <EventsSidebar events={events} />
         </div>
       </main>
 

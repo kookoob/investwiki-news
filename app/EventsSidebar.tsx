@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import { promises as fs } from 'fs';
-import path from 'path';
 
 interface Event {
   id: string;
@@ -9,16 +7,6 @@ interface Event {
   date: string;
   time: string | null;
   emoji: string;
-}
-
-async function getEvents(): Promise<Event[]> {
-  try {
-    const filePath = path.join(process.cwd(), 'public', 'events.json');
-    const fileContents = await fs.readFile(filePath, 'utf8');
-    return JSON.parse(fileContents);
-  } catch {
-    return [];
-  }
 }
 
 function formatDate(dateStr: string): string {
@@ -33,9 +21,12 @@ function formatDate(dateStr: string): string {
   return date.toLocaleDateString('ko-KR', { month: 'short', day: 'numeric' });
 }
 
-export default async function EventsSidebar() {
-  const events = await getEvents();
-  const topEvents = events.slice(0, 3);
+interface EventsSidebarProps {
+  events: Event[];
+}
+
+export default function EventsSidebar({ events }: EventsSidebarProps) {
+  const topEvents = events.slice(0, 5);
 
   if (topEvents.length === 0) {
     return null;
@@ -45,7 +36,7 @@ export default async function EventsSidebar() {
     <div className="hidden lg:block sticky top-20">
       <div className="bg-white rounded-lg border border-gray-200 p-4">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="font-bold text-gray-900">📅 다가오는 이벤트</h3>
+          <h3 className="font-bold text-gray-900">📅 다가오는 경제일정</h3>
           <Link href="/events" className="text-xs text-blue-600 hover:underline">
             전체 →
           </Link>
