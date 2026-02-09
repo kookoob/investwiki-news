@@ -43,17 +43,19 @@ export default function ProfilePage() {
 
   async function checkUser() {
     try {
-      const { data: { user } } = await supabase.auth.getUser();
+      // localStorage에서 사용자 정보 가져오기
+      const savedUser = localStorage.getItem('stockhub_user');
       
-      if (!user) {
-        router.push('/');
+      if (!savedUser) {
+        router.push('/community');
         return;
       }
 
-      setUser(user);
-      await fetchProfile(user.id);
-      await fetchLevel(user.id);
-      await fetchStats(user.id);
+      const userData = JSON.parse(savedUser);
+      setUser(userData);
+      await fetchProfile(userData.id);
+      await fetchLevel(userData.id);
+      await fetchStats(userData.id);
     } catch (error) {
       console.error('사용자 정보 로딩 실패:', error);
     } finally {
@@ -64,13 +66,18 @@ export default function ProfilePage() {
   async function fetchProfile(userId: string) {
     try {
       const { data, error } = await supabase
-        .from('user_profiles')
+        .from('users')
         .select('*')
-        .eq('user_id', userId)
+        .eq('id', userId)
         .single();
 
       if (error && error.code !== 'PGRST116') throw error;
-      setProfile(data || { username: '', display_name: '', bio: '', avatar_url: '' });
+      setProfile(data ? {
+        username: data.username || '',
+        display_name: data.username || '',
+        bio: '',
+        avatar_url: ''
+      } : { username: '', display_name: '', bio: '', avatar_url: '' });
     } catch (error) {
       console.error('프로필 로딩 실패:', error);
     }
@@ -145,8 +152,8 @@ export default function ProfilePage() {
   }
 
   async function handleLogout() {
-    await supabase.auth.signOut();
-    router.push('/');
+    localStorage.removeItem('stockhub_user');
+    router.push('/community');
   }
 
   if (loading) {
