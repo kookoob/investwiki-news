@@ -72,7 +72,7 @@ export default async function Home() {
                 href="/"
                 className="px-3 py-2 text-blue-600 bg-blue-50 rounded-lg font-medium text-sm"
               >
-                📰 전체
+                📰 뉴스
               </Link>
               <Link
                 href="/community"
@@ -121,7 +121,7 @@ export default async function Home() {
           {/* 모바일 탭 메뉴 */}
           <nav className="md:hidden flex items-center gap-1 overflow-x-auto pb-3 -mx-4 px-4">
             <Link href="/" className="px-3 py-2 text-blue-600 bg-blue-50 rounded-lg font-medium text-sm whitespace-nowrap">
-              📰 전체
+              📰 뉴스
             </Link>
             <Link href="/community" className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm whitespace-nowrap">
               💬 커뮤니티
