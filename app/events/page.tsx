@@ -55,7 +55,7 @@ export default async function EventsPage() {
       <Header />
 
       <main className="max-w-4xl mx-auto px-4 py-6 space-y-6">
-        <h1 className="text-2xl font-bold text-gray-900">📅 이벤트 캘린더</h1>
+        <h1 className="text-2xl font-bold text-gray-900">📅 경제일정</h1>
         {/* Investing.com 경제 캘린더 위젯 */}
         <div className="bg-white rounded-lg p-6 border border-gray-200">
           <h2 className="text-xl font-bold text-gray-900 mb-4">📊 경제 캘린더</h2>

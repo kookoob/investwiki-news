@@ -65,7 +65,7 @@ export default function Header() {
                   : 'text-gray-600 hover:bg-gray-50'
               } transition-colors`}
             >
-              📅 이벤트
+              📅 경제일정
             </Link>
             <Link
               href="/notice"
@@ -148,7 +148,7 @@ export default function Header() {
                 : 'text-gray-600 hover:bg-gray-50'
             }`}
           >
-            📅 이벤트
+            📅 경제일정
           </Link>
           <Link
             href="/notice"
