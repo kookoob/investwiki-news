@@ -33,12 +33,18 @@ export default function AuthButton() {
     setLoading(true)
     setError('')
 
+    if (!name.trim()) {
+      setError('닉네임을 입력해주세요.')
+      setLoading(false)
+      return
+    }
+
     const { error } = await supabase.auth.signUp({
       email,
       password,
       options: {
         data: {
-          name: name || email.split('@')[0]
+          name: name.trim()
         }
       }
     })
@@ -52,6 +58,9 @@ export default function AuthButton() {
       setTimeout(() => {
         setShowModal(false)
         setError('')
+        setName('')
+        setEmail('')
+        setPassword('')
       }, 2000)
     }
   }
@@ -156,21 +165,23 @@ export default function AuthButton() {
               {isSignUp && (
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    이름 (선택)
+                    닉네임 *
                   </label>
                   <input
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    required
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="홍길동"
+                    placeholder="사용하실 닉네임을 입력하세요"
+                    maxLength={20}
                   />
                 </div>
               )}
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  이메일
+                  이메일 *
                 </label>
                 <input
                   type="email"
@@ -184,7 +195,7 @@ export default function AuthButton() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  비밀번호
+                  비밀번호 *
                 </label>
                 <input
                   type="password"
@@ -193,7 +204,7 @@ export default function AuthButton() {
                   required
                   minLength={6}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="6자 이상"
+                  placeholder="6자 이상 입력하세요"
                 />
               </div>
 
@@ -217,6 +228,9 @@ export default function AuthButton() {
                 onClick={() => {
                   setIsSignUp(!isSignUp)
                   setError('')
+                  setName('')
+                  setEmail('')
+                  setPassword('')
                 }}
                 className="text-sm text-blue-600 hover:text-blue-700 cursor-pointer"
               >
@@ -228,6 +242,9 @@ export default function AuthButton() {
               onClick={() => {
                 setShowModal(false)
                 setError('')
+                setName('')
+                setEmail('')
+                setPassword('')
               }}
               className="mt-4 w-full px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
             >
