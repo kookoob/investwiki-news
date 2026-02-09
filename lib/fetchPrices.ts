@@ -6,6 +6,23 @@ export interface TickerData {
   changePercent: number
 }
 
+// 티커별 한글 이름 매핑
+const TICKER_NAMES: Record<string, string> = {
+  '^DJI': '다우존스',
+  '^GSPC': 'S&P 500',
+  '^IXIC': '나스닥',
+  'BTC-USD': '비트코인',
+  'ETH-USD': '이더리움',
+  'GS': '골드만삭스',
+  'SQ': 'Block (Square)',
+  'AAPL': '애플',
+  'TSLA': '테슬라',
+  'MSFT': '마이크로소프트',
+  'GOOGL': '구글',
+  'AMZN': '아마존',
+  'NVDA': '엔비디아'
+}
+
 export async function fetchTickerPrices(tickers: string[]): Promise<TickerData[]> {
   if (!tickers || tickers.length === 0) return []
 
@@ -27,7 +44,7 @@ export async function fetchTickerPrices(tickers: string[]): Promise<TickerData[]
 
           return {
             symbol,
-            name: meta.symbol,
+            name: TICKER_NAMES[symbol] || meta.longName || meta.shortName || symbol,
             price: currentPrice,
             change,
             changePercent

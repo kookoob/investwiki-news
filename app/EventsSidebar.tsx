@@ -1,0 +1,81 @@
+import Link from 'next/link';
+import { promises as fs } from 'fs';
+import path from 'path';
+
+interface Event {
+  id: string;
+  title: string;
+  link: string;
+  date: string;
+  time: string | null;
+  emoji: string;
+}
+
+async function getEvents(): Promise<Event[]> {
+  try {
+    const filePath = path.join(process.cwd(), 'public', 'events.json');
+    const fileContents = await fs.readFile(filePath, 'utf8');
+    return JSON.parse(fileContents);
+  } catch {
+    return [];
+  }
+}
+
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr);
+  const now = new Date();
+  const diffDays = Math.ceil((date.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+  
+  if (diffDays === 0) return '오늘';
+  if (diffDays === 1) return '내일';
+  if (diffDays < 7) return `${diffDays}일 후`;
+  
+  return date.toLocaleDateString('ko-KR', { month: 'short', day: 'numeric' });
+}
+
+export default async function EventsSidebar() {
+  const events = await getEvents();
+  const topEvents = events.slice(0, 3);
+
+  if (topEvents.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="hidden lg:block sticky top-20">
+      <div className="bg-white rounded-lg border border-gray-200 p-4">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="font-bold text-gray-900">📅 다가오는 이벤트</h3>
+          <Link href="/events" className="text-xs text-blue-600 hover:underline">
+            전체 →
+          </Link>
+        </div>
+        
+        <div className="space-y-3">
+          {topEvents.map((event) => (
+            <a
+              key={event.id}
+              href={event.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block p-3 rounded-lg hover:bg-gray-50 transition-colors border border-gray-100"
+            >
+              <div className="flex items-start gap-2">
+                <span className="text-xl">{event.emoji}</span>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-medium text-gray-900 line-clamp-2 mb-1">
+                    {event.title}
+                  </p>
+                  <p className="text-xs text-gray-600">
+                    {formatDate(event.date)}
+                    {event.time && ` · ${event.time}`}
+                  </p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}

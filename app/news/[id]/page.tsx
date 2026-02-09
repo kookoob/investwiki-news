@@ -2,6 +2,10 @@ import Link from 'next/link'
 import { promises as fs } from 'fs'
 import path from 'path'
 import { fetchTickerPrices } from '@/lib/fetchPrices'
+import CopyButton from './CopyButton'
+import Comments from './Comments'
+import VoteButtons from './VoteButtons'
+import AuthButton from '@/app/AuthButton'
 
 async function getNewsById(id: string) {
   try {
@@ -37,11 +41,14 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
   return (
     <div className="min-h-screen bg-gray-50">
       {/* 헤더 */}
-      <header className="bg-white border-b border-gray-200">
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-4 py-4">
-          <Link href="/" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
-            ← 뉴스 목록으로
-          </Link>
+          <div className="flex items-center justify-between">
+            <Link href="/" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
+              ← 뉴스 목록으로
+            </Link>
+            <AuthButton />
+          </div>
         </div>
       </header>
 
@@ -81,13 +88,13 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
                 {tickerData.map((item) => (
                   <div key={item.symbol} className="bg-gray-50 rounded-lg p-3 border border-gray-200">
                     <div className="flex justify-between items-start mb-1">
-                      <span className="text-sm font-medium text-gray-900">{item.symbol}</span>
+                      <span className="text-sm font-medium text-gray-900">{item.name}</span>
                       <span className="text-base font-semibold text-gray-900">
                         ${item.price.toFixed(2)}
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-xs text-gray-500">{item.name}</span>
+                      <span className="text-xs text-gray-500">{item.symbol}</span>
                       <span
                         className={`text-xs font-medium ${
                           item.change >= 0 ? 'text-red-600' : 'text-blue-600'
@@ -102,19 +109,28 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
             </div>
           )}
 
-          {/* 원문 링크 */}
+          {/* 원문 링크 및 공유 */}
           {news.link && (
             <div className="mt-6 pt-6 border-t border-gray-200">
-              <a
-                href={news.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:text-blue-700 text-sm font-medium"
-              >
-                원문 보기 →
-              </a>
+              <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+                <a
+                  href={news.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 text-sm font-medium"
+                >
+                  원문 보기 →
+                </a>
+                <CopyButton url={`https://stockhub.kr/news/${news.id}`} />
+              </div>
             </div>
           )}
+
+          {/* 투표 */}
+          <VoteButtons newsId={news.id} />
+
+          {/* 댓글 */}
+          <Comments newsId={news.id} />
         </article>
       </main>
     </div>

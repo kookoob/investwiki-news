@@ -1,0 +1,6 @@
+# StockHub Robots.txt
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://stockhub.kr/sitemap.xml
