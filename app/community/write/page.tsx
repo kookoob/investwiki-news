@@ -21,6 +21,7 @@ export default function WritePage() {
   const [user, setUser] = useState<any>(null);
   const [showLogin, setShowLogin] = useState(false);
   const [nickname, setNickname] = useState('');
+  const [email, setEmail] = useState('');
 
   useEffect(() => {
     // localStorage에서 사용자 정보 확인
@@ -50,11 +51,24 @@ export default function WritePage() {
       let userData;
       if (existingUser) {
         userData = existingUser;
+        
+        // email이 입력되었고, 기존 email과 다르면 업데이트
+        if (email.trim() && email.trim() !== existingUser.email) {
+          await supabase
+            .from('users')
+            .update({ email: email.trim() })
+            .eq('id', existingUser.id);
+          
+          userData = { ...existingUser, email: email.trim() };
+        }
       } else {
         // 새 사용자 생성
         const { data: newUser, error } = await supabase
           .from('users')
-          .insert([{ username: nickname.trim() }])
+          .insert([{ 
+            username: nickname.trim(),
+            email: email.trim() || null
+          }])
           .select()
           .single();
 
@@ -209,7 +223,7 @@ export default function WritePage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">로그인</h2>
             <p className="text-gray-600 mb-6 text-center">닉네임을 입력하세요</p>
             
-            <div className="mb-6">
+            <div className="mb-4">
               <input
                 type="text"
                 value={nickname}
@@ -217,8 +231,21 @@ export default function WritePage() {
                 placeholder="닉네임 입력"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
                 maxLength={20}
+              />
+            </div>
+
+            <div className="mb-6">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="이메일 (선택, 관리자 권한용)"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
                 onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
               />
+              <p className="text-xs text-gray-500 mt-2">
+                ※ 이메일을 입력하면 관리자 권한이 자동 부여됩니다
+              </p>
             </div>
 
             <button
