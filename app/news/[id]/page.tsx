@@ -6,6 +6,7 @@ import CopyButton from './CopyButton'
 import Comments from './Comments'
 import VoteButtons from './VoteButtons'
 import AuthButton from '@/app/AuthButton'
+import { Metadata } from 'next'
 
 async function getNewsById(id: string) {
   try {
@@ -15,6 +16,62 @@ async function getNewsById(id: string) {
     return allNews.find((item: any) => item.id === id)
   } catch {
     return null
+  }
+}
+
+// 동적 메타데이터 생성
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params
+  const news = await getNewsById(id)
+
+  if (!news) {
+    return {
+      title: '뉴스를 찾을 수 없습니다 - StockHub',
+      description: '요청하신 뉴스를 찾을 수 없습니다.',
+    }
+  }
+
+  const title = `${news.title} - StockHub`
+  const description = news.summary.replace(/\n/g, ' ').substring(0, 160)
+  const url = `https://stockhub.kr/news/${news.id}`
+
+  return {
+    title,
+    description,
+    keywords: [
+      ...(news.tickers || []),
+      news.source,
+      '투자뉴스',
+      '미국주식',
+      '경제뉴스',
+    ],
+    authors: [{ name: 'StockHub' }],
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: 'StockHub',
+      locale: 'ko_KR',
+      type: 'article',
+      publishedTime: news.date,
+      images: [
+        {
+          url: 'https://stockhub.kr/logo.png',
+          width: 1280,
+          height: 698,
+          alt: news.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://stockhub.kr/logo.png'],
+    },
+    alternates: {
+      canonical: url,
+    },
   }
 }
 
@@ -38,8 +95,41 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
     )
   }
 
+  // Schema.org NewsArticle 구조화 데이터
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: news.title,
+    description: news.summary.replace(/\n/g, ' ').substring(0, 160),
+    image: 'https://stockhub.kr/logo.png',
+    datePublished: news.date,
+    dateModified: news.date,
+    author: {
+      '@type': 'Organization',
+      name: news.source,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'StockHub',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://stockhub.kr/logo.png',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://stockhub.kr/news/${news.id}`,
+    },
+    articleBody: news.content,
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Schema.org JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       {/* 헤더 */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-4 py-4">

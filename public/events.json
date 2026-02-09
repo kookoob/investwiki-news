@@ -13,7 +13,7 @@
     "company": "McDonald's Corporation",
     "eps_estimate": 13.27,
     "eps_current": 11.71,
-    "market_cap": 233462824960,
+    "market_cap": 231821524992,
     "sector": "Consumer Cyclical"
   },
   {
@@ -45,7 +45,24 @@
     "company": "Walmart Inc.",
     "eps_estimate": 2.96,
     "eps_current": 2.86,
-    "market_cap": 1045878538240,
+    "market_cap": 1034876092416,
     "sector": "Consumer Defensive"
+  },
+  {
+    "id": "earning_HD_2026-02-24",
+    "title": "HD 실적 발표",
+    "link": "#",
+    "source": "Yahoo Finance",
+    "date": "2026-02-24",
+    "time": "09:00",
+    "time_kr": "2026-02-24 09:00 KST",
+    "type": "earnings",
+    "emoji": "💼",
+    "ticker": "HD",
+    "company": "The Home Depot, Inc.",
+    "eps_estimate": 15.04,
+    "eps_current": 14.67,
+    "market_cap": 376641814528,
+    "sector": "Consumer Cyclical"
   }
 ]
