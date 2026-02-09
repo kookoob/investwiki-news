@@ -124,12 +124,9 @@ export default function AuthButton() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="kyongg02@gmail.com"
+                  placeholder="이메일 (선택 입력)"
                   onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
                 />
-                <p className="mt-1 text-xs text-gray-500">
-                  관리자 권한: kyongg02@gmail.com
-                </p>
               </div>
 
               <button
