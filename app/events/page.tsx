@@ -10,8 +10,15 @@ interface Event {
   source: string;
   date: string;
   time: string | null;
+  time_kr?: string;
   type: string;
   emoji: string;
+  ticker?: string;
+  company?: string;
+  eps_estimate?: number;
+  eps_current?: number;
+  market_cap?: number;
+  sector?: string;
 }
 
 async function getEvents(): Promise<Event[]> {
@@ -85,60 +92,67 @@ export default async function EventsPage() {
           ) : (
             <div className="space-y-3">
             {events.map((event) => (
-              <a
+              <div
                 key={event.id}
-                href={event.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-white rounded-lg p-4 hover:shadow-md transition-shadow border border-gray-200"
+                className="bg-white rounded-lg p-5 border border-gray-200 hover:shadow-md transition-shadow"
               >
-                <div className="flex items-start gap-4">
-                  {/* 이모지 */}
+                {/* 헤더 */}
+                <div className="flex items-start gap-4 mb-4">
                   <div className="text-3xl">{event.emoji}</div>
-
-                  {/* 내용 */}
-                  <div className="flex-1 min-w-0">
-                    {/* 타입 태그 */}
-                    <div className="mb-2">
-                      <span className={`inline-block px-2 py-1 text-xs font-medium rounded ${
-                        event.type === 'earnings' ? 'bg-green-100 text-green-700' :
-                        event.type === 'conference' ? 'bg-blue-100 text-blue-700' :
-                        event.type === 'shareholders' ? 'bg-purple-100 text-purple-700' :
-                        'bg-gray-100 text-gray-700'
-                      }`}>
-                        {event.type === 'earnings' ? '실적발표' :
-                         event.type === 'conference' ? '컨퍼런스' :
-                         event.type === 'shareholders' ? '주주총회' : '기타'}
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="inline-block px-2 py-1 text-xs font-medium rounded bg-green-100 text-green-700">
+                        실적발표
                       </span>
-                    </div>
-
-                    {/* 제목 */}
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                      {event.title}
-                    </h3>
-
-                    {/* 날짜/시간 */}
-                    <div className="flex items-center gap-3 text-sm text-gray-600">
-                      <span className="font-medium">{formatDate(event.date)}</span>
-                      {event.time && (
-                        <>
-                          <span>•</span>
-                          <span>{event.time}</span>
-                        </>
+                      {event.sector && (
+                        <span className="text-xs text-gray-500">{event.sector}</span>
                       )}
-                      <span>•</span>
-                      <span>{event.source}</span>
                     </div>
-                  </div>
-
-                  {/* 외부 링크 아이콘 */}
-                  <div className="text-gray-400">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">
+                      {event.ticker} {event.company && `- ${event.company}`}
+                    </h3>
+                    <div className="flex items-center gap-3 text-sm text-gray-600">
+                      <span className="font-medium">📅 {event.time_kr || `${event.date} ${event.time || ''}`}</span>
+                    </div>
                   </div>
                 </div>
-              </a>
+
+                {/* 상세 정보 */}
+                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
+                  {event.eps_estimate && (
+                    <div>
+                      <div className="text-xs text-gray-500 mb-1">EPS 예상</div>
+                      <div className="text-lg font-semibold text-blue-600">${event.eps_estimate}</div>
+                    </div>
+                  )}
+                  {event.eps_current && (
+                    <div>
+                      <div className="text-xs text-gray-500 mb-1">현재 EPS</div>
+                      <div className="text-lg font-semibold text-gray-700">${event.eps_current}</div>
+                    </div>
+                  )}
+                  {event.market_cap && (
+                    <div className="col-span-2">
+                      <div className="text-xs text-gray-500 mb-1">시가총액</div>
+                      <div className="text-lg font-semibold text-gray-700">
+                        ${(event.market_cap / 1_000_000_000).toFixed(1)}B
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* 하단 링크 */}
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <a
+                    href={`https://finance.yahoo.com/quote/${event.ticker}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-blue-600 hover:underline"
+                  >
+                    Yahoo Finance에서 자세히 보기 →
+                  </a>
+                </div>
+              </div>
             ))}
             </div>
           )}

@@ -2,23 +2,35 @@
   {
     "id": "earning_MCD_2026-02-11",
     "title": "MCD 실적 발표",
-    "link": "https://finance.yahoo.com/quote/MCD",
+    "link": "#",
     "source": "Yahoo Finance",
     "date": "2026-02-11",
-    "time": null,
+    "time": "09:00",
+    "time_kr": "2026-02-11 09:00 KST",
     "type": "earnings",
     "emoji": "💼",
-    "ticker": "MCD"
+    "ticker": "MCD",
+    "company": "McDonald's Corporation",
+    "eps_estimate": 13.27,
+    "eps_current": 11.71,
+    "market_cap": 233462824960,
+    "sector": "Consumer Cyclical"
   },
   {
     "id": "earning_WMT_2026-02-19",
     "title": "WMT 실적 발표",
-    "link": "https://finance.yahoo.com/quote/WMT",
+    "link": "#",
     "source": "Yahoo Finance",
     "date": "2026-02-19",
-    "time": null,
+    "time": "09:00",
+    "time_kr": "2026-02-19 09:00 KST",
     "type": "earnings",
     "emoji": "💼",
-    "ticker": "WMT"
+    "ticker": "WMT",
+    "company": "Walmart Inc.",
+    "eps_estimate": 2.96,
+    "eps_current": 2.86,
+    "market_cap": 1045878538240,
+    "sector": "Consumer Defensive"
   }
 ]
