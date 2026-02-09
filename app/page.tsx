@@ -57,13 +57,50 @@ export default async function Home() {
       
       {/* 헤더 */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
-        {/* 상단: 로고 + 우측 버튼들 */}
-        <div className="max-w-4xl mx-auto px-4 py-3 border-b border-gray-100">
-          <div className="flex items-center justify-between">
-            <div className="flex flex-col gap-1 select-none">
-              <img src="/logo.png" alt="StockHub" className="h-10 w-auto pointer-events-none" draggable="false" />
-              <h1 className="text-xs text-gray-500">실시간 투자·경제 뉴스</h1>
-            </div>
+        <div className="max-w-7xl mx-auto px-4">
+          {/* 상단: 로고 + 탭 + 버튼들 */}
+          <div className="flex items-center justify-between py-3">
+            {/* 로고 */}
+            <Link href="/" className="flex items-center gap-2 select-none">
+              <img src="/logo.png" alt="StockHub" className="h-8 w-auto pointer-events-none" draggable="false" />
+              <span className="text-xs text-gray-500 hidden sm:inline">실시간 투자·경제 뉴스</span>
+            </Link>
+            
+            {/* 탭 메뉴 (중앙) */}
+            <nav className="hidden md:flex items-center gap-1">
+              <Link
+                href="/"
+                className="px-3 py-2 text-blue-600 bg-blue-50 rounded-lg font-medium text-sm"
+              >
+                📰 전체
+              </Link>
+              <Link
+                href="/community"
+                className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm transition-colors"
+              >
+                💬 커뮤니티
+              </Link>
+              <Link
+                href="/events"
+                className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm transition-colors"
+              >
+                📅 이벤트
+              </Link>
+              <Link
+                href="/notice"
+                className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm transition-colors"
+              >
+                📢 공지
+              </Link>
+              <Link
+                href="/contact"
+                className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm transition-colors"
+              >
+                📨 문의
+              </Link>
+            </nav>
+            
+            {/* 우측 버튼들 */}
             <div className="flex items-center gap-2">
               <a
                 href="https://t.me/stockhubkr"
@@ -75,45 +112,27 @@ export default async function Home() {
                   <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121L7.942 13.5l-2.906-.907c-.63-.196-.642-.63.135-.931l11.36-4.38c.525-.195.984.127.814.939z"/>
                 </svg>
                 <span className="hidden sm:inline">텔레그램</span>
-                <span className="sm:hidden">채널</span>
               </a>
               <AuthButton />
               <BookmarkButton />
             </div>
           </div>
-        </div>
-        
-        {/* 하단: 탭 메뉴 */}
-        <div className="max-w-4xl mx-auto px-4">
-          <nav className="flex items-center gap-1 overflow-x-auto">
-            <Link
-              href="/"
-              className="px-4 py-3 text-blue-600 border-b-2 border-blue-600 font-medium text-sm whitespace-nowrap"
-            >
+          
+          {/* 모바일 탭 메뉴 */}
+          <nav className="md:hidden flex items-center gap-1 overflow-x-auto pb-3 -mx-4 px-4">
+            <Link href="/" className="px-3 py-2 text-blue-600 bg-blue-50 rounded-lg font-medium text-sm whitespace-nowrap">
               📰 전체
             </Link>
-            <Link
-              href="/community"
-              className="px-4 py-3 text-gray-600 hover:text-gray-900 font-medium text-sm whitespace-nowrap transition-colors"
-            >
+            <Link href="/community" className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm whitespace-nowrap">
               💬 커뮤니티
             </Link>
-            <Link
-              href="/events"
-              className="px-4 py-3 text-gray-600 hover:text-gray-900 font-medium text-sm whitespace-nowrap transition-colors"
-            >
+            <Link href="/events" className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm whitespace-nowrap">
               📅 이벤트
             </Link>
-            <Link
-              href="/notice"
-              className="px-4 py-3 text-gray-600 hover:text-gray-900 font-medium text-sm whitespace-nowrap transition-colors"
-            >
+            <Link href="/notice" className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm whitespace-nowrap">
               📢 공지
             </Link>
-            <Link
-              href="/contact"
-              className="px-4 py-3 text-gray-600 hover:text-gray-900 font-medium text-sm whitespace-nowrap transition-colors"
-            >
+            <Link href="/contact" className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm whitespace-nowrap">
               📨 문의
             </Link>
           </nav>
@@ -124,8 +143,8 @@ export default async function Home() {
       <EventsScroll />
 
       {/* 메인 콘텐츠 */}
-      <main className="max-w-7xl mx-auto px-4 py-6">
-        <div className="lg:grid lg:grid-cols-[1fr,320px] lg:gap-6">
+      <main className="max-w-6xl mx-auto px-4 py-6">
+        <div className="lg:grid lg:grid-cols-[minmax(0,800px),320px] lg:gap-6 lg:justify-center">
           {/* 뉴스 + 이벤트 피드 */}
           <div className="space-y-4">
             {feed.length === 0 && (
