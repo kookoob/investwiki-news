@@ -59,14 +59,42 @@ export default async function EventsPage() {
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-4 py-6">
-        {/* 이벤트 리스트 */}
-        {events.length === 0 ? (
-          <div className="bg-white rounded-lg p-12 text-center border border-gray-200">
-            <p className="text-gray-500">예정된 이벤트가 없습니다.</p>
+      <main className="max-w-4xl mx-auto px-4 py-6 space-y-6">
+        {/* Investing.com 경제 캘린더 위젯 */}
+        <div className="bg-white rounded-lg p-6 border border-gray-200">
+          <h2 className="text-xl font-bold text-gray-900 mb-4">📊 경제 캘린더</h2>
+          <div className="overflow-hidden rounded-lg border border-gray-200">
+            <iframe
+              src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&importance=2,3&features=datepicker,timezone&countries=25,32,6,37,72,22,17,39,14,10,35,43,56,36,110,11,26,12,4,5&calType=week&timeZone=28&lang=18"
+              width="100%"
+              height="600"
+              frameBorder="0"
+              allowTransparency={true}
+              marginWidth={0}
+              marginHeight={0}
+              className="w-full"
+            />
           </div>
-        ) : (
-          <div className="space-y-3">
+          <p className="text-xs text-gray-500 mt-2">
+            Powered by{' '}
+            <a
+              href="https://www.investing.com"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              className="text-blue-600 hover:underline"
+            >
+              Investing.com
+            </a>
+          </p>
+        </div>
+
+        {/* 기업 실적 발표 */}
+        <div className="bg-white rounded-lg p-6 border border-gray-200">
+          <h2 className="text-xl font-bold text-gray-900 mb-4">💼 기업 실적 발표</h2>
+          {events.length === 0 ? (
+            <p className="text-center text-gray-500 py-8">예정된 실적 발표가 없습니다.</p>
+          ) : (
+            <div className="space-y-3">
             {events.map((event) => (
               <a
                 key={event.id}
@@ -123,8 +151,9 @@ export default async function EventsPage() {
                 </div>
               </a>
             ))}
-          </div>
-        )}
+            </div>
+          )}
+        </div>
       </main>
     </div>
   );
