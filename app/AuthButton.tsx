@@ -104,7 +104,7 @@ export default function AuthButton() {
         </a>
         <button
           onClick={handleSignOut}
-          className="px-3 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
+          className="px-3 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
         >
           로그아웃
         </button>
@@ -132,7 +132,7 @@ export default function AuthButton() {
             <button
               type="button"
               onClick={handleGoogleLogin}
-              className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-white border-2 border-gray-300 hover:border-gray-400 rounded-lg font-medium transition-colors"
+              className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-white border-2 border-gray-300 hover:border-gray-400 rounded-lg font-medium transition-colors cursor-pointer"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -206,7 +206,7 @@ export default function AuthButton() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors disabled:opacity-50"
+                className="w-full px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors disabled:opacity-50 cursor-pointer"
               >
                 {loading ? '처리 중...' : (isSignUp ? '가입하기' : '로그인')}
               </button>
@@ -218,7 +218,7 @@ export default function AuthButton() {
                   setIsSignUp(!isSignUp)
                   setError('')
                 }}
-                className="text-sm text-blue-600 hover:text-blue-700"
+                className="text-sm text-blue-600 hover:text-blue-700 cursor-pointer"
               >
                 {isSignUp ? '이미 계정이 있으신가요? 로그인' : '계정이 없으신가요? 회원가입'}
               </button>
@@ -229,7 +229,7 @@ export default function AuthButton() {
                 setShowModal(false)
                 setError('')
               }}
-              className="mt-4 w-full px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors"
+              className="mt-4 w-full px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
             >
               닫기
             </button>
