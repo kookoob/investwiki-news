@@ -54,7 +54,7 @@ export default async function EventsPage() {
           <h2 className="text-xl font-bold text-gray-900 mb-4">📊 경제 캘린더</h2>
           <div className="overflow-hidden rounded-lg border border-gray-200">
             <iframe
-              src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&importance=2,3&features=datepicker,timezone&countries=25,32,6,37,72,22,17,39,14,10,35,43,56,36,110,11,26,12,4,5&calType=week&timeZone=28&lang=18"
+              src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&importance=3&features=datepicker,timezone&countries=25,32,6,37,72,22,17,39,14,10,35,43,56,36,110,11,26,12,4,5&calType=week&timeZone=28&lang=18"
               width="100%"
               height="600"
               frameBorder="0"
