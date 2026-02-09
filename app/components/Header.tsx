@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import AuthButton from '../AuthButton'
-import BookmarkButton from '../BookmarkButton'
 
 export default function Header() {
   const pathname = usePathname()
@@ -116,7 +115,6 @@ export default function Header() {
               <span className="hidden sm:inline">텔레그램</span>
             </a>
             <AuthButton />
-            <BookmarkButton />
           </div>
         </div>
         

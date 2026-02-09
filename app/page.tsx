@@ -103,7 +103,6 @@ export default async function Home() {
                 <span className="hidden sm:inline">텔레그램</span>
               </a>
               <AuthButton />
-              <BookmarkButton />
             </div>
           </div>
           
@@ -147,15 +146,13 @@ export default async function Home() {
           
           return (
           <div key={item.id}>
-            <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 p-4">
-              <Link href={`/news/${item.id}`} className="block">
-                <div className="flex items-start gap-2 mb-2">
-                  <h2 className="flex-1 text-lg font-semibold text-gray-900 line-clamp-2">
-                    {item.title}
-                  </h2>
-                  <BookmarkButton itemId={item.id} itemType="news" size="md" />
-                </div>
-              </Link>
+            <Link href={`/news/${item.id}`} className="block bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 p-4">
+              <div className="flex items-start gap-2 mb-2">
+                <h2 className="flex-1 text-lg font-semibold text-gray-900 line-clamp-2">
+                  {item.title}
+                </h2>
+                <BookmarkButton itemId={item.id} itemType="news" size="md" />
+              </div>
               <div className="flex items-center gap-3 text-sm text-gray-500 flex-wrap">
                 <span className="font-medium text-blue-600">{item.source}</span>
                 <span>•</span>
@@ -199,11 +196,10 @@ export default async function Home() {
                   </>
                 )}
               </div>
-              </Link>
-              
-              {/* 5번째 뉴스 뒤에 광고 */}
-              {index === 4 && <AdSense slot="1234567890" />}
-            </div>
+            </Link>
+            {/* 5번째 뉴스 뒤에 광고 */}
+            {index === 4 && <AdSense slot="1234567890" />}
+          </div>
           )
         })}
           </div>
