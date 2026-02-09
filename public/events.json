@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id": "earning_MCD_2026-02-11",
+    "title": "MCD 실적 발표",
+    "link": "https://finance.yahoo.com/quote/MCD",
+    "source": "Yahoo Finance",
+    "date": "2026-02-11",
+    "time": null,
+    "type": "earnings",
+    "emoji": "💼",
+    "ticker": "MCD"
+  },
+  {
+    "id": "earning_WMT_2026-02-19",
+    "title": "WMT 실적 발표",
+    "link": "https://finance.yahoo.com/quote/WMT",
+    "source": "Yahoo Finance",
+    "date": "2026-02-19",
+    "time": null,
+    "type": "earnings",
+    "emoji": "💼",
+    "ticker": "WMT"
+  }
+]
