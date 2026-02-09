@@ -17,13 +17,37 @@ interface Notice {
   created_at: string;
 }
 
+const ADMIN_EMAILS = ['kyongg02@gmail.com'];
+
 export default function NoticePage() {
   const [notices, setNotices] = useState<Notice[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     fetchNotices();
+    checkAdmin();
   }, []);
+
+  async function checkAdmin() {
+    try {
+      const savedUser = localStorage.getItem('stockhub_user');
+      if (!savedUser) return;
+
+      const userData = JSON.parse(savedUser);
+      const { data } = await supabase
+        .from('users')
+        .select('email')
+        .eq('id', userData.id)
+        .single();
+
+      if (data && ADMIN_EMAILS.includes(data.email)) {
+        setIsAdmin(true);
+      }
+    } catch (error) {
+      console.error('권한 확인 실패:', error);
+    }
+  }
 
   async function fetchNotices() {
     try {
@@ -57,7 +81,17 @@ export default function NoticePage() {
       <div className="container mx-auto px-4 py-12">
         {/* 헤더 */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">📢 공지사항</h1>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <h1 className="text-4xl font-bold text-gray-900">📢 공지사항</h1>
+            {isAdmin && (
+              <a
+                href="/notice/write"
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-colors"
+              >
+                ✍️ 작성하기
+              </a>
+            )}
+          </div>
           <p className="text-gray-600">StockHub의 새로운 소식을 확인하세요</p>
         </div>
 
