@@ -2,11 +2,21 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
 import AuthButton from '../AuthButton'
 import BookmarkButton from '../BookmarkButton'
 
 export default function Header() {
   const pathname = usePathname()
+  const [isAdmin, setIsAdmin] = useState(false)
+
+  useEffect(() => {
+    const savedUser = localStorage.getItem('stockhub_user')
+    if (savedUser) {
+      const userData = JSON.parse(savedUser)
+      setIsAdmin(userData.email === 'kyongg02@gmail.com')
+    }
+  }, [])
 
   const isActive = (path: string) => {
     if (path === '/') {
@@ -78,6 +88,18 @@ export default function Header() {
             >
               📨 문의
             </Link>
+            {isAdmin && (
+              <Link
+                href="/admin/inquiries"
+                className={`px-3 py-2 rounded-lg font-medium text-sm ${
+                  isActive('/admin')
+                    ? 'text-red-600 bg-red-50'
+                    : 'text-red-600 hover:bg-red-50'
+                } transition-colors`}
+              >
+                🔧 관리자
+              </Link>
+            )}
           </nav>
           
           {/* 우측 버튼들 */}
