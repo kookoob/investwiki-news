@@ -35,17 +35,6 @@ export default async function Home() {
   const events = await getEvents()
   const newsIds = news.map((item: any) => item.id)
   const stats = await getAllNewsStats(newsIds)
-  
-  // 뉴스와 이벤트 섞기 (3개 뉴스마다 이벤트 1개)
-  const feed: any[] = []
-  let eventIndex = 0
-  news.forEach((item: any, index: number) => {
-    feed.push({ type: 'news', data: item })
-    if ((index + 1) % 3 === 0 && eventIndex < events.length) {
-      feed.push({ type: 'event', data: events[eventIndex] })
-      eventIndex++
-    }
-  })
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -145,41 +134,15 @@ export default async function Home() {
       {/* 메인 콘텐츠 */}
       <main className="max-w-6xl mx-auto px-4 py-6">
         <div className="lg:grid lg:grid-cols-[minmax(0,800px),320px] lg:gap-6 lg:justify-center">
-          {/* 뉴스 + 이벤트 피드 */}
+          {/* 뉴스 피드 */}
           <div className="space-y-4">
-            {feed.length === 0 && (
+            {news.length === 0 && (
               <div className="text-center py-12 text-gray-500">
                 뉴스를 불러오는 중...
               </div>
             )}
             
-            {feed.map((feedItem: any, index: number) => {
-          if (feedItem.type === 'event') {
-            const event = feedItem.data
-            return (
-              <a
-                key={`event-${event.id}`}
-                href={event.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4 border-2 border-blue-200 hover:border-blue-400 transition-all"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="text-3xl">{event.emoji}</div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-xs font-semibold text-blue-600">📅 이벤트</span>
-                      <span className="text-xs text-gray-600">{event.date}</span>
-                      {event.time && <span className="text-xs text-gray-600">{event.time}</span>}
-                    </div>
-                    <h3 className="font-semibold text-gray-900">{event.title}</h3>
-                  </div>
-                </div>
-              </a>
-            )
-          }
-          
-          const item = feedItem.data
+            {news.map((item: any) => {
           const itemStats = stats[item.id] || { bullish: 0, bearish: 0, comments: 0 }
           
           return (
