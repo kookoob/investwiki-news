@@ -1,5 +1,32 @@
 [
   {
+    "id": "news_1770642285_1",
+    "title": "메타, 뉴멕시코와 LA 재판에서 개정 시작하며 법정 공방 주간 개시",
+    "summary": "본 기사는 헤드라인만 제공됩니다. 자세한 내용은 원문 링크를 확인하세요.",
+    "content": "이 뉴스는 헤드라인만 제공되며, 전체 기사는 원문 링크에서 확인할 수 있습니다.",
+    "source": "CNBC",
+    "date": "2026-02-09 22:04",
+    "timestamp": 1770642225,
+    "link": "https://www.cnbc.com/2026/02/09/meta-big-week-in-court-opening-arguments-in-new-mexico-la-trials.html",
+    "tickers": [
+      "META"
+    ]
+  },
+  {
+    "id": "news_1770642292_2",
+    "title": "루멘텀, 엔비디아의 '가속화된' Co-Packaged Optics 활용에 따른 수혜 예상: GF",
+    "summary": "GF 증권은 루멘텀(LITE)이 엔비디아(NVDA)의 co-packaged optics 사용 가속화에 따라 수혜를 볼 것으로 예상했다. 엔비디아는 GTC 2025에서 2025년 하반기에 예정된 Quantum-X와 2026년 하반기에 예정된 Spectrum-X 스위치를 출시했다.\n\n📈 코멘트: 루멘텀은 엔비디아의 co-packaged optics 채택 확대로 인해 성장 기회를 얻을 것으로 전망된다.",
+    "content": "루멘텀(LITE)은 엔비디아(NVDA)가 코패키지 옵틱스 사용을 가속화함에 따라 수혜를 입을 것으로 보인다고 GF 증권이 밝혔다. GF 증권의 애널리스트 제프 푸는 고객들에게 보내는 메모에서 \"GTC 2025에서 엔비디아(NVDA 매수)는 코패키지 옵틱스 스위치인 Quantum-X (2025년 하반기 출시 예정)와 Spectrum-X (2026년 하반기 출시 예정)를 발표했다\"고 썼다. \"엔비디아의 1세대...\"",
+    "source": "Seeking Alpha",
+    "date": "2026-02-09 22:04",
+    "timestamp": 1770642172,
+    "link": "https://seekingalpha.com/news/4548930-lumentum-should-benefit-as-nvidia-accelerates-co-packaged-optics-gf?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+    "tickers": [
+      "NVDA",
+      "LITE"
+    ]
+  },
+  {
     "id": "news_1770642176_1",
     "title": "바클레이즈, 2분기 실적 발표 후 유비쿼티(UI) 전망 업데이트",
     "summary": "바클레이즈의 애널리스트 팀 롱은 유비쿼티의 2026 회계연도 2분기 보고서 이후 목표 주가를 455달러에서 527달러로 상향 조정했지만, 'Underweight' 등급은 유지했습니다. 유비쿼티는 2분기에 전년 동기 대비 35.8% 증가한 8억 1,480만 달러의 매출을 기록했으며, 이는 엔터프라이즈 기술 플랫폼과 서비스 제공업체 기술 플랫폼의 기여도 증가에 기인합니다.\n\n📊 코멘트: 유비쿼티의 성장 잠재력은 인정하나, AI 주식에 비해 상승 여력이 제한적이라고 판단됩니다.",
@@ -11,17 +38,6 @@
     "tickers": [
       "UI"
     ]
-  },
-  {
-    "id": "news_1770642179_2",
-    "title": "BioSyent, Oral Science 인수.",
-    "summary": "상세 요약을 준비 중입니다.",
-    "content": "원문을 확인하려면 아래 링크를 클릭하세요.",
-    "source": "Seeking Alpha",
-    "date": "2026-02-09 22:02",
-    "timestamp": 1770642059,
-    "link": "https://seekingalpha.com/news/4548925-biosyent-acquires-oral-science?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-    "tickers": []
   },
   {
     "id": "news_1770642183_3",
