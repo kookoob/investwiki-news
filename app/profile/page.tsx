@@ -240,9 +240,9 @@ export default function ProfilePage() {
           <h3 className="px-6 py-4 font-bold text-gray-900 border-b border-gray-200">설정</h3>
           
           {/* 일반 설정 */}
-          <Link
-            href="/profile/edit"
-            className="flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
+          <button
+            onClick={() => alert('준비 중입니다')}
+            className="w-full flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
           >
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
@@ -258,12 +258,12 @@ export default function ProfilePage() {
             <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </Link>
+          </button>
 
           {/* 회원 정보 수정 */}
-          <Link
-            href="/profile/account"
-            className="flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
+          <button
+            onClick={() => alert('준비 중입니다')}
+            className="w-full flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
           >
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
@@ -279,10 +279,13 @@ export default function ProfilePage() {
             <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </Link>
+          </button>
 
           {/* 앱 화면 설정 */}
-          <div className="flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100">
+          <button
+            onClick={() => alert('준비 중입니다')}
+            className="w-full flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
+          >
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
                 <svg className="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -297,7 +300,7 @@ export default function ProfilePage() {
             <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </div>
+          </button>
 
           {/* 문의하기 */}
           <Link
@@ -325,9 +328,9 @@ export default function ProfilePage() {
         <div className="bg-white rounded-lg border border-gray-200">
           <h3 className="px-6 py-4 font-bold text-gray-900 border-b border-gray-200">활동</h3>
           
-          <Link
-            href="/profile/posts"
-            className="flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
+          <button
+            onClick={() => alert('준비 중입니다')}
+            className="w-full flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
           >
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
@@ -343,9 +346,12 @@ export default function ProfilePage() {
             <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </Link>
+          </button>
 
-          <div className="flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors">
+          <button
+            onClick={() => alert('준비 중입니다')}
+            className="w-full flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors"
+          >
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">
                 <svg className="w-5 h-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -360,7 +366,7 @@ export default function ProfilePage() {
             <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </div>
+          </button>
         </div>
 
         {/* 로그아웃 */}
