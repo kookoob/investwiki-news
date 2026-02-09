@@ -57,31 +57,14 @@ export default async function Home() {
       
       {/* 헤더 */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
-        <div className="max-w-4xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between gap-4">
+        {/* 상단: 로고 + 우측 버튼들 */}
+        <div className="max-w-4xl mx-auto px-4 py-3 border-b border-gray-100">
+          <div className="flex items-center justify-between">
             <div className="flex flex-col gap-1 select-none">
               <img src="/logo.png" alt="StockHub" className="h-10 w-auto pointer-events-none" draggable="false" />
-              <h1 className="text-sm text-gray-600">실시간 투자·경제 뉴스</h1>
+              <h1 className="text-xs text-gray-500">실시간 투자·경제 뉴스</h1>
             </div>
             <div className="flex items-center gap-2">
-              <Link
-                href="/community"
-                className="px-3 py-2 text-gray-700 hover:text-blue-600 text-sm font-medium transition-colors"
-              >
-                💬 커뮤니티
-              </Link>
-              <Link
-                href="/notice"
-                className="px-3 py-2 text-gray-700 hover:text-blue-600 text-sm font-medium transition-colors"
-              >
-                📢 공지
-              </Link>
-              <Link
-                href="/contact"
-                className="px-3 py-2 text-gray-700 hover:text-blue-600 text-sm font-medium transition-colors"
-              >
-                📨 문의
-              </Link>
               <a
                 href="https://t.me/stockhubkr"
                 target="_blank"
@@ -98,6 +81,42 @@ export default async function Home() {
               <BookmarkButton />
             </div>
           </div>
+        </div>
+        
+        {/* 하단: 탭 메뉴 */}
+        <div className="max-w-4xl mx-auto px-4">
+          <nav className="flex items-center gap-1 overflow-x-auto">
+            <Link
+              href="/"
+              className="px-4 py-3 text-blue-600 border-b-2 border-blue-600 font-medium text-sm whitespace-nowrap"
+            >
+              📰 전체
+            </Link>
+            <Link
+              href="/community"
+              className="px-4 py-3 text-gray-600 hover:text-gray-900 font-medium text-sm whitespace-nowrap transition-colors"
+            >
+              💬 커뮤니티
+            </Link>
+            <Link
+              href="/events"
+              className="px-4 py-3 text-gray-600 hover:text-gray-900 font-medium text-sm whitespace-nowrap transition-colors"
+            >
+              📅 이벤트
+            </Link>
+            <Link
+              href="/notice"
+              className="px-4 py-3 text-gray-600 hover:text-gray-900 font-medium text-sm whitespace-nowrap transition-colors"
+            >
+              📢 공지
+            </Link>
+            <Link
+              href="/contact"
+              className="px-4 py-3 text-gray-600 hover:text-gray-900 font-medium text-sm whitespace-nowrap transition-colors"
+            >
+              📨 문의
+            </Link>
+          </nav>
         </div>
       </header>
 
