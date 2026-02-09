@@ -110,6 +110,25 @@ export default function WritePage() {
     setError('');
 
     try {
+      // 먼저 users 테이블에 해당 유저가 있는지 확인
+      const { data: existingUser } = await supabase
+        .from('users')
+        .select('id')
+        .eq('id', user.id)
+        .single();
+
+      // 없으면 생성
+      if (!existingUser) {
+        await supabase
+          .from('users')
+          .insert([{
+            id: user.id,
+            username: user.username,
+            email: user.email || null,
+          }]);
+      }
+
+      // 게시글 작성
       const { data, error } = await supabase
         .from('posts')
         .insert([
