@@ -132,7 +132,7 @@ export default async function Home() {
 
       {/* 메인 콘텐츠 */}
       <main className="max-w-6xl mx-auto px-4 py-6">
-        <div className="lg:grid lg:grid-cols-[minmax(0,800px),320px] lg:gap-6 lg:justify-center">
+        <div className="md:grid md:grid-cols-[minmax(0,800px),320px] md:gap-6 md:justify-center">
           {/* 뉴스 피드 */}
           <div className="space-y-4">
             {news.length === 0 && (
