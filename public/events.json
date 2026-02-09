@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": "event_1",
+    "title": "Apple Q1 2026 실적발표",
+    "link": "https://investor.apple.com",
+    "source": "Reuters(IR)",
+    "date": "2026-02-12",
+    "time": "17:00",
+    "type": "earnings",
+    "emoji": "📊"
+  },
+  {
+    "id": "event_2",
+    "title": "Microsoft Azure 개발자 컨퍼런스",
+    "link": "https://azure.microsoft.com/events",
+    "source": "Reuters(IR)",
+    "date": "2026-02-15",
+    "time": "10:00",
+    "type": "conference",
+    "emoji": "🎤"
+  },
+  {
+    "id": "event_3",
+    "title": "Tesla 2026 주주총회",
+    "link": "https://ir.tesla.com",
+    "source": "Reuters(IR)",
+    "date": "2026-02-18",
+    "time": null,
+    "type": "shareholders",
+    "emoji": "👥"
+  }
+]
