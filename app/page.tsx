@@ -142,7 +142,7 @@ export default async function Home() {
               </div>
             )}
             
-            {news.map((item: any) => {
+            {news.map((item: any, index: number) => {
           const itemStats = stats[item.id] || { bullish: 0, bearish: 0, comments: 0 }
           
           return (
