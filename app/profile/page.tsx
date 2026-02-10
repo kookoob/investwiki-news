@@ -281,9 +281,9 @@ export default function ProfilePage() {
           </button>
 
           {/* 앱 화면 설정 */}
-          <button
-            onClick={() => alert('준비 중입니다')}
-            className="w-full flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
+          <Link
+            href="/profile/settings"
+            className="flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
           >
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
@@ -327,9 +327,9 @@ export default function ProfilePage() {
         <div className="bg-white rounded-lg border border-gray-200">
           <h3 className="px-6 py-4 font-bold text-gray-900 border-b border-gray-200">활동</h3>
           
-          <button
-            onClick={() => alert('준비 중입니다')}
-            className="w-full flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
+          <Link
+            href="/profile/posts"
+            className="flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
           >
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
@@ -345,11 +345,11 @@ export default function ProfilePage() {
             <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </button>
+          </Link>
 
-          <button
-            onClick={() => alert('준비 중입니다')}
-            className="w-full flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors"
+          <Link
+            href="/profile/bookmarks"
+            className="flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors"
           >
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">
