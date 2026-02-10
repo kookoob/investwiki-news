@@ -12,8 +12,8 @@
     "ticker": "MCD",
     "company": "McDonald's Corporation",
     "eps_estimate": 13.27,
-    "eps_current": 11.71,
-    "market_cap": 231821524992,
+    "eps_current": 11.66,
+    "market_cap": 232349597696,
     "sector": "Consumer Cyclical"
   },
   {
@@ -44,8 +44,8 @@
     "ticker": "WMT",
     "company": "Walmart Inc.",
     "eps_estimate": 2.96,
-    "eps_current": 2.86,
-    "market_cap": 1034876092416,
+    "eps_current": 2.81,
+    "market_cap": 1028657315840,
     "sector": "Consumer Defensive"
   },
   {
@@ -61,8 +61,8 @@
     "ticker": "HD",
     "company": "The Home Depot, Inc.",
     "eps_estimate": 15.04,
-    "eps_current": 14.67,
-    "market_cap": 376641814528,
+    "eps_current": 14.52,
+    "market_cap": 379289862144,
     "sector": "Consumer Cyclical"
   }
 ]

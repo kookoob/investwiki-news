@@ -1,36 +1,18 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { supabase } from '@/lib/supabase';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import type { User } from '@supabase/supabase-js';
 
 export default function WritePage() {
   const router = useRouter();
   const [form, setForm] = useState({
     title: '',
     content: '',
+    author: '',
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [user, setUser] = useState<User | null>(null);
-  const [authLoading, setAuthLoading] = useState(true);
-
-  useEffect(() => {
-    // Supabase Auth 세션 확인
-    supabase.auth.getUser().then(({ data: { user } }) => {
-      setUser(user);
-      setAuthLoading(false);
-    });
-
-    // 인증 상태 변경 감지
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
-      setUser(session?.user ?? null);
-    });
-
-    return () => subscription.unsubscribe();
-  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,51 +26,22 @@ export default function WritePage() {
     setError('');
 
     try {
-      // 익명 사용자 ID 생성 (로그인 안 된 경우)
-      const userId = user?.id || 'anonymous-' + Date.now();
-      const username = user?.user_metadata?.name || user?.email?.split('@')[0] || '익명';
+      const response = await fetch('/api/community/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: form.title.trim(),
+          content: form.content.trim(),
+          author: form.author.trim() || '익명',
+        }),
+      });
 
-      // 로그인한 사용자만 users 테이블 체크
-      if (user) {
-        const { data: existingUser } = await supabase
-          .from('users')
-          .select('id')
-          .eq('id', user.id)
-          .single();
-
-        if (!existingUser) {
-          await supabase
-            .from('users')
-            .insert([{
-              id: user.id,
-              username: username,
-              email: user.email || null,
-            }]);
-        }
+      if (!response.ok) {
+        throw new Error('Failed to create post');
       }
 
-      // 게시글 작성
-      const { data, error } = await supabase
-        .from('posts')
-        .insert([
-          {
-            user_id: userId,
-            title: form.title.trim(),
-            content: form.content.trim(),
-            category: 'free',
-          },
-        ])
-        .select()
-        .single();
-
-      if (error) throw error;
-
-      // 로그인한 사용자만 경험치 추가
-      if (user) {
-        await addExp(user.id, 10, 'post', data.id);
-      }
-
-      router.push(`/community/${data.id}`);
+      const data = await response.json();
+      router.push(`/community`);
     } catch (err) {
       console.error('게시글 작성 실패:', err);
       setError('게시글 작성에 실패했습니다.');
@@ -96,90 +49,6 @@ export default function WritePage() {
       setLoading(false);
     }
   };
-
-  async function addExp(userId: string, exp: number, reason: string, referenceId: string) {
-    try {
-      // 경험치 로그 추가
-      await supabase.from('exp_logs').insert([
-        {
-          user_id: userId,
-          exp_change: exp,
-          reason,
-          reference_id: referenceId,
-        },
-      ]);
-
-      // 레벨 정보 가져오기
-      const { data: levelData } = await supabase
-        .from('user_levels')
-        .select('*')
-        .eq('user_id', userId)
-        .single();
-
-      if (levelData) {
-        const newExp = levelData.exp + exp;
-        const expNeeded = calculateExpNeeded(levelData.level);
-        
-        let newLevel = levelData.level;
-        let remainingExp = newExp;
-
-        // 레벨업 체크
-        while (remainingExp >= expNeeded) {
-          remainingExp -= expNeeded;
-          newLevel++;
-        }
-
-        await supabase
-          .from('user_levels')
-          .update({
-            level: newLevel,
-            exp: remainingExp,
-          })
-          .eq('user_id', userId);
-      } else {
-        // 레벨 정보 없으면 생성
-        await supabase
-          .from('user_levels')
-          .insert([{
-            user_id: userId,
-            level: 1,
-            exp: exp,
-          }]);
-      }
-    } catch (err) {
-      console.error('경험치 추가 실패:', err);
-    }
-  }
-
-  function calculateExpNeeded(level: number): number {
-    return level * 100;
-  }
-
-  if (authLoading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-gray-500">로딩 중...</div>
-      </div>
-    );
-  }
-
-  // 임시: 로그인 없이도 글쓰기 허용 (익명)
-  // if (!user) {
-  //   return (
-  //     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-  //       <div className="bg-white rounded-lg p-8 max-w-md w-full text-center">
-  //         <h2 className="text-2xl font-bold mb-4">로그인이 필요합니다</h2>
-  //         <p className="text-gray-600 mb-6">커뮤니티 글을 작성하려면 로그인하세요.</p>
-  //         <Link
-  //           href="/community"
-  //           className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
-  //         >
-  //           커뮤니티로 돌아가기
-  //         </Link>
-  //       </div>
-  //     </div>
-  //   );
-  // }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -206,27 +75,17 @@ export default function WritePage() {
             </div>
           )}
 
-          {/* 사용자 정보 */}
-          {user && (
-            <div className="mb-6 flex items-center gap-3 pb-4 border-b border-gray-200">
-              <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
-                {(user.user_metadata?.name || user.email || '?')[0].toUpperCase()}
-              </div>
-              <span className="font-medium text-gray-900">
-                {user.user_metadata?.name || user.email?.split('@')[0]}
-              </span>
-            </div>
-          )}
-          {!user && (
-            <div className="mb-6 flex items-center gap-3 pb-4 border-b border-gray-200">
-              <div className="w-10 h-10 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold">
-                ?
-              </div>
-              <span className="font-medium text-gray-700">
-                익명 (로그인하면 닉네임 표시)
-              </span>
-            </div>
-          )}
+          {/* 닉네임 (선택) */}
+          <div className="mb-4">
+            <input
+              type="text"
+              value={form.author}
+              onChange={(e) => setForm({ ...form, author: e.target.value })}
+              placeholder="닉네임 (선택, 비워두면 익명)"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
+              maxLength={20}
+            />
+          </div>
 
           {/* 제목 */}
           <div className="mb-6">
