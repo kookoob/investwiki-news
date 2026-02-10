@@ -117,7 +117,11 @@ export default function VoteButtons({ newsId }: VoteButtonsProps) {
     if (!error) {
       // 포인트 지급 (첫 투표일 때만)
       if (!userVote) {
-        await awardPoints(user.id, POINT_REWARDS.NEWS_VOTE, '뉴스 투표 참여');
+        try {
+          await awardPoints(user.id, POINT_REWARDS.NEWS_VOTE, '뉴스 투표 참여');
+        } catch (pointErr) {
+          console.error('포인트 지급 실패:', pointErr);
+        }
       }
       
       setUserVote(voteType)

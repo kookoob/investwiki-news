@@ -95,7 +95,11 @@ export default function Comments({ newsId }: { newsId: string }) {
 
     if (!error) {
       // 포인트 지급 (댓글 작성: 1포인트)
-      await awardPoints(user.id, POINT_REWARDS.COMMENT, '뉴스 댓글 작성');
+      try {
+        await awardPoints(user.id, POINT_REWARDS.COMMENT, '뉴스 댓글 작성');
+      } catch (pointErr) {
+        console.error('포인트 지급 실패:', pointErr);
+      }
       
       setContent('')
       loadComments()

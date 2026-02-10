@@ -74,18 +74,23 @@ export default function WritePage() {
 
     try {
       // users 테이블에 사용자 추가 (없으면)
-      const { data: existingUser } = await supabase
-        .from('users')
-        .select('id')
-        .eq('id', user.id)
-        .single();
+      try {
+        const { data: existingUser } = await supabase
+          .from('users')
+          .select('id')
+          .eq('id', user.id)
+          .single();
 
-      if (!existingUser) {
-        await supabase.from('users').insert([{
-          id: user.id,
-          email: user.email,
-          username: user.user_metadata?.name || user.email?.split('@')[0] || 'User',
-        }]);
+        if (!existingUser) {
+          await supabase.from('users').insert([{
+            id: user.id,
+            email: user.email,
+            username: user.user_metadata?.name || user.email?.split('@')[0] || 'User',
+          }]);
+        }
+      } catch (userErr) {
+        console.error('사용자 정보 처리 실패:', userErr);
+        // 사용자 정보 처리 실패해도 글 작성 시도
       }
 
       // 이미지 업로드 (있는 경우)
@@ -133,7 +138,12 @@ export default function WritePage() {
       if (error) throw error;
 
       // 포인트 지급 (커뮤니티 글 작성: 5포인트)
-      await awardPoints(user.id, POINT_REWARDS.COMMUNITY_POST, '커뮤니티 글 작성');
+      try {
+        await awardPoints(user.id, POINT_REWARDS.COMMUNITY_POST, '커뮤니티 글 작성');
+      } catch (pointErr) {
+        console.error('포인트 지급 실패:', pointErr);
+        // 포인트 지급 실패해도 글 작성은 성공으로 처리
+      }
 
       router.push('/community');
     } catch (err) {

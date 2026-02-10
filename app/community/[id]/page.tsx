@@ -191,7 +191,12 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
       if (error) throw error;
 
       // 포인트 지급 (댓글 작성: 1포인트)
-      await awardPoints(user.id, POINT_REWARDS.COMMENT, '커뮤니티 댓글 작성');
+      try {
+        await awardPoints(user.id, POINT_REWARDS.COMMENT, '커뮤니티 댓글 작성');
+      } catch (pointErr) {
+        console.error('포인트 지급 실패:', pointErr);
+        // 포인트 지급 실패해도 댓글 작성은 성공
+      }
 
       setCommentText('');
       fetchComments(postId);
