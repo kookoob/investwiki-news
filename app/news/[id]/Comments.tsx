@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { supabase } from '@/lib/supabase'
 import type { User } from '@supabase/supabase-js'
 import LoginModal from '@/app/LoginModal'
+import { awardPoints, POINT_REWARDS } from '@/lib/points'
 
 interface Comment {
   id: string
@@ -93,6 +94,9 @@ export default function Comments({ newsId }: { newsId: string }) {
     setLoading(false)
 
     if (!error) {
+      // 포인트 지급 (댓글 작성: 1포인트)
+      await awardPoints(user.id, POINT_REWARDS.COMMENT, '뉴스 댓글 작성');
+      
       setContent('')
       loadComments()
     }

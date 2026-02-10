@@ -5,6 +5,7 @@ import { supabase } from '@/lib/supabase';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import type { User } from '@supabase/supabase-js';
+import { awardPoints, POINT_REWARDS } from '@/lib/points';
 
 export default function WritePage() {
   const router = useRouter();
@@ -74,6 +75,9 @@ export default function WritePage() {
         .single();
 
       if (error) throw error;
+
+      // 포인트 지급 (커뮤니티 글 작성: 5포인트)
+      await awardPoints(user.id, POINT_REWARDS.COMMUNITY_POST, '커뮤니티 글 작성');
 
       router.push('/community');
     } catch (err) {

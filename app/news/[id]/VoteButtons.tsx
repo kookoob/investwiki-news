@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { supabase } from '@/lib/supabase'
 import type { User } from '@supabase/supabase-js'
 import LoginModal from '@/app/LoginModal'
+import { awardPoints, POINT_REWARDS } from '@/lib/points'
 
 interface VoteButtonsProps {
   newsId: string
@@ -114,6 +115,11 @@ export default function VoteButtons({ newsId }: VoteButtonsProps) {
     setLoading(false)
 
     if (!error) {
+      // 포인트 지급 (첫 투표일 때만)
+      if (!userVote) {
+        await awardPoints(user.id, POINT_REWARDS.NEWS_VOTE, '뉴스 투표 참여');
+      }
+      
       setUserVote(voteType)
       loadVotes()
     }

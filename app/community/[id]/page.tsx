@@ -5,6 +5,7 @@ import { supabase } from '@/lib/supabase';
 import Link from 'next/link';
 import Header from '@/app/components/Header';
 import type { User } from '@supabase/supabase-js';
+import { awardPoints, POINT_REWARDS } from '@/lib/points';
 
 interface Post {
   id: string;
@@ -168,6 +169,9 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
         ]);
 
       if (error) throw error;
+
+      // 포인트 지급 (댓글 작성: 1포인트)
+      await awardPoints(user.id, POINT_REWARDS.COMMENT, '커뮤니티 댓글 작성');
 
       setCommentText('');
       fetchComments(postId);
