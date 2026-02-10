@@ -64,12 +64,7 @@ export default async function EventsPage() {
                         <div className="flex items-start gap-3">
                           <div className="flex-shrink-0 w-20 text-center">
                             <div className="text-xs font-medium text-blue-600">
-                              {new Date(event.date).toLocaleTimeString('ko-KR', { 
-                                timeZone: 'Asia/Seoul',
-                                hour: '2-digit',
-                                minute: '2-digit',
-                                hour12: false
-                              })}
+                              {event.time || '미정'}
                             </div>
                             <div className="text-[10px] text-gray-500 mt-0.5">KST</div>
                           </div>
