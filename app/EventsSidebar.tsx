@@ -7,6 +7,10 @@ interface Event {
   date: string;
   time: string | null;
   emoji: string;
+  type?: string;
+  ticker?: string;
+  company?: string;
+  description?: string;
 }
 
 function formatDate(dateStr: string): string {
@@ -19,6 +23,25 @@ function formatDate(dateStr: string): string {
   if (diffDays < 7) return `${diffDays}일 후`;
   
   return date.toLocaleDateString('ko-KR', { month: 'short', day: 'numeric' });
+}
+
+function getCompanyName(event: Event): string {
+  // 회사명이 있으면 간단한 이름으로 변환
+  if (event.company) {
+    const companyMap: { [key: string]: string } = {
+      "McDonald's Corporation": "맥도날드",
+      "Walmart Inc.": "월마트",
+      "The Home Depot, Inc.": "홈디포",
+    };
+    
+    const simpleName = companyMap[event.company];
+    if (simpleName && event.type === 'earnings') {
+      return `${simpleName} 실적 발표`;
+    }
+  }
+  
+  // 기본값: 원래 제목
+  return event.title;
 }
 
 interface EventsSidebarProps {
@@ -44,18 +67,16 @@ export default function EventsSidebar({ events }: EventsSidebarProps) {
         
         <div className="space-y-3">
           {topEvents.map((event) => (
-            <a
+            <Link
               key={event.id}
-              href={event.link}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/events/${event.id}`}
               className="block p-3 rounded-lg hover:bg-gray-50 transition-colors border border-gray-100"
             >
               <div className="flex items-start gap-2">
                 <span className="text-xl">{event.emoji}</span>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-gray-900 line-clamp-2 mb-1">
-                    {event.title}
+                    {getCompanyName(event)}
                   </p>
                   <p className="text-xs text-gray-600">
                     {formatDate(event.date)}
@@ -63,7 +84,7 @@ export default function EventsSidebar({ events }: EventsSidebarProps) {
                   </p>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
