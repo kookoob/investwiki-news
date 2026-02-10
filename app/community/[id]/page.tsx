@@ -16,6 +16,10 @@ interface Post {
   created_at: string;
 }
 
+interface PostLike {
+  user_id: string;
+}
+
 interface Comment {
   id: string;
   content: string;
@@ -31,12 +35,15 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [postId, setPostId] = useState<string>('');
+  const [liked, setLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(0);
 
   useEffect(() => {
     params.then(p => {
       setPostId(p.id);
       fetchPost(p.id);
       fetchComments(p.id);
+      fetchLikes(p.id);
     });
     checkUser();
   }, []);
@@ -81,6 +88,65 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
       setComments(data || []);
     } catch (error) {
       console.error('Failed to fetch comments:', error);
+    }
+  }
+
+  async function fetchLikes(id: string) {
+    try {
+      // 좋아요 수
+      const { data: likes, error: likesError } = await supabase
+        .from('post_likes')
+        .select('*')
+        .eq('post_id', id);
+
+      if (likesError) throw likesError;
+      setLikeCount(likes?.length || 0);
+
+      // 현재 사용자가 좋아요 눌렀는지
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        const userLiked = likes?.some(like => like.user_id === user.id);
+        setLiked(userLiked || false);
+      }
+    } catch (error) {
+      console.error('Failed to fetch likes:', error);
+    }
+  }
+
+  async function toggleLike() {
+    if (!user) {
+      alert('로그인이 필요합니다.');
+      return;
+    }
+
+    try {
+      if (liked) {
+        // 좋아요 취소
+        const { error } = await supabase
+          .from('post_likes')
+          .delete()
+          .eq('post_id', postId)
+          .eq('user_id', user.id);
+
+        if (error) throw error;
+        setLiked(false);
+        setLikeCount(prev => prev - 1);
+      } else {
+        // 좋아요 추가
+        const { error } = await supabase
+          .from('post_likes')
+          .insert([{
+            post_id: postId,
+            user_id: user.id,
+          }]);
+
+        if (error) throw error;
+        setLiked(true);
+        setLikeCount(prev => prev + 1);
+      }
+    } catch (error) {
+      console.error('Failed to toggle like:', error);
+      alert('좋아요 처리에 실패했습니다.');
     }
   }
 
@@ -192,8 +258,25 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
               <span>·</span>
               <span>조회 {post.views}</span>
             </div>
-            <div className="text-gray-700 whitespace-pre-wrap leading-relaxed">
+            <div className="text-gray-700 whitespace-pre-wrap leading-relaxed mb-6">
               {post.content}
+            </div>
+
+            {/* 좋아요 버튼 */}
+            <div className="pt-6 border-t border-gray-200">
+              <button
+                onClick={toggleLike}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+                  liked
+                    ? 'bg-red-100 text-red-600 hover:bg-red-200'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
+                <svg className="w-5 h-5" fill={liked ? 'currentColor' : 'none'} stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                <span className="font-medium">좋아요 {likeCount}</span>
+              </button>
             </div>
           </div>
 
