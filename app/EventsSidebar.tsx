@@ -77,7 +77,7 @@ export default function EventsSidebar({ events }: EventsSidebarProps) {
                   </p>
                   <p className="text-xs text-gray-600">
                     {formatDate(event.date)}
-                    {event.time && ` · ${event.time}`}
+                    {event.time && ` · ${event.time} KST`}
                   </p>
                 </div>
               </div>

@@ -80,7 +80,7 @@ export default async function EventsScroll() {
                   </p>
                   <p className="text-xs text-gray-600">
                     {formatDate(event.date)}
-                    {event.time && ` · ${event.time}`}
+                    {event.time && ` · ${event.time} KST`}
                   </p>
                 </div>
               </div>

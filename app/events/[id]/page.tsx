@@ -95,9 +95,15 @@ export default async function EventDetailPage({
                   year: 'numeric', 
                   month: 'long', 
                   day: 'numeric',
-                  weekday: 'short'
+                  weekday: 'short',
+                  timeZone: 'Asia/Seoul'
                 })}
-                {event.time && ` ${event.time_kr || event.time}`}
+                {event.time && (
+                  <span className="ml-2">
+                    <span className="font-medium text-blue-600">{event.time_kr || event.time}</span>
+                    <span className="ml-1 text-sm text-gray-500">(한국시간)</span>
+                  </span>
+                )}
               </p>
             </div>
           </div>

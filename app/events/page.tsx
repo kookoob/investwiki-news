@@ -62,13 +62,16 @@ export default async function EventsPage() {
                         className="block px-4 py-4 hover:bg-gray-50 transition-colors"
                       >
                         <div className="flex items-start gap-3">
-                          <div className="flex-shrink-0 w-16 text-center">
-                            <div className="text-xs text-gray-500">
+                          <div className="flex-shrink-0 w-20 text-center">
+                            <div className="text-xs font-medium text-blue-600">
                               {new Date(event.date).toLocaleTimeString('ko-KR', { 
+                                timeZone: 'Asia/Seoul',
                                 hour: '2-digit',
-                                minute: '2-digit'
+                                minute: '2-digit',
+                                hour12: false
                               })}
                             </div>
+                            <div className="text-[10px] text-gray-500 mt-0.5">KST</div>
                           </div>
                           <div className="flex-1 min-w-0">
                             <h3 className="font-semibold text-gray-900 mb-1">{event.title}</h3>
