@@ -37,22 +37,33 @@ export default function CommunityPage() {
 
   async function fetchPosts() {
     try {
-      const { data, error } = await supabase
+      // posts만 먼저 가져오기
+      const { data: postsData, error: postsError } = await supabase
         .from('posts')
-        .select(`
-          *,
-          users!inner(username, id)
-        `)
+        .select('*')
         .is('deleted_at', null)
         .order('created_at', { ascending: false })
         .limit(50);
 
-      if (error) throw error;
+      if (postsError) throw postsError;
       
-      // 닉네임 정보 추가
-      const postsWithUsernames = await Promise.all((data || []).map(async (post: any) => {
-        const username = post.users?.username || '익명';
-        return { ...post, author_name: username };
+      // 각 포스트의 작성자 정보 가져오기
+      const postsWithUsernames = await Promise.all((postsData || []).map(async (post: any) => {
+        try {
+          const { data: userData } = await supabase
+            .from('users')
+            .select('username')
+            .eq('id', post.user_id)
+            .maybeSingle();
+          
+          return { 
+            ...post, 
+            author_name: userData?.username || '익명' 
+          };
+        } catch (err) {
+          console.error('사용자 정보 로딩 실패:', err);
+          return { ...post, author_name: '익명' };
+        }
       }));
       
       setPosts(postsWithUsernames);
