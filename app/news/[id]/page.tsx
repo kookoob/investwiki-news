@@ -157,9 +157,9 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
           </div>
 
           {/* AI 요약 */}
-          <div className="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 dark:border-blue-400 p-4 mb-6">
-            <h2 className="text-sm font-semibold text-blue-900 dark:text-blue-200 mb-2">🤖 AI 요약</h2>
-            <p className="text-sm text-gray-700 dark:text-gray-100 leading-relaxed whitespace-pre-wrap">{news.summary}</p>
+          <div className="bg-blue-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 mb-6">
+            <h2 className="text-sm font-semibold text-blue-900 dark:text-blue-300 mb-2">🤖 AI 요약</h2>
+            <p className="text-sm text-gray-700 dark:text-white leading-relaxed whitespace-pre-wrap">{news.summary}</p>
           </div>
 
           {/* 전체 내용 */}
