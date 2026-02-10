@@ -33,7 +33,7 @@ export default function EventsSidebar({ events }: EventsSidebarProps) {
   }
 
   return (
-    <div className="hidden lg:block sticky top-20">
+    <div className="hidden md:block sticky top-20">
       <div className="bg-white rounded-lg border border-gray-200 p-4">
         <div className="flex items-center justify-between mb-4">
           <h3 className="font-bold text-gray-900">📅 다가오는 경제일정</h3>
