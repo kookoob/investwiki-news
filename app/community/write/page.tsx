@@ -91,21 +91,27 @@ export default function WritePage() {
       // 이미지 업로드 (있는 경우)
       let imageUrl = null;
       if (imageFile) {
-        const fileExt = imageFile.name.split('.').pop();
-        const fileName = `${user.id}-${Date.now()}.${fileExt}`;
-        const filePath = `posts/${fileName}`;
+        try {
+          const fileExt = imageFile.name.split('.').pop();
+          const fileName = `${user.id}-${Date.now()}.${fileExt}`;
+          const filePath = `posts/${fileName}`;
 
-        const { error: uploadError } = await supabase.storage
-          .from('images')
-          .upload(filePath, imageFile);
-
-        if (uploadError) {
-          console.error('이미지 업로드 실패:', uploadError);
-        } else {
-          const { data: urlData } = supabase.storage
+          const { error: uploadError } = await supabase.storage
             .from('images')
-            .getPublicUrl(filePath);
-          imageUrl = urlData.publicUrl;
+            .upload(filePath, imageFile);
+
+          if (uploadError) {
+            console.error('이미지 업로드 실패:', uploadError);
+            // Storage bucket이 없어도 글 작성은 계속 진행
+          } else {
+            const { data: urlData } = supabase.storage
+              .from('images')
+              .getPublicUrl(filePath);
+            imageUrl = urlData.publicUrl;
+          }
+        } catch (uploadErr) {
+          console.error('이미지 업로드 중 오류:', uploadErr);
+          // 이미지 업로드 실패해도 글 작성은 계속
         }
       }
 
