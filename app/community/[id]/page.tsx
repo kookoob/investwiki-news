@@ -145,10 +145,42 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
       <Header />
       <div className="min-h-screen bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 py-8">
-          {/* 뒤로가기 */}
-          <Link href="/community" className="inline-block mb-4 text-blue-600 hover:text-blue-700">
-            ← 목록으로
-          </Link>
+          {/* 뒤로가기 & 작성자 메뉴 */}
+          <div className="flex items-center justify-between mb-4">
+            <Link href="/community" className="text-blue-600 hover:text-blue-700">
+              ← 목록으로
+            </Link>
+            {user && user.id === post.user_id && (
+              <div className="flex items-center gap-2">
+                <Link
+                  href={`/community/${postId}/edit`}
+                  className="px-3 py-1 text-sm text-blue-600 hover:text-blue-700 border border-blue-600 rounded-lg transition-colors"
+                >
+                  수정
+                </Link>
+                <button
+                  onClick={async () => {
+                    if (!confirm('정말 삭제하시겠습니까?')) return;
+                    try {
+                      const { error } = await supabase
+                        .from('posts')
+                        .update({ deleted_at: new Date().toISOString() })
+                        .eq('id', postId);
+                      if (error) throw error;
+                      alert('삭제되었습니다.');
+                      window.location.href = '/community';
+                    } catch (error) {
+                      console.error('삭제 실패:', error);
+                      alert('삭제에 실패했습니다.');
+                    }
+                  }}
+                  className="px-3 py-1 text-sm text-red-600 hover:text-red-700 border border-red-600 rounded-lg transition-colors"
+                >
+                  삭제
+                </button>
+              </div>
+            )}
+          </div>
 
           {/* 게시글 */}
           <div className="bg-white rounded-lg p-6 border border-gray-200 mb-6">
