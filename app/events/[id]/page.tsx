@@ -24,15 +24,27 @@ interface Event {
   category?: string;
 }
 
-async function getEvent(id: string): Promise<Event | null> {
+async function getAllEvents(): Promise<Event[]> {
   try {
     const filePath = path.join(process.cwd(), 'public', 'events.json');
     const fileContents = await fs.readFile(filePath, 'utf8');
-    const events = JSON.parse(fileContents);
-    return events.find((e: Event) => e.id === id) || null;
+    return JSON.parse(fileContents);
   } catch {
-    return null;
+    return [];
   }
+}
+
+async function getEvent(id: string): Promise<Event | null> {
+  const events = await getAllEvents();
+  return events.find((e: Event) => e.id === id) || null;
+}
+
+// 정적 경로 생성
+export async function generateStaticParams() {
+  const events = await getAllEvents();
+  return events.map((event) => ({
+    id: event.id,
+  }));
 }
 
 function formatMarketCap(marketCap: number): string {
