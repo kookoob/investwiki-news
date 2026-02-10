@@ -150,14 +150,16 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
             <Link href="/community" className="text-blue-600 hover:text-blue-700">
               ← 목록으로
             </Link>
-            {user && user.id === post.user_id && (
+            {user && (user.id === post.user_id || user.email === 'kyongg02@gmail.com') && (
               <div className="flex items-center gap-2">
-                <Link
-                  href={`/community/${postId}/edit`}
-                  className="px-3 py-1 text-sm text-blue-600 hover:text-blue-700 border border-blue-600 rounded-lg transition-colors"
-                >
-                  수정
-                </Link>
+                {user.id === post.user_id && (
+                  <Link
+                    href={`/community/${postId}/edit`}
+                    className="px-3 py-1 text-sm text-blue-600 hover:text-blue-700 border border-blue-600 rounded-lg transition-colors"
+                  >
+                    수정
+                  </Link>
+                )}
                 <button
                   onClick={async () => {
                     if (!confirm('정말 삭제하시겠습니까?')) return;
