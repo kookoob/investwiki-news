@@ -1,5 +1,18 @@
 [
   {
+    "id": "news_1770697074_6",
+    "title": "Newell Brands, 주당 0.07달러 배당금 발표",
+    "summary": "Newell Brands(NWL)가 주당 0.07달러의 분기별 배당금을 발표했는데, 이는 이전과 동일한 수준이다. 선행 수익률은 6.17%이며, 3월 13일에 지급될 예정이고, 2월 27일이 배당 기준일 및 배당락일이다. NWL 배당금 스코어카드, 수익률 차트 및 배당금 성장률을 참조할 수 있다.\n\n📊 코멘트: Newell Brands의 꾸준한 배당금 지급은 투자자에게 매력적인 요소가 될 수 있습니다.",
+    "content": "Newell Brands (NWL)는 이전과 동일하게 주당 0.07달러의 분기별 배당금을 발표했다.\n\n선행 수익률은 6.17%이다.\n\n지급일은 3월 13일이며, 배당 기준일은 2월 27일이고, 배당락일도 2월 27일이다.\n\nNWL 배당금 스코어카드, 수익률 차트 및 배당금 성장률을 참조하십시오.",
+    "source": "Seeking Alpha",
+    "date": "2026-02-10 13:17",
+    "timestamp": 1770696714,
+    "link": "https://seekingalpha.com/news/4549256-newell-brands-declares-0_07-dividend?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+    "tickers": [
+      "NWL"
+    ]
+  },
+  {
     "id": "news_1770697052_6",
     "title": "미국, TSMC 투자 연계 빅테크 칩 관세 면제 계획 - FT 보도",
     "summary": "도널드 트럼프 행정부는 아마존, 구글, 마이크로소프트 등 기업들이 AI 붐을 가속화하는 데이터 센터 구축 경쟁에 박차를 가함에 따라 곧 부과될 칩 관세로부터 이들을 면제할 계획인 것으로 알려졌다. 이는 TSMC의 미국 투자를 유치하고, 미국 내 AI 기술 경쟁력을 강화하려는 의도로 해석된다.\n\n💡 코멘트: 빅테크 기업들의 AI 인프라 투자가 지속될 것으로 예상되며, 관련 수혜주에 대한 관심이 필요하다.",
@@ -14,6 +27,21 @@
       "GOOGL",
       "TSM",
       "AMZN"
+    ]
+  },
+  {
+    "id": "news_1770697081_8",
+    "title": "암호화폐 거래소 백팩, IPO 목표와 연계된 토큰 출시 예정",
+    "summary": "암호화폐 거래소 백팩(Backpack)이 기업공개(IPO) 목표와 연계된 토큰을 출시할 예정이다. 해당 토큰의 언락 조건은 IPO 달성과 연동되어 있으며, 이는 거래소의 장기적인 성장과 가치 창출에 대한 자신감을 나타낸다.\n\n💡 코멘트: 백팩의 토큰 출시 전략은 IPO 성공을 위한 동기 부여로 작용할 수 있으나, 암호화폐 시장의 변동성과 규제 변화에 따른 위험을 고려해야 한다.",
+    "content": "암호화폐 거래소 백팩(Backpack)이 기업공개(IPO) 목표와 연계된 토큰을 출시할 예정입니다.\n\n자세한 내용은 아직 공개되지 않았지만, 토큰 언락 조건이 IPO 달성과 연동될 것으로 보입니다.\n\n이는 백팩이 기업 가치를 높이고 장기적인 성장을 추구하는 전략의 일환으로 해석됩니다.",
+    "source": "Cointelegraph",
+    "date": "2026-02-10 13:18",
+    "timestamp": 1770696601,
+    "link": "https://cointelegraph.com/news/crypto-exchange-backpack-launch-token-with-unlocks-tied-ipo-ambition?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "tickers": [
+      "ETH-USD",
+      "GE",
+      "BTC-USD"
     ]
   },
   {
@@ -2679,33 +2707,6 @@
       "SOL",
       "XRP",
       "ETH"
-    ]
-  },
-  {
-    "id": "news_1770643475_9",
-    "title": "킨드릴, 재무 보고 검토 속에서 수익 전망치 하향 조정",
-    "summary": "킨드릴 홀딩스는 전체 회계 연도 전망치를 대폭 낮추면서 수익 감소를 예상했으며, 이는 회사가 더 낮은 이익을 보고하고 회계 3분기에 대한 월스트리트의 예상치를 하회했기 때문이다. 킨드릴은 회계 3분기에 주당 25센트인 5700만 달러의 이익을 기록했는데, 이는 전년도의 주당 89센트인 2억 1500만 달러의 이익과 비교된다.\n\n⚠️ 코멘트: 재무 보고 신뢰성 문제로 인해 킨드릴에 대한 투자 심리가 악화될 가능성이 있다.",
-    "content": "킨드릴 홀딩스는 회계연도 3분기 실적이 부진하여 이익이 감소하고 월스트리트의 예상치에 미치지 못함에 따라, 전체 회계연도 전망을 하향 조정하며 매출 감소를 예상했습니다. 킨드릴은 회계연도 3분기에 5,700만 달러(주당 25센트)의 이익을 기록했는데, 이는 전년 동기의 2억 1,500만 달러(주당 89센트) 이익에 비해 감소한 수치입니다. 일회성 항목을 제외하면, 회사는 주당 52센트의 수익을 보고했습니다. FactSet에서 조사한 애널리스트들은 주당 60센트를 예상했습니다. 매출은 전년도의 37억 4천만 달러에서 38억 6천만 달러로 증가했습니다. FactSet에 따르면 애널리스트들은 38억 9천만 달러를 예상했습니다. 킨드릴은 이번 분기 매출 중 5억 달러가 클라우드 하이퍼스케일러 제휴에서 발생했으며, 이는 전년 대비 58% 증가한 수치라고 밝혔습니다. 회사는 회계연도 하이퍼스케일러 매출 목표 18억 달러를 초과 달성할 것으로 예상하고 있다고 밝혔습니다.\n\n킨드릴은 월요일 SEC에 제출한 자료에 따르면 이사회에서 회사의 현금 관리 관행, 조정된 잉여 현금 흐름 지표의 동인에 대한 공시, 그리고 더 광범위한 재무 보고 관행을 검토함에 따라 10-Q 보고서 제출이 지연될 것이라고 밝혔습니다. 킨드릴은 가장 최근 연간 보고서에 포함된 재무 보고에 대한 내부 통제 평가와 PricewaterhouseCoopers의 외부 평가 모두 신뢰할 수 없다고 밝혔습니다.",
-    "source": "Yahoo Finance",
-    "date": "2026-02-09 22:24",
-    "timestamp": 1770642935,
-    "link": "https://finance.yahoo.com/news/kyndryl-cuts-earnings-outlook-amid-130000986.html",
-    "tickers": [
-      "KD"
-    ]
-  },
-  {
-    "id": "news_1770643480_10",
-    "title": "Kroger, 신임 CEO 선임에 주가 상승; 연간 전망치 유지",
-    "summary": "Kroger(KR)는 월마트(WMT) 임원이었던 Greg Foran을 새로운 최고 경영자로 임명한다고 발표한 후 월요일 개장 전 거래에서 상승세를 보이고 있다. 이번 임명은 Rodney McMullen이 내부적으로 물러난 지 거의 1년 만에 이루어졌다.\n\n📈 코멘트: 신임 CEO 선임은 Kroger의 성장 전략에 긍정적인 영향을 미칠 것으로 예상된다.",
-    "content": "Kroger(KR)는 월마트(WMT) 임원이었던 Greg Foran을 새로운 최고 경영자로 임명한다고 발표한 후 월요일 개장 전 거래에서 상승세를 보이고 있다. 이번 임명은 Rodney McMullen이 내부적으로 물러난 지 거의 1년 만에 이루어졌다.",
-    "source": "Seeking Alpha",
-    "date": "2026-02-09 22:24",
-    "timestamp": 1770642880,
-    "link": "https://seekingalpha.com/news/4548927-kroger-shares-gain-on-new-ceo-affirms-full-year-guidance?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-    "tickers": [
-      "WMT",
-      "KR"
     ]
   }
 ]

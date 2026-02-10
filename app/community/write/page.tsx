@@ -44,6 +44,22 @@ export default function WritePage() {
     setError('');
 
     try {
+      // users 테이블에 사용자 추가 (없으면)
+      const { data: existingUser } = await supabase
+        .from('users')
+        .select('id')
+        .eq('id', user.id)
+        .single();
+
+      if (!existingUser) {
+        await supabase.from('users').insert([{
+          id: user.id,
+          email: user.email,
+          username: user.user_metadata?.name || user.email?.split('@')[0] || 'User',
+        }]);
+      }
+
+      // 게시글 작성
       const { data, error } = await supabase
         .from('posts')
         .insert([
@@ -134,7 +150,7 @@ export default function WritePage() {
               value={form.title}
               onChange={(e) => setForm({ ...form, title: e.target.value })}
               placeholder="제목을 입력하세요"
-              className="w-full px-4 py-3 text-lg font-medium border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
+              className="w-full px-4 py-3 text-lg font-medium text-gray-900 placeholder-gray-400 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
               maxLength={100}
               required
             />
@@ -146,7 +162,7 @@ export default function WritePage() {
               value={form.content}
               onChange={(e) => setForm({ ...form, content: e.target.value })}
               placeholder="내용을 입력하세요"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors min-h-[300px] resize-y"
+              className="w-full px-4 py-3 text-gray-900 placeholder-gray-400 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors min-h-[300px] resize-y"
               required
             />
           </div>
