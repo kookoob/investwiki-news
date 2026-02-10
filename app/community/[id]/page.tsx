@@ -56,21 +56,35 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
 
   async function fetchPost(id: string) {
     try {
-      const { data, error } = await supabase
+      // posts 먼저 가져오기
+      const { data: postData, error: postError } = await supabase
         .from('posts')
-        .select(`
-          *,
-          users!inner(username, id)
-        `)
+        .select('*')
         .eq('id', id)
         .single();
 
-      if (error) throw error;
+      if (postError) throw postError;
+      
+      // 작성자 정보 별도로 가져오기
+      let authorName = '익명';
+      try {
+        const { data: userData } = await supabase
+          .from('users')
+          .select('username')
+          .eq('id', postData.user_id)
+          .maybeSingle();
+        
+        if (userData?.username) {
+          authorName = userData.username;
+        }
+      } catch (err) {
+        console.error('작성자 정보 로딩 실패:', err);
+      }
       
       // 닉네임 정보 추가
       const postWithUsername = {
-        ...data,
-        author_name: data.users?.username || '익명'
+        ...postData,
+        author_name: authorName
       };
       
       setPost(postWithUsername as any);
@@ -89,21 +103,35 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
 
   async function fetchComments(id: string) {
     try {
-      const { data, error } = await supabase
+      // 댓글 먼저 가져오기
+      const { data: commentsData, error: commentsError } = await supabase
         .from('post_comments')
-        .select(`
-          *,
-          users!inner(username, id)
-        `)
+        .select('*')
         .eq('post_id', id)
         .order('created_at', { ascending: true });
 
-      if (error) throw error;
+      if (commentsError) throw commentsError;
       
-      // 닉네임 정보 추가
-      const commentsWithUsernames = (data || []).map((comment: any) => ({
-        ...comment,
-        author_name: comment.users?.username || '익명'
+      // 각 댓글의 작성자 정보 가져오기
+      const commentsWithUsernames = await Promise.all((commentsData || []).map(async (comment: any) => {
+        try {
+          const { data: userData } = await supabase
+            .from('users')
+            .select('username')
+            .eq('id', comment.user_id)
+            .maybeSingle();
+          
+          return {
+            ...comment,
+            author_name: userData?.username || '익명'
+          };
+        } catch (err) {
+          console.error('댓글 작성자 정보 로딩 실패:', err);
+          return {
+            ...comment,
+            author_name: '익명'
+          };
+        }
       }));
       
       setComments(commentsWithUsernames);
