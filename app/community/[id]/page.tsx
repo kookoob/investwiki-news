@@ -92,7 +92,7 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
       // 조회수 증가 (간단 버전)
       await supabase
         .from('posts')
-        .update({ views: (data.views || 0) + 1 })
+        .update({ views: (postData.views || 0) + 1 })
         .eq('id', id);
     } catch (error) {
       console.error('Failed to fetch post:', error);
