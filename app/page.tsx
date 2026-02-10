@@ -128,7 +128,7 @@ export default async function Home() {
       </header>
 
       {/* 모바일 이벤트 스크롤 */}
-      {/* <EventsScroll /> */}
+      <EventsScroll />
 
       {/* 메인 콘텐츠 */}
       <main className="max-w-7xl mx-auto px-4 py-6">

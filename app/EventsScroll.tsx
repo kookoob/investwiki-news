@@ -9,6 +9,9 @@ interface Event {
   date: string;
   time: string | null;
   emoji: string;
+  type?: string;
+  ticker?: string;
+  company?: string;
 }
 
 async function getEvents(): Promise<Event[]> {
@@ -31,6 +34,23 @@ function formatDate(dateStr: string): string {
   return `${diffDays}일 후`;
 }
 
+function getCompanyName(event: Event): string {
+  if (event.company) {
+    const companyMap: { [key: string]: string } = {
+      "McDonald's Corporation": "맥도날드",
+      "Walmart Inc.": "월마트",
+      "The Home Depot, Inc.": "홈디포",
+    };
+    
+    const simpleName = companyMap[event.company];
+    if (simpleName && event.type === 'earnings') {
+      return `${simpleName} 실적 발표`;
+    }
+  }
+  
+  return event.title;
+}
+
 export default async function EventsScroll() {
   const events = await getEvents();
 
@@ -39,7 +59,7 @@ export default async function EventsScroll() {
   }
 
   return (
-    <div className="md:hidden bg-white border-b border-gray-200 mb-4">
+    <div className="lg:hidden bg-white border-b border-gray-200 mb-4">
       <div className="px-4 py-3">
         <div className="flex items-center justify-between mb-2">
           <h3 className="text-sm font-bold text-gray-900">📅 다가오는 이벤트</h3>
@@ -50,18 +70,16 @@ export default async function EventsScroll() {
         
         <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
           {events.slice(0, 5).map((event) => (
-            <a
+            <Link
               key={event.id}
-              href={event.link}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/events/${event.id}`}
               className="flex-shrink-0 w-64 p-3 rounded-lg border border-gray-200 hover:border-blue-300 transition-colors bg-gray-50"
             >
               <div className="flex items-start gap-2">
                 <span className="text-2xl">{event.emoji}</span>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-gray-900 line-clamp-2 mb-1">
-                    {event.title}
+                    {getCompanyName(event)}
                   </p>
                   <p className="text-xs text-gray-600">
                     {formatDate(event.date)}
@@ -69,7 +87,7 @@ export default async function EventsScroll() {
                   </p>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
