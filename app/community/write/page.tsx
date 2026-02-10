@@ -75,18 +75,22 @@ export default function WritePage() {
     try {
       // users 테이블에 사용자 추가 (없으면)
       try {
-        const { data: existingUser } = await supabase
+        const { data: existingUser, error: checkError } = await supabase
           .from('users')
           .select('id')
           .eq('id', user.id)
-          .single();
+          .maybeSingle();
 
-        if (!existingUser) {
-          await supabase.from('users').insert([{
+        if (!existingUser && !checkError) {
+          const { error: insertError } = await supabase.from('users').insert([{
             id: user.id,
             email: user.email,
             username: user.user_metadata?.name || user.email?.split('@')[0] || 'User',
           }]);
+          
+          if (insertError) {
+            console.error('사용자 생성 실패:', insertError);
+          }
         }
       } catch (userErr) {
         console.error('사용자 정보 처리 실패:', userErr);
@@ -135,7 +139,14 @@ export default function WritePage() {
         .select()
         .single();
 
-      if (error) throw error;
+      if (error) {
+        console.error('게시글 삽입 실패:', error);
+        throw error;
+      }
+
+      if (!data) {
+        throw new Error('게시글 생성 실패: 데이터 없음');
+      }
 
       // 포인트 지급 (커뮤니티 글 작성: 5포인트)
       try {
@@ -145,10 +156,19 @@ export default function WritePage() {
         // 포인트 지급 실패해도 글 작성은 성공으로 처리
       }
 
+      // 성공 후 리디렉션
       router.push('/community');
-    } catch (err) {
+    } catch (err: any) {
       console.error('게시글 작성 실패:', err);
-      setError('게시글 작성에 실패했습니다.');
+      
+      // 에러 메시지를 더 구체적으로 표시
+      if (err?.message) {
+        setError(`게시글 작성 실패: ${err.message}`);
+      } else if (err?.code) {
+        setError(`게시글 작성 실패 (${err.code})`);
+      } else {
+        setError('게시글 작성에 실패했습니다. 다시 시도해주세요.');
+      }
     } finally {
       setLoading(false);
     }

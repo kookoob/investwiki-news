@@ -48,6 +48,16 @@ export default function Header() {
               📰 뉴스
             </Link>
             <Link
+              href="/events"
+              className={`px-3 py-2 rounded-lg font-medium text-sm ${
+                isActive('/events')
+                  ? 'text-blue-600 bg-blue-50'
+                  : 'text-gray-600 hover:bg-gray-50'
+              } transition-colors`}
+            >
+              📅 일정
+            </Link>
+            <Link
               href="/community"
               className={`px-3 py-2 rounded-lg font-medium text-sm ${
                 isActive('/community')
@@ -56,16 +66,6 @@ export default function Header() {
               } transition-colors`}
             >
               💬 커뮤니티
-            </Link>
-            <Link
-              href="/events"
-              className={`px-3 py-2 rounded-lg font-medium text-sm ${
-                isActive('/events')
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-600 hover:bg-gray-50'
-              } transition-colors`}
-            >
-              📅 경제일정
             </Link>
             <Link
               href="/notice"
@@ -131,6 +131,16 @@ export default function Header() {
             📰 뉴스
           </Link>
           <Link
+            href="/events"
+            className={`px-3 py-2 rounded-lg font-medium text-sm whitespace-nowrap ${
+              isActive('/events')
+                ? 'text-blue-600 bg-blue-50'
+                : 'text-gray-600 hover:bg-gray-50'
+            }`}
+          >
+            📅 일정
+          </Link>
+          <Link
             href="/community"
             className={`px-3 py-2 rounded-lg font-medium text-sm whitespace-nowrap ${
               isActive('/community')
@@ -139,16 +149,6 @@ export default function Header() {
             }`}
           >
             💬 커뮤니티
-          </Link>
-          <Link
-            href="/events"
-            className={`px-3 py-2 rounded-lg font-medium text-sm whitespace-nowrap ${
-              isActive('/events')
-                ? 'text-blue-600 bg-blue-50'
-                : 'text-gray-600 hover:bg-gray-50'
-            }`}
-          >
-            📅 경제일정
           </Link>
           <Link
             href="/notice"
