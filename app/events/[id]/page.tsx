@@ -111,8 +111,8 @@ export default async function EventDetailPage({
           {/* 실적 발표 정보 */}
           {isEarnings && (
             <div className="space-y-4">
-              <div className="bg-blue-50 dark:bg-gray-800 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
-                <h2 className="font-bold text-blue-900 dark:text-blue-300 mb-3">📊 실적 발표 정보</h2>
+              <div className="bg-blue-50 dark:bg-black border border-blue-200 dark:border-blue-700 rounded-lg p-4">
+                <h2 className="font-bold text-blue-900 dark:text-blue-400 mb-3">📊 실적 발표 정보</h2>
                 <div className="grid grid-cols-2 gap-4">
                   {event.ticker && (
                     <div>
@@ -161,8 +161,8 @@ export default async function EventDetailPage({
           {/* 경제 지표 정보 */}
           {isEconomic && event.description && (
             <div className="space-y-4">
-              <div className="bg-yellow-50 dark:bg-gray-800 border border-yellow-200 dark:border-yellow-700 rounded-lg p-4">
-                <h2 className="font-bold text-yellow-900 dark:text-yellow-300 mb-3">📈 경제 지표 정보</h2>
+              <div className="bg-yellow-50 dark:bg-black border border-yellow-200 dark:border-yellow-700 rounded-lg p-4">
+                <h2 className="font-bold text-yellow-900 dark:text-yellow-400 mb-3">📈 경제 지표 정보</h2>
                 <p className="text-gray-700 dark:text-white mb-4">{event.description}</p>
                 
                 <div className="grid grid-cols-2 gap-4">
