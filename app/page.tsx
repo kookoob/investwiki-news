@@ -64,6 +64,12 @@ export default async function Home() {
                 📰 뉴스
               </Link>
               <Link
+                href="/events"
+                className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm transition-colors"
+              >
+                📅 일정
+              </Link>
+              <Link
                 href="/community"
                 className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm transition-colors"
               >
@@ -104,6 +110,9 @@ export default async function Home() {
           <nav className="md:hidden flex items-center gap-1 overflow-x-auto pb-3 -mx-4 px-4">
             <Link href="/" className="px-3 py-2 text-blue-600 bg-blue-50 rounded-lg font-medium text-sm whitespace-nowrap">
               📰 뉴스
+            </Link>
+            <Link href="/events" className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm whitespace-nowrap">
+              📅 일정
             </Link>
             <Link href="/community" className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm whitespace-nowrap">
               💬 커뮤니티
