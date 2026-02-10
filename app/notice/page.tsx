@@ -1,8 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { supabase } from '@/lib/supabase';
 import Link from 'next/link';
 import Header from '../components/Header';
+import type { User } from '@supabase/supabase-js';
 
 interface Notice {
   id: string;
@@ -16,10 +18,21 @@ export default function NoticePage() {
   const [notices, setNotices] = useState<Notice[]>([]);
   const [loading, setLoading] = useState(true);
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [user, setUser] = useState<User | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     fetchNotices();
+    checkAdmin();
   }, []);
+
+  async function checkAdmin() {
+    const { data: { user } } = await supabase.auth.getUser();
+    setUser(user);
+    if (user && user.email === 'kyongg02@gmail.com') {
+      setIsAdmin(true);
+    }
+  }
 
   async function fetchNotices() {
     try {
@@ -44,12 +57,14 @@ export default function NoticePage() {
           {/* 헤더 */}
           <div className="mb-6 flex items-center justify-between">
             <h1 className="text-3xl font-bold text-gray-900">📢 공지사항</h1>
-            <Link
-              href="/notice/write"
-              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors cursor-pointer"
-            >
-              글쓰기
-            </Link>
+            {isAdmin && (
+              <Link
+                href="/notice/write"
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors cursor-pointer"
+              >
+                글쓰기
+              </Link>
+            )}
           </div>
 
           {/* 공지사항 목록 */}
