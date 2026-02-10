@@ -1,71 +1,30 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { supabase } from '@/lib/supabase';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-
-
-// 관리자 이메일 목록
-const ADMIN_EMAILS = ['kyongg02@gmail.com'];
 
 export default function NoticeWritePage() {
   const router = useRouter();
   const [form, setForm] = useState({
     title: '',
     content: '',
+    password: '',
     pinned: false,
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [user, setUser] = useState<any>(null);
-
-  useEffect(() => {
-    checkAdmin();
-  }, []);
-
-  async function checkAdmin() {
-    try {
-      const savedUser = localStorage.getItem('stockhub_user');
-      
-      if (!savedUser) {
-        router.push('/notice');
-        return;
-      }
-
-      const userData = JSON.parse(savedUser);
-      setUser(userData);
-
-      // 사용자 이메일 확인
-      const { data } = await supabase
-        .from('users')
-        .select('email')
-        .eq('id', userData.id)
-        .single();
-
-      if (data && ADMIN_EMAILS.includes(data.email)) {
-        setIsAdmin(true);
-      } else {
-        alert('관리자만 접근할 수 있습니다.');
-        router.push('/notice');
-      }
-    } catch (error) {
-      console.error('권한 확인 실패:', error);
-      router.push('/notice');
-    }
-  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!isAdmin) {
-      setError('관리자만 공지사항을 작성할 수 있습니다.');
+    if (!form.title.trim() || !form.content.trim()) {
+      setError('제목과 내용을 입력해주세요.');
       return;
     }
 
-    if (!form.title.trim() || !form.content.trim()) {
-      setError('제목과 내용을 입력해주세요.');
+    if (!form.password) {
+      setError('관리자 비밀번호를 입력해주세요.');
       return;
     }
 
@@ -73,19 +32,27 @@ export default function NoticeWritePage() {
     setError('');
 
     try {
-      const { error } = await supabase
-        .from('notices')
-        .insert([
-          {
-            title: form.title.trim(),
-            content: form.content.trim(),
-            pinned: form.pinned,
-          },
-        ]);
+      const response = await fetch('/api/notices', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: form.title.trim(),
+          content: form.content.trim(),
+          password: form.password,
+          pinned: form.pinned,
+        }),
+      });
 
-      if (error) throw error;
+      if (response.status === 401) {
+        setError('비밀번호가 올바르지 않습니다.');
+        setLoading(false);
+        return;
+      }
 
-      alert('공지사항이 등록되었습니다.');
+      if (!response.ok) {
+        throw new Error('Failed to create notice');
+      }
+
       router.push('/notice');
     } catch (err) {
       console.error('공지사항 작성 실패:', err);
@@ -95,31 +62,20 @@ export default function NoticeWritePage() {
     }
   };
 
-  if (!isAdmin) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-6xl mb-4">🔒</div>
-          <p className="text-gray-600">권한 확인 중...</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* 헤더 */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
-        <div className="max-w-4xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <h1 className="text-xl font-bold text-gray-900">📢 공지사항 작성</h1>
-            <Link
-              href="/notice"
-              className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg text-sm font-medium transition-colors"
-            >
-              취소
-            </Link>
-          </div>
+        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+          <Link href="/notice" className="text-2xl font-bold">
+            📢 공지사항 작성
+          </Link>
+          <Link
+            href="/notice"
+            className="px-4 py-2 text-gray-600 hover:text-gray-900 font-medium rounded-lg transition-colors cursor-pointer"
+          >
+            취소
+          </Link>
         </div>
       </header>
 
@@ -131,23 +87,31 @@ export default function NoticeWritePage() {
             </div>
           )}
 
-          {/* 관리자 표시 */}
-          <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-            <div className="flex items-center gap-2 text-blue-700">
-              <span className="font-semibold">👑 관리자 모드</span>
-            </div>
+          {/* 관리자 비밀번호 */}
+          <div className="mb-4">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              관리자 비밀번호 *
+            </label>
+            <input
+              type="password"
+              value={form.password}
+              onChange={(e) => setForm({ ...form, password: e.target.value })}
+              placeholder="관리자 비밀번호"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
+              required
+            />
           </div>
 
           {/* 상단 고정 */}
-          <div className="mb-6">
+          <div className="mb-4">
             <label className="flex items-center gap-2 cursor-pointer">
               <input
                 type="checkbox"
                 checked={form.pinned}
                 onChange={(e) => setForm({ ...form, pinned: e.target.checked })}
-                className="w-5 h-5 text-blue-600 rounded"
+                className="w-4 h-4 cursor-pointer"
               />
-              <span className="text-gray-900 font-medium">상단 고정</span>
+              <span className="text-sm text-gray-700">상단 고정</span>
             </label>
           </div>
 
@@ -158,7 +122,7 @@ export default function NoticeWritePage() {
               value={form.title}
               onChange={(e) => setForm({ ...form, title: e.target.value })}
               placeholder="제목을 입력하세요"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-lg font-semibold focus:outline-none focus:border-blue-500 transition-colors"
+              className="w-full px-4 py-3 text-lg font-medium border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
               maxLength={100}
               required
             />
@@ -170,20 +134,27 @@ export default function NoticeWritePage() {
               value={form.content}
               onChange={(e) => setForm({ ...form, content: e.target.value })}
               placeholder="내용을 입력하세요"
-              rows={15}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors resize-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors min-h-[300px] resize-y"
               required
             />
           </div>
 
           {/* 제출 버튼 */}
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full py-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-semibold rounded-lg transition-colors"
-          >
-            {loading ? '등록 중...' : '공지사항 등록'}
-          </button>
+          <div className="flex gap-3">
+            <button
+              type="submit"
+              disabled={loading}
+              className="flex-1 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-semibold rounded-lg transition-colors cursor-pointer"
+            >
+              {loading ? '작성 중...' : '공지 작성'}
+            </button>
+            <Link
+              href="/notice"
+              className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold rounded-lg transition-colors text-center cursor-pointer"
+            >
+              취소
+            </Link>
+          </div>
         </form>
       </main>
     </div>

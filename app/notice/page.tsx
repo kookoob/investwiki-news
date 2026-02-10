@@ -1,9 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { supabase } from '@/lib/supabase';
+import Link from 'next/link';
 import Header from '../components/Header';
-
 
 interface Notice {
   id: string;
@@ -13,135 +12,113 @@ interface Notice {
   created_at: string;
 }
 
-const ADMIN_EMAILS = ['kyongg02@gmail.com'];
-
 export default function NoticePage() {
   const [notices, setNotices] = useState<Notice[]>([]);
   const [loading, setLoading] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
   useEffect(() => {
     fetchNotices();
-    checkAdmin();
   }, []);
-
-  async function checkAdmin() {
-    try {
-      const savedUser = localStorage.getItem('stockhub_user');
-      if (!savedUser) return;
-
-      const userData = JSON.parse(savedUser);
-      const { data } = await supabase
-        .from('users')
-        .select('email')
-        .eq('id', userData.id)
-        .single();
-
-      if (data && ADMIN_EMAILS.includes(data.email)) {
-        setIsAdmin(true);
-      }
-    } catch (error) {
-      console.error('권한 확인 실패:', error);
-    }
-  }
 
   async function fetchNotices() {
     try {
-      const { data, error } = await supabase
-        .from('notices')
-        .select('*')
-        .order('pinned', { ascending: false })
-        .order('created_at', { ascending: false });
-
-      if (error) throw error;
-      setNotices(data || []);
+      const response = await fetch('/api/notices');
+      const data = await response.json();
+      setNotices(data);
     } catch (error) {
-      console.error('공지사항 로딩 실패:', error);
+      console.error('Failed to fetch notices:', error);
     } finally {
       setLoading(false);
     }
   }
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center">
-        <div className="text-white text-xl">로딩 중...</div>
-      </div>
-    );
-  }
+  const pinnedNotices = notices.filter(n => n.pinned);
+  const regularNotices = notices.filter(n => !n.pinned);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
       <Header />
-      
-      <div className="container mx-auto px-4 py-12">
-        {/* 헤더 */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <h1 className="text-4xl font-bold text-gray-900">📢 공지사항</h1>
-            {isAdmin && (
-              <a
-                href="/notice/write"
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-colors"
-              >
-                ✍️ 작성하기
-              </a>
+      <div className="min-h-screen bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 py-8">
+          {/* 헤더 */}
+          <div className="mb-6 flex items-center justify-between">
+            <h1 className="text-3xl font-bold text-gray-900">📢 공지사항</h1>
+            <Link
+              href="/notice/write"
+              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors cursor-pointer"
+            >
+              글쓰기
+            </Link>
+          </div>
+
+          {/* 공지사항 목록 */}
+          <div className="bg-white rounded-lg border border-gray-200">
+            {loading ? (
+              <div className="p-8 text-center text-gray-500">로딩 중...</div>
+            ) : notices.length === 0 ? (
+              <div className="p-8 text-center text-gray-500">
+                공지사항이 없습니다.
+              </div>
+            ) : (
+              <div className="divide-y divide-gray-200">
+                {/* 고정 공지 */}
+                {pinnedNotices.map((notice) => (
+                  <div
+                    key={notice.id}
+                    className="p-4 hover:bg-gray-50 transition-colors cursor-pointer"
+                    onClick={() => setExpandedId(expandedId === notice.id ? null : notice.id)}
+                  >
+                    <div className="flex items-start gap-3">
+                      <span className="px-2 py-1 bg-red-100 text-red-700 text-xs font-bold rounded">
+                        공지
+                      </span>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                          {notice.title}
+                        </h3>
+                        <p className="text-sm text-gray-500">
+                          {new Date(notice.created_at).toLocaleDateString('ko-KR')}
+                        </p>
+                        {expandedId === notice.id && (
+                          <div className="mt-4 p-4 bg-gray-50 rounded-lg text-gray-700 whitespace-pre-wrap">
+                            {notice.content}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+
+                {/* 일반 공지 */}
+                {regularNotices.map((notice) => (
+                  <div
+                    key={notice.id}
+                    className="p-4 hover:bg-gray-50 transition-colors cursor-pointer"
+                    onClick={() => setExpandedId(expandedId === notice.id ? null : notice.id)}
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                          {notice.title}
+                        </h3>
+                        <p className="text-sm text-gray-500">
+                          {new Date(notice.created_at).toLocaleDateString('ko-KR')}
+                        </p>
+                        {expandedId === notice.id && (
+                          <div className="mt-4 p-4 bg-gray-50 rounded-lg text-gray-700 whitespace-pre-wrap">
+                            {notice.content}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             )}
           </div>
-          <p className="text-gray-600">StockHub의 새로운 소식을 확인하세요</p>
-        </div>
-
-        {/* 공지사항 리스트 */}
-        <div className="max-w-4xl mx-auto space-y-4">
-          {notices.length === 0 ? (
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 text-center">
-              <p className="text-white/70">등록된 공지사항이 없습니다.</p>
-            </div>
-          ) : (
-            notices.map((notice) => (
-              <div
-                key={notice.id}
-                className={`bg-white/10 backdrop-blur-sm rounded-lg p-6 border transition-all hover:bg-white/15 ${
-                  notice.pinned
-                    ? 'border-yellow-500/50 shadow-lg shadow-yellow-500/20'
-                    : 'border-white/10'
-                }`}
-              >
-                <div className="flex items-start gap-4">
-                  {notice.pinned && (
-                    <span className="text-2xl">📌</span>
-                  )}
-                  <div className="flex-1">
-                    <h2 className="text-xl font-bold text-white mb-2">
-                      {notice.title}
-                    </h2>
-                    <p className="text-white/70 mb-4 whitespace-pre-wrap">
-                      {notice.content}
-                    </p>
-                    <p className="text-sm text-white/50">
-                      {new Date(notice.created_at).toLocaleDateString('ko-KR', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                      })}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))
-          )}
-        </div>
-
-        {/* 돌아가기 버튼 */}
-        <div className="text-center mt-12">
-          <a
-            href="/"
-            className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
-          >
-            ← 홈으로 돌아가기
-          </a>
         </div>
       </div>
-    </div>
+    </>
   );
 }
