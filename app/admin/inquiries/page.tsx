@@ -20,25 +20,27 @@ export default function AdminInquiriesPage() {
   const [selectedInquiry, setSelectedInquiry] = useState<Inquiry | null>(null);
 
   useEffect(() => {
-    // 관리자 확인
-    const savedUser = localStorage.getItem('stockhub_user');
-    if (savedUser) {
-      const userData = JSON.parse(savedUser);
-      setUser(userData);
-      
-      // 관리자 권한 확인
-      if (userData.email !== 'kyongg02@gmail.com') {
-        alert('관리자 권한이 없습니다.');
-        window.location.href = '/';
-        return;
-      }
-      
-      fetchInquiries();
-    } else {
+    checkAdmin();
+  }, []);
+
+  async function checkAdmin() {
+    const { data: { user } } = await supabase.auth.getUser();
+    
+    if (!user) {
       alert('로그인이 필요합니다.');
       window.location.href = '/';
+      return;
     }
-  }, []);
+
+    if (user.email !== 'kyongg02@gmail.com') {
+      alert('관리자 권한이 없습니다.');
+      window.location.href = '/';
+      return;
+    }
+
+    setUser(user);
+    fetchInquiries();
+  }
 
   const fetchInquiries = async () => {
     try {
