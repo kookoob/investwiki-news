@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { supabase } from '@/lib/supabase'
+import Link from 'next/link'
 import type { User } from '@supabase/supabase-js'
 
 export default function AuthButton() {
@@ -100,9 +101,9 @@ export default function AuthButton() {
   if (user) {
     return (
       <div className="flex items-center gap-2">
-        <a
+        <Link
           href="/profile"
-          className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:text-gray-900 transition-colors"
+          className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:text-gray-900 transition-colors cursor-pointer"
         >
           <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
             {(user.user_metadata?.name || user.email || '?')[0].toUpperCase()}
@@ -110,7 +111,7 @@ export default function AuthButton() {
           <span className="hidden sm:inline">
             {user.user_metadata?.name || user.email?.split('@')[0]}
           </span>
-        </a>
+        </Link>
         <button
           onClick={handleSignOut}
           className="px-3 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
