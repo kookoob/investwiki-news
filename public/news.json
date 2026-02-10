@@ -1,45 +1,5 @@
 [
   {
-    "id": "news_1770697868_7",
-    "title": "Wall Financial, 주당 1.00달러 배당금 발표",
-    "summary": "Wall Financial (WFICF)는 주당 1.00달러의 중간 배당금을 발표했습니다. 배당금 지급일은 3월 9일이며, 배당 기준일은 2월 23일, 배당락일 또한 2월 23일입니다. WFICF 배당금 스코어카드, 수익률 차트 및 배당 성장률을 참조하십시오.\n\n📊 코멘트: Wall Financial의 배당금 발표는 투자자들에게 긍정적인 신호로 해석될 수 있지만, 투자 결정을 내리기 전에 기업의 재무 상태 및 성장 가능성을 종합적으로 고려해야 합니다.",
-    "content": "Wall Financial (WFICF)는 주당 1.00달러의 중간 배당금을 발표했습니다.\n\n지급일: 3월 9일\n배당 기준일: 2월 23일\n배당락일: 2월 23일\n\nWFICF 배당금 스코어카드, 수익률 차트 및 배당 성장률을 참조하십시오.\n\nWall Financial에 대한 추가 정보: Seeking Alpha의 Wall Financial Quant Rating, Wall Financial에 대한 재무 정보",
-    "source": "Seeking Alpha",
-    "date": "2026-02-10 13:31",
-    "timestamp": 1770697448,
-    "link": "https://seekingalpha.com/news/4549260-wall-financial-declares-1_00-dividend?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-    "tickers": [
-      "WFICF"
-    ]
-  },
-  {
-    "id": "news_1770697807_7",
-    "title": "Cardinal Energy, CAD 0.06 배당금 발표",
-    "summary": "Cardinal Energy (CRLFF)는 주당 CAD 0.06의 월별 배당금을 발표했으며, 이는 이전과 동일합니다. 배당금 지급일은 3월 16일이며, 배당 기준일은 2월 27일, 배당락일도 2월 27일입니다. CRLFF 배당금 스코어카드, 수익률 차트 및 배당금 성장률을 참조하십시오.  📈 코멘트: Cardinal Energy의 꾸준한 배당금 지급은 투자자들에게 안정적인 수익을 제공할 수 있다는 긍정적인 신호입니다.",
-    "content": "Cardinal Energy (CRLFF)는 주당 CAD 0.06의 월별 배당금을 발표했으며, 이는 이전과 동일합니다.\n\n배당금 지급일은 3월 16일이며, 배당 기준일은 2월 27일, 배당락일도 2월 27일입니다.\n\nCRLFF 배당금 스코어카드, 수익률 차트 및 배당금 성장률을 참조하십시오.\n\n다양한 투자자를 위한 뉴스레터: 전문가의 통찰력, 신선한 아이디어 및 새로운 기회로 가득 찬 매일, 특정 분야 뉴스레터를 받아보세요.\n\nCardinal Energy 관련 추가 정보:\n- Cardinal Energy: 위험 증가 (등급 및 전망 하향)\n- Cardinal Energy, 인수 계약 증액 $95.15백만 달러\n- Cardinal Energy, $86.5M 인수 계약 발표, Reford 2 프로젝트 승인\n- Cardinal Energy에 대한 Seeking Alpha의 Quant Rating\n- Cardinal Energy의 과거 수익 데이터",
-    "source": "Seeking Alpha",
-    "date": "2026-02-10 13:30",
-    "timestamp": 1770697387,
-    "link": "https://seekingalpha.com/news/4549259-cardinal-energy-declares-cad-0_06-dividend?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-    "tickers": [
-      "F",
-      "CRLFF"
-    ]
-  },
-  {
-    "id": "news_1770697074_6",
-    "title": "Newell Brands, 주당 0.07달러 배당금 발표",
-    "summary": "Newell Brands(NWL)가 주당 0.07달러의 분기별 배당금을 발표했는데, 이는 이전과 동일한 수준이다. 선행 수익률은 6.17%이며, 3월 13일에 지급될 예정이고, 2월 27일이 배당 기준일 및 배당락일이다. NWL 배당금 스코어카드, 수익률 차트 및 배당금 성장률을 참조할 수 있다.\n\n📊 코멘트: Newell Brands의 꾸준한 배당금 지급은 투자자에게 매력적인 요소가 될 수 있습니다.",
-    "content": "Newell Brands (NWL)는 이전과 동일하게 주당 0.07달러의 분기별 배당금을 발표했다.\n\n선행 수익률은 6.17%이다.\n\n지급일은 3월 13일이며, 배당 기준일은 2월 27일이고, 배당락일도 2월 27일이다.\n\nNWL 배당금 스코어카드, 수익률 차트 및 배당금 성장률을 참조하십시오.",
-    "source": "Seeking Alpha",
-    "date": "2026-02-10 13:17",
-    "timestamp": 1770696714,
-    "link": "https://seekingalpha.com/news/4549256-newell-brands-declares-0_07-dividend?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-    "tickers": [
-      "NWL"
-    ]
-  },
-  {
     "id": "news_1770697052_6",
     "title": "미국, TSMC 투자 연계 빅테크 칩 관세 면제 계획 - FT 보도",
     "summary": "도널드 트럼프 행정부는 아마존, 구글, 마이크로소프트 등 기업들이 AI 붐을 가속화하는 데이터 센터 구축 경쟁에 박차를 가함에 따라 곧 부과될 칩 관세로부터 이들을 면제할 계획인 것으로 알려졌다. 이는 TSMC의 미국 투자를 유치하고, 미국 내 AI 기술 경쟁력을 강화하려는 의도로 해석된다.\n\n💡 코멘트: 빅테크 기업들의 AI 인프라 투자가 지속될 것으로 예상되며, 관련 수혜주에 대한 관심이 필요하다.",
