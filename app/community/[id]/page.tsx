@@ -293,6 +293,17 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
               {post.content}
             </div>
 
+            {/* 이미지 (있는 경우) */}
+            {(post as any).image_url && (
+              <div className="mb-6">
+                <img
+                  src={(post as any).image_url}
+                  alt="게시글 이미지"
+                  className="max-w-full h-auto rounded-lg border border-gray-200"
+                />
+              </div>
+            )}
+
             {/* 좋아요 버튼 */}
             <div className="pt-6 border-t border-gray-200">
               <button

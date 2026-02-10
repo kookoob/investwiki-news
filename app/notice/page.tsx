@@ -102,8 +102,17 @@ export default function NoticePage() {
                           {new Date(notice.created_at).toLocaleDateString('ko-KR')}
                         </p>
                         {expandedId === notice.id && (
-                          <div className="mt-4 p-4 bg-gray-50 rounded-lg text-gray-700 whitespace-pre-wrap">
-                            {notice.content}
+                          <div className="mt-4 p-4 bg-gray-50 rounded-lg">
+                            <div className="text-gray-700 whitespace-pre-wrap mb-4">
+                              {notice.content}
+                            </div>
+                            {(notice as any).image_url && (
+                              <img
+                                src={(notice as any).image_url}
+                                alt="공지사항 이미지"
+                                className="max-w-full h-auto rounded-lg border border-gray-200"
+                              />
+                            )}
                           </div>
                         )}
                       </div>
@@ -127,8 +136,17 @@ export default function NoticePage() {
                           {new Date(notice.created_at).toLocaleDateString('ko-KR')}
                         </p>
                         {expandedId === notice.id && (
-                          <div className="mt-4 p-4 bg-gray-50 rounded-lg text-gray-700 whitespace-pre-wrap">
-                            {notice.content}
+                          <div className="mt-4 p-4 bg-gray-50 rounded-lg">
+                            <div className="text-gray-700 whitespace-pre-wrap mb-4">
+                              {notice.content}
+                            </div>
+                            {(notice as any).image_url && (
+                              <img
+                                src={(notice as any).image_url}
+                                alt="공지사항 이미지"
+                                className="max-w-full h-auto rounded-lg border border-gray-200"
+                              />
+                            )}
                           </div>
                         )}
                       </div>

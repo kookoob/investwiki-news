@@ -13,6 +13,8 @@ export default function WritePage() {
     title: '',
     content: '',
   });
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState<string>('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [user, setUser] = useState<User | null>(null);
@@ -27,6 +29,32 @@ export default function WritePage() {
     setUser(user);
     setAuthLoading(false);
   }
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // 이미지 파일 확인
+    if (!file.type.startsWith('image/')) {
+      alert('이미지 파일만 업로드할 수 있습니다');
+      return;
+    }
+
+    // 5MB 제한
+    if (file.size > 5 * 1024 * 1024) {
+      alert('이미지 크기는 5MB 이하로 제한됩니다');
+      return;
+    }
+
+    setImageFile(file);
+    
+    // 미리보기
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setImagePreview(reader.result as string);
+    };
+    reader.readAsDataURL(file);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,6 +88,27 @@ export default function WritePage() {
         }]);
       }
 
+      // 이미지 업로드 (있는 경우)
+      let imageUrl = null;
+      if (imageFile) {
+        const fileExt = imageFile.name.split('.').pop();
+        const fileName = `${user.id}-${Date.now()}.${fileExt}`;
+        const filePath = `posts/${fileName}`;
+
+        const { error: uploadError } = await supabase.storage
+          .from('images')
+          .upload(filePath, imageFile);
+
+        if (uploadError) {
+          console.error('이미지 업로드 실패:', uploadError);
+        } else {
+          const { data: urlData } = supabase.storage
+            .from('images')
+            .getPublicUrl(filePath);
+          imageUrl = urlData.publicUrl;
+        }
+      }
+
       // 게시글 작성
       const { data, error } = await supabase
         .from('posts')
@@ -69,6 +118,7 @@ export default function WritePage() {
             title: form.title.trim(),
             content: form.content.trim(),
             category: 'free',
+            image_url: imageUrl,
           },
         ])
         .select()
@@ -169,6 +219,49 @@ export default function WritePage() {
               className="w-full px-4 py-3 text-gray-900 placeholder-gray-400 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors min-h-[300px] resize-y"
               required
             />
+          </div>
+
+          {/* 이미지 업로드 */}
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              이미지 첨부 (선택사항)
+            </label>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              className="block w-full text-sm text-gray-500
+                file:mr-4 file:py-2 file:px-4
+                file:rounded-lg file:border-0
+                file:text-sm file:font-semibold
+                file:bg-blue-50 file:text-blue-700
+                hover:file:bg-blue-100 file:cursor-pointer"
+            />
+            <p className="mt-1 text-xs text-gray-500">JPG, PNG, GIF (최대 5MB)</p>
+            
+            {/* 이미지 미리보기 */}
+            {imagePreview && (
+              <div className="mt-4 relative">
+                <img
+                  src={imagePreview}
+                  alt="미리보기"
+                  className="max-w-full h-auto rounded-lg border border-gray-200"
+                  style={{ maxHeight: '300px' }}
+                />
+                <button
+                  type="button"
+                  onClick={() => {
+                    setImageFile(null);
+                    setImagePreview('');
+                  }}
+                  className="absolute top-2 right-2 bg-red-500 text-white rounded-full p-2 hover:bg-red-600 transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            )}
           </div>
 
           {/* 제출 버튼 */}
