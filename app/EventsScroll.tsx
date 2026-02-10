@@ -62,10 +62,7 @@ export default async function EventsScroll() {
     <div className="lg:hidden bg-white border-b border-gray-200 mb-4">
       <div className="px-4 py-3">
         <div className="flex items-center justify-between mb-2">
-          <h3 className="text-sm font-bold text-gray-900">📅 다가오는 이벤트</h3>
-          <Link href="/events" className="text-xs text-blue-600 hover:underline">
-            전체
-          </Link>
+          <h3 className="text-sm font-bold text-gray-900">📅 다가오는 경제일정</h3>
         </div>
         
         <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">

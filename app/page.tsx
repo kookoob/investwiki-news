@@ -70,12 +70,6 @@ export default async function Home() {
                 💬 커뮤니티
               </Link>
               <Link
-                href="/events"
-                className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm transition-colors"
-              >
-                📅 이벤트
-              </Link>
-              <Link
                 href="/notice"
                 className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm transition-colors"
               >
@@ -113,9 +107,6 @@ export default async function Home() {
             </Link>
             <Link href="/community" className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm whitespace-nowrap">
               💬 커뮤니티
-            </Link>
-            <Link href="/events" className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm whitespace-nowrap">
-              📅 이벤트
             </Link>
             <Link href="/notice" className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm whitespace-nowrap">
               📢 공지
