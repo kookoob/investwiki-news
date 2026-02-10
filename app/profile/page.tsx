@@ -70,8 +70,8 @@ export default function ProfilePage() {
       setProfile(data ? {
         username: data.username || '',
         display_name: data.username || '',
-        bio: '',
-        avatar_url: ''
+        bio: data.bio || '',
+        avatar_url: data.avatar_url || ''
       } : { username: '', display_name: '', bio: '', avatar_url: '' });
     } catch (error) {
       console.error('프로필 로딩 실패:', error);
@@ -194,7 +194,14 @@ export default function ProfilePage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-1">
             {user?.user_metadata?.name || profile?.display_name || profile?.username || user?.email?.split('@')[0] || '익명'}
           </h2>
-          <p className="text-gray-600 mb-4">{user?.email}</p>
+          <p className="text-gray-600 mb-2">{user?.email}</p>
+          
+          {/* 자기소개 */}
+          {profile?.bio && (
+            <p className="text-sm text-gray-700 mb-4 px-4 py-2 bg-gray-50 rounded-lg">
+              {profile.bio}
+            </p>
+          )}
 
           {/* 레벨 프로그레스 */}
           <div className="mb-4">

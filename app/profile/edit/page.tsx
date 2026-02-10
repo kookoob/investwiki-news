@@ -12,6 +12,7 @@ export default function ProfileEditPage() {
   const [form, setForm] = useState({
     username: '',
     avatar_url: '',
+    bio: '',
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -33,13 +34,14 @@ export default function ProfileEditPage() {
     // users 테이블에서 프로필 정보 가져오기
     const { data: profile } = await supabase
       .from('users')
-      .select('username, avatar_url')
+      .select('username, avatar_url, bio')
       .eq('id', user.id)
       .single();
     
     setForm({
       username: profile?.username || user.user_metadata?.name || '',
       avatar_url: profile?.avatar_url || user.user_metadata?.avatar_url || '',
+      bio: profile?.bio || '',
     });
   }
 
@@ -111,6 +113,7 @@ export default function ProfileEditPage() {
         .update({
           username: form.username.trim(),
           avatar_url: form.avatar_url || null,
+          bio: form.bio.trim() || null,
         })
         .eq('id', user.id);
 
@@ -226,6 +229,21 @@ export default function ProfileEditPage() {
             />
             <p className="text-xs text-gray-500 mt-2">
               2-20자 이내로 입력하세요
+            </p>
+          </div>
+
+          {/* 자기소개 */}
+          <div className="mb-6">
+            <label className="block text-gray-900 font-semibold mb-2">자기소개</label>
+            <textarea
+              value={form.bio}
+              onChange={(e) => setForm({ ...form, bio: e.target.value })}
+              placeholder="자신을 소개해주세요"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors resize-y min-h-[100px]"
+              maxLength={200}
+            />
+            <p className="text-xs text-gray-500 mt-2">
+              최대 200자까지 입력 가능합니다
             </p>
           </div>
 
