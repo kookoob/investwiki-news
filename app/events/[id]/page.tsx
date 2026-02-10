@@ -3,6 +3,9 @@ import Link from 'next/link';
 import { promises as fs } from 'fs';
 import path from 'path';
 
+// 동적 렌더링 강제
+export const dynamic = 'force-dynamic';
+
 interface Event {
   id: string;
   title: string;
@@ -39,13 +42,8 @@ async function getEvent(id: string): Promise<Event | null> {
   return events.find((e: Event) => e.id === id) || null;
 }
 
-// 정적 경로 생성
-export async function generateStaticParams() {
-  const events = await getAllEvents();
-  return events.map((event) => ({
-    id: event.id,
-  }));
-}
+// 동적 경로 허용 (정적 생성 비활성화)
+export const dynamicParams = true;
 
 function formatMarketCap(marketCap: number): string {
   if (marketCap >= 1_000_000_000_000) {
