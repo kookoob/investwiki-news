@@ -35,11 +35,6 @@ export default function WritePage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!user) {
-      setError('로그인이 필요합니다.');
-      return;
-    }
-
     if (!form.title.trim() || !form.content.trim()) {
       setError('제목과 내용을 입력해주세요.');
       return;
@@ -49,21 +44,27 @@ export default function WritePage() {
     setError('');
 
     try {
-      // 사용자 DB 존재 확인 및 생성
-      const { data: existingUser } = await supabase
-        .from('users')
-        .select('id')
-        .eq('id', user.id)
-        .single();
+      // 익명 사용자 ID 생성 (로그인 안 된 경우)
+      const userId = user?.id || 'anonymous-' + Date.now();
+      const username = user?.user_metadata?.name || user?.email?.split('@')[0] || '익명';
 
-      if (!existingUser) {
-        await supabase
+      // 로그인한 사용자만 users 테이블 체크
+      if (user) {
+        const { data: existingUser } = await supabase
           .from('users')
-          .insert([{
-            id: user.id,
-            username: user.user_metadata?.name || user.email?.split('@')[0] || 'Anonymous',
-            email: user.email || null,
-          }]);
+          .select('id')
+          .eq('id', user.id)
+          .single();
+
+        if (!existingUser) {
+          await supabase
+            .from('users')
+            .insert([{
+              id: user.id,
+              username: username,
+              email: user.email || null,
+            }]);
+        }
       }
 
       // 게시글 작성
@@ -71,7 +72,7 @@ export default function WritePage() {
         .from('posts')
         .insert([
           {
-            user_id: user.id,
+            user_id: userId,
             title: form.title.trim(),
             content: form.content.trim(),
             category: 'free',
@@ -82,8 +83,10 @@ export default function WritePage() {
 
       if (error) throw error;
 
-      // 경험치 추가 (+10)
-      await addExp(user.id, 10, 'post', data.id);
+      // 로그인한 사용자만 경험치 추가
+      if (user) {
+        await addExp(user.id, 10, 'post', data.id);
+      }
 
       router.push(`/community/${data.id}`);
     } catch (err) {
@@ -160,22 +163,23 @@ export default function WritePage() {
     );
   }
 
-  if (!user) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-        <div className="bg-white rounded-lg p-8 max-w-md w-full text-center">
-          <h2 className="text-2xl font-bold mb-4">로그인이 필요합니다</h2>
-          <p className="text-gray-600 mb-6">커뮤니티 글을 작성하려면 로그인하세요.</p>
-          <Link
-            href="/community"
-            className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
-          >
-            커뮤니티로 돌아가기
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  // 임시: 로그인 없이도 글쓰기 허용 (익명)
+  // if (!user) {
+  //   return (
+  //     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+  //       <div className="bg-white rounded-lg p-8 max-w-md w-full text-center">
+  //         <h2 className="text-2xl font-bold mb-4">로그인이 필요합니다</h2>
+  //         <p className="text-gray-600 mb-6">커뮤니티 글을 작성하려면 로그인하세요.</p>
+  //         <Link
+  //           href="/community"
+  //           className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
+  //         >
+  //           커뮤니티로 돌아가기
+  //         </Link>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -203,14 +207,26 @@ export default function WritePage() {
           )}
 
           {/* 사용자 정보 */}
-          <div className="mb-6 flex items-center gap-3 pb-4 border-b border-gray-200">
-            <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
-              {(user.user_metadata?.name || user.email || '?')[0].toUpperCase()}
+          {user && (
+            <div className="mb-6 flex items-center gap-3 pb-4 border-b border-gray-200">
+              <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+                {(user.user_metadata?.name || user.email || '?')[0].toUpperCase()}
+              </div>
+              <span className="font-medium text-gray-900">
+                {user.user_metadata?.name || user.email?.split('@')[0]}
+              </span>
             </div>
-            <span className="font-medium text-gray-900">
-              {user.user_metadata?.name || user.email?.split('@')[0]}
-            </span>
-          </div>
+          )}
+          {!user && (
+            <div className="mb-6 flex items-center gap-3 pb-4 border-b border-gray-200">
+              <div className="w-10 h-10 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold">
+                ?
+              </div>
+              <span className="font-medium text-gray-700">
+                익명 (로그인하면 닉네임 표시)
+              </span>
+            </div>
+          )}
 
           {/* 제목 */}
           <div className="mb-6">
