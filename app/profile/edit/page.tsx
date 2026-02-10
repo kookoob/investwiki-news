@@ -22,17 +22,24 @@ export default function ProfileEditPage() {
   }, []);
 
   async function checkUser() {
-    const savedUser = localStorage.getItem('stockhub_user');
-    if (!savedUser) {
-      router.push('/community');
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) {
+      router.push('/');
       return;
     }
 
-    const userData = JSON.parse(savedUser);
-    setUser(userData);
+    setUser(user);
+    
+    // users 테이블에서 프로필 정보 가져오기
+    const { data: profile } = await supabase
+      .from('users')
+      .select('username, avatar_url')
+      .eq('id', user.id)
+      .single();
+    
     setForm({
-      username: userData.username || '',
-      avatar_url: userData.avatar_url || '',
+      username: profile?.username || user.user_metadata?.name || '',
+      avatar_url: profile?.avatar_url || user.user_metadata?.avatar_url || '',
     });
   }
 
@@ -109,13 +116,13 @@ export default function ProfileEditPage() {
 
       if (error) throw error;
 
-      // localStorage 업데이트
-      const updatedUser = {
-        ...user,
-        username: form.username.trim(),
-        avatar_url: form.avatar_url,
-      };
-      localStorage.setItem('stockhub_user', JSON.stringify(updatedUser));
+      // Supabase auth user_metadata 업데이트 (선택사항)
+      await supabase.auth.updateUser({
+        data: {
+          name: form.username.trim(),
+          avatar_url: form.avatar_url,
+        }
+      });
 
       alert('프로필이 업데이트되었습니다');
       router.push('/profile');
