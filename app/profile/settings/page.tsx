@@ -8,7 +8,15 @@ export default function SettingsPage() {
 
   useEffect(() => {
     const saved = localStorage.getItem('darkMode');
-    setDarkMode(saved === 'true');
+    const isDark = saved === 'true';
+    setDarkMode(isDark);
+    
+    // 페이지 로드 시 다크모드 적용
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   }, []);
 
   function toggleDarkMode() {
@@ -24,23 +32,23 @@ export default function SettingsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b border-gray-200">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-4xl mx-auto px-4 py-4">
-          <Link href="/profile" className="text-blue-600 hover:underline text-sm">
+          <Link href="/profile" className="text-blue-600 dark:text-blue-400 hover:underline text-sm">
             ← 프로필로
           </Link>
         </div>
       </header>
 
       <main className="max-w-4xl mx-auto px-4 py-6">
-        <h1 className="text-2xl font-bold mb-6">앱 화면 설정</h1>
+        <h1 className="text-2xl font-bold mb-6 dark:text-white">앱 화면 설정</h1>
 
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="font-semibold text-gray-900">다크 모드</h2>
-              <p className="text-sm text-gray-600">어두운 테마 사용</p>
+              <h2 className="font-semibold text-gray-900 dark:text-gray-100">다크 모드</h2>
+              <p className="text-sm text-gray-600 dark:text-gray-400">어두운 테마 사용</p>
             </div>
             <button
               onClick={toggleDarkMode}
@@ -56,8 +64,8 @@ export default function SettingsPage() {
             </button>
           </div>
 
-          <p className="mt-4 text-sm text-yellow-600">
-            💡 준비 중입니다. 곧 다크 모드를 제공할 예정입니다!
+          <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+            다크 모드를 켜면 전체 사이트에 어두운 테마가 적용됩니다.
           </p>
         </div>
       </main>
