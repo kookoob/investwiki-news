@@ -135,13 +135,23 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
 
       {/* 뉴스 상세 */}
       <main className="max-w-4xl mx-auto px-4 py-6">
-        <article className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        <article className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
           {/* 제목 */}
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">{news.title}</h1>
+          <div className="flex items-start gap-3 mb-4">
+            {/* 중요도 표시 */}
+            {news.importance && (
+              <div className="flex-shrink-0 mt-1">
+                {news.importance === 'high' && <span className="text-2xl" title="높은 중요도">🔴</span>}
+                {news.importance === 'medium' && <span className="text-2xl" title="중간 중요도">🟡</span>}
+                {news.importance === 'low' && <span className="text-2xl" title="낮은 중요도">⚪</span>}
+              </div>
+            )}
+            <h1 className="flex-1 text-2xl font-bold text-gray-900 dark:text-white">{news.title}</h1>
+          </div>
 
           {/* 메타 정보 */}
-          <div className="flex items-center gap-3 text-sm text-gray-500 mb-6 pb-6 border-b border-gray-200">
-            <span className="font-medium text-blue-600">{news.source}</span>
+          <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400 mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
+            <span className="font-medium text-blue-600 dark:text-blue-400">{news.source}</span>
             <span>•</span>
             <span>{news.date}</span>
           </div>
@@ -153,9 +163,9 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
           </div>
 
           {/* 전체 내용 */}
-          <div className="prose prose-gray max-w-none">
+          <div className="prose prose-gray dark:prose-invert max-w-none">
             {news.content.split('\n\n').map((paragraph: string, i: number) => (
-              <p key={i} className="mb-4 text-gray-700 leading-relaxed">
+              <p key={i} className="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
                 {paragraph}
               </p>
             ))}
@@ -163,22 +173,22 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
 
           {/* 관련 종목 가격 */}
           {tickerData.length > 0 && (
-            <div className="mt-6 pt-6 border-t border-gray-200">
-              <h3 className="text-sm font-semibold text-gray-900 mb-3">📊 관련 종목</h3>
+            <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">📊 관련 종목</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {tickerData.map((item) => (
-                  <div key={item.symbol} className="bg-gray-50 rounded-lg p-3 border border-gray-200">
+                  <div key={item.symbol} className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-3 border border-gray-200 dark:border-gray-600">
                     <div className="flex justify-between items-start mb-1">
-                      <span className="text-sm font-medium text-gray-900">{item.name}</span>
-                      <span className="text-base font-semibold text-gray-900">
+                      <span className="text-sm font-medium text-gray-900 dark:text-white">{item.name}</span>
+                      <span className="text-base font-semibold text-gray-900 dark:text-white">
                         ${item.price.toFixed(2)}
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-xs text-gray-500">{item.symbol}</span>
+                      <span className="text-xs text-gray-500 dark:text-gray-400">{item.symbol}</span>
                       <span
                         className={`text-xs font-medium ${
-                          item.change >= 0 ? 'text-red-600' : 'text-blue-600'
+                          item.change >= 0 ? 'text-red-600 dark:text-red-400' : 'text-blue-600 dark:text-blue-400'
                         }`}
                       >
                         {item.change >= 0 ? '▲' : '▼'} {Math.abs(item.changePercent).toFixed(2)}%
@@ -192,13 +202,13 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
 
           {/* 원문 링크 및 공유 */}
           {news.link && (
-            <div className="mt-6 pt-6 border-t border-gray-200">
+            <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
               <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
                 <a
                   href={news.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-700 text-sm font-medium"
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 text-sm font-medium"
                 >
                   원문 보기 →
                 </a>

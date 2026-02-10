@@ -146,15 +146,23 @@ export default async function Home() {
           
           return (
           <div key={item.id}>
-            <Link href={`/news/${item.id}`} className="block bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 p-4">
+            <Link href={`/news/${item.id}`} className="block bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700 p-4">
               <div className="flex items-start gap-2 mb-2">
-                <h2 className="flex-1 text-lg font-semibold text-gray-900 line-clamp-2">
+                {/* 중요도 표시 */}
+                {item.importance && (
+                  <div className="flex-shrink-0 mt-1">
+                    {item.importance === 'high' && <span className="text-lg" title="높은 중요도">🔴</span>}
+                    {item.importance === 'medium' && <span className="text-lg" title="중간 중요도">🟡</span>}
+                    {item.importance === 'low' && <span className="text-lg" title="낮은 중요도">⚪</span>}
+                  </div>
+                )}
+                <h2 className="flex-1 text-lg font-semibold text-gray-900 dark:text-white line-clamp-2">
                   {item.title}
                 </h2>
                 <BookmarkButton itemId={item.id} itemType="news" size="md" />
               </div>
-              <div className="flex items-center gap-3 text-sm text-gray-500 flex-wrap">
-                <span className="font-medium text-blue-600">{item.source}</span>
+              <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400 flex-wrap">
+                <span className="font-medium text-blue-600 dark:text-blue-400">{item.source}</span>
                 <span>•</span>
                 <span>{item.date}</span>
                 
