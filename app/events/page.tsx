@@ -1,0 +1,96 @@
+import Header from '@/app/components/Header'
+import Link from 'next/link'
+import { promises as fs } from 'fs'
+import path from 'path'
+
+async function getEvents() {
+  try {
+    const filePath = path.join(process.cwd(), 'public', 'events.json')
+    const fileContents = await fs.readFile(filePath, 'utf8')
+    return JSON.parse(fileContents)
+  } catch {
+    return []
+  }
+}
+
+export default async function EventsPage() {
+  const events = await getEvents()
+  const now = new Date()
+  
+  // 오늘 이후 이벤트만 필터링
+  const upcomingEvents = events.filter((event: any) => new Date(event.date) >= now)
+  
+  // 날짜별로 그룹화
+  const eventsByDate = upcomingEvents.reduce((acc: any, event: any) => {
+    const date = new Date(event.date).toLocaleDateString('ko-KR', { 
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      weekday: 'short'
+    })
+    if (!acc[date]) acc[date] = []
+    acc[date].push(event)
+    return acc
+  }, {})
+
+  return (
+    <>
+      <Header />
+      <div className="min-h-screen bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 py-6">
+          <div className="mb-6">
+            <h1 className="text-2xl font-bold text-gray-900 mb-2">📅 경제일정</h1>
+            <p className="text-gray-600">주요 경제 이벤트 및 실적 발표 일정</p>
+          </div>
+
+          {Object.keys(eventsByDate).length === 0 ? (
+            <div className="bg-white rounded-lg border border-gray-200 p-8 text-center">
+              <p className="text-gray-500">예정된 경제일정이 없습니다.</p>
+            </div>
+          ) : (
+            <div className="space-y-6">
+              {Object.entries(eventsByDate).map(([date, dateEvents]: [string, any]) => (
+                <div key={date} className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                  <div className="bg-blue-50 px-4 py-3 border-b border-blue-100">
+                    <h2 className="font-bold text-blue-900">{date}</h2>
+                  </div>
+                  <div className="divide-y divide-gray-100">
+                    {dateEvents.map((event: any) => (
+                      <Link
+                        key={event.id}
+                        href={`/events/${event.id}`}
+                        className="block px-4 py-4 hover:bg-gray-50 transition-colors"
+                      >
+                        <div className="flex items-start gap-3">
+                          <div className="flex-shrink-0 w-16 text-center">
+                            <div className="text-xs text-gray-500">
+                              {new Date(event.date).toLocaleTimeString('ko-KR', { 
+                                hour: '2-digit',
+                                minute: '2-digit'
+                              })}
+                            </div>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h3 className="font-semibold text-gray-900 mb-1">{event.title}</h3>
+                            {event.company && (
+                              <p className="text-sm text-gray-600">{event.company}</p>
+                            )}
+                            {event.type && (
+                              <span className="inline-block mt-2 px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">
+                                {event.type}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </>
+  )
+}

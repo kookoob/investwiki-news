@@ -5,7 +5,7 @@ import { fetchTickerPrices } from '@/lib/fetchPrices'
 import CopyButton from './CopyButton'
 import Comments from './Comments'
 import VoteButtons from './VoteButtons'
-import AuthButton from '@/app/AuthButton'
+import Header from '@/app/components/Header'
 import { Metadata } from 'next'
 
 async function getNewsById(id: string) {
@@ -131,16 +131,7 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       {/* 헤더 */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
-        <div className="max-w-4xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
-              ← 뉴스 목록으로
-            </Link>
-            <AuthButton />
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* 뉴스 상세 */}
       <main className="max-w-4xl mx-auto px-4 py-6">
