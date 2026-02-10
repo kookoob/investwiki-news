@@ -128,13 +128,13 @@ export default async function Home() {
       </header>
 
       {/* 모바일 이벤트 스크롤 */}
-      <EventsScroll />
+      {/* <EventsScroll /> */}
 
       {/* 메인 콘텐츠 */}
       <main className="max-w-7xl mx-auto px-4 py-6">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr,300px] md:gap-4">
+        <div className="flex flex-col lg:flex-row lg:gap-6">
           {/* 뉴스 피드 */}
-          <div className="space-y-4">
+          <div className="flex-1 space-y-4">
             {news.length === 0 && (
               <div className="text-center py-12 text-gray-500">
                 뉴스를 불러오는 중...
