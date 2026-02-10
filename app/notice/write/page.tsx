@@ -1,30 +1,48 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { supabase } from '@/lib/supabase';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import type { User } from '@supabase/supabase-js';
 
 export default function NoticeWritePage() {
   const router = useRouter();
   const [form, setForm] = useState({
     title: '',
     content: '',
-    password: '',
     pinned: false,
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [user, setUser] = useState<User | null>(null);
+  const [authLoading, setAuthLoading] = useState(true);
+
+  useEffect(() => {
+    checkAdmin();
+  }, []);
+
+  async function checkAdmin() {
+    const { data: { user } } = await supabase.auth.getUser();
+    setUser(user);
+    setAuthLoading(false);
+
+    if (!user || user.email !== 'kyongg02@gmail.com') {
+      alert('관리자만 작성할 수 있습니다.');
+      router.push('/notice');
+    }
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!form.title.trim() || !form.content.trim()) {
-      setError('제목과 내용을 입력해주세요.');
+    if (!user) {
+      setError('로그인이 필요합니다.');
       return;
     }
 
-    if (!form.password) {
-      setError('관리자 비밀번호를 입력해주세요.');
+    if (!form.title.trim() || !form.content.trim()) {
+      setError('제목과 내용을 입력해주세요.');
       return;
     }
 
@@ -32,26 +50,17 @@ export default function NoticeWritePage() {
     setError('');
 
     try {
-      const response = await fetch('/api/notices', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          title: form.title.trim(),
-          content: form.content.trim(),
-          password: form.password,
-          pinned: form.pinned,
-        }),
-      });
+      const { error } = await supabase
+        .from('notices')
+        .insert([
+          {
+            title: form.title.trim(),
+            content: form.content.trim(),
+            pinned: form.pinned,
+          },
+        ]);
 
-      if (response.status === 401) {
-        setError('비밀번호가 올바르지 않습니다.');
-        setLoading(false);
-        return;
-      }
-
-      if (!response.ok) {
-        throw new Error('Failed to create notice');
-      }
+      if (error) throw error;
 
       router.push('/notice');
     } catch (err) {
@@ -61,6 +70,14 @@ export default function NoticeWritePage() {
       setLoading(false);
     }
   };
+
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-gray-500">로딩 중...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -86,21 +103,6 @@ export default function NoticeWritePage() {
               {error}
             </div>
           )}
-
-          {/* 관리자 비밀번호 */}
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              관리자 비밀번호 *
-            </label>
-            <input
-              type="password"
-              value={form.password}
-              onChange={(e) => setForm({ ...form, password: e.target.value })}
-              placeholder="관리자 비밀번호"
-              className="w-full px-4 py-2 text-gray-900 placeholder-gray-400 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
-              required
-            />
-          </div>
 
           {/* 상단 고정 */}
           <div className="mb-4">

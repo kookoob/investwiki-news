@@ -36,9 +36,15 @@ export default function NoticePage() {
 
   async function fetchNotices() {
     try {
-      const response = await fetch('/api/notices');
-      const data = await response.json();
-      setNotices(data);
+      const { data, error } = await supabase
+        .from('notices')
+        .select('*')
+        .is('deleted_at', null)
+        .order('pinned', { ascending: false })
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+      setNotices(data || []);
     } catch (error) {
       console.error('Failed to fetch notices:', error);
     } finally {
