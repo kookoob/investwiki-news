@@ -58,12 +58,22 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
     try {
       const { data, error } = await supabase
         .from('posts')
-        .select('*')
+        .select(`
+          *,
+          users!inner(username, id)
+        `)
         .eq('id', id)
         .single();
 
       if (error) throw error;
-      setPost(data);
+      
+      // 닉네임 정보 추가
+      const postWithUsername = {
+        ...data,
+        author_name: data.users?.username || '익명'
+      };
+      
+      setPost(postWithUsername as any);
 
       // 조회수 증가 (간단 버전)
       await supabase
@@ -81,12 +91,22 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
     try {
       const { data, error } = await supabase
         .from('post_comments')
-        .select('*')
+        .select(`
+          *,
+          users!inner(username, id)
+        `)
         .eq('post_id', id)
         .order('created_at', { ascending: true });
 
       if (error) throw error;
-      setComments(data || []);
+      
+      // 닉네임 정보 추가
+      const commentsWithUsernames = (data || []).map((comment: any) => ({
+        ...comment,
+        author_name: comment.users?.username || '익명'
+      }));
+      
+      setComments(commentsWithUsernames);
     } catch (error) {
       console.error('Failed to fetch comments:', error);
     }
@@ -257,10 +277,17 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
           {/* 게시글 */}
           <div className="bg-white rounded-lg p-6 border border-gray-200 mb-6">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">{post.title}</h1>
-            <div className="flex items-center gap-4 text-sm text-gray-500 mb-6 pb-6 border-b border-gray-200">
-              <span>{new Date(post.created_at).toLocaleDateString('ko-KR')}</span>
-              <span>·</span>
-              <span>조회 {post.views}</span>
+            <div className="flex items-center gap-3 text-sm mb-6 pb-6 border-b border-gray-200">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xs">
+                  {((post as any).author_name || '익명')[0].toUpperCase()}
+                </div>
+                <span className="font-medium text-gray-900">{(post as any).author_name || '익명'}</span>
+              </div>
+              <span className="text-gray-400">·</span>
+              <span className="text-gray-500">{new Date(post.created_at).toLocaleDateString('ko-KR')}</span>
+              <span className="text-gray-400">·</span>
+              <span className="text-gray-500">조회 {post.views}</span>
             </div>
             <div className="text-gray-700 whitespace-pre-wrap leading-relaxed mb-6">
               {post.content}
@@ -299,8 +326,12 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
                   <div key={comment.id} className="p-4 bg-gray-50 rounded-lg">
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                        ?
+                        {((comment as any).author_name || '익명')[0].toUpperCase()}
                       </div>
+                      <span className="text-sm font-medium text-gray-900">
+                        {(comment as any).author_name || '익명'}
+                      </span>
+                      <span className="text-gray-400">·</span>
                       <span className="text-sm text-gray-500">
                         {new Date(comment.created_at).toLocaleDateString('ko-KR')}
                       </span>

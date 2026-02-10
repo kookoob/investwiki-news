@@ -39,13 +39,23 @@ export default function CommunityPage() {
     try {
       const { data, error } = await supabase
         .from('posts')
-        .select('*')
+        .select(`
+          *,
+          users!inner(username, id)
+        `)
         .is('deleted_at', null)
         .order('created_at', { ascending: false })
         .limit(50);
 
       if (error) throw error;
-      setPosts(data || []);
+      
+      // 닉네임 정보 추가
+      const postsWithUsernames = await Promise.all((data || []).map(async (post: any) => {
+        const username = post.users?.username || '익명';
+        return { ...post, author_name: username };
+      }));
+      
+      setPosts(postsWithUsernames);
     } catch (error) {
       console.error('Failed to fetch posts:', error);
     } finally {
@@ -92,8 +102,8 @@ export default function CommunityPage() {
                     className="block p-4 hover:bg-gray-50 transition-colors cursor-pointer"
                   >
                     <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
-                        ?
+                      <div className="flex-shrink-0 w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                        {((post as any).author_name || '익명')[0].toUpperCase()}
                       </div>
 
                       <div className="flex-1 min-w-0">
@@ -103,7 +113,9 @@ export default function CommunityPage() {
                         <p className="text-sm text-gray-600 line-clamp-2 mb-2">
                           {post.content}
                         </p>
-                        <div className="flex items-center gap-4 text-xs text-gray-500">
+                        <div className="flex items-center gap-2 text-xs text-gray-500">
+                          <span className="font-medium text-gray-700">{(post as any).author_name || '익명'}</span>
+                          <span>·</span>
                           <span>{new Date(post.created_at).toLocaleDateString('ko-KR')}</span>
                           <span>·</span>
                           <span>조회 {post.views}</span>
