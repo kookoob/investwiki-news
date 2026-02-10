@@ -1,33 +1,51 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { supabase } from '@/lib/supabase';
 import Link from 'next/link';
 import Header from '../components/Header';
+import type { User } from '@supabase/supabase-js';
 
 interface Post {
   id: string;
   title: string;
   content: string;
-  author: string;
+  user_id: string;
   views: number;
   likes: number;
-  comments: any[];
   created_at: string;
+  user_profiles?: {
+    username: string;
+    display_name: string;
+  };
 }
 
 export default function CommunityPage() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     fetchPosts();
+    checkUser();
   }, []);
+
+  async function checkUser() {
+    const { data: { user } } = await supabase.auth.getUser();
+    setUser(user);
+  }
 
   async function fetchPosts() {
     try {
-      const response = await fetch('/api/community/posts');
-      const data = await response.json();
-      setPosts(data);
+      const { data, error } = await supabase
+        .from('posts')
+        .select('*')
+        .is('deleted_at', null)
+        .order('created_at', { ascending: false })
+        .limit(50);
+
+      if (error) throw error;
+      setPosts(data || []);
     } catch (error) {
       console.error('Failed to fetch posts:', error);
     } finally {
@@ -43,12 +61,18 @@ export default function CommunityPage() {
           {/* 헤더 */}
           <div className="mb-6 flex items-center justify-between">
             <h1 className="text-3xl font-bold text-gray-900">커뮤니티</h1>
-            <Link
-              href="/community/write"
-              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors cursor-pointer"
-            >
-              글쓰기
-            </Link>
+            {user ? (
+              <Link
+                href="/community/write"
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors cursor-pointer"
+              >
+                글쓰기
+              </Link>
+            ) : (
+              <div className="text-sm text-gray-500">
+                로그인 후 글쓰기 가능
+              </div>
+            )}
           </div>
 
           {/* 게시글 목록 */}
@@ -67,12 +91,10 @@ export default function CommunityPage() {
                     className="p-4 hover:bg-gray-50 transition-colors cursor-pointer"
                   >
                     <div className="flex items-start gap-3">
-                      {/* 작성자 아이콘 */}
                       <div className="flex-shrink-0 w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
-                        {post.author[0].toUpperCase()}
+                        ?
                       </div>
 
-                      {/* 게시글 정보 */}
                       <div className="flex-1 min-w-0">
                         <h3 className="text-lg font-semibold text-gray-900 mb-1">
                           {post.title}
@@ -81,13 +103,9 @@ export default function CommunityPage() {
                           {post.content}
                         </p>
                         <div className="flex items-center gap-4 text-xs text-gray-500">
-                          <span>{post.author}</span>
-                          <span>·</span>
                           <span>{new Date(post.created_at).toLocaleDateString('ko-KR')}</span>
                           <span>·</span>
                           <span>조회 {post.views}</span>
-                          <span>·</span>
-                          <span>댓글 {post.comments.length}</span>
                         </div>
                       </div>
                     </div>

@@ -1,21 +1,39 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { supabase } from '@/lib/supabase';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import type { User } from '@supabase/supabase-js';
 
 export default function WritePage() {
   const router = useRouter();
   const [form, setForm] = useState({
     title: '',
     content: '',
-    author: '',
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [user, setUser] = useState<User | null>(null);
+  const [authLoading, setAuthLoading] = useState(true);
+
+  useEffect(() => {
+    checkUser();
+  }, []);
+
+  async function checkUser() {
+    const { data: { user } } = await supabase.auth.getUser();
+    setUser(user);
+    setAuthLoading(false);
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!user) {
+      setError('로그인이 필요합니다.');
+      return;
+    }
 
     if (!form.title.trim() || !form.content.trim()) {
       setError('제목과 내용을 입력해주세요.');
@@ -26,22 +44,22 @@ export default function WritePage() {
     setError('');
 
     try {
-      const response = await fetch('/api/community/posts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          title: form.title.trim(),
-          content: form.content.trim(),
-          author: form.author.trim() || '익명',
-        }),
-      });
+      const { data, error } = await supabase
+        .from('posts')
+        .insert([
+          {
+            user_id: user.id,
+            title: form.title.trim(),
+            content: form.content.trim(),
+            category: 'free',
+          },
+        ])
+        .select()
+        .single();
 
-      if (!response.ok) {
-        throw new Error('Failed to create post');
-      }
+      if (error) throw error;
 
-      const data = await response.json();
-      router.push(`/community`);
+      router.push('/community');
     } catch (err) {
       console.error('게시글 작성 실패:', err);
       setError('게시글 작성에 실패했습니다.');
@@ -50,9 +68,33 @@ export default function WritePage() {
     }
   };
 
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-gray-500">로딩 중...</div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+        <div className="bg-white rounded-lg p-8 max-w-md w-full text-center">
+          <h2 className="text-2xl font-bold mb-4">로그인이 필요합니다</h2>
+          <p className="text-gray-600 mb-6">커뮤니티 글을 작성하려면 로그인하세요.</p>
+          <Link
+            href="/community"
+            className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
+          >
+            커뮤니티로 돌아가기
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* 헤더 */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/community" className="text-2xl font-bold">
@@ -75,16 +117,14 @@ export default function WritePage() {
             </div>
           )}
 
-          {/* 닉네임 (선택) */}
-          <div className="mb-4">
-            <input
-              type="text"
-              value={form.author}
-              onChange={(e) => setForm({ ...form, author: e.target.value })}
-              placeholder="닉네임 (선택, 비워두면 익명)"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
-              maxLength={20}
-            />
+          {/* 사용자 정보 */}
+          <div className="mb-6 flex items-center gap-3 pb-4 border-b border-gray-200">
+            <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+              {(user.user_metadata?.name || user.email || '?')[0].toUpperCase()}
+            </div>
+            <span className="font-medium text-gray-900">
+              {user.user_metadata?.name || user.email?.split('@')[0]}
+            </span>
           </div>
 
           {/* 제목 */}
