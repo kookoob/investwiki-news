@@ -131,8 +131,8 @@ export default async function Home() {
       <EventsScroll />
 
       {/* 메인 콘텐츠 */}
-      <main className="max-w-6xl mx-auto px-4 py-6">
-        <div className="md:grid md:grid-cols-[minmax(0,800px),320px] md:gap-6 md:justify-center">
+      <main className="max-w-7xl mx-auto px-4 py-6">
+        <div className="lg:grid lg:grid-cols-[1fr,320px] lg:gap-6">
           {/* 뉴스 피드 */}
           <div className="space-y-4">
             {news.length === 0 && (
