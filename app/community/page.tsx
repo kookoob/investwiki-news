@@ -86,9 +86,10 @@ export default function CommunityPage() {
             ) : (
               <div className="divide-y divide-gray-200">
                 {posts.map((post) => (
-                  <div
+                  <Link
                     key={post.id}
-                    className="p-4 hover:bg-gray-50 transition-colors cursor-pointer"
+                    href={`/community/${post.id}`}
+                    className="block p-4 hover:bg-gray-50 transition-colors cursor-pointer"
                   >
                     <div className="flex items-start gap-3">
                       <div className="flex-shrink-0 w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
@@ -109,7 +110,7 @@ export default function CommunityPage() {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             )}
