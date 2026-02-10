@@ -16,13 +16,28 @@ export default function BookmarkButton({ itemId, itemType, size = 'md' }: Bookma
   const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
-    const savedUser = localStorage.getItem('stockhub_user');
-    if (savedUser) {
-      const userData = JSON.parse(savedUser);
-      setUser(userData);
-      checkBookmark(userData.id);
+    async function loadUser() {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        setUser(user);
+        checkBookmark(user.id);
+      }
     }
-  }, []);
+    loadUser();
+    
+    // 로그인 상태 변화 감지
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (session?.user) {
+        setUser(session.user);
+        checkBookmark(session.user.id);
+      } else {
+        setUser(null);
+        setIsBookmarked(false);
+      }
+    });
+    
+    return () => subscription.unsubscribe();
+  }, [itemId, itemType]);
 
   async function checkBookmark(userId: string) {
     try {
