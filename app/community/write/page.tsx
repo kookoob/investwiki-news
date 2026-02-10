@@ -40,9 +40,9 @@ export default function WritePage() {
       return;
     }
 
-    // 5MB 제한
-    if (file.size > 5 * 1024 * 1024) {
-      alert('이미지 크기는 5MB 이하로 제한됩니다');
+    // 1MB 제한
+    if (file.size > 1024 * 1024) {
+      alert('이미지 크기는 1MB 이하로 제한됩니다');
       return;
     }
 
@@ -243,7 +243,7 @@ export default function WritePage() {
                 file:bg-blue-50 file:text-blue-700
                 hover:file:bg-blue-100 file:cursor-pointer"
             />
-            <p className="mt-1 text-xs text-gray-500">JPG, PNG, GIF (최대 5MB)</p>
+            <p className="mt-1 text-xs text-gray-500">JPG, PNG, GIF (최대 1MB)</p>
             
             {/* 이미지 미리보기 */}
             {imagePreview && (

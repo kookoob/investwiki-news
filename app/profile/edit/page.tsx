@@ -55,9 +55,9 @@ export default function ProfileEditPage() {
       return;
     }
 
-    // 파일 크기 제한 (5MB)
-    if (file.size > 5 * 1024 * 1024) {
-      alert('이미지 크기는 5MB 이하로 제한됩니다');
+    // 파일 크기 제한 (1MB)
+    if (file.size > 1024 * 1024) {
+      alert('이미지 크기는 1MB 이하로 제한됩니다');
       return;
     }
 
@@ -200,7 +200,7 @@ export default function ProfileEditPage() {
                   className="hidden"
                 />
                 <p className="text-xs text-gray-500 mt-2">
-                  JPG, PNG, GIF (최대 5MB)
+                  JPG, PNG, GIF (최대 1MB)
                 </p>
                 {form.avatar_url && (
                   <button
