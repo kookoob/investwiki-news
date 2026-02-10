@@ -39,19 +39,18 @@ export default function ProfilePage() {
 
   async function checkUser() {
     try {
-      // localStorage에서 사용자 정보 가져오기
-      const savedUser = localStorage.getItem('stockhub_user');
+      // Supabase에서 사용자 정보 가져오기
+      const { data: { user } } = await supabase.auth.getUser();
       
-      if (!savedUser) {
-        router.push('/community');
+      if (!user) {
+        router.push('/');
         return;
       }
 
-      const userData = JSON.parse(savedUser);
-      setUser(userData);
-      await fetchProfile(userData.id);
-      await fetchLevel(userData.id);
-      await fetchStats(userData.id);
+      setUser(user);
+      await fetchProfile(user.id);
+      await fetchLevel(user.id);
+      await fetchStats(user.id);
     } catch (error) {
       console.error('사용자 정보 로딩 실패:', error);
     } finally {
@@ -148,8 +147,8 @@ export default function ProfilePage() {
   }
 
   async function handleLogout() {
-    localStorage.removeItem('stockhub_user');
-    router.push('/community');
+    await supabase.auth.signOut();
+    router.push('/');
   }
 
   if (loading) {
@@ -179,21 +178,21 @@ export default function ProfilePage() {
         <div className="bg-white rounded-lg p-6 text-center border border-gray-200">
           {/* 아바타 */}
           <div className="w-20 h-20 mx-auto mb-4 bg-blue-500 rounded-full flex items-center justify-center text-white text-3xl font-bold overflow-hidden">
-            {user?.avatar_url ? (
-              <img src={user.avatar_url} alt="프로필" className="w-full h-full object-cover" />
+            {user?.user_metadata?.avatar_url ? (
+              <img src={user.user_metadata.avatar_url} alt="프로필" className="w-full h-full object-cover" />
             ) : (
-              profile?.display_name?.[0] || profile?.username?.[0] || '?'
+              (user?.user_metadata?.name || user?.email || '?')[0].toUpperCase()
             )}
           </div>
 
           {/* 뱃지 */}
           <div className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full mb-2">
-            브론즈
+            레벨 {level?.level || 1}
           </div>
 
           {/* 이름 */}
           <h2 className="text-2xl font-bold text-gray-900 mb-1">
-            {profile?.display_name || profile?.username || '익명'}
+            {user?.user_metadata?.name || profile?.display_name || profile?.username || user?.email?.split('@')[0] || '익명'}
           </h2>
           <p className="text-gray-600 mb-4">{user?.email}</p>
 
