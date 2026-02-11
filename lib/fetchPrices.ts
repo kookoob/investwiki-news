@@ -1,3 +1,6 @@
+import { promises as fs } from 'fs'
+import path from 'path'
+
 export interface TickerData {
   symbol: string
   name: string
@@ -6,12 +9,42 @@ export interface TickerData {
   changePercent: number
 }
 
-// 티커별 한글 이름 매핑
+// 한글 매핑 캐시
+let koreanStocksMap: Record<string, string> | null = null
+
+// 한국 주식 한글 이름 로드
+async function loadKoreanStocksMap() {
+  if (koreanStocksMap) return koreanStocksMap
+  
+  try {
+    const filePath = path.join(process.cwd(), 'public', 'korean-stocks.json')
+    const fileContents = await fs.readFile(filePath, 'utf8')
+    const mapping = JSON.parse(fileContents)
+    
+    // 역방향 매핑 생성 (티커 → 이름)
+    koreanStocksMap = {}
+    for (const [name, ticker] of Object.entries(mapping)) {
+      // 대문자 버전만 사용 (중복 제거)
+      if (name === name.toUpperCase() || !name.match(/[A-Z]/)) {
+        koreanStocksMap[ticker as string] = name
+      }
+    }
+    
+    return koreanStocksMap
+  } catch (error) {
+    console.error('한국 주식 매핑 로드 실패:', error)
+    return {}
+  }
+}
+
+// 티커별 한글 이름 매핑 (기본값 - JSON 로드 실패 시 사용)
 const TICKER_NAMES: Record<string, string> = {
   // 지수
   '^DJI': '다우존스',
   '^GSPC': 'S&P 500',
   '^IXIC': '나스닥',
+  '^KS11': 'KOSPI',
+  '^KQ11': 'KOSDAQ',
   
   // 암호화폐
   'BTC-USD': '비트코인',
@@ -28,38 +61,35 @@ const TICKER_NAMES: Record<string, string> = {
   'NVDA': '엔비디아',
   'META': '메타',
   'NFLX': '넷플릭스',
-  
-  // 한국 주식 (KOSPI - .KS)
-  '005930.KS': '삼성전자',
-  '000660.KS': 'SK하이닉스',
-  '035420.KS': '네이버',
-  '035720.KS': '카카오',
-  '005380.KS': '현대차',
-  '373220.KS': 'LG에너지솔루션',
-  '000270.KS': '기아',
-  '051910.KS': 'LG화학',
-  '006400.KS': '삼성SDI',
-  '207940.KS': '삼성바이오로직스',
-  '005490.KS': 'POSCO홀딩스',
-  '068270.KS': '셀트리온',
-  '028260.KS': '삼성물산',
-  '105560.KS': 'KB금융',
-  '055550.KS': '신한지주',
-  
-  // 한국 주식 (KOSDAQ - .KQ)
-  '036570.KQ': '엔씨소프트',
-  '086520.KQ': '에코프로',
-  '247540.KQ': '에코프로비엠',
-  '293490.KQ': '카카오게임즈',
-  '112040.KQ': '위메이드',
-  '251270.KQ': '넷마블',
-  '041510.KQ': 'SM엔터테인먼트',
-  '035900.KQ': 'JYP Ent.',
-  '122870.KQ': 'YG엔터테인먼트'
+  'JPM': 'JP모건',
+  'BAC': '뱅크오브아메리카',
+  'V': '비자',
+  'MA': '마스터카드',
+  'WMT': '월마트',
+  'DIS': '디즈니',
+  'INTC': '인텔',
+  'AMD': 'AMD',
+  'PYPL': '페이팔',
+  'ADBE': '어도비',
+  'CRM': '세일즈포스',
+  'CSCO': '시스코',
+  'PFE': '화이자',
+  'MRK': '머크',
+  'JNJ': '존슨앤존슨',
+  'UNH': '유나이티드헬스',
+  'XOM': '엑손모빌',
+  'CVX': '셰브론',
+  'BA': '보잉',
+  'CAT': '캐터필러',
+  'MMM': '3M',
+  'GE': 'GE'
 }
 
 export async function fetchTickerPrices(tickers: string[]): Promise<TickerData[]> {
   if (!tickers || tickers.length === 0) return []
+
+  // 한국 주식 매핑 로드
+  const koreanMap = await loadKoreanStocksMap()
 
   try {
     const results = await Promise.all(
@@ -77,9 +107,15 @@ export async function fetchTickerPrices(tickers: string[]): Promise<TickerData[]
           const change = currentPrice - previousClose
           const changePercent = (change / previousClose) * 100
 
+          // 이름 결정 우선순위:
+          // 1. 한국 주식 매핑 (korean-stocks.json)
+          // 2. 하드코딩 매핑 (TICKER_NAMES)
+          // 3. Yahoo Finance API 이름
+          let name = koreanMap[symbol] || TICKER_NAMES[symbol] || meta.longName || meta.shortName || symbol
+
           return {
             symbol,
-            name: TICKER_NAMES[symbol] || meta.longName || meta.shortName || symbol,
+            name,
             price: currentPrice,
             change,
             changePercent
