@@ -10,7 +10,7 @@ export async function GET() {
     const baseUrl = 'https://stockhub.kr'
     const buildDate = new Date().toUTCString()
 
-    const rssItems = news.slice(0, 50).map((item: any) => `
+    const rssItems = news.slice(0, 100).map((item: any) => `
     <item>
       <title><![CDATA[${item.title}]]></title>
       <link>${baseUrl}/news/${item.id}</link>
