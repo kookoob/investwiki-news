@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { supabase } from '@/lib/supabase'
+import { ensureUserExists } from '@/lib/ensureUser'
 import Link from 'next/link'
 import type { User } from '@supabase/supabase-js'
 
@@ -19,11 +20,13 @@ export default function AuthButton() {
     // 현재 사용자 확인
     supabase.auth.getUser().then(({ data: { user } }) => {
       setUser(user)
+      if (user) ensureUserExists(user)
     })
 
     // 인증 상태 변경 감지
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       setUser(session?.user ?? null)
+      if (session?.user) ensureUserExists(session.user)
     })
 
     return () => subscription.unsubscribe()

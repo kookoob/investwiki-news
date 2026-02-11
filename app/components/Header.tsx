@@ -103,6 +103,22 @@ export default function Header() {
           
           {/* 우측 버튼들 */}
           <div className="flex items-center gap-2">
+            {/* 검색 아이콘 */}
+            <Link
+              href="/search"
+              className={`p-2 rounded-lg transition-colors ${
+                isActive('/search')
+                  ? 'text-blue-600 bg-blue-50'
+                  : 'text-gray-600 hover:bg-gray-100'
+              }`}
+              aria-label="검색"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </Link>
+            
+            {/* 텔레그램 버튼 */}
             <a
               href="https://t.me/stockhubkr"
               target="_blank"
@@ -114,6 +130,7 @@ export default function Header() {
               </svg>
               <span className="hidden sm:inline">텔레그램</span>
             </a>
+            
             <AuthButton />
           </div>
         </div>
@@ -170,6 +187,18 @@ export default function Header() {
           >
             📨 문의
           </Link>
+          {isAdmin && (
+            <Link
+              href="/admin/inquiries"
+              className={`px-3 py-2 rounded-lg font-medium text-sm whitespace-nowrap ${
+                isActive('/admin')
+                  ? 'text-red-600 bg-red-50'
+                  : 'text-red-600 hover:bg-red-50'
+              }`}
+            >
+              🔧 관리자
+            </Link>
+          )}
         </nav>
       </div>
     </header>

@@ -11,9 +11,6 @@ interface BookmarkButtonProps {
 }
 
 export default function BookmarkButton({ itemId, itemType, size = 'md' }: BookmarkButtonProps) {
-  // 임시로 북마크 기능 비활성화 (Supabase 관계 설정 문제)
-  return null;
-  
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState<any>(null);

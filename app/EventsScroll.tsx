@@ -12,6 +12,9 @@ interface Event {
   type?: string;
   ticker?: string;
   company?: string;
+  announced?: boolean;  // 실적 발표 완료 여부
+  eps?: string | null;
+  sales?: string | null;
 }
 
 async function getEvents(): Promise<Event[]> {
@@ -52,7 +55,18 @@ function getCompanyName(event: Event): string {
 }
 
 export default async function EventsScroll() {
-  const events = await getEvents();
+  const allEvents = await getEvents();
+  
+  // 오늘 이후 이벤트만 필터링
+  const now = new Date();
+  now.setHours(0, 0, 0, 0);
+  const events = allEvents
+    .filter((event) => {
+      const eventDate = new Date(event.date);
+      eventDate.setHours(0, 0, 0, 0);
+      return eventDate >= now;
+    })
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
   if (events.length === 0) {
     return null;
@@ -69,7 +83,7 @@ export default async function EventsScroll() {
           {events.slice(0, 5).map((event) => (
             <Link
               key={event.id}
-              href={`/events/${event.id}`}
+              href={`/events/${encodeURIComponent(event.id)}`}
               className="flex-shrink-0 w-64 p-3 rounded-lg border border-gray-200 hover:border-blue-300 transition-colors bg-gray-50"
             >
               <div className="flex items-start gap-2">
@@ -80,7 +94,15 @@ export default async function EventsScroll() {
                   </p>
                   <p className="text-xs text-gray-600">
                     {formatDate(event.date)}
-                    {event.time && ` · ${event.time} KST`}
+                    {event.announced ? (
+                      <span className="text-red-600 font-semibold ml-1">
+                        · 실적발표({event.time} KST)
+                      </span>
+                    ) : event.time && event.time !== '미정' && event.time !== '00:00' ? (
+                      ` · ${event.time} KST`
+                    ) : (
+                      ' · 시간 미정'
+                    )}
                   </p>
                 </div>
               </div>

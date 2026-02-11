@@ -121,8 +121,8 @@ export default function Comments({ newsId }: { newsId: string }) {
         onSuccess={() => loadComments()}
       />
 
-      <div className="mt-8 border-t border-gray-200 pt-8">
-        <h3 className="text-xl font-bold mb-6">
+      <div className="mt-8 border-t border-gray-200 dark:border-gray-700 pt-8">
+        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
           💬 댓글 {comments.length}개
         </h3>
 
@@ -135,7 +135,7 @@ export default function Comments({ newsId }: { newsId: string }) {
             placeholder={user ? "댓글을 입력하세요..." : "댓글을 작성하려면 클릭하세요"}
             readOnly={!user}
             rows={3}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none cursor-pointer"
+            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none cursor-pointer bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
           />
 
         <div className="mt-3 flex justify-end">
@@ -152,21 +152,21 @@ export default function Comments({ newsId }: { newsId: string }) {
       {/* 댓글 목록 */}
       <div className="space-y-4">
         {comments.length === 0 ? (
-          <p className="text-center text-gray-500 py-8">
+          <p className="text-center text-gray-500 dark:text-gray-400 py-8">
             아직 댓글이 없습니다. 첫 댓글을 남겨보세요!
           </p>
         ) : (
           comments.map((comment) => (
             <div
               key={comment.id}
-              className="bg-gray-50 rounded-lg p-4"
+              className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700"
             >
               <div className="flex items-start justify-between mb-2">
                 <div>
-                  <span className="font-medium text-gray-900">
+                  <span className="font-medium text-gray-900 dark:text-white">
                     {comment.user_name || '익명'}
                   </span>
-                  <span className="text-sm text-gray-500 ml-2">
+                  <span className="text-sm text-gray-500 dark:text-gray-400 ml-2">
                     {new Date(comment.created_at).toLocaleString('ko-KR', {
                       year: 'numeric',
                       month: '2-digit',
@@ -179,13 +179,13 @@ export default function Comments({ newsId }: { newsId: string }) {
                 {user && user.id === comment.user_id && (
                   <button
                     onClick={() => handleDelete(comment.id)}
-                    className="text-sm text-red-600 hover:text-red-700"
+                    className="text-sm text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300"
                   >
                     삭제
                   </button>
                 )}
               </div>
-              <p className="text-gray-700 whitespace-pre-wrap">
+              <p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
                 {comment.content}
               </p>
             </div>

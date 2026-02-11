@@ -11,6 +11,9 @@ interface Event {
   ticker?: string;
   company?: string;
   description?: string;
+  announced?: boolean;  // 실적 발표 완료 여부
+  eps?: string | null;
+  sales?: string | null;
 }
 
 function formatDate(dateStr: string): string {
@@ -44,11 +47,19 @@ function getCompanyName(event: Event): string {
   return event.title;
 }
 
-interface EventsSidebarProps {
-  events: Event[];
+interface WeeklySummary {
+  id: string;
+  title: string;
+  contents: string;
+  additionalContents?: string;
 }
 
-export default function EventsSidebar({ events }: EventsSidebarProps) {
+interface EventsSidebarProps {
+  events: Event[];
+  weeklySummary?: WeeklySummary | null;
+}
+
+export default function EventsSidebar({ events, weeklySummary }: EventsSidebarProps) {
   const topEvents = events.slice(0, 5);
 
   if (topEvents.length === 0) {
@@ -66,7 +77,7 @@ export default function EventsSidebar({ events }: EventsSidebarProps) {
           {topEvents.map((event) => (
             <Link
               key={event.id}
-              href={`/events/${event.id}`}
+              href={`/events/${encodeURIComponent(event.id)}`}
               className="block p-3 rounded-lg hover:bg-gray-50 transition-colors border border-gray-100"
             >
               <div className="flex items-start gap-2">
@@ -77,13 +88,44 @@ export default function EventsSidebar({ events }: EventsSidebarProps) {
                   </p>
                   <p className="text-xs text-gray-600">
                     {formatDate(event.date)}
-                    {event.time && ` · ${event.time} KST`}
+                    {event.announced ? (
+                      <span className="text-red-600 font-semibold ml-1">
+                        · 실적발표({event.time} KST)
+                      </span>
+                    ) : event.time && event.time !== '미정' && event.time !== '00:00' ? (
+                      ` · ${event.time} KST`
+                    ) : (
+                      ' · 시간 미정'
+                    )}
                   </p>
                 </div>
               </div>
             </Link>
           ))}
         </div>
+
+        {weeklySummary && (
+          <div className="mt-4 pt-4 border-t border-gray-200">
+            <div className="mb-2">
+              <h4 className="font-bold text-gray-900 text-sm flex items-center gap-1">
+                🤖 이번 주 주목
+              </h4>
+            </div>
+            <div className="bg-blue-50 rounded-lg p-3">
+              <p className="text-sm font-semibold text-blue-900 mb-2">
+                {weeklySummary.title}
+              </p>
+              <p className="text-xs text-gray-700 leading-relaxed mb-2">
+                {weeklySummary.contents}
+              </p>
+              {weeklySummary.additionalContents && (
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  {weeklySummary.additionalContents}
+                </p>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </aside>
   );

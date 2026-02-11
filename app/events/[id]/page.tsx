@@ -2,9 +2,11 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { getIndicatorInfo } from '@/lib/economicIndicators';
 
-// 동적 렌더링 강제
-export const dynamic = 'force-dynamic';
+// ISR: 60초마다 재생성
+export const revalidate = 60;
+export const dynamicParams = true;
 
 interface Event {
   id: string;
@@ -25,6 +27,12 @@ interface Event {
   country?: string;
   importance?: string;
   category?: string;
+  announced?: boolean;  // 실적 발표 완료 여부
+  eps?: string | null;   // 실제 EPS
+  eps_est?: string | null;  // 예상 EPS
+  sales?: string | null;    // 실제 매출
+  sales_est?: string | null; // 예상 매출
+  ai_comment?: string;      // AI 코멘트
 }
 
 async function getAllEvents(): Promise<Event[]> {
@@ -39,11 +47,10 @@ async function getAllEvents(): Promise<Event[]> {
 
 async function getEvent(id: string): Promise<Event | null> {
   const events = await getAllEvents();
-  return events.find((e: Event) => e.id === id) || null;
+  // URL 디코딩 처리 (한글 ID 지원)
+  const decodedId = decodeURIComponent(id);
+  return events.find((e: Event) => e.id === decodedId) || null;
 }
-
-// 동적 경로 허용 (정적 생성 비활성화)
-export const dynamicParams = true;
 
 function formatMarketCap(marketCap: number): string {
   if (marketCap >= 1_000_000_000_000) {
@@ -68,6 +75,7 @@ export default async function EventDetailPage({
 
   const isEarnings = event.type === 'earnings';
   const isEconomic = event.type === 'economic';
+  const indicatorInfo = isEconomic ? getIndicatorInfo(event.title) : null;
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -98,12 +106,20 @@ export default async function EventDetailPage({
                   weekday: 'short',
                   timeZone: 'Asia/Seoul'
                 })}
-                {event.time && (
+                {event.announced ? (
+                  <span className="ml-2">
+                    <span className="font-semibold text-red-600 dark:text-red-400">
+                      실적발표({event.time} KST)
+                    </span>
+                  </span>
+                ) : event.time && event.time !== '미정' ? (
                   <span className="ml-2">
                     <span className="font-medium text-blue-600 dark:text-blue-400">{event.time_kr || event.time}</span>
                     <span className="ml-1 text-sm text-gray-500 dark:text-gray-400">(한국시간)</span>
                   </span>
-                )}
+                ) : event.time === '미정' ? (
+                  <span className="ml-2 text-gray-500 dark:text-gray-400">시간 미정</span>
+                ) : null}
               </p>
             </div>
           </div>
@@ -111,13 +127,48 @@ export default async function EventDetailPage({
           {/* 실적 발표 정보 */}
           {isEarnings && (
             <div className="space-y-4">
+              {/* 발표 완료 - 실제 실적 */}
+              {event.announced && (
+                <div className="bg-red-50 dark:bg-black border-2 border-red-500 dark:border-red-700 rounded-lg p-4">
+                  <h2 className="font-bold text-red-900 dark:text-red-400 mb-3 flex items-center gap-2">
+                    <span className="text-xl">🔴</span> 실적 발표 완료
+                  </h2>
+                  <div className="grid grid-cols-2 gap-4 mb-4">
+                    {event.eps && (
+                      <div>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">실제 EPS</p>
+                        <p className="font-bold text-xl text-red-900 dark:text-red-400">{event.eps}</p>
+                        {event.eps_est && (
+                          <p className="text-xs text-gray-500 dark:text-gray-400">예상: {event.eps_est}</p>
+                        )}
+                      </div>
+                    )}
+                    {event.sales && (
+                      <div>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">실제 매출</p>
+                        <p className="font-bold text-xl text-red-900 dark:text-red-400">{event.sales}</p>
+                        {event.sales_est && (
+                          <p className="text-xs text-gray-500 dark:text-gray-400">예상: {event.sales_est}</p>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                  {event.ai_comment && (
+                    <div className="bg-white dark:bg-gray-800 rounded p-3 border border-red-200 dark:border-red-900">
+                      <p className="text-sm text-gray-700 dark:text-gray-200">{event.ai_comment}</p>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* 발표 전 - 예상 실적 */}
               <div className="bg-blue-50 dark:bg-black border border-blue-200 dark:border-blue-700 rounded-lg p-4">
-                <h2 className="font-bold text-blue-900 dark:text-blue-400 mb-3">📊 실적 발표 정보</h2>
+                <h2 className="font-bold text-blue-900 dark:text-blue-400 mb-3">📊 {event.announced ? '발표 전 예상' : '실적 발표 정보'}</h2>
                 <div className="grid grid-cols-2 gap-4">
                   {event.ticker && (
                     <div>
                       <p className="text-sm text-gray-600 dark:text-gray-400">티커</p>
-                      <p className="font-semibold text-gray-900 dark:text-white">${event.ticker}</p>
+                      <p className="font-semibold text-gray-900 dark:text-white">{event.ticker}</p>
                     </div>
                   )}
                   {event.sector && (
@@ -130,6 +181,18 @@ export default async function EventDetailPage({
                     <div>
                       <p className="text-sm text-gray-600 dark:text-gray-400">시가총액</p>
                       <p className="font-semibold text-gray-900 dark:text-white">{formatMarketCap(event.market_cap)}</p>
+                    </div>
+                  )}
+                  {event.eps_est && (
+                    <div>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">예상 EPS</p>
+                      <p className="font-semibold text-gray-900 dark:text-white">{event.eps_est}</p>
+                    </div>
+                  )}
+                  {event.sales_est && (
+                    <div>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">예상 매출</p>
+                      <p className="font-semibold text-gray-900 dark:text-white">{event.sales_est}</p>
                     </div>
                   )}
                   {event.eps_estimate && (
@@ -145,6 +208,12 @@ export default async function EventDetailPage({
                     </div>
                   )}
                 </div>
+                {!event.announced && event.ai_comment && (
+                  <div className="mt-4 bg-white dark:bg-gray-800 rounded p-3 border border-blue-200 dark:border-blue-900">
+                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">💡 AI 전망</p>
+                    <p className="text-sm text-gray-700 dark:text-gray-200">{event.ai_comment}</p>
+                  </div>
+                )}
               </div>
 
               <div className="bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-lg p-4">
@@ -159,11 +228,13 @@ export default async function EventDetailPage({
           )}
 
           {/* 경제 지표 정보 */}
-          {isEconomic && event.description && (
+          {isEconomic && (
             <div className="space-y-4">
               <div className="bg-yellow-50 dark:bg-black border border-yellow-200 dark:border-yellow-700 rounded-lg p-4">
                 <h2 className="font-bold text-yellow-900 dark:text-yellow-400 mb-3">📈 경제 지표 정보</h2>
-                <p className="text-gray-700 dark:text-white mb-4">{event.description}</p>
+                {event.description && (
+                  <p className="text-gray-700 dark:text-white mb-4">{event.description}</p>
+                )}
                 
                 <div className="grid grid-cols-2 gap-4">
                   {event.country && (
@@ -189,6 +260,44 @@ export default async function EventDetailPage({
                   )}
                 </div>
               </div>
+
+              {/* 상세 지표 설명 (토스증권 스타일) */}
+              {indicatorInfo && (
+                <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
+                    {indicatorInfo.fullName}
+                  </h3>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+                        <span className="text-blue-600">📊</span> 이 지표는 무엇인가요?
+                      </h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                        {indicatorInfo.description}
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+                        <span className="text-red-600">🔥</span> 왜 중요한가요?
+                      </h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                        {indicatorInfo.importance}
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+                        <span className="text-green-600">💡</span> 어떻게 해석하나요?
+                      </h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                        {indicatorInfo.interpretation}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               <div className="bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-lg p-4">
                 <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-2">💡 주요 포인트</h3>

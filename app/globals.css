@@ -96,6 +96,15 @@ body {
   background-color: #2a2a2a !important;
 }
 
+/* AI 요약 및 정보 박스 다크모드 배경 */
+.dark .bg-blue-50 {
+  background-color: #000 !important;
+}
+
+.dark .bg-yellow-50 {
+  background-color: #000 !important;
+}
+
 @keyframes slide-down {
   from {
     transform: translateY(-100%);

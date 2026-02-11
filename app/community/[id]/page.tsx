@@ -67,15 +67,19 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
       
       // 작성자 정보 별도로 가져오기
       let authorName = '익명';
+      let authorUsername = '';
+      let authorAvatar = '';
       try {
         const { data: userData } = await supabase
           .from('users')
-          .select('username')
+          .select('username, display_name, avatar_url')
           .eq('id', postData.user_id)
           .maybeSingle();
         
-        if (userData?.username) {
-          authorName = userData.username;
+        if (userData) {
+          authorName = userData.display_name || userData.username;
+          authorUsername = userData.username || '';
+          authorAvatar = userData.avatar_url || '';
         }
       } catch (err) {
         console.error('작성자 정보 로딩 실패:', err);
@@ -84,7 +88,9 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
       // 닉네임 정보 추가
       const postWithUsername = {
         ...postData,
-        author_name: authorName
+        author_name: authorName,
+        author_username: authorUsername,
+        author_avatar: authorAvatar
       };
       
       setPost(postWithUsername as any);
@@ -117,19 +123,23 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
         try {
           const { data: userData } = await supabase
             .from('users')
-            .select('username')
+            .select('username, display_name, avatar_url')
             .eq('id', comment.user_id)
             .maybeSingle();
           
           return {
             ...comment,
-            author_name: userData?.username || '익명'
+            author_name: userData?.display_name || userData?.username || '익명',
+            author_username: userData?.username || '',
+            author_avatar: userData?.avatar_url || ''
           };
         } catch (err) {
           console.error('댓글 작성자 정보 로딩 실패:', err);
           return {
             ...comment,
-            author_name: '익명'
+            author_name: '익명',
+            author_username: '',
+            author_avatar: ''
           };
         }
       }));
@@ -312,10 +322,30 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
             <h1 className="text-3xl font-bold text-gray-900 mb-4">{post.title}</h1>
             <div className="flex items-center gap-3 text-sm mb-6 pb-6 border-b border-gray-200">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xs">
-                  {((post as any).author_name || '익명')[0].toUpperCase()}
-                </div>
-                <span className="font-medium text-gray-900">{(post as any).author_name || '익명'}</span>
+                {/* 작성자 프로필 이미지 - 클릭 가능 */}
+                <Link href={`/profile/${post.user_id}`} className="flex-shrink-0">
+                  {(post as any).author_avatar ? (
+                    <img
+                      src={(post as any).author_avatar}
+                      alt={(post as any).author_name || '익명'}
+                      className="w-8 h-8 rounded-full object-cover hover:ring-2 hover:ring-blue-500 transition-all"
+                    />
+                  ) : (
+                    <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xs hover:ring-2 hover:ring-blue-400 transition-all">
+                      {((post as any).author_name || '익명')[0].toUpperCase()}
+                    </div>
+                  )}
+                </Link>
+                {/* 작성자 닉네임 - 클릭 가능 */}
+                <Link 
+                  href={`/profile/${post.user_id}`}
+                  className="font-medium text-gray-900 hover:text-blue-600 transition-colors"
+                >
+                  {(post as any).author_name || '익명'}
+                </Link>
+                <span className="text-gray-400 text-xs">
+                  @{(post as any).author_username || 'unknown'}
+                </span>
               </div>
               <span className="text-gray-400">·</span>
               <span className="text-gray-500">{new Date(post.created_at).toLocaleDateString('ko-KR')}</span>
@@ -369,12 +399,27 @@ export default function PostDetailPage({ params }: { params: Promise<{ id: strin
                 comments.map((comment) => (
                   <div key={comment.id} className="p-4 bg-gray-50 rounded-lg">
                     <div className="flex items-center gap-2 mb-2">
-                      <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                        {((comment as any).author_name || '익명')[0].toUpperCase()}
-                      </div>
-                      <span className="text-sm font-medium text-gray-900">
+                      {/* 댓글 작성자 프로필 이미지 */}
+                      <Link href={`/profile/${comment.user_id}`} className="flex-shrink-0">
+                        {(comment as any).author_avatar ? (
+                          <img
+                            src={(comment as any).author_avatar}
+                            alt={(comment as any).author_name || '익명'}
+                            className="w-8 h-8 rounded-full object-cover hover:ring-2 hover:ring-blue-500 transition-all"
+                          />
+                        ) : (
+                          <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold hover:ring-2 hover:ring-blue-400 transition-all">
+                            {((comment as any).author_name || '익명')[0].toUpperCase()}
+                          </div>
+                        )}
+                      </Link>
+                      {/* 댓글 작성자 닉네임 */}
+                      <Link
+                        href={`/profile/${comment.user_id}`}
+                        className="text-sm font-medium text-gray-900 hover:text-blue-600 transition-colors"
+                      >
                         {(comment as any).author_name || '익명'}
-                      </span>
+                      </Link>
                       <span className="text-gray-400">·</span>
                       <span className="text-sm text-gray-500">
                         {new Date(comment.created_at).toLocaleDateString('ko-KR')}

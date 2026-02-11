@@ -141,8 +141,8 @@ export default function VoteButtons({ newsId }: VoteButtonsProps) {
         onSuccess={() => loadVotes()}
       />
 
-      <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
-        <h3 className="text-lg font-bold text-gray-900 mb-4">
+      <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+        <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
           📊 호재/악재 투표
         </h3>
 
@@ -154,7 +154,7 @@ export default function VoteButtons({ newsId }: VoteButtonsProps) {
           className={`flex-1 flex flex-col items-center gap-2 px-4 py-4 rounded-lg font-medium transition-all disabled:opacity-50 ${
             userVote === 'bullish'
               ? 'bg-green-500 text-white shadow-lg scale-105'
-              : 'bg-white border-2 border-green-500 text-green-600 hover:bg-green-50'
+              : 'bg-white dark:bg-gray-700 border-2 border-green-500 dark:border-green-400 text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-gray-600'
           }`}
         >
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -171,7 +171,7 @@ export default function VoteButtons({ newsId }: VoteButtonsProps) {
           className={`flex-1 flex flex-col items-center gap-2 px-4 py-4 rounded-lg font-medium transition-all disabled:opacity-50 ${
             userVote === 'bearish'
               ? 'bg-red-500 text-white shadow-lg scale-105'
-              : 'bg-white border-2 border-red-500 text-red-600 hover:bg-red-50'
+              : 'bg-white dark:bg-gray-700 border-2 border-red-500 dark:border-red-400 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-gray-600'
           }`}
         >
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -186,39 +186,39 @@ export default function VoteButtons({ newsId }: VoteButtonsProps) {
       {totalVotes > 0 && (
         <div className="space-y-2">
           <div className="flex items-center gap-2 text-sm">
-            <span className="text-green-600 font-medium w-12">호재</span>
-            <div className="flex-1 bg-gray-200 rounded-full h-2 overflow-hidden">
+            <span className="text-green-600 dark:text-green-400 font-medium w-12">호재</span>
+            <div className="flex-1 bg-gray-200 dark:bg-gray-600 rounded-full h-2 overflow-hidden">
               <div
-                className="bg-green-500 h-full transition-all duration-500"
+                className="bg-green-500 dark:bg-green-400 h-full transition-all duration-500"
                 style={{ width: `${bullishPercent}%` }}
               />
             </div>
-            <span className="text-gray-600 font-medium w-12 text-right">
+            <span className="text-gray-600 dark:text-gray-300 font-medium w-12 text-right">
               {bullishPercent.toFixed(0)}%
             </span>
           </div>
 
           <div className="flex items-center gap-2 text-sm">
-            <span className="text-red-600 font-medium w-12">악재</span>
-            <div className="flex-1 bg-gray-200 rounded-full h-2 overflow-hidden">
+            <span className="text-red-600 dark:text-red-400 font-medium w-12">악재</span>
+            <div className="flex-1 bg-gray-200 dark:bg-gray-600 rounded-full h-2 overflow-hidden">
               <div
-                className="bg-red-500 h-full transition-all duration-500"
+                className="bg-red-500 dark:bg-red-400 h-full transition-all duration-500"
                 style={{ width: `${bearishPercent}%` }}
               />
             </div>
-            <span className="text-gray-600 font-medium w-12 text-right">
+            <span className="text-gray-600 dark:text-gray-300 font-medium w-12 text-right">
               {bearishPercent.toFixed(0)}%
             </span>
           </div>
 
-          <p className="text-xs text-gray-500 text-center mt-3">
+          <p className="text-xs text-gray-500 dark:text-gray-400 text-center mt-3">
             총 {totalVotes}명이 투표했습니다
           </p>
         </div>
       )}
 
       {totalVotes === 0 && (
-        <p className="text-sm text-gray-500 text-center">
+        <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
           첫 투표를 해보세요!
         </p>
       )}

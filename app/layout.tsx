@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   manifest: "/manifest.json",
-  themeColor: "#2563eb",
+  themeColor: "#111827",
   viewport: "width=device-width, initial-scale=1, maximum-scale=1",
   appleWebApp: {
     capable: true,
@@ -76,7 +76,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" className="dark">
       <head>
         <meta name="google-site-verification" content="aL-dmCAtmOJFBGBSB7Sxu9K0gQw9WvDy3Srg3unDLn8" />
         <meta name="naver-site-verification" content="846a9ed4c727ca52c2a22402746a29070f83ed50" />
@@ -84,19 +84,6 @@ export default function RootLayout({
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1539404481334883"
           crossOrigin="anonymous"
-        />
-        {/* 다크모드 초기화 (깜빡임 방지) */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                const darkMode = localStorage.getItem('darkMode') === 'true';
-                if (darkMode) {
-                  document.documentElement.classList.add('dark');
-                }
-              })();
-            `,
-          }}
         />
       </head>
       <body

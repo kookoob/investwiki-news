@@ -1,0 +1,83 @@
+{
+  "id": "weekly_summary_20260209",
+  "title": "글로벌 경제 나침반: 주요 경제 지표 발표 주간",
+  "contents": "이번 주는 주요 경제 지표 발표가 집중되어 있습니다. 특히, 물가 상승률 지표는 금리 정책 방향성을 가늠하는 핵심 지표로, 투자 심리에 큰 영향을 미칠 것으로 예상됩니다. 만약 예상치를 상회하는 수치가 발표된다면, 긴축 우려가 다시 고조되며 시장 변동성이 확대될 수 있습니다. 반대로, 안정적인 수치가 발표된다면, 금리 인상 중단에 대한 기대감이 커지며 투자 심리가 개선될 가능성이 있습니다. 투자자들은 발표되는 지표를 면밀히 분석하여 투자 전략을 조정해야 합니다.",
+  "additionalContents": "각국 정부의 경기 부양책 및 특정 산업 육성 정책 발표는 관련 산업에 대한 투자 기회를 제공할 수 있습니다. 정책 방향성을 주시하며 장기적인 관점에서 투자 포트폴리오를 구축하는 것이 중요합니다.",
+  "contentSources": [
+    {
+      "id": "hankyung_X20260208.110531",
+      "source": "hankyung",
+      "agencyName": "한국경제",
+      "title": "월가, 1월 고용지표와 CPI 주목…상하이 증시, 춘절 소비 예의주시 [뉴욕·상하이 증시 주간전망]",
+      "faviconUrl": "https://static.tossinvest.com/assets/image/press/hankyung_favicon.png",
+      "createdAt": "2026-02-08T11:05:31"
+    },
+    {
+      "id": "financial_202602081222368172",
+      "source": "financial",
+      "agencyName": "파이낸셜뉴스",
+      "title": "상단 확인 후 숨 고르기…코스피 방향성 시험대 [주간 증시 전망]",
+      "faviconUrl": "https://static.tossinvest.com/assets/image/press/fnnews-favicon.png",
+      "createdAt": "2026-02-08T12:50:01"
+    },
+    {
+      "id": "tipranks_2887803",
+      "source": "tipranks",
+      "agencyName": "TIPRANKS",
+      "title": "코카콜라(4분기 실적 앞두고) 주요 주주 현황 주목",
+      "faviconUrl": "https://static.toss.im/icons/png/4x/tipranks_favicon.png",
+      "createdAt": "2026-02-06T12:20:59"
+    },
+    {
+      "id": "mt_newswires_A3552924",
+      "source": "mt_newswires",
+      "agencyName": "MTNEWSWIRES",
+      "title": "UBS \"코카콜라, 4분기 견조 실적 전망…2026 가이던스도 긍정적\"",
+      "faviconUrl": "https://static.toss.im/png-icons/timeline/mtnewswires-fill.png",
+      "createdAt": "2026-02-04T05:13:09"
+    },
+    {
+      "id": "tipranks_2867702",
+      "source": "tipranks",
+      "agencyName": "TIPRANKS",
+      "title": "코카콜라 주가, 사상 최고치 경신…상승세 지속 여부 주목",
+      "faviconUrl": "https://static.toss.im/icons/png/4x/tipranks_favicon.png",
+      "createdAt": "2026-02-02T21:48:39"
+    },
+    {
+      "id": "asiae_2026020722255308673",
+      "source": "asiae",
+      "agencyName": "아시아경제",
+      "title": "[마켓 ING]5000선으로 밀린 코스피, 조정 이어지나",
+      "faviconUrl": "https://static.tossinvest.com/assets/image/press/asia_favicon.png",
+      "createdAt": "2026-02-08T10:15:00"
+    },
+    {
+      "id": "maekyung_000011956997",
+      "source": "maekyung",
+      "agencyName": "매일경제",
+      "title": "[이번주 증시 예보] '자사주 소각 의무화' 상법개정안 13일 공청회 촉각",
+      "faviconUrl": "https://static.tossinvest.com/assets/image/press/maekyung_favicon.png",
+      "createdAt": "2026-02-08T17:12:34"
+    },
+    {
+      "id": "chosunbiz_2026020800183",
+      "source": "chosunbiz",
+      "agencyName": "조선비즈",
+      "title": "[주간증시전망] AI 거품론 속 흔들린 투심… 美 지표가 향방 가른다",
+      "faviconUrl": "https://static.tossinvest.com/assets/image/press/cho_favicon.png",
+      "createdAt": "2026-02-08T06:00:00"
+    }
+  ],
+  "additionalContentSources": [
+    {
+      "id": "tipranks_2894566",
+      "source": "tipranks",
+      "agencyName": "TIPRANKS",
+      "title": "2월 글로벌 증시·거시 동향 총정리 및 전망",
+      "faviconUrl": "https://static.toss.im/icons/png/4x/tipranks_favicon.png",
+      "createdAt": "2026-02-08T17:55:02"
+    }
+  ],
+  "cacheCreatedAt": "2026-02-11T15:21:39.853709325"
+}

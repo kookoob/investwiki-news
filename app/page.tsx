@@ -10,6 +10,9 @@ import EventsSidebar from './EventsSidebar'
 import BookmarkButton from './components/BookmarkButton'
 import { getAllNewsStats } from '@/lib/getNewsStats'
 
+// ISR: 60초마다 재생성 (빠른 로딩 + 최신 데이터)
+export const revalidate = 60
+
 async function getNews() {
   try {
     const filePath = path.join(process.cwd(), 'public', 'news.json')
@@ -30,11 +33,31 @@ async function getEvents() {
   }
 }
 
+async function getWeeklySummary() {
+  try {
+    const filePath = path.join(process.cwd(), 'public', 'weekly-summary.json')
+    const fileContents = await fs.readFile(filePath, 'utf8')
+    return JSON.parse(fileContents)
+  } catch {
+    return null
+  }
+}
+
 export default async function Home() {
   const news = await getNews()
-  const events = await getEvents()
+  const allEvents = await getEvents()
+  const weeklySummary = await getWeeklySummary()
   const newsIds = news.map((item: any) => item.id)
   const stats = await getAllNewsStats(newsIds)
+  
+  // 오늘 이후 이벤트만 필터링
+  const now = new Date()
+  now.setHours(0, 0, 0, 0) // 오늘 00:00:00
+  const events = allEvents.filter((event: any) => {
+    const eventDate = new Date(event.date)
+    eventDate.setHours(0, 0, 0, 0)
+    return eventDate >= now
+  }).sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -148,23 +171,34 @@ export default async function Home() {
           <div key={item.id}>
             <Link href={`/news/${item.id}`} className="block bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700 p-4">
               <div className="flex items-start gap-2 mb-2">
-                {/* 중요도 표시 */}
-                {item.importance && (
-                  <div className="flex-shrink-0 mt-1">
-                    {item.importance === 'high' && <span className="text-lg" title="높은 중요도">🔴</span>}
-                    {item.importance === 'medium' && <span className="text-lg" title="중간 중요도">🟡</span>}
-                    {item.importance === 'low' && <span className="text-lg" title="낮은 중요도">⚪</span>}
-                  </div>
-                )}
                 <h2 className="flex-1 text-lg font-semibold text-gray-900 dark:text-white line-clamp-2">
                   {item.title}
                 </h2>
                 <BookmarkButton itemId={item.id} itemType="news" size="md" />
               </div>
-              <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400 flex-wrap">
+              <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 flex-wrap">
                 <span className="font-medium text-blue-600 dark:text-blue-400">{item.source}</span>
                 <span>•</span>
                 <span>{item.date}</span>
+                
+                {/* AI 판단 등급 별점 */}
+                {item.importance && (
+                  <>
+                    <span>•</span>
+                    <span className="inline-flex items-center gap-0.5" title={`AI 판단 등급: ${
+                      item.importance === 'very_high' ? '매우 높음' :
+                      item.importance === 'high' ? '높음' :
+                      item.importance === 'medium' ? '보통' :
+                      item.importance === 'low' ? '낮음' : '매우 낮음'
+                    }`}>
+                      {item.importance === 'very_high' && '⭐⭐⭐⭐⭐'}
+                      {item.importance === 'high' && '⭐⭐⭐⭐'}
+                      {item.importance === 'medium' && '⭐⭐⭐'}
+                      {item.importance === 'low' && '⭐⭐'}
+                      {item.importance === 'very_low' && '⭐'}
+                    </span>
+                  </>
+                )}
                 
                 {/* 투표/댓글 통계 */}
                 <span>•</span>
@@ -195,15 +229,15 @@ export default async function Home() {
                 </div>
               </div>
             </Link>
-            {/* 5번째 뉴스 뒤에 광고 */}
-            {index === 4 && <AdSense slot="1234567890" />}
+            {/* 5번째 뉴스 뒤에 광고 - AdSense 승인 후 활성화 */}
+            {/* {index === 4 && <AdSense slot="1234567890" />} */}
           </div>
           )
         })}
           </div>
           
           {/* PC 사이드바 */}
-          <EventsSidebar events={events} />
+          <EventsSidebar events={events} weeklySummary={weeklySummary} />
         </div>
       </main>
 

@@ -123,12 +123,42 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
     articleBody: news.content,
   }
 
+  // BreadcrumbList Schema
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: '홈',
+        item: 'https://stockhub.kr',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: '뉴스',
+        item: 'https://stockhub.kr',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: news.title,
+        item: `https://stockhub.kr/news/${news.id}`,
+      },
+    ],
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Schema.org JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {/* 헤더 */}
       <Header />
@@ -137,23 +167,30 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
       <main className="max-w-4xl mx-auto px-4 py-6">
         <article className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
           {/* 제목 */}
-          <div className="flex items-start gap-3 mb-4">
-            {/* 중요도 표시 */}
-            {news.importance && (
-              <div className="flex-shrink-0 mt-1">
-                {news.importance === 'high' && <span className="text-2xl" title="높은 중요도">🔴</span>}
-                {news.importance === 'medium' && <span className="text-2xl" title="중간 중요도">🟡</span>}
-                {news.importance === 'low' && <span className="text-2xl" title="낮은 중요도">⚪</span>}
-              </div>
-            )}
-            <h1 className="flex-1 text-2xl font-bold text-gray-900 dark:text-white">{news.title}</h1>
-          </div>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{news.title}</h1>
 
-          {/* 메타 정보 */}
-          <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400 mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
+          {/* 메타 정보 + 중요도 */}
+          <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400 mb-6 pb-6 border-b border-gray-200 dark:border-gray-700 flex-wrap">
             <span className="font-medium text-blue-600 dark:text-blue-400">{news.source}</span>
             <span>•</span>
             <span>{news.date}</span>
+            
+            {/* AI 판단 등급 별점 */}
+            {news.importance && (
+              <>
+                <span>•</span>
+                <span className="inline-flex items-center gap-1">
+                  <span className="text-sm text-gray-600 dark:text-gray-400">AI 판단 등급:</span>
+                  <span className="text-base">
+                    {news.importance === 'very_high' && '⭐⭐⭐⭐⭐'}
+                    {news.importance === 'high' && '⭐⭐⭐⭐'}
+                    {news.importance === 'medium' && '⭐⭐⭐'}
+                    {news.importance === 'low' && '⭐⭐'}
+                    {news.importance === 'very_low' && '⭐'}
+                  </span>
+                </span>
+              </>
+            )}
           </div>
 
           {/* AI 요약 */}
