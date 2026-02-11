@@ -10,9 +10,23 @@ import { Metadata } from 'next'
 
 async function getNewsById(id: string) {
   try {
-    const filePath = path.join(process.cwd(), 'public', 'news.json')
-    const fileContents = await fs.readFile(filePath, 'utf8')
-    const allNews = JSON.parse(fileContents)
+    // 모든 페이지 파일 읽기
+    const allNews = []
+    let pageNum = 1
+    
+    while (true) {
+      try {
+        const filePath = path.join(process.cwd(), 'public', `news-${pageNum}.json`)
+        const fileContents = await fs.readFile(filePath, 'utf8')
+        const pageNews = JSON.parse(fileContents)
+        allNews.push(...pageNews)
+        pageNum++
+      } catch {
+        // 더 이상 페이지 파일이 없으면 중단
+        break
+      }
+    }
+    
     return allNews.find((item: any) => item.id === id)
   } catch {
     return null
