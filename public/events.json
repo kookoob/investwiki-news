@@ -226,7 +226,7 @@
     "type": "economic",
     "emoji": "📊",
     "description": "미국 고용 시장 변화를 확인할 수 있어요.",
-    "actual": null,
+    "actual": 22,
     "forecast": null,
     "historical": 23,
     "ai_comment": "고용시장 단기 트렌드 체크. NFP 발표 전 선행지표로 활용됩니다"
