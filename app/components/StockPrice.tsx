@@ -59,16 +59,16 @@ export default function StockPrice({ ticker }: StockPriceProps) {
   return (
     <>
       {isPositive ? (
-        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-base font-bold text-green-800 dark:text-green-300 bg-green-50 dark:bg-green-950/40">
+        <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-sm font-bold text-green-800 dark:text-green-300 bg-green-50 dark:bg-green-950/40">
           <span>{priceData.currency === 'KRW' ? '₩' : '$'}{priceData.price.toLocaleString()}</span>
-          <span className="text-sm font-semibold">
+          <span className="text-xs font-semibold">
             ▲ {Math.abs(priceData.changePercent).toFixed(2)}%
           </span>
         </span>
       ) : (
-        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-base font-bold text-red-800 dark:text-red-300 bg-red-50 dark:bg-red-950/40">
+        <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-sm font-bold text-red-800 dark:text-red-300 bg-red-50 dark:bg-red-950/40">
           <span>{priceData.currency === 'KRW' ? '₩' : '$'}{priceData.price.toLocaleString()}</span>
-          <span className="text-sm font-semibold">
+          <span className="text-xs font-semibold">
             ▼ {Math.abs(priceData.changePercent).toFixed(2)}%
           </span>
         </span>
