@@ -128,7 +128,7 @@ export default function EventsSidebar({ events, weeklySummary }: EventsSidebarPr
                 {weeklySummary.contents}
               </p>
               {weeklySummary.additionalContents && (
-                <p className="text-xs text-gray-600 leading-relaxed">
+                <p className="text-xs text-gray-700 leading-relaxed">
                   {weeklySummary.additionalContents}
                 </p>
               )}

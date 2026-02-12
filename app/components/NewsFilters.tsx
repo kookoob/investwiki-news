@@ -9,40 +9,51 @@ interface NewsFiltersProps {
 
 export default function NewsFilters({ news, onFilteredNewsChange }: NewsFiltersProps) {
   const [selectedSource, setSelectedSource] = useState<string>('all')
-  const [selectedTicker, setSelectedTicker] = useState<string>('all')
+  const [selectedRegion, setSelectedRegion] = useState<string>('all') // 국내/외신 필터
   const [sortBy, setSortBy] = useState<'latest' | 'importance'>('latest')
   
-  // 출처 목록 추출
+  // 제외된 RSS 출처 (더 이상 사용 안 함)
+  const excludedSources = [
+    '디지털투데이',
+    '매일경제',
+    'The Verge',
+    'BBC Business',
+    'Barron.com'
+  ]
+  
+  // 출처 목록 추출 (제외된 출처 필터링)
   const sources = useMemo(() => {
     const uniqueSources = new Set(news.map(item => item.source))
-    return ['all', ...Array.from(uniqueSources)].filter(Boolean)
+    const filteredSources = Array.from(uniqueSources).filter(
+      source => !excludedSources.includes(source)
+    )
+    return ['all', ...filteredSources].filter(Boolean)
   }, [news])
   
-  // 티커 목록 추출
-  const tickers = useMemo(() => {
-    const uniqueTickers = new Set<string>()
-    news.forEach(item => {
-      if (item.tickers && Array.isArray(item.tickers)) {
-        item.tickers.forEach((ticker: string) => uniqueTickers.add(ticker))
-      }
-    })
-    return ['all', ...Array.from(uniqueTickers)].filter(Boolean).sort()
-  }, [news])
+  // 국내/외신 구분
+  const koreanSources = ['한국경제', '연합인포맥스', 'Bloomberg 개장전 5가지']
+  
+  const isKoreanSource = (source: string) => {
+    return koreanSources.includes(source)
+  }
   
   // 필터링 & 정렬 적용
   useMemo(() => {
     let filtered = [...news]
+    
+    // 제외된 출처 필터링
+    filtered = filtered.filter(item => !excludedSources.includes(item.source))
     
     // 출처 필터
     if (selectedSource !== 'all') {
       filtered = filtered.filter(item => item.source === selectedSource)
     }
     
-    // 티커 필터
-    if (selectedTicker !== 'all') {
-      filtered = filtered.filter(item => 
-        item.tickers && item.tickers.includes(selectedTicker)
-      )
+    // 국내/외신 필터
+    if (selectedRegion === 'domestic') {
+      filtered = filtered.filter(item => isKoreanSource(item.source))
+    } else if (selectedRegion === 'foreign') {
+      filtered = filtered.filter(item => !isKoreanSource(item.source))
     }
     
     // 정렬
@@ -65,7 +76,7 @@ export default function NewsFilters({ news, onFilteredNewsChange }: NewsFiltersP
     }
     
     onFilteredNewsChange(filtered)
-  }, [news, selectedSource, selectedTicker, sortBy, onFilteredNewsChange])
+  }, [news, selectedSource, selectedRegion, sortBy, onFilteredNewsChange])
   
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4 mb-4">
@@ -87,20 +98,19 @@ export default function NewsFilters({ news, onFilteredNewsChange }: NewsFiltersP
           </select>
         </div>
         
-        {/* 티커 필터 */}
+        {/* 국내/외신 필터 */}
         <div className="flex-1">
           <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
-            종목
+            지역
           </label>
           <select
-            value={selectedTicker}
-            onChange={(e) => setSelectedTicker(e.target.value)}
+            value={selectedRegion}
+            onChange={(e) => setSelectedRegion(e.target.value)}
             className="w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           >
             <option value="all">전체</option>
-            {tickers.filter(t => t !== 'all').map(ticker => (
-              <option key={ticker} value={ticker}>{ticker}</option>
-            ))}
+            <option value="domestic">국내</option>
+            <option value="foreign">외신</option>
           </select>
         </div>
         
@@ -121,11 +131,11 @@ export default function NewsFilters({ news, onFilteredNewsChange }: NewsFiltersP
       </div>
       
       {/* 필터 초기화 버튼 */}
-      {(selectedSource !== 'all' || selectedTicker !== 'all' || sortBy !== 'latest') && (
+      {(selectedSource !== 'all' || selectedRegion !== 'all' || sortBy !== 'latest') && (
         <button
           onClick={() => {
             setSelectedSource('all')
-            setSelectedTicker('all')
+            setSelectedRegion('all')
             setSortBy('latest')
           }}
           className="mt-3 text-sm text-blue-600 hover:text-blue-700 font-medium"

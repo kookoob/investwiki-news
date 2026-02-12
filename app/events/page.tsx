@@ -99,7 +99,7 @@ export default function EventsPage() {
                     {weeklySummary.contents}
                   </p>
                   {weeklySummary.additionalContents && (
-                    <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                       {weeklySummary.additionalContents}
                     </p>
                   )}
