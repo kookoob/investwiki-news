@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '@/lib/supabase'
 import { ensureUserExists } from '@/lib/ensureUser'
+import { getCachedAuth, setCachedAuth, clearAuthCache } from '@/lib/auth-cache'
 import Link from 'next/link'
 import type { User } from '@supabase/supabase-js'
 
@@ -17,19 +18,22 @@ export default function AuthButton() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    // 현재 사용자 확인
+    // 캐시 먼저 확인 (Disk IO 절약)
+    const cachedUser = getCachedAuth()
+    if (cachedUser) {
+      setUser(cachedUser)
+      return
+    }
+
+    // 캐시 없을 때만 DB 접근
     supabase.auth.getUser().then(({ data: { user } }) => {
       setUser(user)
+      setCachedAuth(user)
       if (user) ensureUserExists(user)
     })
 
-    // 인증 상태 변경 감지
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
-      setUser(session?.user ?? null)
-      if (session?.user) ensureUserExists(session.user)
-    })
-
-    return () => subscription.unsubscribe()
+    // 실시간 구독 제거 (Realtime Connections 절약)
+    // 로그인/로그아웃 시에만 상태 업데이트
   }, [])
 
   const handleSignUp = async (e: React.FormEvent) => {
@@ -59,6 +63,7 @@ export default function AuthButton() {
       setError(error.message)
     } else {
       setError('회원가입 성공! 이메일을 확인해주세요.')
+      clearAuthCache() // 캐시 초기화
       setTimeout(() => {
         setShowModal(false)
         setError('')
@@ -84,12 +89,19 @@ export default function AuthButton() {
     if (error) {
       setError(error.message)
     } else {
+      // 로그인 성공 시 사용자 정보 가져오기
+      const { data: { user } } = await supabase.auth.getUser()
+      setUser(user)
+      setCachedAuth(user)
+      if (user) ensureUserExists(user)
       setShowModal(false)
     }
   }
 
   const handleSignOut = async () => {
     await supabase.auth.signOut()
+    clearAuthCache()
+    setUser(null)
   }
 
   const handleGoogleLogin = async () => {
