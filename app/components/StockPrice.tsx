@@ -44,7 +44,7 @@ export default function StockPrice({ ticker }: StockPriceProps) {
   
   if (loading) {
     return (
-      <span className="inline-flex items-center gap-1 text-xs text-gray-400">
+      <span className="inline-flex items-center gap-1 text-xs text-gray-400 dark:text-gray-500">
         <span className="animate-pulse">•••</span>
       </span>
     )
@@ -55,12 +55,14 @@ export default function StockPrice({ ticker }: StockPriceProps) {
   }
   
   const isPositive = priceData.change >= 0
-  const colorClass = isPositive ? 'text-green-600' : 'text-red-600'
+  const colorClass = isPositive 
+    ? 'text-green-700 dark:text-green-500' 
+    : 'text-red-700 dark:text-red-500'
   
   return (
-    <span className={`inline-flex items-center gap-1 text-xs font-medium ${colorClass}`}>
+    <span className={`inline-flex items-center gap-1 text-sm font-semibold ${colorClass}`}>
       <span>{priceData.currency === 'KRW' ? '₩' : '$'}{priceData.price.toLocaleString()}</span>
-      <span className="text-[10px]">
+      <span className="text-xs">
         {isPositive ? '▲' : '▼'} {Math.abs(priceData.changePercent).toFixed(2)}%
       </span>
     </span>

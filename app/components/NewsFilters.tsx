@@ -79,70 +79,55 @@ export default function NewsFilters({ news, onFilteredNewsChange }: NewsFiltersP
   }, [news, selectedSource, selectedRegion, sortBy, onFilteredNewsChange])
   
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4 mb-4">
-      <div className="flex flex-col sm:flex-row gap-3">
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 px-4 py-3 mb-4">
+      <div className="flex items-center gap-2">
         {/* 출처 필터 */}
-        <div className="flex-1">
-          <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
-            출처
-          </label>
-          <select
-            value={selectedSource}
-            onChange={(e) => setSelectedSource(e.target.value)}
-            className="w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          >
-            <option value="all">전체</option>
-            {sources.filter(s => s !== 'all').map(source => (
-              <option key={source} value={source}>{source}</option>
-            ))}
-          </select>
-        </div>
+        <select
+          value={selectedSource}
+          onChange={(e) => setSelectedSource(e.target.value)}
+          className="flex-1 px-2 py-1.5 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded text-xs focus:ring-1 focus:ring-blue-500 focus:border-transparent"
+        >
+          <option value="all">전체 출처</option>
+          {sources.filter(s => s !== 'all').map(source => (
+            <option key={source} value={source}>{source}</option>
+          ))}
+        </select>
         
         {/* 국내/외신 필터 */}
-        <div className="flex-1">
-          <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
-            지역
-          </label>
-          <select
-            value={selectedRegion}
-            onChange={(e) => setSelectedRegion(e.target.value)}
-            className="w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          >
-            <option value="all">전체</option>
-            <option value="domestic">국내</option>
-            <option value="foreign">외신</option>
-          </select>
-        </div>
+        <select
+          value={selectedRegion}
+          onChange={(e) => setSelectedRegion(e.target.value)}
+          className="w-20 px-2 py-1.5 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded text-xs focus:ring-1 focus:ring-blue-500 focus:border-transparent"
+        >
+          <option value="all">전체</option>
+          <option value="domestic">국내</option>
+          <option value="foreign">외신</option>
+        </select>
         
         {/* 정렬 */}
-        <div className="flex-1">
-          <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
-            정렬
-          </label>
-          <select
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value as 'latest' | 'importance')}
-            className="w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          >
-            <option value="latest">최신순</option>
-            <option value="importance">중요도순</option>
-          </select>
-        </div>
-      </div>
-      
-      {/* 필터 초기화 버튼 */}
-      {(selectedSource !== 'all' || selectedRegion !== 'all' || sortBy !== 'latest') && (
-        <button
-          onClick={() => {
-            setSelectedSource('all')
-            setSelectedRegion('all')
-            setSortBy('latest')
-          }}
-          className="mt-3 text-sm text-blue-600 hover:text-blue-700 font-medium"
+        <select
+          value={sortBy}
+          onChange={(e) => setSortBy(e.target.value as 'latest' | 'importance')}
+          className="w-24 px-2 py-1.5 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded text-xs focus:ring-1 focus:ring-blue-500 focus:border-transparent"
         >
-          필터 초기화
-        </button>
-      )}
+          <option value="latest">최신순</option>
+          <option value="importance">중요도순</option>
+        </select>
+        
+        {/* 필터 초기화 버튼 */}
+        {(selectedSource !== 'all' || selectedRegion !== 'all' || sortBy !== 'latest') && (
+          <button
+            onClick={() => {
+              setSelectedSource('all')
+              setSelectedRegion('all')
+              setSortBy('latest')
+            }}
+            className="text-xs text-blue-600 hover:text-blue-700 font-medium whitespace-nowrap"
+          >
+            초기화
+          </button>
+        )}
+      </div>
     </div>
   )
 }
