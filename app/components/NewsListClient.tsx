@@ -10,6 +10,23 @@ interface NewsListClientProps {
   stats: Record<string, { bullish: number; bearish: number; comments: number }>
 }
 
+// 지수 티커 표시명 매핑
+const TICKER_DISPLAY_NAMES: Record<string, string> = {
+  '^DJI': 'DOW',
+  '^IXIC': 'NASDAQ',
+  '^GSPC': 'S&P 500',
+  '^RUT': 'Russell 2000',
+  '^VIX': 'VIX',
+  '^TNX': '10Y Treasury',
+  '^FTSE': 'FTSE 100',
+  '^N225': 'Nikkei',
+  '^HSI': 'Hang Seng',
+}
+
+function getTickerDisplayName(ticker: string): string {
+  return TICKER_DISPLAY_NAMES[ticker] || ticker
+}
+
 export default function NewsListClient({ initialNews, stats }: NewsListClientProps) {
   const [filteredNews, setFilteredNews] = useState(initialNews)
   
@@ -70,7 +87,7 @@ export default function NewsListClient({ initialNews, stats }: NewsListClientPro
                       {item.tickers.slice(0, 3).map((ticker: string) => (
                         <div key={ticker} className="inline-flex items-center gap-1">
                           <span className="text-xs font-mono bg-gray-100 dark:bg-gray-700 px-1.5 py-0.5 rounded">
-                            {ticker}
+                            {getTickerDisplayName(ticker)}
                           </span>
                           <StockPrice ticker={ticker} />
                         </div>
