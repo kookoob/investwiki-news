@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import NewsFilters from './NewsFilters'
-import BookmarkButton from './BookmarkButton'
 import StockPrice from './StockPrice'
 
 interface NewsListClientProps {
@@ -35,12 +34,9 @@ export default function NewsListClient({ initialNews, stats }: NewsListClientPro
         return (
           <div key={item.id}>
             <Link href={`/news/${item.id}`} className="block bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700 p-4">
-              <div className="flex items-start gap-2 mb-2">
-                <h2 className="flex-1 text-lg font-semibold text-gray-900 dark:text-white line-clamp-2">
-                  {item.title}
-                </h2>
-                <BookmarkButton itemId={item.id} itemType="news" size="md" />
-              </div>
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-white line-clamp-2 mb-2">
+                {item.title}
+              </h2>
               
               <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 flex-wrap">
                 <span className="font-medium text-blue-600 dark:text-blue-400">{item.source}</span>

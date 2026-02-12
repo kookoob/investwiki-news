@@ -4,7 +4,6 @@ import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Header from '../components/Header';
-import BookmarkButton from '../components/BookmarkButton';
 
 interface NewsItem {
   id: string;
@@ -185,12 +184,9 @@ function SearchContent() {
                 className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow"
               >
                 <Link href={`/news/${item.id}`}>
-                  <div className="flex items-start gap-2 mb-2">
-                    <h2 className="flex-1 text-lg font-semibold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 line-clamp-2">
-                      {item.title}
-                    </h2>
-                    <BookmarkButton itemId={item.id} itemType="news" size="md" />
-                  </div>
+                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 line-clamp-2 mb-2">
+                    {item.title}
+                  </h2>
                   
                   <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
                     <span className="font-medium text-blue-600 dark:text-blue-400">
