@@ -75,8 +75,8 @@ export default function Header() {
               href="/events"
               className={`px-3 py-2 rounded-lg font-medium text-sm ${
                 isActive('/events')
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-600 hover:bg-gray-50'
+                  ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
+                  : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
               } transition-colors`}
             >
               📅 일정
@@ -85,8 +85,8 @@ export default function Header() {
               href="/community"
               className={`px-3 py-2 rounded-lg font-medium text-sm ${
                 isActive('/community')
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-600 hover:bg-gray-50'
+                  ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
+                  : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
               } transition-colors`}
             >
               💬 커뮤니티
@@ -95,8 +95,8 @@ export default function Header() {
               href="/notice"
               className={`px-3 py-2 rounded-lg font-medium text-sm ${
                 isActive('/notice')
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-600 hover:bg-gray-50'
+                  ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
+                  : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
               } transition-colors`}
             >
               📢 공지
@@ -105,8 +105,8 @@ export default function Header() {
               href="/contact"
               className={`px-3 py-2 rounded-lg font-medium text-sm ${
                 isActive('/contact')
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-600 hover:bg-gray-50'
+                  ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
+                  : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
               } transition-colors`}
             >
               📨 문의
@@ -116,8 +116,8 @@ export default function Header() {
                 href="/admin/inquiries"
                 className={`px-3 py-2 rounded-lg font-medium text-sm ${
                   isActive('/admin')
-                    ? 'text-red-600 bg-red-50'
-                    : 'text-red-600 hover:bg-red-50'
+                    ? 'text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/30'
+                    : 'text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/30'
                 } transition-colors`}
               >
                 🔧 관리자
@@ -149,7 +149,7 @@ export default function Header() {
               href="/search"
               className={`p-2 rounded-lg transition-colors ${
                 isActive('/search')
-                  ? 'text-blue-600 bg-blue-50 dark:bg-blue-900 dark:text-blue-300'
+                  ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 dark:bg-blue-900 dark:text-blue-300'
                   : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
               }`}
               aria-label="검색"
@@ -182,8 +182,8 @@ export default function Header() {
             href="/"
             className={`px-3 py-2 rounded-lg font-medium text-sm whitespace-nowrap ${
               isActive('/') && pathname === '/'
-                ? 'text-blue-600 bg-blue-50'
-                : 'text-gray-600 hover:bg-gray-50'
+                ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
+                : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
             }`}
           >
             📰 뉴스
@@ -192,8 +192,8 @@ export default function Header() {
             href="/events"
             className={`px-3 py-2 rounded-lg font-medium text-sm whitespace-nowrap ${
               isActive('/events')
-                ? 'text-blue-600 bg-blue-50'
-                : 'text-gray-600 hover:bg-gray-50'
+                ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
+                : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
             }`}
           >
             📅 일정
@@ -202,8 +202,8 @@ export default function Header() {
             href="/community"
             className={`px-3 py-2 rounded-lg font-medium text-sm whitespace-nowrap ${
               isActive('/community')
-                ? 'text-blue-600 bg-blue-50'
-                : 'text-gray-600 hover:bg-gray-50'
+                ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
+                : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
             }`}
           >
             💬 커뮤니티
@@ -212,8 +212,8 @@ export default function Header() {
             href="/notice"
             className={`px-3 py-2 rounded-lg font-medium text-sm whitespace-nowrap ${
               isActive('/notice')
-                ? 'text-blue-600 bg-blue-50'
-                : 'text-gray-600 hover:bg-gray-50'
+                ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
+                : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
             }`}
           >
             📢 공지
@@ -222,8 +222,8 @@ export default function Header() {
             href="/contact"
             className={`px-3 py-2 rounded-lg font-medium text-sm whitespace-nowrap ${
               isActive('/contact')
-                ? 'text-blue-600 bg-blue-50'
-                : 'text-gray-600 hover:bg-gray-50'
+                ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
+                : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
             }`}
           >
             📨 문의
@@ -233,8 +233,8 @@ export default function Header() {
               href="/admin/inquiries"
               className={`px-3 py-2 rounded-lg font-medium text-sm whitespace-nowrap ${
                 isActive('/admin')
-                  ? 'text-red-600 bg-red-50'
-                  : 'text-red-600 hover:bg-red-50'
+                  ? 'text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/30'
+                  : 'text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/30'
               }`}
             >
               🔧 관리자
