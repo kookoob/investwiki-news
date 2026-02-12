@@ -22,6 +22,10 @@ export default function BookmarkButton({ itemId, itemType, size = 'md' }: Bookma
         if (user) {
           setUser(user);
           await checkBookmark(user.id);
+        } else {
+          // 비로그인 사용자는 북마크 체크 생략
+          setUser(null);
+          setIsBookmarked(false);
         }
       } catch (err) {
         console.error('북마크 사용자 로드 실패:', err);
@@ -45,14 +49,17 @@ export default function BookmarkButton({ itemId, itemType, size = 'md' }: Bookma
 
   async function checkBookmark(userId: string) {
     try {
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from('bookmarks')
         .select('id')
         .eq('user_id', userId)
         .eq('item_type', itemType)
         .eq('item_id', itemId)
-        .single();
+        .maybeSingle(); // .single() 대신 .maybeSingle() 사용 (406 에러 방지)
 
+      if (error && error.code !== 'PGRST116') {
+        console.error('북마크 체크 실패:', error);
+      }
       setIsBookmarked(!!data);
     } catch (error) {
       // 북마크 없음
