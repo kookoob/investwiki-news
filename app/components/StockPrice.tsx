@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 
 interface StockPriceProps {
   ticker: string
+  displayName?: string
 }
 
 interface PriceData {
@@ -13,7 +14,7 @@ interface PriceData {
   currency: string
 }
 
-export default function StockPrice({ ticker }: StockPriceProps) {
+export default function StockPrice({ ticker, displayName }: StockPriceProps) {
   const [priceData, setPriceData] = useState<PriceData | null>(null)
   const [loading, setLoading] = useState(true)
   
@@ -60,6 +61,7 @@ export default function StockPrice({ ticker }: StockPriceProps) {
     <>
       {isPositive ? (
         <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-sm font-bold text-green-800 dark:text-green-300 bg-green-50 dark:bg-green-950/40">
+          {displayName && <span className="text-xs font-mono">{displayName}</span>}
           <span>{priceData.currency === 'KRW' ? '₩' : '$'}{priceData.price.toLocaleString()}</span>
           <span className="text-xs font-semibold">
             ▲ {Math.abs(priceData.changePercent).toFixed(2)}%
@@ -67,6 +69,7 @@ export default function StockPrice({ ticker }: StockPriceProps) {
         </span>
       ) : (
         <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-sm font-bold text-red-800 dark:text-red-300 bg-red-50 dark:bg-red-950/40">
+          {displayName && <span className="text-xs font-mono">{displayName}</span>}
           <span>{priceData.currency === 'KRW' ? '₩' : '$'}{priceData.price.toLocaleString()}</span>
           <span className="text-xs font-semibold">
             ▼ {Math.abs(priceData.changePercent).toFixed(2)}%

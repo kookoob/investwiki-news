@@ -85,12 +85,11 @@ export default function NewsListClient({ initialNews, stats }: NewsListClientPro
                     <span>•</span>
                     <div className="flex items-center gap-2 flex-wrap">
                       {item.tickers.slice(0, 3).map((ticker: string) => (
-                        <div key={ticker} className="inline-flex items-center gap-1">
-                          <span className="text-xs font-mono bg-gray-100 dark:bg-gray-700 px-1.5 py-0.5 rounded">
-                            {getTickerDisplayName(ticker)}
-                          </span>
-                          <StockPrice ticker={ticker} />
-                        </div>
+                        <StockPrice 
+                          key={ticker} 
+                          ticker={ticker} 
+                          displayName={getTickerDisplayName(ticker)} 
+                        />
                       ))}
                       {item.tickers.length > 3 && (
                         <span className="text-xs text-gray-400">

@@ -1,5 +1,19 @@
 [
   {
+    "id": "news_1770830008_5",
+    "title": "견조한 홀리데이 분기에 SharkNinja 주가 상승",
+    "summary": "SharkNinja는 예상치를 상회하는 홀리데이 분기 실적을 발표하며 주가가 상승했다. 구체적인 수치는 제시되지 않았으나, CEO는 향후 더 강력한 실적을 기대해도 좋다고 밝혔다.\n\n🚀 닌자 블렌더로 유명한 SharkNinja, 홀리데이 시즌 매출 급증! 코멘트\n소형 가전 시장 경쟁 심화 속에서 브랜드 파워와 제품 혁신이 지속적인 성장 동력, 틈새 시장 공략 전략 유효!",
+    "content": "소형 가전 제조업체인 SharkNinja의 주가는 최근 Barron's의 긍정적인 평가 이후 예상보다 나은 홀리데이 분기 실적을 발표하면서 상승세를 보이고 있다. CEO는 투자자들이 더 강력한 실적을 기대해야 한다고 말했다.",
+    "source": "Barrons.com",
+    "date": "2026-02-12 02:13",
+    "timestamp": 1770829708,
+    "link": "https://www.barrons.com/articles/strong-holiday-quarter-boosts-sharkninja-18d80c7b?siteid=yhoof2&yptr=yahoo",
+    "tickers": [
+      "SN"
+    ],
+    "importance": "medium"
+  },
+  {
     "id": "news_1770830019_6",
     "title": "은 가격, 투자 심리 강화 및 산업 수요 약화 속 온스당 85달러 상회",
     "summary": "은 가격은 6.8% 급등하여 지난주 저점 대비 약 33% 상승했으며, Silver Institute 보고서에 따르면 은 시장은 6년 연속 공급 부족을 겪을 것으로 예상된다. 이는 투자 증가가 보석 수요 감소와 태양광 부문 사용 억제 노력을 상쇄하기 때문이다. 산업 수요는 2026년에 소폭 감소할 것으로 전망된다.\n\n📈 투자 심리 강화, 산업 수요 약화 📉 코멘트\nP/E 데이터 부재, 투자 수요 증가 추세 지속 여부 불확실성 존재",
@@ -626,20 +640,6 @@
     "timestamp": 1770814829,
     "link": "https://finance.yahoo.com/news/dutch-court-orders-investigation-nexperia-114016996.html",
     "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1770814495_1",
-    "title": "T-Mobile, 예상보다 적은 무선 가입자 증가: 치열한 경쟁 속",
-    "summary": "T-Mobile은 4분기에 96만 2천 명의 월별 요금 납부 휴대폰 가입자를 추가했지만, 이는 FactSet의 애널리스트 예상치인 98만 1330명에 미치지 못하는 수치다. 연간 조정 잉여현금흐름은 180억 달러에서 187억 달러 사이로 예상되는데, 이는 Visible Alpha에서 분석가들이 예상한 평균 189억 달러보다 낮은 수치다.\n\n📉 경쟁 심화 + 가이던스 하향\n경쟁사 공격적인 마케팅으로 가입자 확보에 어려움, 잉여현금흐름 가이던스 하향은 투자 심리 위축 요인",
-    "content": "T-Mobile은 10월에서 12월 기간 동안 블랙프라이데이와 사이버 먼데이를 맞아 대대적인 프로모션을 진행했지만, 경쟁 심화로 인해 예상보다 적은 무선 가입자 증가를 기록했다. T-Mobile의 CFO인 Peter Osvaldik은 로이터와의 인터뷰에서 주요 경쟁사 중 한 곳이 대대적인 기기 중심 경쟁을 펼쳤다고 언급했다. \n\nT-Mobile의 해지율은 후불 서비스의 경우 1.02%로, 전년 동기의 0.92%에 비해 증가했다. 총 매출은 LSEG에서 집계한 예상치인 241억 1천만 달러를 상회하는 243억 3천만 달러를 기록했다. Osvaldik은 신규 고객 계정의 프리미엄 요금제 가입률이 60%라고 밝혔다.",
-    "source": "Reuters",
-    "date": "2026-02-11 21:54",
-    "timestamp": 1770814435,
-    "link": "https://finance.yahoo.com/news/t-mobile-adds-fewer-wireless-124002650.html",
-    "tickers": [
-      "TMUS"
-    ],
     "importance": "medium"
   }
 ]
