@@ -18,7 +18,8 @@ export default function NewsFilters({ news, onFilteredNewsChange }: NewsFiltersP
     '매일경제',
     'The Verge',
     'BBC Business',
-    'Barron.com'
+    'Barron.com',
+    'Bloomberg 개장전 5가지'
   ]
   
   // 출처 목록 추출 (제외된 출처 필터링)
@@ -31,7 +32,7 @@ export default function NewsFilters({ news, onFilteredNewsChange }: NewsFiltersP
   }, [news])
   
   // 국내/외신 구분
-  const koreanSources = ['한국경제', '연합인포맥스', 'Bloomberg 개장전 5가지']
+  const koreanSources = ['한국경제', '연합인포맥스']
   
   const isKoreanSource = (source: string) => {
     return koreanSources.includes(source)
