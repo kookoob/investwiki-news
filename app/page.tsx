@@ -65,13 +65,25 @@ export default async function Home() {
   const newsIds = news.map((item: any) => item.id)
   const stats = await getAllNewsStats(newsIds)
   
-  // 오늘 이후 이벤트만 필터링
-  const now = new Date()
-  now.setHours(0, 0, 0, 0) // 오늘 00:00:00
+  // 한국시간(KST) 기준 오늘
+  const nowKST = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Seoul" }))
+  nowKST.setHours(0, 0, 0, 0)
+  
+  // 사이드바용: 오늘 이후만 (한국시간 기준)
+  const upcomingEvents = allEvents.filter((event: any) => {
+    const eventDate = new Date(event.date)
+    eventDate.setHours(0, 0, 0, 0)
+    return eventDate >= nowKST
+  }).sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())
+  
+  // 캘린더 페이지용: 최근 7일 ~ 미래 (한국시간 기준)
+  const sevenDaysAgo = new Date(nowKST)
+  sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7)
+  
   const events = allEvents.filter((event: any) => {
     const eventDate = new Date(event.date)
     eventDate.setHours(0, 0, 0, 0)
-    return eventDate >= now
+    return eventDate >= sevenDaysAgo
   }).sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
   return (
@@ -263,7 +275,7 @@ export default async function Home() {
           </div>
           
           {/* PC 사이드바 */}
-          <EventsSidebar events={events} weeklySummary={weeklySummary} />
+          <EventsSidebar events={upcomingEvents} weeklySummary={weeklySummary} />
         </div>
       </main>
 

@@ -33,6 +33,9 @@ interface Event {
   sales?: string | null;    // 실제 매출
   sales_est?: string | null; // 예상 매출
   ai_comment?: string;      // AI 코멘트
+  actual?: number | null;    // 경제지표 실제값
+  forecast?: number | null;  // 경제지표 예상값
+  historical?: number | null; // 경제지표 이전값
 }
 
 async function getAllEvents(): Promise<Event[]> {
@@ -76,6 +79,14 @@ export default async function EventDetailPage({
   const isEarnings = event.type === 'earnings';
   const isEconomic = event.type === 'economic';
   const indicatorInfo = isEconomic ? getIndicatorInfo(event.title) : null;
+  
+  // 과거 일정 여부 확인 (한국시간 기준)
+  const eventDate = new Date(event.date);
+  eventDate.setHours(0, 0, 0, 0);
+  const nowKST = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Seoul" }));
+  nowKST.setHours(0, 0, 0, 0);
+  const isPast = eventDate < nowKST;
+  const isAnnounced = isPast && event.actual !== null && event.actual !== undefined;
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -230,8 +241,41 @@ export default async function EventDetailPage({
           {/* 경제 지표 정보 */}
           {isEconomic && (
             <div className="space-y-4">
+              {/* 발표 완료 - 실제 결과 */}
+              {isAnnounced && (
+                <div className="bg-green-50 dark:bg-black border-2 border-green-500 dark:border-green-700 rounded-lg p-4">
+                  <h2 className="font-bold text-green-900 dark:text-green-400 mb-3 flex items-center gap-2">
+                    <span className="text-xl">✅</span> 발표 완료
+                  </h2>
+                  <div className="grid grid-cols-3 gap-4 mb-4">
+                    <div>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">실제</p>
+                      <p className="font-bold text-2xl text-green-900 dark:text-green-400">{event.actual}</p>
+                    </div>
+                    {event.forecast !== null && event.forecast !== undefined && (
+                      <div>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">예상</p>
+                        <p className="font-bold text-xl text-gray-700 dark:text-gray-300">{event.forecast}</p>
+                      </div>
+                    )}
+                    {event.historical !== null && event.historical !== undefined && (
+                      <div>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">이전</p>
+                        <p className="font-bold text-xl text-gray-700 dark:text-gray-300">{event.historical}</p>
+                      </div>
+                    )}
+                  </div>
+                  {event.ai_comment && (
+                    <div className="bg-white dark:bg-gray-800 rounded p-3 border border-green-200 dark:border-green-900">
+                      <p className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">💡 AI 해설</p>
+                      <p className="text-sm text-gray-700 dark:text-gray-200">{event.ai_comment}</p>
+                    </div>
+                  )}
+                </div>
+              )}
+              
               <div className="bg-yellow-50 dark:bg-black border border-yellow-200 dark:border-yellow-700 rounded-lg p-4">
-                <h2 className="font-bold text-yellow-900 dark:text-yellow-400 mb-3">📈 경제 지표 정보</h2>
+                <h2 className="font-bold text-yellow-900 dark:text-yellow-400 mb-3">📈 {isAnnounced ? '지표 정보' : '경제 지표 정보'}</h2>
                 {event.description && (
                   <p className="text-gray-700 dark:text-white mb-4">{event.description}</p>
                 )}
@@ -259,6 +303,13 @@ export default async function EventDetailPage({
                     </div>
                   )}
                 </div>
+                
+                {!isAnnounced && event.ai_comment && (
+                  <div className="mt-4 bg-white dark:bg-gray-800 rounded p-3 border border-yellow-200 dark:border-yellow-900">
+                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">💡 AI 전망</p>
+                    <p className="text-sm text-gray-700 dark:text-gray-200">{event.ai_comment}</p>
+                  </div>
+                )}
               </div>
 
               {/* 상세 지표 설명 (토스증권 스타일) */}
@@ -302,9 +353,19 @@ export default async function EventDetailPage({
               <div className="bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-lg p-4">
                 <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-2">💡 주요 포인트</h3>
                 <ul className="list-disc list-inside text-sm text-gray-700 dark:text-gray-200 space-y-1">
-                  <li>시장 예상치와 실제 수치 비교 중요</li>
-                  <li>발표 시점 전후 시장 변동성 주의</li>
-                  <li>중앙은행 정책 결정에 영향 가능</li>
+                  {isAnnounced ? (
+                    <>
+                      <li>실제 수치가 예상치 대비 {event.forecast && event.actual && event.actual > event.forecast ? '상회' : event.forecast && event.actual && event.actual < event.forecast ? '하회' : '일치'}</li>
+                      <li>시장은 발표 직후 변동성을 보였을 것으로 예상</li>
+                      <li>향후 경제 정책 및 금리 결정에 영향</li>
+                    </>
+                  ) : (
+                    <>
+                      <li>시장 예상치와 실제 수치 비교 중요</li>
+                      <li>발표 시점 전후 시장 변동성 주의</li>
+                      <li>중앙은행 정책 결정에 영향 가능</li>
+                    </>
+                  )}
                 </ul>
               </div>
             </div>

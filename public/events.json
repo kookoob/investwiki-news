@@ -28,22 +28,6 @@
     "historical": 4.1
   },
   {
-    "id": "toss_earnings_042660_2026-02-04",
-    "title": "한화오션 실적발표",
-    "link": "#",
-    "source": "토스증권",
-    "date": "2026-02-04",
-    "time": "미정",
-    "type": "earnings",
-    "emoji": "💼",
-    "ticker": "042660",
-    "company": "한화오션",
-    "eps": null,
-    "eps_est": null,
-    "sales": "3조 2,278억",
-    "sales_est": "3조 4,417억"
-  },
-  {
     "id": "toss_20260205_ISM서비스업구매관리자지수발표_ECONOMIC",
     "title": "ISM 서비스업 구매관리자지수 발표",
     "link": "#",
@@ -56,22 +40,6 @@
     "actual": 53.8,
     "forecast": null,
     "historical": 54.4
-  },
-  {
-    "id": "toss_earnings_105560_2026-02-05",
-    "title": "KB금융 실적발표",
-    "link": "#",
-    "source": "토스증권",
-    "date": "2026-02-05",
-    "time": "미정",
-    "type": "earnings",
-    "emoji": "💼",
-    "ticker": "105560",
-    "company": "KB금융",
-    "eps": null,
-    "eps_est": null,
-    "sales": "22조 4,614억",
-    "sales_est": null
   },
   {
     "id": "toss_earnings_068270_2026-02-05",
@@ -90,22 +58,6 @@
     "sales_est": "1조 2,689억"
   },
   {
-    "id": "toss_earnings_055550_2026-02-05",
-    "title": "신한지주 실적발표",
-    "link": "#",
-    "source": "토스증권",
-    "date": "2026-02-05",
-    "time": "미정",
-    "type": "earnings",
-    "emoji": "💼",
-    "ticker": "055550",
-    "company": "신한지주",
-    "eps": null,
-    "eps_est": null,
-    "sales": "15조 8,271억",
-    "sales_est": null
-  },
-  {
     "id": "toss_20260205_주간신규실업수당청구건수발표_ECONOMIC",
     "title": "주간 신규실업수당 청구건수 발표",
     "link": "#",
@@ -118,22 +70,6 @@
     "actual": 23,
     "forecast": null,
     "historical": 20
-  },
-  {
-    "id": "toss_earnings_035420_2026-02-06",
-    "title": "NAVER 실적발표",
-    "link": "#",
-    "source": "토스증권",
-    "date": "2026-02-06",
-    "time": "미정",
-    "type": "earnings",
-    "emoji": "💼",
-    "ticker": "035420",
-    "company": "NAVER",
-    "eps": null,
-    "eps_est": null,
-    "sales": "3조 1,951억",
-    "sales_est": "3조 2,623억"
   },
   {
     "id": "toss_20260206_노동시장신규구인건수(JOLTs)발표_ECONOMIC",
@@ -176,54 +112,6 @@
     "actual": 3.5,
     "forecast": null,
     "historical": 4.0
-  },
-  {
-    "id": "toss_earnings_329180_2026-02-09",
-    "title": "HD현대중공업 실적발표",
-    "link": "#",
-    "source": "토스증권",
-    "date": "2026-02-09",
-    "time": "미정",
-    "type": "earnings",
-    "emoji": "💼",
-    "ticker": "329180",
-    "company": "HD현대중공업",
-    "eps": null,
-    "eps_est": null,
-    "sales": "5조 1,931억",
-    "sales_est": "5조 1,420억"
-  },
-  {
-    "id": "toss_earnings_010130_2026-02-09",
-    "title": "고려아연 실적발표",
-    "link": "#",
-    "source": "토스증권",
-    "date": "2026-02-09",
-    "time": "미정",
-    "type": "earnings",
-    "emoji": "💼",
-    "ticker": "010130",
-    "company": "고려아연",
-    "eps": null,
-    "eps_est": null,
-    "sales": "4조 7,633억",
-    "sales_est": "4조 6,103억"
-  },
-  {
-    "id": "toss_earnings_012450_2026-02-09",
-    "title": "한화에어로스페이스 실적발표",
-    "link": "#",
-    "source": "토스증권",
-    "date": "2026-02-09",
-    "time": "미정",
-    "type": "earnings",
-    "emoji": "💼",
-    "ticker": "012450",
-    "company": "한화에어로스페이스",
-    "eps": null,
-    "eps_est": null,
-    "sales": "8조 3,261억",
-    "sales_est": "8조 6,480억"
   },
   {
     "id": "toss_20260210_근원소매판매발표_ECONOMIC",
@@ -277,10 +165,10 @@
     "type": "economic",
     "emoji": "📊",
     "description": "",
-    "actual": null,
+    "actual": 13.0,
     "forecast": null,
     "historical": 5.0,
-    "ai_comment": "고용시장 강세 여부가 연준 금리 인하 타이밍을 결정합니다. 시장 변동성 주의"
+    "ai_comment": "고용시장 강세 여부가 연준 금리 인하 타이밍에 영향을 줄 수 있습니다. 시장 변동성 주의"
   },
   {
     "id": "toss_20260211_실업률발표_ECONOMIC",
@@ -292,10 +180,10 @@
     "type": "economic",
     "emoji": "📊",
     "description": "미국의 고용보고서가 발표돼요.",
-    "actual": null,
+    "actual": 4.3,
     "forecast": null,
     "historical": 4.4,
-    "ai_comment": "노동시장 건강도 핵심 지표. 실업률 상승시 연준 비둘기파 전환 가능성 높아져요"
+    "ai_comment": "노동시장 건강도 핵심 지표. 실업률 상승시 연준 비둘기파 전환 가능성 높아질 수 있어요"
   },
   {
     "id": "toss_20260211_평균임금상승률발표_ECONOMIC",
@@ -307,10 +195,10 @@
     "type": "economic",
     "emoji": "📊",
     "description": "",
-    "actual": null,
+    "actual": 0.4,
     "forecast": null,
     "historical": 0.3,
-    "ai_comment": "임금 인플레이션이 핵심. 상승폭 클수록 금리 인하 지연 우려 커집니다"
+    "ai_comment": "임금 인플레이션이 핵심. 상승폭 클수록 금리 인하 지연 우려 커질 수 있습니다"
   },
   {
     "id": "cpi_2026_02_12",
@@ -326,7 +214,7 @@
     "type": "economic",
     "source": "경제 캘린더",
     "link": "#",
-    "ai_comment": "이번 주 최대 이벤트. CPI 수치에 따라 연준의 금리 정책 방향이 결정되며, 증시 전반에 큰 영향을 줍니다."
+    "ai_comment": "이번 주 최대 이벤트. CPI 수치에 따라 연준의 금리 정책 방향이 결정될 수 있으며, 증시 전반에 큰 영향을 줄 수 있습니다."
   },
   {
     "id": "toss_20260212_주간신규실업수당청구건수발표_ECONOMIC",
@@ -400,7 +288,7 @@
     "actual": null,
     "forecast": null,
     "historical": 2.7,
-    "ai_comment": "전년 대비 물가 상승률 추세 확인. 2%대 안착 여부가 금리 인하 속도 결정"
+    "ai_comment": "전년 대비 물가 상승률 추세 확인. 2%대 안착 여부가 금리 인하 속도에 영향"
   },
   {
     "id": "toss_20260213_소비자물가지수(CPI)발표(전월대비)_ECONOMIC",
@@ -415,23 +303,6 @@
     "actual": null,
     "forecast": null,
     "historical": 0.3
-  },
-  {
-    "id": "earning_WMT_2026-02-19",
-    "title": "WMT 실적 발표",
-    "link": "#",
-    "source": "Yahoo Finance",
-    "date": "2026-02-19",
-    "time": "09:00",
-    "time_kr": "2026-02-19 09:00 KST",
-    "type": "earnings",
-    "emoji": "💼",
-    "ticker": "WMT",
-    "company": "Walmart Inc.",
-    "eps_estimate": 2.96,
-    "eps_current": 2.86,
-    "market_cap": 1010160238592,
-    "sector": "Consumer Defensive"
   },
   {
     "id": "toss_20260219_필라델피아연은제조업활동지수발표_ECONOMIC",
@@ -574,23 +445,6 @@
     "historical": 73.7
   },
   {
-    "id": "earning_HD_2026-02-24",
-    "title": "HD 실적 발표",
-    "link": "#",
-    "source": "Yahoo Finance",
-    "date": "2026-02-24",
-    "time": "09:00",
-    "time_kr": "2026-02-24 09:00 KST",
-    "type": "earnings",
-    "emoji": "💼",
-    "ticker": "HD",
-    "company": "The Home Depot, Inc.",
-    "eps_estimate": 15.04,
-    "eps_current": 14.67,
-    "market_cap": 387930914816,
-    "sector": "Consumer Cyclical"
-  },
-  {
     "id": "toss_20260225_CB소비자신뢰지수발표_ECONOMIC",
     "title": "CB 소비자신뢰지수 발표",
     "link": "#",
@@ -603,6 +457,23 @@
     "actual": null,
     "forecast": null,
     "historical": 84.5
+  },
+  {
+    "id": "earning_NVDA_2026-02-26",
+    "title": "NVDA 실적 발표",
+    "link": "#",
+    "source": "Yahoo Finance",
+    "date": "2026-02-26",
+    "time": "09:00",
+    "time_kr": "2026-02-26 09:00 KST",
+    "type": "earnings",
+    "emoji": "💼",
+    "ticker": "NVDA",
+    "company": "NVIDIA Corporation",
+    "eps_estimate": 7.72,
+    "eps_current": 4.03,
+    "market_cap": 4606939627520,
+    "sector": "Technology"
   },
   {
     "id": "toss_20260226_한국은행금융통화위원회_ECONOMIC",
@@ -687,6 +558,34 @@
     "actual": null,
     "forecast": null,
     "historical": 52.6
+  },
+  {
+    "id": "toss_20260304_비농업부문고용변화량(ADP)발표_ECONOMIC",
+    "title": "비농업부문 고용변화량(ADP) 발표",
+    "link": "#",
+    "source": "토스증권",
+    "date": "2026-03-04",
+    "time": "22:15",
+    "type": "economic",
+    "emoji": "📊",
+    "description": "",
+    "actual": null,
+    "forecast": null,
+    "historical": 2.2
+  },
+  {
+    "id": "toss_20260305_ISM서비스업구매관리자지수발표_ECONOMIC",
+    "title": "ISM 서비스업 구매관리자지수 발표",
+    "link": "#",
+    "source": "토스증권",
+    "date": "2026-03-05",
+    "time": "00:00",
+    "type": "economic",
+    "emoji": "📊",
+    "description": "미국 서비스업 경기 상황을 빠르게 파악할 수 있어요.",
+    "actual": null,
+    "forecast": null,
+    "historical": 53.8
   },
   {
     "id": "toss_20260310_4분기경제성장률(GDP)발표(수정치)_ECONOMIC",

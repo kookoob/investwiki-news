@@ -30,8 +30,19 @@ export default function TickerPrices({ tickers }: { tickers: string[] }) {
             const json = await res.json()
             const quote = json.chart.result[0]
             const meta = quote.meta
-            const currentPrice = meta.regularMarketPrice
+            let currentPrice = meta.regularMarketPrice
             const previousClose = meta.chartPreviousClose
+            
+            // 한국 주식인데 통화가 USD인 경우 → KRW로 역변환
+            const isKorean = symbol.endsWith('.KS') || symbol.endsWith('.KQ')
+            const currency = meta.currency || 'USD'
+            
+            if (isKorean && currency === 'USD') {
+              // USD → KRW 변환 (대략 1300배)
+              // 정확한 환율은 별도 API 필요하지만, 주가 표시용으로는 근사치 사용
+              currentPrice = currentPrice * 1300
+            }
+            
             const change = currentPrice - previousClose
             const changePercent = (change / previousClose) * 100
 
@@ -68,6 +79,20 @@ export default function TickerPrices({ tickers }: { tickers: string[] }) {
     )
   }
 
+  // 한국 주식 여부 확인 함수
+  const isKoreanStock = (symbol: string) => symbol.endsWith('.KS') || symbol.endsWith('.KQ')
+
+  // 가격 포맷 함수
+  const formatPrice = (symbol: string, price: number) => {
+    if (isKoreanStock(symbol)) {
+      // 한국 주식: 원화 표시 (소수점 없이)
+      return `₩${Math.round(price).toLocaleString()}`
+    } else {
+      // 해외 주식: 달러 표시
+      return `$${price.toFixed(2)}`
+    }
+  }
+
   return (
     <div className="mt-6 pt-6 border-t border-gray-200">
       <h3 className="text-sm font-semibold text-gray-900 mb-3">📊 관련 종목</h3>
@@ -77,7 +102,7 @@ export default function TickerPrices({ tickers }: { tickers: string[] }) {
             <div className="flex justify-between items-start mb-1">
               <span className="text-sm font-medium text-gray-900">{item.symbol}</span>
               <span className="text-base font-semibold text-gray-900">
-                ${item.price.toFixed(2)}
+                {formatPrice(item.symbol, item.price)}
               </span>
             </div>
             <div className="flex justify-between items-center">

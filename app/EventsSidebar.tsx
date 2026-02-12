@@ -17,15 +17,24 @@ interface Event {
 }
 
 function formatDate(dateStr: string): string {
-  const date = new Date(dateStr);
-  const now = new Date();
-  const diffDays = Math.ceil((date.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+  const eventDate = new Date(dateStr);
+  eventDate.setHours(0, 0, 0, 0);
   
-  if (diffDays === 0) return '오늘';
-  if (diffDays === 1) return '내일';
-  if (diffDays < 7) return `${diffDays}일 후`;
+  // 한국시간 기준 오늘
+  const nowKST = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Seoul" }));
+  nowKST.setHours(0, 0, 0, 0);
   
-  return date.toLocaleDateString('ko-KR', { month: 'short', day: 'numeric' });
+  const diffMs = eventDate.getTime() - nowKST.getTime();
+  const diffDays = Math.round(diffMs / (1000 * 60 * 60 * 24));
+  
+  // 날짜 표시 (월/일)
+  const monthDay = eventDate.toLocaleDateString('ko-KR', { month: 'numeric', day: 'numeric' });
+  
+  if (diffDays === 0) return `오늘 (${monthDay})`;
+  if (diffDays === 1) return `내일 (${monthDay})`;
+  if (diffDays > 1 && diffDays < 7) return `${diffDays}일 후 (${monthDay})`;
+  
+  return monthDay;
 }
 
 function getCompanyName(event: Event): string {
