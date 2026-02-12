@@ -6,6 +6,7 @@ import CopyButton from './CopyButton'
 import Comments from './Comments'
 import VoteButtons from './VoteButtons'
 import Header from '@/app/components/Header'
+import RelatedNews from '@/app/components/RelatedNews'
 import { Metadata } from 'next'
 
 async function getNewsById(id: string) {
@@ -273,6 +274,13 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
 
           {/* 댓글 */}
           <Comments newsId={news.id} />
+          
+          {/* 관련 뉴스 */}
+          <RelatedNews 
+            currentNewsId={news.id}
+            tickers={news.tickers || []}
+            title={news.title}
+          />
         </article>
       </main>
     </div>
