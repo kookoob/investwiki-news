@@ -22,6 +22,8 @@ function SearchContent() {
   const query = searchParams.get('q') || '';
   
   const [searchQuery, setSearchQuery] = useState(query);
+  const [dateFrom, setDateFrom] = useState('');
+  const [dateTo, setDateTo] = useState('');
   const [results, setResults] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(false);
   const [totalResults, setTotalResults] = useState(0);
@@ -61,7 +63,7 @@ function SearchContent() {
 
       // 검색어로 필터링
       const searchLower = q.toLowerCase();
-      const filtered = allNews.filter((item) => {
+      let filtered = allNews.filter((item) => {
         return (
           item.title.toLowerCase().includes(searchLower) ||
           item.summary.toLowerCase().includes(searchLower) ||
@@ -69,6 +71,19 @@ function SearchContent() {
           (item.tickers && item.tickers.some(t => t.toLowerCase().includes(searchLower)))
         );
       });
+      
+      // 날짜 범위 필터링
+      if (dateFrom || dateTo) {
+        filtered = filtered.filter((item) => {
+          const itemDate = new Date(item.date);
+          const fromDate = dateFrom ? new Date(dateFrom) : null;
+          const toDate = dateTo ? new Date(dateTo) : null;
+          
+          if (fromDate && itemDate < fromDate) return false;
+          if (toDate && itemDate > toDate) return false;
+          return true;
+        });
+      }
 
       setResults(filtered);
       setTotalResults(filtered.length);
@@ -99,21 +114,53 @@ function SearchContent() {
           </h1>
           
           {/* 검색창 */}
-          <form onSubmit={handleSearch} className="flex gap-2">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="제목, 내용, 티커로 검색..."
-              className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <button
-              type="submit"
-              disabled={loading}
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-medium rounded-lg transition-colors"
-            >
-              {loading ? '검색 중...' : '검색'}
-            </button>
+          <form onSubmit={handleSearch} className="space-y-3">
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="제목, 내용, 티커로 검색..."
+                className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <button
+                type="submit"
+                disabled={loading}
+                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-medium rounded-lg transition-colors"
+              >
+                {loading ? '검색 중...' : '검색'}
+              </button>
+            </div>
+            
+            {/* 날짜 범위 */}
+            <div className="flex gap-2 items-center text-sm">
+              <label className="text-gray-600 dark:text-gray-400">기간:</label>
+              <input
+                type="date"
+                value={dateFrom}
+                onChange={(e) => setDateFrom(e.target.value)}
+                className="px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <span className="text-gray-400">~</span>
+              <input
+                type="date"
+                value={dateTo}
+                onChange={(e) => setDateTo(e.target.value)}
+                className="px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              {(dateFrom || dateTo) && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setDateFrom('');
+                    setDateTo('');
+                  }}
+                  className="text-blue-600 hover:text-blue-700"
+                >
+                  초기화
+                </button>
+              )}
+            </div>
           </form>
         </div>
 
