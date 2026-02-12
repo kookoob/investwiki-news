@@ -19,12 +19,27 @@ export async function GET(request: NextRequest) {
     })
     
     if (!response.ok) {
-      throw new Error('Failed to fetch stock price')
+      console.error(`Yahoo Finance API error for ${ticker}: ${response.status}`)
+      return NextResponse.json({ error: 'API request failed' }, { status: 404 })
     }
     
     const data = await response.json()
+    
+    // result 배열 체크
+    if (!data.chart || !data.chart.result || data.chart.result.length === 0) {
+      console.error(`No data for ticker: ${ticker}`)
+      return NextResponse.json({ error: 'No data available' }, { status: 404 })
+    }
+    
     const quote = data.chart.result[0]
     const meta = quote.meta
+    
+    // 필수 데이터 체크
+    if (!meta || typeof meta.regularMarketPrice !== 'number' || typeof meta.chartPreviousClose !== 'number') {
+      console.error(`Invalid data structure for ${ticker}`)
+      return NextResponse.json({ error: 'Invalid data' }, { status: 404 })
+    }
+    
     const currentPrice = meta.regularMarketPrice
     const previousClose = meta.chartPreviousClose
     
@@ -42,7 +57,7 @@ export async function GET(request: NextRequest) {
       currency: currency
     })
   } catch (error) {
-    console.error('Stock price fetch error:', error)
+    console.error(`Stock price fetch error for ${ticker}:`, error)
     return NextResponse.json({ error: 'Failed to fetch price' }, { status: 500 })
   }
 }

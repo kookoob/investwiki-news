@@ -20,11 +20,13 @@ export default function StockPrice({ ticker }: StockPriceProps) {
   useEffect(() => {
     async function fetchPrice() {
       try {
-        // Yahoo Finance API 호출
         const response = await fetch(`/api/stock-price?ticker=${ticker}`)
         if (response.ok) {
           const data = await response.json()
-          setPriceData(data)
+          // 데이터 유효성 검증
+          if (data && typeof data.price === 'number') {
+            setPriceData(data)
+          }
         }
       } catch (error) {
         console.error('Failed to fetch price:', error)
