@@ -27,12 +27,12 @@ export default function MiniChart({ data, color, width = 80, height = 30 }: Mini
   }
 
   return (
-    <svg width={width} height={height} className="inline-block">
+    <svg width={width} height={height} className="w-full" viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none">
       <polyline
         points={points}
         fill="none"
         stroke={colorMap[color]}
-        strokeWidth="1.5"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

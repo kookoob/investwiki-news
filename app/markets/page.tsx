@@ -117,12 +117,12 @@ export default function MarketsPage() {
                 </div>
               </div>
               {item.chartData && item.chartData.length > 1 && (
-                <div className="mt-2">
+                <div className="mt-3 w-full">
                   <MiniChart 
                     data={item.chartData} 
                     color={isPositive ? 'green' : isNegative ? 'red' : 'gray'}
-                    width={240}
-                    height={40}
+                    width={280}
+                    height={50}
                   />
                 </div>
               )}
