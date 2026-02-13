@@ -107,8 +107,8 @@ export default function MarketsPage() {
                   </div>
                   <div
                     className={`text-xs font-medium ${
-                      isPositive ? 'text-red-600 dark:text-red-400' : 
-                      isNegative ? 'text-blue-600 dark:text-blue-400' : 
+                      isPositive ? 'text-green-600 dark:text-green-400' : 
+                      isNegative ? 'text-red-600 dark:text-red-400' : 
                       'text-gray-600 dark:text-gray-400'
                     }`}
                   >
@@ -120,7 +120,7 @@ export default function MarketsPage() {
                 <div className="mt-2">
                   <MiniChart 
                     data={item.chartData} 
-                    color={isPositive ? 'red' : isNegative ? 'blue' : 'gray'}
+                    color={isPositive ? 'green' : isNegative ? 'red' : 'gray'}
                     width={240}
                     height={40}
                   />

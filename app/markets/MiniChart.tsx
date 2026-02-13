@@ -2,7 +2,7 @@
 
 interface MiniChartProps {
   data: number[]
-  color: 'red' | 'blue' | 'gray'
+  color: 'green' | 'red' | 'gray'
   width?: number
   height?: number
 }
@@ -21,8 +21,8 @@ export default function MiniChart({ data, color, width = 80, height = 30 }: Mini
   }).join(' ')
 
   const colorMap = {
+    green: '#22c55e',
     red: '#ef4444',
-    blue: '#3b82f6',
     gray: '#9ca3af'
   }
 
