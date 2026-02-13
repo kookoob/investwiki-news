@@ -11,49 +11,47 @@ export async function GET(request: NextRequest) {
   try {
     const results: Record<string, any> = {}
 
-    // Yahoo Finance API (비공식이지만 작동함)
+    // Binance API (암호화폐만, 무료, 인증 불필요)
+    const cryptoSymbols = ['BTC-USD', 'ETH-USD', 'SOL-USD', 'BNB-USD']
+    const binanceMap: Record<string, string> = {
+      'BTC-USD': 'BTCUSDT',
+      'ETH-USD': 'ETHUSDT',
+      'SOL-USD': 'SOLUSDT',
+      'BNB-USD': 'BNBUSDT',
+    }
+
     for (const symbol of symbols) {
-      try {
-        const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1d&range=1d`
-        const response = await fetch(url, {
-          headers: {
-            'User-Agent': 'Mozilla/5.0',
-          },
-        })
+      if (cryptoSymbols.includes(symbol)) {
+        try {
+          const binanceSymbol = binanceMap[symbol]
+          const url = `https://api.binance.com/api/v3/ticker/24hr?symbol=${binanceSymbol}`
+          const response = await fetch(url)
+          
+          if (response.ok) {
+            const data = await response.json()
+            const price = parseFloat(data.lastPrice)
+            const change = parseFloat(data.priceChange)
+            const changePercent = parseFloat(data.priceChangePercent)
 
-        if (!response.ok) {
-          results[symbol] = { price: '-', change: '-', changePercent: '-' }
-          continue
-        }
+            const formatPrice = (p: number) => {
+              if (p >= 1000) return p.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+              if (p >= 100) return p.toFixed(2)
+              if (p >= 1) return p.toFixed(3)
+              return p.toFixed(4)
+            }
 
-        const data = await response.json()
-        const quote = data?.chart?.result?.[0]?.meta
-        const indicators = data?.chart?.result?.[0]?.indicators?.quote?.[0]
-
-        if (quote) {
-          const currentPrice = quote.regularMarketPrice || quote.previousClose
-          const previousClose = quote.chartPreviousClose || quote.previousClose
-          const change = currentPrice - previousClose
-          const changePercent = (change / previousClose) * 100
-
-          // 포맷팅
-          const formatPrice = (price: number) => {
-            if (price >= 1000) return price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-            if (price >= 100) return price.toFixed(2)
-            if (price >= 1) return price.toFixed(3)
-            return price.toFixed(4)
+            results[symbol] = {
+              price: formatPrice(price),
+              change: change >= 0 ? `+${formatPrice(Math.abs(change))}` : `-${formatPrice(Math.abs(change))}`,
+              changePercent: changePercent >= 0 ? `+${changePercent.toFixed(2)}%` : `${changePercent.toFixed(2)}%`,
+            }
           }
-
-          results[symbol] = {
-            price: formatPrice(currentPrice),
-            change: change >= 0 ? `+${formatPrice(Math.abs(change))}` : `-${formatPrice(Math.abs(change))}`,
-            changePercent: change >= 0 ? `+${changePercent.toFixed(2)}%` : `${changePercent.toFixed(2)}%`,
-          }
-        } else {
+        } catch (error) {
+          console.error(`Error fetching ${symbol}:`, error)
           results[symbol] = { price: '-', change: '-', changePercent: '-' }
         }
-      } catch (error) {
-        console.error(`Error fetching ${symbol}:`, error)
+      } else {
+        // 다른 심볼은 일단 placeholder
         results[symbol] = { price: '-', change: '-', changePercent: '-' }
       }
     }
