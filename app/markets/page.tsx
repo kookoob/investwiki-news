@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Header from '../components/Header'
+import './market-colors.css'
 
 interface MarketData {
   symbol: string
@@ -103,20 +104,10 @@ export default function MarketsPage() {
                   <div className="text-xs text-gray-500 dark:text-gray-400">{item.symbol}</div>
                 </div>
                 <div className="text-right">
-                  <div 
-                    className="text-base font-semibold"
-                    style={{
-                      color: isPositive ? '#16a34a' : isNegative ? '#dc2626' : undefined
-                    }}
-                  >
+                  <div className={`text-base font-semibold ${isPositive ? 'market-price-positive' : isNegative ? 'market-price-negative' : ''}`}>
                     {item.loading ? '...' : item.price}
                   </div>
-                  <div
-                    className="text-sm font-medium"
-                    style={{
-                      color: isPositive ? '#16a34a' : isNegative ? '#dc2626' : undefined
-                    }}
-                  >
+                  <div className={`text-sm font-medium ${isPositive ? 'market-change-positive' : isNegative ? 'market-change-negative' : ''}`}>
                     {item.loading ? '...' : `${isPositive ? '▲' : isNegative ? '▼' : ''} ${item.changePercent}`}
                   </div>
                 </div>
