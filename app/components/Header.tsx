@@ -55,7 +55,7 @@ export default function Header() {
         <div className="flex items-center justify-between py-4">
           {/* 로고 */}
           <Link href="/" className="flex items-center gap-2 select-none">
-            <img src="/logo.png" alt="StockHub" className="h-12 w-auto pointer-events-none" draggable="false" />
+            <img src="/logo.png" alt="StockHub" className="h-8 sm:h-10 md:h-12 w-auto pointer-events-none" draggable="false" />
             <span className="text-sm text-gray-600 dark:text-gray-300 hidden sm:inline font-medium">실시간 투자·경제 뉴스</span>
           </Link>
           
