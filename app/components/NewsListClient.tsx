@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import NewsFilters from './NewsFilters'
 import StockPrice from './StockPrice'
@@ -23,12 +23,26 @@ const TICKER_DISPLAY_NAMES: Record<string, string> = {
   '^HSI': 'Hang Seng',
 }
 
-function getTickerDisplayName(ticker: string): string {
-  return TICKER_DISPLAY_NAMES[ticker] || ticker
-}
-
 export default function NewsListClient({ initialNews, stats }: NewsListClientProps) {
   const [filteredNews, setFilteredNews] = useState(initialNews)
+  const [tickerNames, setTickerNames] = useState<Record<string, string>>({})
+
+  // 한글 종목명 매핑 로드
+  useEffect(() => {
+    fetch('/ticker-names.json')
+      .then(res => res.json())
+      .then(names => setTickerNames(names))
+      .catch(err => console.error('티커 매핑 로드 실패:', err))
+  }, [])
+
+  function getTickerDisplayName(ticker: string): string {
+    // 한글 종목명이 있으면 우선 사용
+    if (tickerNames[ticker]) {
+      return tickerNames[ticker]
+    }
+    // 지수 매핑 사용
+    return TICKER_DISPLAY_NAMES[ticker] || ticker
+  }
   
   return (
     <div className="flex-1 space-y-4">

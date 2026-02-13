@@ -3,7 +3,7 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import InstallButton from './InstallButton'
 import AdSense from './AdSense'
-import AuthButton from './AuthButton'
+import Header from './components/Header'
 import LiveNewsUpdater from './LiveNewsUpdater'
 import EventsScroll from './EventsScroll'
 import EventsSidebar from './EventsSidebar'
@@ -87,7 +87,7 @@ export default async function Home() {
   }).sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* 실시간 업데이트 */}
       <LiveNewsUpdater initialNewsIds={newsIds} />
       
@@ -95,98 +95,7 @@ export default async function Home() {
       <InstallButton />
       
       {/* 헤더 */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4">
-          {/* 상단: 로고 + 탭 + 버튼들 */}
-          <div className="flex items-center justify-between py-3">
-            {/* 로고 */}
-            <Link href="/" className="flex items-center gap-2 select-none">
-              <img src="/logo.png" alt="StockHub" className="h-8 w-auto pointer-events-none" draggable="false" />
-              <span className="text-xs text-gray-500 hidden sm:inline">실시간 투자·경제 뉴스</span>
-            </Link>
-            
-            {/* 탭 메뉴 (중앙) */}
-            <nav className="hidden md:flex items-center gap-1">
-              <Link
-                href="/"
-                className="px-3 py-2 text-blue-600 bg-blue-50 rounded-lg font-medium text-sm"
-              >
-                📰 뉴스
-              </Link>
-              <Link
-                href="/events"
-                className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm transition-colors"
-              >
-                📅 일정
-              </Link>
-              <Link
-                href="/community"
-                className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm transition-colors"
-              >
-                💬 커뮤니티
-              </Link>
-              <Link
-                href="/notice"
-                className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm transition-colors"
-              >
-                📢 공지
-              </Link>
-              <Link
-                href="/contact"
-                className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm transition-colors"
-              >
-                📨 문의
-              </Link>
-            </nav>
-            
-            {/* 우측 버튼들 */}
-            <div className="flex items-center gap-2">
-              {/* 검색 아이콘 */}
-              <Link
-                href="/search"
-                className="p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
-                aria-label="검색"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </Link>
-              
-              <a
-                href="https://t.me/stockhubkr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 px-3 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-sm font-medium transition-colors"
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121L7.942 13.5l-2.906-.907c-.63-.196-.642-.63.135-.931l11.36-4.38c.525-.195.984.127.814.939z"/>
-                </svg>
-                <span className="hidden sm:inline">텔레그램</span>
-              </a>
-              <AuthButton />
-            </div>
-          </div>
-          
-          {/* 모바일 탭 메뉴 */}
-          <nav className="md:hidden flex items-center gap-1 overflow-x-auto pb-3 -mx-4 px-4">
-            <Link href="/" className="px-3 py-2 text-blue-600 bg-blue-50 rounded-lg font-medium text-sm whitespace-nowrap">
-              📰 뉴스
-            </Link>
-            <Link href="/events" className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm whitespace-nowrap">
-              📅 일정
-            </Link>
-            <Link href="/community" className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm whitespace-nowrap">
-              💬 커뮤니티
-            </Link>
-            <Link href="/notice" className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm whitespace-nowrap">
-              📢 공지
-            </Link>
-            <Link href="/contact" className="px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium text-sm whitespace-nowrap">
-              📨 문의
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       {/* 모바일 이벤트 스크롤 */}
       <EventsScroll />
@@ -203,13 +112,13 @@ export default async function Home() {
       </main>
 
       {/* 푸터 */}
-      <footer className="max-w-4xl mx-auto px-4 py-8 text-center text-sm text-gray-500">
+      <footer className="max-w-4xl mx-auto px-4 py-8 text-center text-sm text-gray-500 dark:text-gray-400">
         <div className="mb-4">
           <a
             href="https://t.me/stockhubkr"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
+            className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121L7.942 13.5l-2.906-.907c-.63-.196-.642-.63.135-.931l11.36-4.38c.525-.195.984.127.814.939z"/>

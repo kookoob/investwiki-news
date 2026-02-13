@@ -13,6 +13,15 @@ interface TickerData {
 export default function TickerPrices({ tickers }: { tickers: string[] }) {
   const [data, setData] = useState<TickerData[]>([])
   const [loading, setLoading] = useState(true)
+  const [tickerNames, setTickerNames] = useState<Record<string, string>>({})
+
+  // 한글 종목명 매핑 로드
+  useEffect(() => {
+    fetch('/ticker-names.json')
+      .then(res => res.json())
+      .then(setTickerNames)
+      .catch(err => console.error('티커 매핑 로드 실패:', err))
+  }, [])
 
   useEffect(() => {
     if (!tickers || tickers.length === 0) {
@@ -97,26 +106,33 @@ export default function TickerPrices({ tickers }: { tickers: string[] }) {
     <div className="mt-6 pt-6 border-t border-gray-200">
       <h3 className="text-sm font-semibold text-gray-900 mb-3">📊 관련 종목</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {data.map((item) => (
-          <div key={item.symbol} className="bg-gray-50 rounded-lg p-3 border border-gray-200">
-            <div className="flex justify-between items-start mb-1">
-              <span className="text-sm font-medium text-gray-900">{item.symbol}</span>
-              <span className="text-base font-semibold text-gray-900">
-                {formatPrice(item.symbol, item.price)}
-              </span>
+        {data.map((item) => {
+          // 한국 주식이면 한글명 우선 표시
+          const koreanName = tickerNames[item.symbol]
+          const displayName = koreanName || item.symbol
+          const subName = koreanName ? item.symbol : item.name
+          
+          return (
+            <div key={item.symbol} className="bg-gray-50 rounded-lg p-3 border border-gray-200">
+              <div className="flex justify-between items-start mb-1">
+                <span className="text-sm font-medium text-gray-900">{displayName}</span>
+                <span className="text-base font-semibold text-gray-900">
+                  {formatPrice(item.symbol, item.price)}
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-xs text-gray-500">{subName}</span>
+                <span
+                  className={`text-xs font-medium ${
+                    item.change >= 0 ? 'text-red-600' : 'text-blue-600'
+                  }`}
+                >
+                  {item.change >= 0 ? '▲' : '▼'} {Math.abs(item.changePercent).toFixed(2)}%
+                </span>
+              </div>
             </div>
-            <div className="flex justify-between items-center">
-              <span className="text-xs text-gray-500">{item.name}</span>
-              <span
-                className={`text-xs font-medium ${
-                  item.change >= 0 ? 'text-red-600' : 'text-blue-600'
-                }`}
-              >
-                {item.change >= 0 ? '▲' : '▼'} {Math.abs(item.changePercent).toFixed(2)}%
-              </span>
-            </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
     </div>
   )

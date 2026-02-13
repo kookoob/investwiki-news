@@ -7,6 +7,7 @@ import Comments from './Comments'
 import VoteButtons from './VoteButtons'
 import Header from '@/app/components/Header'
 import RelatedNews from '@/app/components/RelatedNews'
+import TradingViewChart from './TradingViewChart'
 import { Metadata } from 'next'
 
 async function getNewsById(id: string) {
@@ -90,12 +91,25 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   }
 }
 
+async function getTickerNames() {
+  try {
+    const filePath = path.join(process.cwd(), 'public', 'ticker-names.json')
+    const fileContents = await fs.readFile(filePath, 'utf8')
+    return JSON.parse(fileContents)
+  } catch {
+    return {}
+  }
+}
+
 export default async function NewsDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const news = await getNewsById(id)
 
   // 가격 정보 가져오기
   const tickerData = news?.tickers ? await fetchTickerPrices(news.tickers) : []
+  
+  // 티커 한글명 가져오기
+  const tickerNames = await getTickerNames()
 
   if (!news) {
     return (
@@ -249,6 +263,22 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
                   </div>
                 ))}
               </div>
+            </div>
+          )}
+
+          {/* TradingView 차트 */}
+          {news.tickers && news.tickers.length > 0 && (
+            <div className="mt-6">
+              {news.tickers.slice(0, 2).map((ticker: string) => {
+                const displayName = tickerNames[ticker] || ticker
+                return (
+                  <TradingViewChart 
+                    key={ticker} 
+                    symbol={ticker}
+                    displayName={displayName}
+                  />
+                )
+              })}
             </div>
           )}
 

@@ -69,14 +69,14 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Header />
       
       <div className="container mx-auto px-4 py-12">
         {/* 헤더 */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">📨 문의하기</h1>
-          <p className="text-gray-300">궁금한 점이나 제안사항을 남겨주세요</p>
+          <p className="text-gray-700 dark:text-gray-300">궁금한 점이나 제안사항을 남겨주세요</p>
         </div>
 
         {/* 문의 폼 */}
@@ -87,7 +87,7 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-white mb-2">
                 문의가 접수되었습니다!
               </h2>
-              <p className="text-gray-300 mb-6">
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
                 빠른 시일 내에 답변드리겠습니다.
               </p>
               <button
@@ -100,7 +100,7 @@ export default function ContactPage() {
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="bg-gray-800 rounded-lg p-8 border border-gray-700 shadow-sm"
+              className="bg-white dark:bg-gray-800 rounded-lg p-8 border border-gray-200 dark:border-gray-700 shadow-sm"
             >
               {error && (
                 <div className="mb-6 p-4 bg-red-900 border border-red-700 rounded-lg text-red-300">
@@ -118,7 +118,7 @@ export default function ContactPage() {
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   placeholder="your@email.com"
-                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full px-4 py-3 bg-gray-200 dark:bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors"
                   required
                 />
               </div>
@@ -133,7 +133,7 @@ export default function ContactPage() {
                   value={form.subject}
                   onChange={(e) => setForm({ ...form, subject: e.target.value })}
                   placeholder="문의 제목을 입력하세요"
-                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full px-4 py-3 bg-gray-200 dark:bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors"
                   required
                 />
               </div>
@@ -148,7 +148,7 @@ export default function ContactPage() {
                   onChange={(e) => setForm({ ...form, content: e.target.value })}
                   placeholder="문의 내용을 자세히 입력해주세요"
                   rows={8}
-                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-gray-200 dark:bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors resize-none"
                   required
                 />
               </div>
@@ -168,7 +168,7 @@ export default function ContactPage() {
           <div className="text-center mt-8">
             <a
               href="/"
-              className="inline-block px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors"
+              className="inline-block px-6 py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors"
             >
               ← 홈으로 돌아가기
             </a>

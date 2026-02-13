@@ -58,7 +58,7 @@ export default function NoticePage() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gray-900">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         <div className="max-w-5xl mx-auto px-4 py-8">
           {/* 헤더 */}
           <div className="mb-6 flex items-center justify-between">
@@ -74,20 +74,20 @@ export default function NoticePage() {
           </div>
 
           {/* 공지사항 목록 */}
-          <div className="bg-gray-800 rounded-lg border border-gray-700">
+          <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
             {loading ? (
-              <div className="p-8 text-center text-gray-400">로딩 중...</div>
+              <div className="p-8 text-center text-gray-400 dark:text-gray-500 dark:text-gray-400">로딩 중...</div>
             ) : notices.length === 0 ? (
-              <div className="p-8 text-center text-gray-400">
+              <div className="p-8 text-center text-gray-400 dark:text-gray-500 dark:text-gray-400">
                 공지사항이 없습니다.
               </div>
             ) : (
-              <div className="divide-y divide-gray-700">
+              <div className="divide-y divide-gray-200 dark:divide-gray-700">
                 {/* 고정 공지 */}
                 {pinnedNotices.map((notice) => (
                   <div
                     key={notice.id}
-                    className="p-4 hover:bg-gray-700 transition-colors cursor-pointer"
+                    className="p-4 hover:bg-gray-200 dark:bg-gray-700 transition-colors cursor-pointer"
                     onClick={() => setExpandedId(expandedId === notice.id ? null : notice.id)}
                   >
                     <div className="flex items-start gap-3">
@@ -98,19 +98,19 @@ export default function NoticePage() {
                         <h3 className="text-lg font-semibold text-white mb-1">
                           {notice.title}
                         </h3>
-                        <p className="text-sm text-gray-400">
+                        <p className="text-sm text-gray-400 dark:text-gray-500 dark:text-gray-400">
                           {new Date(notice.created_at).toLocaleDateString('ko-KR')}
                         </p>
                         {expandedId === notice.id && (
                           <div className="mt-4 p-4 bg-gray-900 rounded-lg">
-                            <div className="text-gray-300 whitespace-pre-wrap mb-4">
+                            <div className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap mb-4">
                               {notice.content}
                             </div>
                             {(notice as any).image_url && (
                               <img
                                 src={(notice as any).image_url}
                                 alt="공지사항 이미지"
-                                className="max-w-full h-auto rounded-lg border border-gray-700"
+                                className="max-w-full h-auto rounded-lg border border-gray-200 dark:border-gray-700"
                               />
                             )}
                           </div>
@@ -124,7 +124,7 @@ export default function NoticePage() {
                 {regularNotices.map((notice) => (
                   <div
                     key={notice.id}
-                    className="p-4 hover:bg-gray-700 transition-colors cursor-pointer"
+                    className="p-4 hover:bg-gray-200 dark:bg-gray-700 transition-colors cursor-pointer"
                     onClick={() => setExpandedId(expandedId === notice.id ? null : notice.id)}
                   >
                     <div className="flex items-start gap-3">
@@ -132,19 +132,19 @@ export default function NoticePage() {
                         <h3 className="text-lg font-semibold text-white mb-1">
                           {notice.title}
                         </h3>
-                        <p className="text-sm text-gray-400">
+                        <p className="text-sm text-gray-400 dark:text-gray-500 dark:text-gray-400">
                           {new Date(notice.created_at).toLocaleDateString('ko-KR')}
                         </p>
                         {expandedId === notice.id && (
                           <div className="mt-4 p-4 bg-gray-900 rounded-lg">
-                            <div className="text-gray-300 whitespace-pre-wrap mb-4">
+                            <div className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap mb-4">
                               {notice.content}
                             </div>
                             {(notice as any).image_url && (
                               <img
                                 src={(notice as any).image_url}
                                 alt="공지사항 이미지"
-                                className="max-w-full h-auto rounded-lg border border-gray-700"
+                                className="max-w-full h-auto rounded-lg border border-gray-200 dark:border-gray-700"
                               />
                             )}
                           </div>

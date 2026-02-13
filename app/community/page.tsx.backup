@@ -129,7 +129,7 @@ export default function CommunityPage() {
                 글쓰기
               </Link>
             ) : (
-              <div className="text-sm text-gray-400 dark:text-gray-500 dark:text-gray-400">
+              <div className="text-sm text-gray-400">
                 로그인 후 글쓰기 가능
               </div>
             )}
@@ -143,7 +143,7 @@ export default function CommunityPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="제목, 내용, 작성자로 검색..."
-                className="flex-1 px-4 py-2 bg-white dark:bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-200 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="flex-1 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <button
                 type="submit"
@@ -155,33 +155,33 @@ export default function CommunityPage() {
                 <button
                   type="button"
                   onClick={clearSearch}
-                  className="px-4 py-2 bg-gray-200 dark:bg-gray-700 hover:bg-gray-600 text-white font-medium rounded-lg transition-colors"
+                  className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white font-medium rounded-lg transition-colors"
                 >
                   초기화
                 </button>
               )}
             </form>
             {searchQuery && (
-              <p className="mt-2 text-sm text-gray-400 dark:text-gray-500 dark:text-gray-400">
+              <p className="mt-2 text-sm text-gray-400">
                 "{searchQuery}" 검색 결과: {posts.length}개
               </p>
             )}
           </div>
 
           {/* 게시글 목록 */}
-          <div className="bg-white dark:bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-200 dark:border-gray-700">
+          <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
             {loading ? (
-              <div className="p-8 text-center text-gray-400 dark:text-gray-500 dark:text-gray-400">로딩 중...</div>
+              <div className="p-8 text-center text-gray-400">로딩 중...</div>
             ) : posts.length === 0 ? (
-              <div className="p-8 text-center text-gray-400 dark:text-gray-500 dark:text-gray-400">
+              <div className="p-8 text-center text-gray-400">
                 아직 게시글이 없습니다. 첫 글을 작성해보세요!
               </div>
             ) : (
-              <div className="divide-y divide-gray-200 dark:divide-gray-200 dark:divide-gray-700">
+              <div className="divide-y divide-gray-200 dark:divide-gray-700">
                 {posts.map((post) => (
                   <div
                     key={post.id}
-                    className="p-4 hover:bg-gray-200 dark:bg-gray-700 transition-colors"
+                    className="p-4 hover:bg-gray-700 transition-colors"
                   >
                     <div className="flex items-start gap-3">
                       {/* 프로필 이미지 - 클릭 가능 */}
@@ -209,11 +209,11 @@ export default function CommunityPage() {
                           <Link
                             href={`/profile/${post.user_id}`}
                             onClick={(e) => e.stopPropagation()}
-                            className="font-medium text-gray-700 dark:text-gray-300 hover:text-blue-400 transition-colors"
+                            className="font-medium text-gray-300 hover:text-blue-400 transition-colors"
                           >
                             {(post as any).author_name || '익명'}
                           </Link>
-                          <span className="text-xs text-gray-400 dark:text-gray-500">
+                          <span className="text-xs text-gray-500">
                             @{(post as any).author_username || 'unknown'}
                           </span>
                         </div>
@@ -226,12 +226,12 @@ export default function CommunityPage() {
                         </Link>
 
                         <Link href={`/community/${post.id}`}>
-                          <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-2 mb-2">
+                          <p className="text-sm text-gray-300 line-clamp-2 mb-2">
                             {post.content}
                           </p>
                         </Link>
 
-                        <div className="flex items-center gap-2 text-xs text-gray-400 dark:text-gray-500 dark:text-gray-400">
+                        <div className="flex items-center gap-2 text-xs text-gray-400">
                           <span>{new Date(post.created_at).toLocaleDateString('ko-KR')}</span>
                           <span>·</span>
                           <span>조회 {post.views}</span>

@@ -82,6 +82,16 @@ export default function Header() {
               📅 일정
             </Link>
             <Link
+              href="/markets"
+              className={`px-3 py-2 rounded-lg font-medium text-sm ${
+                isActive('/markets')
+                  ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
+                  : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
+              } transition-colors`}
+            >
+              📊 시장
+            </Link>
+            <Link
               href="/community"
               className={`px-3 py-2 rounded-lg font-medium text-sm ${
                 isActive('/community')
@@ -197,6 +207,16 @@ export default function Header() {
             }`}
           >
             📅 일정
+          </Link>
+          <Link
+            href="/markets"
+            className={`px-3 py-2 rounded-lg font-medium text-sm whitespace-nowrap ${
+              isActive('/markets')
+                ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
+                : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
+            }`}
+          >
+            📊 시장
           </Link>
           <Link
             href="/community"
