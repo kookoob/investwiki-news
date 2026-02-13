@@ -4,18 +4,17 @@ import { useEffect, useRef } from 'react'
 import Header from '../components/Header'
 
 export default function MarketsPage() {
-  const container1Ref = useRef<HTMLDivElement>(null)
-  const container2Ref = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    // TradingView 위젯 1: 시장 시세표
-    const script1 = document.createElement('script')
-    script1.src = 'https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js'
-    script1.type = 'text/javascript'
-    script1.async = true
-    script1.innerHTML = JSON.stringify({
+    // TradingView 위젯: 시장 시세표 (차트 없이 수치만)
+    const script = document.createElement('script')
+    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js'
+    script.type = 'text/javascript'
+    script.async = true
+    script.innerHTML = JSON.stringify({
       width: '100%',
-      height: 500,
+      height: 600,
       symbolsGroups: [
         {
           name: '주가지수',
@@ -35,6 +34,7 @@ export default function MarketsPage() {
             { name: 'FX_IDC:USDKRW', displayName: '달러/원' },
             { name: 'FX:EURUSD', displayName: '유로/달러' },
             { name: 'FX:USDJPY', displayName: '달러/엔' },
+            { name: 'FX:GBPUSD', displayName: '파운드/달러' },
           ],
         },
         {
@@ -44,6 +44,16 @@ export default function MarketsPage() {
             { name: 'TVC:SILVER', displayName: '은' },
             { name: 'NYMEX:CL1!', displayName: 'WTI 원유' },
             { name: 'NYMEX:NG1!', displayName: '천연가스' },
+            { name: 'CBOT:ZC1!', displayName: '옥수수' },
+          ],
+        },
+        {
+          name: '암호화폐',
+          symbols: [
+            { name: 'BINANCE:BTCUSDT', displayName: '비트코인' },
+            { name: 'BINANCE:ETHUSDT', displayName: '이더리움' },
+            { name: 'BINANCE:SOLUSDT', displayName: '솔라나' },
+            { name: 'BINANCE:BNBUSDT', displayName: 'BNB' },
           ],
         },
       ],
@@ -53,76 +63,13 @@ export default function MarketsPage() {
       locale: 'kr',
     })
 
-    // TradingView 위젯 2: 시장 오버뷰
-    const script2 = document.createElement('script')
-    script2.src = 'https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js'
-    script2.type = 'text/javascript'
-    script2.async = true
-    script2.innerHTML = JSON.stringify({
-      colorTheme: 'light',
-      dateRange: '1D',
-      showChart: true,
-      locale: 'kr',
-      width: '100%',
-      height: 500,
-      largeChartUrl: '',
-      isTransparent: false,
-      showSymbolLogo: true,
-      showFloatingTooltip: false,
-      plotLineColorGrowing: 'rgba(41, 98, 255, 1)',
-      plotLineColorFalling: 'rgba(41, 98, 255, 1)',
-      gridLineColor: 'rgba(240, 243, 250, 0)',
-      scaleFontColor: 'rgba(106, 109, 120, 1)',
-      belowLineFillColorGrowing: 'rgba(41, 98, 255, 0.12)',
-      belowLineFillColorFalling: 'rgba(41, 98, 255, 0.12)',
-      belowLineFillColorGrowingBottom: 'rgba(41, 98, 255, 0)',
-      belowLineFillColorFallingBottom: 'rgba(41, 98, 255, 0)',
-      symbolActiveColor: 'rgba(41, 98, 255, 0.12)',
-      tabs: [
-        {
-          title: '지수',
-          symbols: [
-            { s: 'KRX:KOSPI', d: '코스피' },
-            { s: 'KRX:KOSDAQ', d: '코스닥' },
-            { s: 'NASDAQ:NDX', d: '나스닥' },
-            { s: 'CAPITALCOM:DJI', d: '다우존스' },
-            { s: 'SP:SPX', d: 'S&P 500' },
-          ],
-        },
-        {
-          title: '환율',
-          symbols: [
-            { s: 'FX:EURUSD', d: '유로/달러' },
-            { s: 'FX:GBPUSD', d: '파운드/달러' },
-            { s: 'FX:USDJPY', d: '달러/엔' },
-            { s: 'FX_IDC:USDKRW', d: '달러/원' },
-          ],
-        },
-        {
-          title: '원자재',
-          symbols: [
-            { s: 'TVC:GOLD', d: '금' },
-            { s: 'TVC:SILVER', d: '은' },
-            { s: 'NYMEX:CL1!', d: 'WTI 원유' },
-            { s: 'NYMEX:NG1!', d: '천연가스' },
-          ],
-        },
-      ],
-    })
-
-    if (container1Ref.current) {
-      container1Ref.current.innerHTML = ''
-      container1Ref.current.appendChild(script1)
-    }
-
-    if (container2Ref.current) {
-      container2Ref.current.innerHTML = ''
-      container2Ref.current.appendChild(script2)
+    if (containerRef.current) {
+      containerRef.current.innerHTML = ''
+      containerRef.current.appendChild(script)
     }
 
     return () => {
-      if (container1Ref.current) container1Ref.current.innerHTML = ''
-      if (container2Ref.current) container2Ref.current.innerHTML = ''
+      if (containerRef.current) containerRef.current.innerHTML = ''
     }
   }, [])
 
@@ -137,36 +84,14 @@ export default function MarketsPage() {
             📊 시장 지표
           </h1>
           <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
-            세계 주요 지수, 환율, 원자재 실시간 시세
+            세계 주요 지수, 환율, 원자재, 암호화폐 실시간 시세
           </p>
         </div>
 
-        {/* TradingView 위젯 2: 시장 요약 */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-3 md:p-6 mb-4 md:mb-6">
-          <h2 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
-            시장 요약
-          </h2>
-          <div className="tradingview-widget-container" style={{ minHeight: '500px' }}>
-            <div ref={container2Ref} className="tradingview-widget-container__widget"></div>
-            <div className="tradingview-widget-copyright text-xs text-gray-400 mt-2">
-              <a
-                href="https://kr.tradingview.com/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <span className="blue-text">TradingView에서 제공</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* TradingView 위젯 1: 시세표 */}
+        {/* TradingView 시세표 (차트 없음) */}
         <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-3 md:p-6">
-          <h2 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
-            실시간 시세
-          </h2>
-          <div className="tradingview-widget-container" style={{ minHeight: '500px' }}>
-            <div ref={container1Ref} className="tradingview-widget-container__widget"></div>
+          <div className="tradingview-widget-container" style={{ minHeight: '600px' }}>
+            <div ref={containerRef} className="tradingview-widget-container__widget"></div>
             <div className="tradingview-widget-copyright text-xs text-gray-400 mt-2">
               <a
                 href="https://kr.tradingview.com/"
