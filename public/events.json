@@ -215,7 +215,7 @@
     "source": "경제 캘린더",
     "link": "#",
     "ai_comment": "이번 주 최대 이벤트. CPI 수치에 따라 연준의 금리 정책 방향이 결정될 수 있으며, 증시 전반에 큰 영향을 줄 수 있습니다.",
-    "actual": "2.5"
+    "actual": "0.1"
   },
   {
     "id": "toss_20260212_주간신규실업수당청구건수발표_ECONOMIC",
@@ -242,7 +242,7 @@
     "type": "economic",
     "emoji": "📊",
     "description": "",
-    "actual": "2.5",
+    "actual": "0.1",
     "forecast": null,
     "historical": 2.6,
     "ai_comment": "변동성 큰 식품·에너지 제외한 기조 인플레이션. 연준이 가장 주목하는 지표"
@@ -257,7 +257,7 @@
     "type": "economic",
     "emoji": "📊",
     "description": "",
-    "actual": "2.5",
+    "actual": "0.1",
     "forecast": null,
     "historical": 0.2
   },
@@ -286,7 +286,7 @@
     "type": "economic",
     "emoji": "📊",
     "description": "시장이 중요하게 보는 지표예요.",
-    "actual": "2.5",
+    "actual": "0.1",
     "forecast": null,
     "historical": 2.7,
     "ai_comment": "전년 대비 물가 상승률 추세 확인. 2%대 안착 여부가 금리 인하 속도에 영향"
@@ -301,7 +301,7 @@
     "type": "economic",
     "emoji": "📊",
     "description": "",
-    "actual": "2.5",
+    "actual": "0.1",
     "forecast": null,
     "historical": 0.3
   },
