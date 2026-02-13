@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import NewsFilters from './NewsFilters'
-import StockPrice from './StockPrice'
+import TickerBadge from './TickerBadge'
 
 interface NewsListClientProps {
   initialNews: any[]
@@ -93,13 +93,13 @@ export default function NewsListClient({ initialNews, stats }: NewsListClientPro
                   </>
                 )}
                 
-                {/* 티커 + 실시간 주가 */}
+                {/* 관련 종목 (퍼센트만) */}
                 {item.tickers && item.tickers.length > 0 && (
                   <>
                     <span>•</span>
-                    <div className="flex items-center gap-2 flex-wrap">
+                    <div className="flex items-center gap-1.5 flex-wrap">
                       {item.tickers.slice(0, 3).map((ticker: string) => (
-                        <StockPrice 
+                        <TickerBadge
                           key={ticker} 
                           ticker={ticker} 
                           displayName={getTickerDisplayName(ticker)} 
