@@ -146,7 +146,7 @@ export default function MarketsPage() {
         {renderSection('암호화폐', crypto)}
 
         <div className="mt-8 text-xs text-gray-500 dark:text-gray-400 text-center">
-          시세는 Yahoo Finance API에서 제공됩니다. 1분마다 자동 업데이트됩니다.
+          실시간 시세 (1분마다 자동 업데이트)
         </div>
       </div>
     </div>
