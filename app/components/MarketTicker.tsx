@@ -93,7 +93,7 @@ export default function MarketTicker() {
         
         .ticker-content {
           display: inline-flex;
-          animation: scroll 60s linear infinite;
+          animation: scroll 45s linear infinite;
           will-change: transform;
         }
         
