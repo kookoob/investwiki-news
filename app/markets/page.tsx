@@ -17,6 +17,11 @@ export default function MarketsPage() {
     { symbol: '^IXIC', name: '나스닥', price: '-', change: '-', changePercent: '-', loading: true },
     { symbol: '^DJI', name: '다우존스', price: '-', change: '-', changePercent: '-', loading: true },
     { symbol: '^GSPC', name: 'S&P 500', price: '-', change: '-', changePercent: '-', loading: true },
+    { symbol: '^KS11', name: '코스피', price: '-', change: '-', changePercent: '-', loading: true },
+    { symbol: '^KQ11', name: '코스닥', price: '-', change: '-', changePercent: '-', loading: true },
+    { symbol: '^N225', name: '니케이', price: '-', change: '-', changePercent: '-', loading: true },
+    { symbol: '000001.SS', name: '상해종합', price: '-', change: '-', changePercent: '-', loading: true },
+    { symbol: '^HSI', name: '항셍', price: '-', change: '-', changePercent: '-', loading: true },
   ])
 
   const [forex, setForex] = useState<MarketData[]>([
