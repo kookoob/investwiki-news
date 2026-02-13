@@ -7,7 +7,6 @@ import Comments from './Comments'
 import VoteButtons from './VoteButtons'
 import Header from '@/app/components/Header'
 import RelatedNews from '@/app/components/RelatedNews'
-import TradingViewChart from './TradingViewChart'
 import { Metadata } from 'next'
 
 async function getNewsById(id: string) {
@@ -273,21 +272,7 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
             </div>
           )}
 
-          {/* TradingView 차트 */}
-          {news.tickers && news.tickers.length > 0 && (
-            <div className="mt-6">
-              {news.tickers.slice(0, 2).map((ticker: string) => {
-                const displayName = tickerNames[ticker] || ticker
-                return (
-                  <TradingViewChart 
-                    key={ticker} 
-                    symbol={ticker}
-                    displayName={displayName}
-                  />
-                )
-              })}
-            </div>
-          )}
+          {/* 차트는 TradingView 한국 주식 지원 문제로 제거 (가격 정보는 위 "관련 종목"에 표시됨) */}
 
           {/* 원문 링크 및 공유 */}
           {news.link && (
