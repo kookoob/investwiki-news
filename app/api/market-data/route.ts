@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
 
     for (const symbol of symbols) {
       try {
-        const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1d&range=5d`
+        const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1d&range=1d`
         const response = await fetch(url, {
           headers: {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
@@ -43,20 +43,13 @@ export async function GET(request: NextRequest) {
             return price.toFixed(4)
           }
 
-          // 과거 가격 데이터 추출 (미니차트용)
-          const closePrices = quote?.indicators?.quote?.[0]?.close || []
-          const chartData = closePrices.filter((p: number) => p !== null && p !== undefined && p > 0)
-          
-          console.log(`${symbol}: ${chartData.length} data points, range: ${Math.min(...chartData)}-${Math.max(...chartData)}`)
-
           results[symbol] = {
             price: `$${formatPrice(currentPrice)}`,
             change: change >= 0 ? `+${formatPrice(Math.abs(change))}` : `-${formatPrice(Math.abs(change))}`,
             changePercent: change >= 0 ? `+${changePercent.toFixed(2)}%` : `${changePercent.toFixed(2)}%`,
-            chartData: chartData.length > 0 ? chartData : [previousClose, currentPrice],
           }
         } else {
-          results[symbol] = { price: '-', change: '-', changePercent: '-', chartData: [] }
+          results[symbol] = { price: '-', change: '-', changePercent: '-' }
         }
       } catch (error) {
         console.error(`Error fetching ${symbol}:`, error)

@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import Header from '../components/Header'
-import MiniChart from './MiniChart'
 
 interface MarketData {
   symbol: string
@@ -11,7 +10,6 @@ interface MarketData {
   change: string
   changePercent: string
   loading: boolean
-  chartData?: number[]
 }
 
 export default function MarketsPage() {
@@ -66,22 +64,18 @@ export default function MarketsPage() {
       })
       const data = await response.json()
       
-      console.log('Market data received:', Object.keys(data).length, 'symbols')
-      
       const updated = items.map(item => {
         const quote = data[item.symbol]
         if (quote && quote.price !== '-') {
-          console.log(`${item.symbol}: ${quote.chartData?.length || 0} points`)
           return {
             ...item,
             price: quote.price,
             change: quote.change,
             changePercent: quote.changePercent,
-            chartData: quote.chartData || [],
             loading: false,
           }
         }
-        return { ...item, loading: false, chartData: [] }
+        return { ...item, loading: false }
       })
       
       setter(updated)
@@ -101,17 +95,21 @@ export default function MarketsPage() {
           
           return (
             <div key={item.symbol} className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
-              <div className="flex justify-between items-start mb-2">
+              <div className="flex justify-between items-center">
                 <div className="flex-1">
                   <div className="text-sm font-medium text-gray-900 dark:text-white mb-1">{item.name}</div>
                   <div className="text-xs text-gray-500 dark:text-gray-400">{item.symbol}</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-base font-semibold text-gray-900 dark:text-white">
+                  <div className={`text-base font-semibold ${
+                    isPositive ? 'text-green-600 dark:text-green-400' : 
+                    isNegative ? 'text-red-600 dark:text-red-400' : 
+                    'text-gray-900 dark:text-white'
+                  }`}>
                     {item.loading ? '...' : item.price}
                   </div>
                   <div
-                    className={`text-xs font-medium ${
+                    className={`text-sm font-medium ${
                       isPositive ? 'text-green-600 dark:text-green-400' : 
                       isNegative ? 'text-red-600 dark:text-red-400' : 
                       'text-gray-600 dark:text-gray-400'
@@ -121,14 +119,6 @@ export default function MarketsPage() {
                   </div>
                 </div>
               </div>
-              {item.chartData && item.chartData.length > 1 && (
-                <div className="mt-3 w-full h-12">
-                  <MiniChart 
-                    data={item.chartData} 
-                    color={isPositive ? 'green' : isNegative ? 'red' : 'gray'}
-                  />
-                </div>
-              )}
             </div>
           )
         })}
