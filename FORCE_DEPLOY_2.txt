@@ -1,0 +1,5 @@
+Force deployment trigger #2
+Timestamp: 2026-02-13 22:11:00 KST
+Reason: Vercel webhook not responding to previous commits
+Target: Deploy Asia stock indices (KOSPI, KOSDAQ, Nikkei, SSE, HSI)
+Previous failed commits: aa5e74b, 09013ba, 6d8d69e
