@@ -90,8 +90,8 @@ export default function MarketsPage() {
       <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4">{title}</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
         {data.map((item) => {
-          const isPositive = item.change.startsWith('+')
-          const isNegative = item.change.startsWith('-')
+          const isPositive = item.changePercent.startsWith('+')
+          const isNegative = item.changePercent.startsWith('-')
           
           return (
             <div key={item.symbol} className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
