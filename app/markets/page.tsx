@@ -91,10 +91,9 @@ export default function MarketsPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
         {data.map((item) => {
           // 색상 적용: changePercent 기준 (예: "+0.23%" 또는 "-1.34%")
-          const isPositive = !item.loading && item.changePercent && item.changePercent.startsWith('+')
-          const isNegative = !item.loading && item.changePercent && item.changePercent.startsWith('-')
-          
-          console.log('Market item:', item.name, 'changePercent:', item.changePercent, 'isPositive:', isPositive, 'isNegative:', isNegative)
+          const changePercent = item.changePercent || ''
+          const isPositive = changePercent.startsWith('+')
+          const isNegative = changePercent.startsWith('-')
           
           return (
             <div key={item.symbol} className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
