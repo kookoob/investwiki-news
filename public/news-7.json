@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1770865570_18",
+    "title": "韓 국채, 글로벌 채권펀드 BM 대비 4배 이상 매수",
+    "summary": "한 글로벌 채권펀드가 한국 국채를 벤치마크(BM) 비중 2.5~9% 대비 11.23%로 대폭 상회하여 매수했다.\n\n📊 🤔📊 코멘트\n안전자산 선호 심리 + 듀레이션 축소 전략: 금리 인상 종료 기대감 속 한국 국채의 상대적 고금리 메리트 부각!",
+    "content": "한 글로벌 채권펀드가 벤치마크(BM)에서 우리나라 채권 비중을 2.5~9% 수준으로 설정했으나, 실제 보유 비중은 11.23%로 BM을 크게 상회했다.\n\n펀드는 월간 단위로 발행하는 시장 상황 설명서(Monthly Fund Commentary)에서 지난해 1~2월 전체적으로 펀드 듀레이션을 4.0~9년으로 축소하는 가운데 노르웨이와 독일, 미국, 호주 듀레이션을 줄였지만, 한국과 뉴질랜드의 노출도는 소폭 늘렸다고 밝혔다.",
+    "source": "연합인포맥스",
+    "date": "2026-02-12 12:06",
+    "timestamp": 1770864490,
+    "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4398700",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1770865575_19",
     "title": "장동혁, 대통령 오찬 불참 결정",
     "summary": "국민의힘 장동혁 대표는 1~2일 예정된 대통령과의 오찬 회동에 불참하기로 최종 결정했다.\n\n당대표 비서실장은 홍익표 정무수석에게 이 사실을 전달했다고 밝혔다.\n\n🤔📊 코멘트\n여당 대표의 대통령 오찬 불참은 이례적, 정부와의 관계 설정에 미묘한 긴장감 조성 가능성",
@@ -639,22 +651,6 @@
     "link": "https://www.cnbc.com/2026/02/11/meta-threads-dear-algo-ai-algorithm-personalization.html",
     "tickers": [
       "META"
-    ],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1770832736_2",
-    "title": "워너 브라더스 인수전: 파라마운트, 779억 달러 현금 제안으로 넷플릭스 거래 저지 시도",
-    "summary": "파라마운트가 워너 브라더스 디스커버리를 인수하기 위해 779억 달러의 전액 현금 제안을 제시하며 720억 달러 규모의 넷플릭스와의 거래를 무산시키려 하고 있다.\n\n📊 인수전 재점화 🔥📊 코멘트\n파라마운트의 공격적인 제안은 워너 브라더스의 주가 변동성을 키울 수 있으며, 투자자들은 최종 승자가 누가 될지 주목해야 한다.",
-    "content": "Warner Bros.와 Netflix가 합병을 추진 중인 가운데, Paramount가 이를 저지하려 하고 있다.\n\nParamount는 Warner Bros.\n\nDiscovery에 대한 779억 달러의 전액 현금 제안을 화요일에 제시하여 Warner Bros.를 협상 테이블로 불러내 궁극적으로 720억 달러 규모의 Netflix와의 전액 현금 거래를 포기시키려 하고 있다.",
-    "source": "The Wall Street Journal",
-    "date": "2026-02-12 02:58",
-    "timestamp": 1770832616,
-    "link": "https://www.wsj.com/business/media/where-the-battle-for-warner-bros-stands-now-5fd67999?siteid=yhoof2&yptr=yahoo",
-    "tickers": [
-      "NFLX",
-      "PSKY",
-      "WBD"
     ],
     "importance": "medium"
   }

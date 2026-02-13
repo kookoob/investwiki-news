@@ -1,5 +1,21 @@
 [
   {
+    "id": "news_1770832736_2",
+    "title": "워너 브라더스 인수전: 파라마운트, 779억 달러 현금 제안으로 넷플릭스 거래 저지 시도",
+    "summary": "파라마운트가 워너 브라더스 디스커버리를 인수하기 위해 779억 달러의 전액 현금 제안을 제시하며 720억 달러 규모의 넷플릭스와의 거래를 무산시키려 하고 있다.\n\n📊 인수전 재점화 🔥📊 코멘트\n파라마운트의 공격적인 제안은 워너 브라더스의 주가 변동성을 키울 수 있으며, 투자자들은 최종 승자가 누가 될지 주목해야 한다.",
+    "content": "Warner Bros.와 Netflix가 합병을 추진 중인 가운데, Paramount가 이를 저지하려 하고 있다.\n\nParamount는 Warner Bros.\n\nDiscovery에 대한 779억 달러의 전액 현금 제안을 화요일에 제시하여 Warner Bros.를 협상 테이블로 불러내 궁극적으로 720억 달러 규모의 Netflix와의 전액 현금 거래를 포기시키려 하고 있다.",
+    "source": "The Wall Street Journal",
+    "date": "2026-02-12 02:58",
+    "timestamp": 1770832616,
+    "link": "https://www.wsj.com/business/media/where-the-battle-for-warner-bros-stands-now-5fd67999?siteid=yhoof2&yptr=yahoo",
+    "tickers": [
+      "NFLX",
+      "PSKY",
+      "WBD"
+    ],
+    "importance": "medium"
+  },
+  {
     "id": "news_1770832740_3",
     "title": "암호화폐 대출업체 BlockFills, 고객 인출 중단",
     "summary": "BlockFills는 고객 인출을 중단했다.\n\n정확한 중단 이유나 기간은 명시되지 않았다.\n\n📊📊 코멘트\n암호화폐 시장의 불안정성이 다시 한번 드러났다.\n\n투자 심리 악화로 추가 인출 중단 가능성에 대비해야 한다.",
@@ -626,18 +642,6 @@
     "date": "2026-02-11 22:37",
     "timestamp": 1770816969,
     "link": "https://www.cnbc.com/2026/02/11/jobs-report-january-2026-.html",
-    "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1770817038_2",
-    "title": "FAA, '특별 보안' 이유로 엘파소 공항 항공편 10일간 중단",
-    "summary": "FAA는 텍사스주 엘파소 국제공항의 모든 항공편을 수요일부터 10일 동안 중단한다고 발표했다. 2025년 첫 11개월 동안 300만 명 이상의 승객이 이용한 공항이다.\n\n🚨 엘파소 공항 폐쇄로 인한 항공사들의 단기적 손실 불가피.\n\n그러나 보안 강화 조치로 장기적 안전 확보 가능 📈",
-    "content": "연방항공청(FAA)은 '특별 보안' 지시를 이유로 텍사스주 엘파소 국제공항의 모든 항공편을 수요일부터 10일간 중단시켰다.\n\nFAA는 갑작스러운 운항 중단의 보안 이유에 대해 즉시 밝히지 않았다.\n\n공항은 빅스 육군 비행장 옆에 위치하고 있으며 멕시코 국경 근처, 멕시코 후아레즈에서 약 1~2마일 떨어져 있다.\n\n국방부는 보안 문제의 성격에 대한 질문을 FAA에 넘겼다.\n\n항공편은 2월 20일 늦게까지 중단되며, 이 금지 조치는 공항 주변 10해리 반경에 적용된다.\n\n이 공항은 2025년 첫 11개월 동안 300만 명 이상이 이용했으며, Southwest Airlines, Delta Air Lines, American Airlines, United Airlines 및 Frontier Airlines가 운항하고 있다.",
-    "source": "CNBC",
-    "date": "2026-02-11 22:37",
-    "timestamp": 1770816918,
-    "link": "https://www.cnbc.com/2026/02/11/faa-el-paso-airport.html",
     "tickers": [],
     "importance": "medium"
   }
