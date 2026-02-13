@@ -43,6 +43,9 @@ export async function GET(request: NextRequest) {
             return price.toFixed(4)
           }
 
+          // 지수인지 확인 (^로 시작하거나 .SS로 끝남 = 주가지수)
+          const isIndex = symbol.startsWith('^') || symbol.endsWith('.SS')
+
           // 변동률 포맷팅 (0이 아닐 때만 +/- 기호)
           let formattedChangePercent
           if (Math.abs(changePercent) < 0.01) {
@@ -54,7 +57,7 @@ export async function GET(request: NextRequest) {
           }
 
           results[symbol] = {
-            price: `$${formatPrice(currentPrice)}`,
+            price: isIndex ? formatPrice(currentPrice) : `$${formatPrice(currentPrice)}`,
             change: change >= 0 ? `+${formatPrice(Math.abs(change))}` : `-${formatPrice(Math.abs(change))}`,
             changePercent: formattedChangePercent,
           }
