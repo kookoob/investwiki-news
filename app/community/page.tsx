@@ -120,7 +120,7 @@ export default function CommunityPage() {
         <div className="max-w-5xl mx-auto px-4 py-8">
           {/* 헤더 */}
           <div className="mb-6 flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-white">커뮤니티</h1>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">커뮤니티</h1>
             {user ? (
               <Link
                 href="/community/write"
@@ -220,7 +220,7 @@ export default function CommunityPage() {
 
                         {/* 게시글 제목 - 클릭 시 상세 페이지 */}
                         <Link href={`/community/${post.id}`}>
-                          <h3 className="text-lg font-semibold text-white mb-1 hover:text-blue-400 transition-colors">
+                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1 hover:text-blue-400 transition-colors">
                             {post.title}
                           </h3>
                         </Link>

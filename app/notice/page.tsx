@@ -62,7 +62,7 @@ export default function NoticePage() {
         <div className="max-w-5xl mx-auto px-4 py-8">
           {/* 헤더 */}
           <div className="mb-6 flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-white">📢 공지사항</h1>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">📢 공지사항</h1>
             {isAdmin && (
               <Link
                 href="/notice/write"
@@ -95,7 +95,7 @@ export default function NoticePage() {
                         공지
                       </span>
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-white mb-1">
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                           {notice.title}
                         </h3>
                         <p className="text-sm text-gray-400 dark:text-gray-500 dark:text-gray-400">
@@ -129,7 +129,7 @@ export default function NoticePage() {
                   >
                     <div className="flex items-start gap-3">
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-white mb-1">
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                           {notice.title}
                         </h3>
                         <p className="text-sm text-gray-400 dark:text-gray-500 dark:text-gray-400">
