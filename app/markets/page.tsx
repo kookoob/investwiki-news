@@ -56,40 +56,31 @@ export default function MarketsPage() {
   }
 
   async function fetchData(items: MarketData[], setter: Function) {
-    const updated = await Promise.all(
-      items.map(async (item) => {
-        try {
-          const res = await fetch(
-            `https://query1.finance.yahoo.com/v8/finance/chart/${item.symbol}?interval=1d&range=1d`
-          )
-          const json = await res.json()
-          const quote = json.chart.result[0]
-          const meta = quote.meta
-          const currentPrice = meta.regularMarketPrice
-          const previousClose = meta.chartPreviousClose
-          const change = currentPrice - previousClose
-          const changePercent = (change / previousClose) * 100
-
-          const formatPrice = (price: number) => {
-            if (price >= 1000) return price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-            if (price >= 100) return price.toFixed(2)
-            if (price >= 1) return price.toFixed(3)
-            return price.toFixed(4)
-          }
-
+    const symbols = items.map(item => item.symbol).join(',')
+    
+    try {
+      const response = await fetch(`/api/market-data?symbols=${symbols}`)
+      const data = await response.json()
+      
+      const updated = items.map(item => {
+        const quote = data[item.symbol]
+        if (quote && quote.price !== '-') {
           return {
             ...item,
-            price: `$${formatPrice(currentPrice)}`,
-            change: change >= 0 ? `+${formatPrice(Math.abs(change))}` : `-${formatPrice(Math.abs(change))}`,
-            changePercent: change >= 0 ? `+${changePercent.toFixed(2)}%` : `${changePercent.toFixed(2)}%`,
+            price: quote.price,
+            change: quote.change,
+            changePercent: quote.changePercent,
             loading: false,
           }
-        } catch (error) {
-          return { ...item, loading: false }
         }
+        return { ...item, loading: false }
       })
-    )
-    setter(updated)
+      
+      setter(updated)
+    } catch (error) {
+      console.error('Failed to fetch market data:', error)
+      setter(items.map(item => ({ ...item, loading: false })))
+    }
   }
 
   const renderSection = (title: string, data: MarketData[]) => (
