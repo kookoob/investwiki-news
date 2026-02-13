@@ -20,8 +20,12 @@ export default function MarketTicker() {
 
   async function fetchTickers() {
     try {
-      // 주요 지수만 가져오기
-      const symbols = ['^IXIC', '^DJI', '^GSPC', 'KRW=X', 'GC=F', 'CL=F', 'BTC-USD'].join(',')
+      // 주요 지수 (미국 + 아시아 + 기타)
+      const symbols = [
+        '^IXIC', '^DJI', '^GSPC',           // 미국 지수
+        '^KS11', '^KQ11', '^N225', '000001.SS', '^HSI',  // 아시아 지수
+        'KRW=X', 'GC=F', 'CL=F', 'BTC-USD'  // 환율, 원자재, 코인
+      ].join(',')
       const response = await fetch(`/api/market-data?symbols=${symbols}`, {
         cache: 'no-store'
       })
@@ -31,6 +35,11 @@ export default function MarketTicker() {
         '^IXIC': '나스닥',
         '^DJI': '다우존스',
         '^GSPC': 'S&P 500',
+        '^KS11': '코스피',
+        '^KQ11': '코스닥',
+        '^N225': '니케이',
+        '000001.SS': '상해종합',
+        '^HSI': '항셍',
         'KRW=X': '달러/원',
         'GC=F': '금',
         'CL=F': 'WTI',
