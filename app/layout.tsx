@@ -76,7 +76,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className="dark">
+    <html lang="ko">
       <head>
         <meta name="google-site-verification" content="aL-dmCAtmOJFBGBSB7Sxu9K0gQw9WvDy3Srg3unDLn8" />
         <meta name="naver-site-verification" content="846a9ed4c727ca52c2a22402746a29070f83ed50" />
