@@ -32,6 +32,9 @@ async function getNews() {
       }
     }
     
+    // 전체 뉴스를 timestamp 기준으로 최신순 정렬
+    allNews.sort((a: any, b: any) => b.timestamp - a.timestamp)
+    
     return allNews
   } catch {
     return []
