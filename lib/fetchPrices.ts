@@ -101,7 +101,7 @@ export async function fetchTickerPrices(tickers: string[]): Promise<TickerData[]
           // 1. ticker-names.json
           // 2. 하드코딩 매핑 (TICKER_NAMES)
           // 3. Yahoo Finance API 이름
-          let name = namesMap[symbol] || TICKER_NAMES[symbol] || meta.longName || meta.shortName || symbol
+          let name = (namesMap && namesMap[symbol]) || TICKER_NAMES[symbol] || meta.longName || meta.shortName || symbol
 
           return {
             symbol,

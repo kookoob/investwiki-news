@@ -268,7 +268,7 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
                       </span>
                     </div>
                   </div>
-                )})}}
+                )})}
               </div>
             </div>
           )}
