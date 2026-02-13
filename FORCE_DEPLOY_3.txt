@@ -1,0 +1,5 @@
+Force deployment trigger #3
+Timestamp: 2026-02-13 22:22:00 KST
+Reason: Vercel deploying old commit (6d9085b) instead of latest (435e23a)
+Action: New commit to trigger webhook
+Target: Deploy Asia stock indices (KOSPI, KOSDAQ, Nikkei, SSE, HSI)
