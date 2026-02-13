@@ -40,11 +40,12 @@ export default function MarketTicker() {
       const items: TickerItem[] = []
       for (const [symbol, quote] of Object.entries(data)) {
         if (quote && typeof quote === 'object' && 'changePercent' in quote) {
+          const q = quote as any
           items.push({
             name: nameMap[symbol] || symbol,
             symbol,
-            change: quote.change || '-',
-            changePercent: quote.changePercent || '-'
+            change: q.change || '-',
+            changePercent: q.changePercent || '-'
           })
         }
       }
