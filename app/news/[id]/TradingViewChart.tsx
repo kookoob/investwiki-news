@@ -9,11 +9,12 @@ interface TradingViewChartProps {
 
 export default function TradingViewChart({ symbol, displayName }: TradingViewChartProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const isKorean = symbol.endsWith('.KS') || symbol.endsWith('.KQ')
   
   useEffect(() => {
-    if (!containerRef.current) return
+    if (isKorean || !containerRef.current) return
     
-    // TradingView 스크립트가 이미 로드되었는지 확인
+    // 미국 주식만 TradingView 위젯 사용
     if (!(window as any).TradingView) {
       const script = document.createElement('script')
       script.src = 'https://s3.tradingview.com/tv.js'
@@ -27,22 +28,12 @@ export default function TradingViewChart({ symbol, displayName }: TradingViewCha
     function initWidget() {
       if (!containerRef.current) return
       
-      // 한국 주식 심볼 변환
-      let tvSymbol = symbol
-      if (symbol.endsWith('.KS') || symbol.endsWith('.KQ')) {
-        // 한국 주식: "005930.KS" → "KRX:005930"
-        const code = symbol.split('.')[0]
-        tvSymbol = `KRX:${code}`
-      }
-      // 미국 주식은 심볼 그대로 (TradingView가 자동 인식)
-      
-      // 기존 위젯 제거
       containerRef.current.innerHTML = ''
       
       new (window as any).TradingView.widget({
         container_id: containerRef.current.id,
         autosize: true,
-        symbol: tvSymbol,
+        symbol: symbol,
         interval: 'D',
         timezone: 'Asia/Seoul',
         theme: 'light',
@@ -59,24 +50,56 @@ export default function TradingViewChart({ symbol, displayName }: TradingViewCha
     }
     
     return () => {
-      // 클린업
       if (containerRef.current) {
         containerRef.current.innerHTML = ''
       }
     }
-  }, [symbol])
+  }, [symbol, isKorean])
   
+  // 한국 주식: 네이버 금융 차트
+  if (isKorean) {
+    const code = symbol.split('.')[0]
+    
+    return (
+      <div className="my-6">
+        <div className="flex items-center justify-between mb-3">
+          <h3 className="text-sm font-semibold text-gray-900 dark:text-white">
+            📈 {displayName || symbol} 차트
+          </h3>
+          <a 
+            href={`https://finance.naver.com/item/main.naver?code=${code}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-blue-600 hover:text-blue-800 dark:text-blue-400"
+          >
+            네이버 금융에서 보기 →
+          </a>
+        </div>
+        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+          <iframe
+            src={`https://finance.naver.com/item/fchart.naver?code=${code}`}
+            width="100%"
+            height="400"
+            frameBorder={0}
+            scrolling="no"
+          />
+        </div>
+      </div>
+    )
+  }
+  
+  // 미국 주식: TradingView 위젯
   return (
     <div className="my-6">
       <div className="flex items-center justify-between mb-3">
-        <h3 className="text-sm font-semibold text-gray-900">
+        <h3 className="text-sm font-semibold text-gray-900 dark:text-white">
           📈 {displayName || symbol} 차트
         </h3>
         <a 
           href={`https://www.tradingview.com/chart/?symbol=${symbol}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs text-blue-600 hover:text-blue-800"
+          className="text-xs text-blue-600 hover:text-blue-800 dark:text-blue-400"
         >
           TradingView에서 보기 →
         </a>
@@ -84,7 +107,7 @@ export default function TradingViewChart({ symbol, displayName }: TradingViewCha
       <div 
         ref={containerRef}
         id={`tradingview-chart-${symbol.replace(/[^a-zA-Z0-9]/g, '')}`}
-        className="bg-white rounded-lg border border-gray-200"
+        className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
         style={{ height: '400px' }}
       />
     </div>
