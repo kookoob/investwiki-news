@@ -12,9 +12,9 @@ export default function TradingViewChart({ symbol, displayName }: TradingViewCha
   const isKorean = symbol.endsWith('.KS') || symbol.endsWith('.KQ')
   
   useEffect(() => {
-    if (isKorean || !containerRef.current) return
+    if (!containerRef.current) return
     
-    // 미국 주식만 TradingView 위젯 사용
+    // TradingView 위젯 로드
     if (!(window as any).TradingView) {
       const script = document.createElement('script')
       script.src = 'https://s3.tradingview.com/tv.js'
@@ -56,39 +56,23 @@ export default function TradingViewChart({ symbol, displayName }: TradingViewCha
     }
   }, [symbol, isKorean])
   
-  // 한국 주식: 네이버 금융 차트
-  if (isKorean) {
-    const code = symbol.split('.')[0]
-    
-    return (
-      <div className="my-6">
-        <div className="flex items-center justify-between mb-3">
-          <h3 className="text-sm font-semibold text-gray-900 dark:text-white">
-            📈 {displayName || symbol} 차트
-          </h3>
-          <a 
-            href={`https://finance.naver.com/item/main.naver?code=${code}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-blue-600 hover:text-blue-800 dark:text-blue-400"
-          >
-            네이버 금융에서 보기 →
-          </a>
-        </div>
-        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
-          <iframe
-            src={`https://finance.naver.com/item/fchart.naver?code=${code}`}
-            width="100%"
-            height="400"
-            frameBorder={0}
-            scrolling="no"
-          />
-        </div>
-      </div>
-    )
+  // 외부 링크
+  const getExternalLink = () => {
+    if (isKorean) {
+      const code = symbol.split('.')[0]
+      return {
+        url: `https://finance.naver.com/item/main.naver?code=${code}`,
+        text: '네이버 금융에서 보기 →'
+      }
+    }
+    return {
+      url: `https://www.tradingview.com/chart/?symbol=${symbol}`,
+      text: 'TradingView에서 보기 →'
+    }
   }
   
-  // 미국 주식: TradingView 위젯
+  const link = getExternalLink()
+  
   return (
     <div className="my-6">
       <div className="flex items-center justify-between mb-3">
@@ -96,12 +80,12 @@ export default function TradingViewChart({ symbol, displayName }: TradingViewCha
           📈 {displayName || symbol} 차트
         </h3>
         <a 
-          href={`https://www.tradingview.com/chart/?symbol=${symbol}`}
+          href={link.url}
           target="_blank"
           rel="noopener noreferrer"
           className="text-xs text-blue-600 hover:text-blue-800 dark:text-blue-400"
         >
-          TradingView에서 보기 →
+          {link.text}
         </a>
       </div>
       <div 
