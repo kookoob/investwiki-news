@@ -229,11 +229,20 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
 
           {/* 전체 내용 */}
           <div className="prose prose-gray dark:prose-invert max-w-none">
-            {news.content.split('\n\n').map((paragraph: string, i: number) => (
-              <p key={i} className="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
-                {paragraph}
-              </p>
-            ))}
+            {news.content.split(/\n\n+/).map((paragraph: string, i: number) => {
+              // 문단 내 단일 줄바꿈도 처리
+              const lines = paragraph.split('\n')
+              return (
+                <p key={i} className="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+                  {lines.map((line: string, j: number) => (
+                    <span key={j}>
+                      {line}
+                      {j < lines.length - 1 && <br />}
+                    </span>
+                  ))}
+                </p>
+              )
+            })}
           </div>
 
           {/* 관련 종목 가격 */}
