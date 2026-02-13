@@ -10,31 +10,15 @@ import EventsSidebar from './EventsSidebar'
 import NewsListClient from './components/NewsListClient'
 import { getAllNewsStats } from '@/lib/getNewsStats'
 
-// ISR: 30초마다 재생성 (빠른 로딩 + 최신 데이터)
-export const revalidate = 30
+// Static 생성 (빌드 시 한 번만)
+export const dynamic = 'force-static'
 
 async function getNews() {
   try {
-    // 모든 페이지 파일 읽기 (bot_web.py에서 이미 정렬된 상태)
-    const allNews = []
-    let pageNum = 1
-    
-    while (true) {
-      try {
-        const filePath = path.join(process.cwd(), 'public', `news-${pageNum}.json`)
-        const fileContents = await fs.readFile(filePath, 'utf8')
-        const pageNews = JSON.parse(fileContents)
-        allNews.push(...pageNews)
-        pageNum++
-      } catch {
-        // 더 이상 페이지 파일이 없으면 중단
-        break
-      }
-    }
-    
-    // bot_web.py에서 이미 timestamp 내림차순으로 정렬되어 있음
-    // 빌드 타임아웃 방지를 위해 여기서는 정렬하지 않음
-    return allNews
+    // 첫 페이지만 로드 (타임아웃 방지)
+    const filePath = path.join(process.cwd(), 'public', 'news-1.json')
+    const fileContents = await fs.readFile(filePath, 'utf8')
+    return JSON.parse(fileContents)
   } catch {
     return []
   }
