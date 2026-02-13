@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
           headers: {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
           },
-          next: { revalidate: 60 } // 1분 캐시
+          cache: 'no-store' // 캐시 비활성화 (실시간 데이터)
         })
 
         if (!response.ok) {
@@ -46,6 +46,8 @@ export async function GET(request: NextRequest) {
           // 과거 가격 데이터 추출 (미니차트용)
           const closePrices = quote?.indicators?.quote?.[0]?.close || []
           const chartData = closePrices.filter((p: number) => p !== null && p !== undefined && p > 0)
+          
+          console.log(`${symbol}: ${chartData.length} data points, range: ${Math.min(...chartData)}-${Math.max(...chartData)}`)
 
           results[symbol] = {
             price: `$${formatPrice(currentPrice)}`,

@@ -7,12 +7,21 @@ interface MiniChartProps {
   height?: number
 }
 
-export default function MiniChart({ data, color, width = 80, height = 30 }: MiniChartProps) {
-  if (!data || data.length < 2) return null
+export default function MiniChart({ data, color, width = 280, height = 50 }: MiniChartProps) {
+  if (!data || data.length < 2) {
+    console.log('MiniChart: 데이터 부족', data)
+    return null
+  }
 
   const min = Math.min(...data)
   const max = Math.max(...data)
-  const range = max - min || 1
+  const range = max - min
+
+  // 범위가 너무 작으면 (변동 거의 없음) null 반환
+  if (range < 0.01) {
+    console.log('MiniChart: 범위 너무 작음', { min, max, range })
+    return null
+  }
 
   const points = data.map((value, index) => {
     const x = (index / (data.length - 1)) * width
@@ -27,7 +36,11 @@ export default function MiniChart({ data, color, width = 80, height = 30 }: Mini
   }
 
   return (
-    <svg width={width} height={height} className="w-full" viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none">
+    <svg 
+      className="w-full h-auto" 
+      viewBox={`0 0 ${width} ${height}`}
+      preserveAspectRatio="xMidYMid meet"
+    >
       <polyline
         points={points}
         fill="none"

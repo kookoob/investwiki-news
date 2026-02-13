@@ -61,12 +61,17 @@ export default function MarketsPage() {
     const symbols = items.map(item => item.symbol).join(',')
     
     try {
-      const response = await fetch(`/api/market-data?symbols=${symbols}`)
+      const response = await fetch(`/api/market-data?symbols=${symbols}`, {
+        cache: 'no-store'
+      })
       const data = await response.json()
+      
+      console.log('Market data received:', Object.keys(data).length, 'symbols')
       
       const updated = items.map(item => {
         const quote = data[item.symbol]
         if (quote && quote.price !== '-') {
+          console.log(`${item.symbol}: ${quote.chartData?.length || 0} points`)
           return {
             ...item,
             price: quote.price,
@@ -117,12 +122,10 @@ export default function MarketsPage() {
                 </div>
               </div>
               {item.chartData && item.chartData.length > 1 && (
-                <div className="mt-3 w-full">
+                <div className="mt-3 w-full h-12">
                   <MiniChart 
                     data={item.chartData} 
                     color={isPositive ? 'green' : isNegative ? 'red' : 'gray'}
-                    width={280}
-                    height={50}
                   />
                 </div>
               )}
