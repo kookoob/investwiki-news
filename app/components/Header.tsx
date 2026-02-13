@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import AuthButton from '../AuthButton'
+import MarketTicker from './MarketTicker'
 
 export default function Header() {
   const pathname = usePathname()
@@ -262,6 +263,9 @@ export default function Header() {
           )}
         </nav>
       </div>
+      
+      {/* 시장 지수 티커 */}
+      <MarketTicker />
     </header>
   )
 }
