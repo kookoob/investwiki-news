@@ -9,30 +9,20 @@ export interface TickerData {
   changePercent: number
 }
 
-// 한글 매핑 캐시
-let koreanStocksMap: Record<string, string> | null = null
+// ticker-names.json 캐시
+let tickerNamesMap: Record<string, string> | null = null
 
-// 한국 주식 한글 이름 로드
-async function loadKoreanStocksMap() {
-  if (koreanStocksMap) return koreanStocksMap
+// ticker-names.json 로드
+async function loadTickerNamesMap() {
+  if (tickerNamesMap) return tickerNamesMap
   
   try {
-    const filePath = path.join(process.cwd(), 'public', 'korean-stocks.json')
+    const filePath = path.join(process.cwd(), 'public', 'ticker-names.json')
     const fileContents = await fs.readFile(filePath, 'utf8')
-    const mapping = JSON.parse(fileContents)
-    
-    // 역방향 매핑 생성 (티커 → 이름)
-    koreanStocksMap = {}
-    for (const [name, ticker] of Object.entries(mapping)) {
-      // 대문자 버전만 사용 (중복 제거)
-      if (name === name.toUpperCase() || !name.match(/[A-Z]/)) {
-        koreanStocksMap[ticker as string] = name
-      }
-    }
-    
-    return koreanStocksMap
+    tickerNamesMap = JSON.parse(fileContents)
+    return tickerNamesMap
   } catch (error) {
-    console.error('한국 주식 매핑 로드 실패:', error)
+    console.error('ticker-names.json 로드 실패:', error)
     return {}
   }
 }
@@ -88,8 +78,8 @@ const TICKER_NAMES: Record<string, string> = {
 export async function fetchTickerPrices(tickers: string[]): Promise<TickerData[]> {
   if (!tickers || tickers.length === 0) return []
 
-  // 한국 주식 매핑 로드
-  const koreanMap = await loadKoreanStocksMap()
+  // ticker-names.json 로드
+  const namesMap = await loadTickerNamesMap()
 
   try {
     const results = await Promise.all(
@@ -108,10 +98,10 @@ export async function fetchTickerPrices(tickers: string[]): Promise<TickerData[]
           const changePercent = (change / previousClose) * 100
 
           // 이름 결정 우선순위:
-          // 1. 한국 주식 매핑 (korean-stocks.json)
+          // 1. ticker-names.json
           // 2. 하드코딩 매핑 (TICKER_NAMES)
           // 3. Yahoo Finance API 이름
-          let name = koreanMap[symbol] || TICKER_NAMES[symbol] || meta.longName || meta.shortName || symbol
+          let name = namesMap[symbol] || TICKER_NAMES[symbol] || meta.longName || meta.shortName || symbol
 
           return {
             symbol,
