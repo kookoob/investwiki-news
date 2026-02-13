@@ -33,10 +33,8 @@ export default function TradingViewChart({ symbol, displayName }: TradingViewCha
         // 한국 주식: "005930.KS" → "KRX:005930"
         const code = symbol.split('.')[0]
         tvSymbol = `KRX:${code}`
-      } else if (!symbol.includes(':')) {
-        // 미국 주식: "AAPL" → "NASDAQ:AAPL" (기본)
-        tvSymbol = `NASDAQ:${symbol}`
       }
+      // 미국 주식은 심볼 그대로 (TradingView가 자동 인식)
       
       // 기존 위젯 제거
       containerRef.current.innerHTML = ''

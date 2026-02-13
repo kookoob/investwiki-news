@@ -242,16 +242,21 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
             <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
               <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">📊 관련 종목</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {tickerData.map((item) => (
+                {tickerData.map((item) => {
+                  const koreanName = tickerNames[item.symbol]
+                  const displayName = koreanName || item.name
+                  const subName = koreanName ? item.symbol : item.name
+                  
+                  return (
                   <div key={item.symbol} className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-3 border border-gray-200 dark:border-gray-600">
                     <div className="flex justify-between items-start mb-1">
-                      <span className="text-sm font-medium text-gray-900 dark:text-white">{item.name}</span>
+                      <span className="text-sm font-medium text-gray-900 dark:text-white">{displayName}</span>
                       <span className="text-base font-semibold text-gray-900 dark:text-white">
                         ${item.price.toFixed(2)}
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-xs text-gray-500 dark:text-gray-400">{item.symbol}</span>
+                      <span className="text-xs text-gray-500 dark:text-gray-400">{subName}</span>
                       <span
                         className={`text-xs font-medium ${
                           item.change >= 0 ? 'text-red-600 dark:text-red-400' : 'text-blue-600 dark:text-blue-400'
@@ -261,7 +266,7 @@ export default async function NewsDetail({ params }: { params: Promise<{ id: str
                       </span>
                     </div>
                   </div>
-                ))}
+                )})}}
               </div>
             </div>
           )}
