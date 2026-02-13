@@ -93,6 +93,11 @@ export default function TickerPrices({ tickers }: { tickers: string[] }) {
 
   // 가격 포맷 함수
   const formatPrice = (symbol: string, price: number) => {
+    // 지수는 통화 표시 없이 숫자만
+    if (symbol.startsWith('^') || symbol === 'KRW=X') {
+      return price.toFixed(2).toLocaleString()
+    }
+    
     if (isKoreanStock(symbol)) {
       // 한국 주식: 원화 표시 (소수점 없이)
       return `₩${Math.round(price).toLocaleString()}`
