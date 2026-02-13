@@ -14,7 +14,7 @@ export default function MarketTicker() {
 
   useEffect(() => {
     fetchTickers()
-    const interval = setInterval(fetchTickers, 60000) // 1분마다 업데이트
+    const interval = setInterval(fetchTickers, 60000) // 매 1분 업데이트
     return () => clearInterval(interval)
   }, [])
 
