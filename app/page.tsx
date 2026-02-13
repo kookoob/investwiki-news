@@ -15,7 +15,7 @@ export const revalidate = 30
 
 async function getNews() {
   try {
-    // 모든 페이지 파일 읽기
+    // 모든 페이지 파일 읽기 (bot_web.py에서 이미 정렬된 상태)
     const allNews = []
     let pageNum = 1
     
@@ -32,9 +32,8 @@ async function getNews() {
       }
     }
     
-    // 전체 뉴스를 timestamp 기준으로 최신순 정렬
-    allNews.sort((a: any, b: any) => b.timestamp - a.timestamp)
-    
+    // bot_web.py에서 이미 timestamp 내림차순으로 정렬되어 있음
+    // 빌드 타임아웃 방지를 위해 여기서는 정렬하지 않음
     return allNews
   } catch {
     return []
