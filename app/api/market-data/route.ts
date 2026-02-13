@@ -43,10 +43,20 @@ export async function GET(request: NextRequest) {
             return price.toFixed(4)
           }
 
+          // 변동률 포맷팅 (0이 아닐 때만 +/- 기호)
+          let formattedChangePercent
+          if (Math.abs(changePercent) < 0.01) {
+            formattedChangePercent = '0.00%'
+          } else if (changePercent > 0) {
+            formattedChangePercent = `+${changePercent.toFixed(2)}%`
+          } else {
+            formattedChangePercent = `${changePercent.toFixed(2)}%`
+          }
+
           results[symbol] = {
             price: `$${formatPrice(currentPrice)}`,
             change: change >= 0 ? `+${formatPrice(Math.abs(change))}` : `-${formatPrice(Math.abs(change))}`,
-            changePercent: change >= 0 ? `+${changePercent.toFixed(2)}%` : `${changePercent.toFixed(2)}%`,
+            changePercent: formattedChangePercent,
           }
         } else {
           results[symbol] = { price: '-', change: '-', changePercent: '-' }
