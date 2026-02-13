@@ -10,8 +10,8 @@ import EventsSidebar from './EventsSidebar'
 import NewsListClient from './components/NewsListClient'
 import { getAllNewsStats } from '@/lib/getNewsStats'
 
-// ISR: 60초마다 재생성 (빠른 로딩 + 최신 데이터)
-export const revalidate = 60
+// ISR: 30초마다 재생성 (빠른 로딩 + 최신 데이터)
+export const revalidate = 30
 
 async function getNews() {
   try {
