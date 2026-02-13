@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Header from '../components/Header'
+import MiniChart from './MiniChart'
 
 interface MarketData {
   symbol: string
@@ -10,6 +11,7 @@ interface MarketData {
   change: string
   changePercent: string
   loading: boolean
+  chartData?: number[]
 }
 
 export default function MarketsPage() {
@@ -70,10 +72,11 @@ export default function MarketsPage() {
             price: quote.price,
             change: quote.change,
             changePercent: quote.changePercent,
+            chartData: quote.chartData || [],
             loading: false,
           }
         }
-        return { ...item, loading: false }
+        return { ...item, loading: false, chartData: [] }
       })
       
       setter(updated)
@@ -94,23 +97,35 @@ export default function MarketsPage() {
           return (
             <div key={item.symbol} className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
               <div className="flex justify-between items-start mb-2">
-                <span className="text-sm font-medium text-gray-900 dark:text-white">{item.name}</span>
-                <span className="text-base font-semibold text-gray-900 dark:text-white">
-                  {item.loading ? '...' : item.price}
-                </span>
+                <div className="flex-1">
+                  <div className="text-sm font-medium text-gray-900 dark:text-white mb-1">{item.name}</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">{item.symbol}</div>
+                </div>
+                <div className="text-right">
+                  <div className="text-base font-semibold text-gray-900 dark:text-white">
+                    {item.loading ? '...' : item.price}
+                  </div>
+                  <div
+                    className={`text-xs font-medium ${
+                      isPositive ? 'text-red-600 dark:text-red-400' : 
+                      isNegative ? 'text-blue-600 dark:text-blue-400' : 
+                      'text-gray-600 dark:text-gray-400'
+                    }`}
+                  >
+                    {item.loading ? '...' : `${isPositive ? '▲' : isNegative ? '▼' : ''} ${item.changePercent}`}
+                  </div>
+                </div>
               </div>
-              <div className="flex justify-between items-center">
-                <span className="text-xs text-gray-500 dark:text-gray-400">{item.symbol}</span>
-                <span
-                  className={`text-xs font-medium ${
-                    isPositive ? 'text-red-600 dark:text-red-400' : 
-                    isNegative ? 'text-blue-600 dark:text-blue-400' : 
-                    'text-gray-600 dark:text-gray-400'
-                  }`}
-                >
-                  {item.loading ? '...' : `${isPositive ? '▲' : isNegative ? '▼' : ''} ${item.changePercent}`}
-                </span>
-              </div>
+              {item.chartData && item.chartData.length > 1 && (
+                <div className="mt-2">
+                  <MiniChart 
+                    data={item.chartData} 
+                    color={isPositive ? 'red' : isNegative ? 'blue' : 'gray'}
+                    width={240}
+                    height={40}
+                  />
+                </div>
+              )}
             </div>
           )
         })}

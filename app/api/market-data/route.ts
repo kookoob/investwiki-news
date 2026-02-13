@@ -43,13 +43,19 @@ export async function GET(request: NextRequest) {
             return price.toFixed(4)
           }
 
+          // 과거 가격 데이터 추출 (미니차트용)
+          const timestamps = quote?.timestamp || []
+          const closePrices = quote?.indicators?.quote?.[0]?.close || []
+          const chartData = timestamps.slice(-20).map((ts: number, i: number) => closePrices[closePrices.length - 20 + i] || 0).filter((p: number) => p > 0)
+
           results[symbol] = {
             price: `$${formatPrice(currentPrice)}`,
             change: change >= 0 ? `+${formatPrice(Math.abs(change))}` : `-${formatPrice(Math.abs(change))}`,
             changePercent: change >= 0 ? `+${changePercent.toFixed(2)}%` : `${changePercent.toFixed(2)}%`,
+            chartData: chartData.length > 0 ? chartData : [previousClose, currentPrice],
           }
         } else {
-          results[symbol] = { price: '-', change: '-', changePercent: '-' }
+          results[symbol] = { price: '-', change: '-', changePercent: '-', chartData: [] }
         }
       } catch (error) {
         console.error(`Error fetching ${symbol}:`, error)
