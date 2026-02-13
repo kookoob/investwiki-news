@@ -1,2 +1,1 @@
-Force deployment at 2026-02-13 21:03:00 KST
-Commit: aa5e74b - Add Asia stock indices (KOSPI, KOSDAQ, Nikkei, SSE, HSI)
+FORCE_DEPLOY_1770996667
