@@ -103,19 +103,19 @@ export default function MarketsPage() {
                   <div className="text-xs text-gray-500 dark:text-gray-400">{item.symbol}</div>
                 </div>
                 <div className="text-right">
-                  <div className={`text-base font-semibold ${
-                    isPositive ? 'text-green-600 dark:text-green-400' : 
-                    isNegative ? 'text-red-600 dark:text-red-400' : 
-                    'text-gray-900 dark:text-white'
-                  }`}>
+                  <div 
+                    className="text-base font-semibold"
+                    style={{
+                      color: isPositive ? '#16a34a' : isNegative ? '#dc2626' : undefined
+                    }}
+                  >
                     {item.loading ? '...' : item.price}
                   </div>
                   <div
-                    className={`text-sm font-medium ${
-                      isPositive ? 'text-green-600 dark:text-green-400' : 
-                      isNegative ? 'text-red-600 dark:text-red-400' : 
-                      'text-gray-600 dark:text-gray-400'
-                    }`}
+                    className="text-sm font-medium"
+                    style={{
+                      color: isPositive ? '#16a34a' : isNegative ? '#dc2626' : undefined
+                    }}
                   >
                     {item.loading ? '...' : `${isPositive ? '▲' : isNegative ? '▼' : ''} ${item.changePercent}`}
                   </div>
