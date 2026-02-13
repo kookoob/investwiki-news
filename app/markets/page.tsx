@@ -90,6 +90,7 @@ export default function MarketsPage() {
       <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4">{title}</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
         {data.map((item) => {
+          // 색상 적용: changePercent 기준 (예: "+0.23%" 또는 "-1.34%")
           const isPositive = item.changePercent.startsWith('+')
           const isNegative = item.changePercent.startsWith('-')
           
