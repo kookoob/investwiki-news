@@ -1,5 +1,19 @@
 [
   {
+    "id": "news_1770859251_1",
+    "title": "시스코, 실적 호조에도 주가 하락",
+    "summary": "시스코는 예상치를 상회하는 실적을 발표했지만, 주가는 하락했다.\n\n이는 주가가 사상 최고치를 기록하고 역사적 밸류에이션 프리미엄을 받고 거래되어 온 상황에서 발생했다. \n\n🤔📊 코멘트\n시스코 주가는 단기적으로 조정 가능성이 있으나, 네트워크 장비 수요 증가와 서비스 매출 확대로 장기 성장 모멘텀은 유효하다.",
+    "content": "시스코 시스템즈 주가는 수요일 저녁, 네트워킹 회사가 예상을 뛰어넘는 실적을 발표했음에도 불구하고 하락했다.\n\n실적은 견조했지만, 주가가 사상 최고치로 거래되고 역사적 밸류에이션 대비 프리미엄을 받고 있는 상황에서는 충분하지 못했다.\n\n이는 우리가 보고서에 대한 까다로운 배경을 조성했다고 경고했던 점이다.",
+    "source": "CNBC",
+    "date": "2026-02-12 10:20",
+    "timestamp": 1770859191,
+    "link": "https://www.cnbc.com/2026/02/11/cisco-shares-slide-after-earnings-fail-to-wow-the-street-heres-our-plan-for-the-stock.html",
+    "tickers": [
+      "CSCO"
+    ],
+    "importance": "medium"
+  },
+  {
     "id": "news_1770859823_17",
     "title": "미 국방부, 상습적인 계약 지연 업체 제재…방산주 하락",
     "summary": "미 국방부가 계약 지연을 상습적으로 하는 업체에 대해 제재를 가할 것이라는 발표에 방산주들이 하락했다.\n\n구체적인 제재 내용은 공개되지 않았으나, 재정적 불이익이나 계약 취소 등이 포함될 수 있다.\n\n📉 국방부의 조치 발표에 투자 심리가 위축, 관련 주식에 하방 압력 발생\n방산주는 지정학적 리스크에 민감하게 반응하며, 정책 변화에 따라 변동성이 커질 수 있음",
@@ -634,20 +648,6 @@
     "timestamp": 1770826232,
     "link": "https://www.wsj.com/economy/jobs/job-growth-last-year-was-far-worse-than-we-thought-heres-why-4308db41?siteid=yhoof2&yptr=yahoo",
     "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1770825810_8",
-    "title": "전 Founders Fund VC 샘 블론드, 세일즈포스 혁신 위한 AI 스타트업 출시",
-    "summary": "샘 블론드가 설립한 AI 세일즈 스타트업은 구체적인 매출 목표나 투자 유치 금액은 공개되지 않았지만, 세일즈포스와 같은 기존 CRM 시스템을 혁신하는 것을 목표로 한다.\n\n🚀 세일즈포스 아성에 도전하는 스타트업의 등장!\n\n기존 시장의 판도를 흔들 수 있을지 지켜봐야 한다.\n\n혁신적인 기술로 기존 시장의 강자에게 도전하는 스타트업, 성공 가능성은 미지수지만 잠재력은 충분하다.",
-    "content": "전 Founders Fund 벤처 투자자 샘 블론드가 AI 기반 세일즈 스타트업을 설립하여 세일즈포스와 같은 기존 CRM 시스템에 도전한다.\n\n이 스타트업은 AI 기술을 활용하여 영업 프로세스를 자동화하고 효율성을 높이는 것을 목표로 한다.\n\n아직 구체적인 제품이나 서비스 내용은 공개되지 않았지만, 세일즈포스와 같은 거대 기업이 장악하고 있는 CRM 시장에 새로운 바람을 불어넣을 수 있을지 주목된다.\n\n스타트업의 성공 여부는 혁신적인 기술력과 시장 경쟁력 확보에 달려 있다.",
-    "source": "TechCrunch",
-    "date": "2026-02-12 01:03",
-    "timestamp": 1770825330,
-    "link": "https://techcrunch.com/2026/02/11/former-founders-fund-vc-sam-blond-launches-ai-sales-startup-to-upend-salesforce/",
-    "tickers": [
-      "CRM"
-    ],
     "importance": "medium"
   }
 ]
