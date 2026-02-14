@@ -100,19 +100,6 @@ export default function MarketsPage() {
           const isPositive = changePercent.startsWith('+')
           const isNegative = changePercent.startsWith('-')
           
-          // 색상 클래스 분리 (다크모드에서도 명확하게)
-          const priceColorClass = isPositive 
-            ? 'text-green-600 dark:text-green-300' 
-            : isNegative 
-            ? 'text-red-600 dark:text-red-300' 
-            : 'text-gray-900 dark:text-gray-100'
-          
-          const changeColorClass = isPositive 
-            ? 'text-green-600 dark:text-green-300' 
-            : isNegative 
-            ? 'text-red-600 dark:text-red-300' 
-            : 'text-gray-600 dark:text-gray-300'
-          
           return (
             <div key={item.symbol} className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
               <div className="flex justify-between items-center">
@@ -121,12 +108,36 @@ export default function MarketsPage() {
                   <div className="text-xs text-gray-500 dark:text-gray-400">{item.symbol}</div>
                 </div>
                 <div className="text-right">
-                  <div className={`text-base font-semibold ${priceColorClass}`}>
-                    {item.loading ? '...' : item.price}
-                  </div>
-                  <div className={`text-sm font-medium ${changeColorClass}`}>
-                    {item.loading ? '...' : `${isPositive ? '▲' : isNegative ? '▼' : ''} ${item.changePercent}`}
-                  </div>
+                  {isPositive && (
+                    <>
+                      <div className="text-base font-semibold text-green-600 dark:text-green-300">
+                        {item.loading ? '...' : item.price}
+                      </div>
+                      <div className="text-sm font-medium text-green-600 dark:text-green-300">
+                        {item.loading ? '...' : `▲ ${item.changePercent}`}
+                      </div>
+                    </>
+                  )}
+                  {isNegative && (
+                    <>
+                      <div className="text-base font-semibold text-red-600 dark:text-red-300">
+                        {item.loading ? '...' : item.price}
+                      </div>
+                      <div className="text-sm font-medium text-red-600 dark:text-red-300">
+                        {item.loading ? '...' : `▼ ${item.changePercent}`}
+                      </div>
+                    </>
+                  )}
+                  {!isPositive && !isNegative && (
+                    <>
+                      <div className="text-base font-semibold text-gray-900 dark:text-gray-100">
+                        {item.loading ? '...' : item.price}
+                      </div>
+                      <div className="text-sm font-medium text-gray-600 dark:text-gray-300">
+                        {item.loading ? '...' : item.changePercent}
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
