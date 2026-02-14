@@ -1,5 +1,20 @@
 [
   {
+    "id": "news_1771048055_2",
+    "title": "예측 시장, 미국 스포츠 도박 시장 점유율 확대…Kalshi 연간 수익 1~3억 달러 추정",
+    "summary": "예측 시장 스타트업 Kalshi의 스포츠 베팅 연간 수익이 1~3억 달러로 추정되며 급증했다. 이로 인해 DraftKings 주가는 1~5% 급락, Flutter 주가는 10% 하락하는 등 기존 스포츠 도박 업체들의 실적 부진 우려가 커지고 있다.\n\n📊 코멘트\n스포츠 도박 시장에서 예측 시장의 성장세가 기존 업체들의 수익성을 위협하는 요인이 될 수 있음을 시사.",
+    "content": "2024년 미국 대통령 선거 이후 인기가 급증한 예측 시장 스타트업 Kalshi의 스포츠 베팅 연간 수익이 약 1~3억 달러로 추정된다.\n• **매출 급증:** Kalshi 데이터 분석 결과, 미국 프로 풋볼 시즌 시작과 함께 거래량과 수수료가 급증했으며, 이달 현재 스포츠 거래 수수료가 플랫폼 전체 수수료의 약 90%를 차지한다.\n• **사용자 증가:** 시장 정보 제공업체 Sensor Tower에 따르면 Kalshi 앱의 월간 활성 사용자 수는 2025년 초 60만 명에서 2월 9일까지 510만 명으로 증가했다.\n• **주가 하락:** DraftKings는 2026년 예상 매출이 65억~6~9억 달러로 분석가 예상치인 72억 달러에 미치지 못할 것으로 예상되면서 금요일 뉴욕에서 최대 1~5% 하락했다. FanDuel의 모회사인 Flutter의 주식도 10% 하락했다. 두 회사 모두 지난 1년 동안 시가 총액이 절반 이상 감소했다.\n• **스포츠 도박 감소:** 최근 스포츠 베팅을 합법화한 주를 제외하면 스포츠 도박 총액(베터가 베팅한 총 금액)은 1~2월에 전년 대비 2% 감소했다 (Bank of America 데이터).\n• **슈퍼볼 영향:** 네바다 스포츠 도박장에서 슈퍼볼에 걸린 베팅 금액은 1억 3,380만 달러로 10년 만에 최저치를 기록했다 (네바다 게임 통제 위원회).\n• **Kalshi 슈퍼볼 거래량:** Kalshi는 슈퍼볼 관련 거래량이 하프타임 쇼 베팅을 포함해 10억 달러를 넘어섰다고 밝혔다.\n• **DraftKings CEO 반박:** DraftKings CEO Jason Robins는 스포츠 베팅이 합법화된 시장에서 예측 시장으로 전환하는 사람들은 대부분 “마진이 낮거나 심지어 마진이 마이너스인 고객”이라고 주장하며 구조적인 위협에 직면했다는 주장을 반박했다.",
+    "source": "Financial Times",
+    "date": "2026-02-14 14:47",
+    "timestamp": 1771047935,
+    "link": "https://www.ft.com/content/1aa7d6a6-9bb8-44cd-83c6-9190d4b562f4",
+    "tickers": [
+      "DKNG",
+      "FLUT"
+    ],
+    "importance": "high"
+  },
+  {
     "id": "news_1771047555_3",
     "title": "프랑스 기업, 이익 할증 부담에 ‘젖소 취급’ 불만",
     "summary": "프랑스 최대 기업들이 이익 할증 과세 연장으로 올해 75억 유로의 이익 감소에 직면했다. 기업들은 마크롱 대통령의 친기업 정책 유산이 훼손되고 있다고 경고했다. 이번 과세로 연 매출 30억 유로 이상 기업의 실효 법인세율은 3~5%까지 상승한다.\n\n📊 코멘트\n프랑스 기업 투자 심리 위축 우려.",
@@ -14,6 +29,106 @@
       "AAPL"
     ],
     "importance": "high"
+  },
+  {
+    "id": "news_1771048121_13",
+    "title": "미국 이민 당국, NEC 얼굴 인식 포함 최신 기술 도입…사생활 침해 논란",
+    "summary": "미국 이민세관단속국(ICE)이 일본 NEC의 얼굴 인식 시스템을 포함한 최신 AI 및 생체 인식 기술을 이민 단속에 사용하면서 사생활 침해 논란이 일고 있다. 비판론자들은 이러한 기술 도입이 개인 정보 보호 권리를 침해할 수 있다고 주장한다.\n\n📊 코멘트\n기술 발전과 인권 보호 사이의 균형점을 찾아야 한다.",
+    "content": "미국 이민세관단속국(ICE)이 진행 중인 이민 단속에 일본 기술 그룹 NEC의 얼굴 인식 시스템과 같은 최신 인공지능(AI) 및 생체 인식 기술을 도입하고 있다.\n• **기술 도입:** ICE는 NEC의 얼굴 인식 시스템 외에도 다양한 감시 기술을 사용하고 있다.\n• **사생활 침해 우려:** 비판론자들은 이러한 기술 사용이 개인 정보 보호 권리를 흐리게 할 수 있다고 지적한다.",
+    "source": "Nikkei Asia",
+    "date": "2026-02-14 14:48",
+    "timestamp": 1771047341,
+    "link": "https://asia.nikkei.com/business/technology/us-immigration-agents-tap-latest-tech-including-nec-s-facial-recognition",
+    "tickers": [
+      "NEC"
+    ],
+    "importance": "medium"
+  },
+  {
+    "id": "news_1771048126_14",
+    "title": "스미토모 임업, 42억 달러에 Tri Pointe Homes 인수...미국 5위 주택 건설사 도약",
+    "summary": "스미토모 임업이 미국 주택 건설사 Tri Pointe Homes를 42억 달러에 인수하며 해외 사업 확장에 나섰다. 일본의 단독 주택 시장 축소에 대응하여 2010년대부터 미국 주택 건설 회사를 인수해 왔다.\n\n📊 코멘트\n일본 주택 시장의 위기를 해외 M&A로 극복하려는 전략.",
+    "content": "스미토모 임업은 금요일, 미국의 주요 주택 건설업체인 Tri Pointe Homes를 인수한다고 발표했다. 이는 일본의 단독 주택 시장 축소에 따른 해외 인수합병을 통한 사업 확장 전략의 일환이다.\n• **인수 배경:** 일본의 단독 주택 시장이 축소되면서 스미토모 임업은 2010년대부터 미국 주택 건설 회사를 인수해 왔다.\n• **인수 규모:** 스미토모 임업은 Tri Pointe Homes를 42억 달러에 인수한다.\n• **업계 순위:** 이번 인수를 통해 스미토모 임업은 미국 내 5위 규모의 주택 건설사가 될 것으로 예상된다.",
+    "source": "Nikkei Asia",
+    "date": "2026-02-14 14:48",
+    "timestamp": 1771047286,
+    "link": "https://asia.nikkei.com/business/business-deals/sumitomo-forestry-to-become-5th-largest-us-homebuilder-with-4.2bn-buy",
+    "tickers": [],
+    "importance": "high"
+  },
+  {
+    "id": "news_1771048138_15",
+    "title": "일본 기린, 호주에 건강과학 허브 설립",
+    "summary": "일본의 기린 홀딩스는 주력 사업인 맥주 외 분야 다각화의 일환으로 호주에 해외 건강과학 B2C 사업을 전담할 새로운 회사를 설립한다고 발표했다. 이는 건강 식품 및 보충제 시장 공략을 위한 행보이다.\n\n📊 코멘트\n기린 홀딩스의 사업 다각화 전략이 새로운 성장 동력을 확보할 수 있을지 주목된다.",
+    "content": "기린 홀딩스는 금요일, 맥주 사업에서 벗어나 사업을 다각화하기 위한 노력의 일환으로 해외 건강과학 B2C 사업을 담당할 새로운 호주 회사를 설립한다고 발표했다.\n• **해외 건강과학 사업 확장:** 기린 홀딩스는 건강 식품 및 보충제 시장 진출을 가속화하고 있다.\n• **새로운 회사 설립:** 호주에 설립되는 신규 법인은 기린 홀딩스의 해외 건강과학 B2C 사업 운영을 전담한다.",
+    "source": "Nikkei Asia",
+    "date": "2026-02-14 14:48",
+    "timestamp": 1771047238,
+    "link": "https://asia.nikkei.com/business/food-beverage/japan-s-kirin-sets-up-australian-health-science-hub",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
+    "id": "news_1771048150_16",
+    "title": "CIA, 중국 군 관계자 포섭 위한 유튜브 영상 공개",
+    "summary": "미국 중앙정보국(CIA)이 중국 인민해방군 관계자들을 대상으로 정보 제공을 장려하는 유튜브 영상을 공개했다. 이는 시진핑 주석 휘하 최고위층에 대한 숙청 직후에 이루어졌다.\n\n📊 코멘트\n미중 간 정보전 경쟁 심화 가능성 시사.",
+    "content": "CIA가 중국 군 관계자들에게 미국에 정보를 제공하도록 독려하는 유튜브 영상을 공개했다. 해당 영상은 인민해방군 최고위층이 시진핑 주석에 의해 숙청된 직후에 공개되었다.\n• **CIA의 접근:** CIA는 유튜브 채널을 통해 중국 군 관계자들이 미국 기관과 정보를 공유하도록 장려하는 영상을 게시했다.\n• **숙청 배경:** 인민해방군 최고위층에 대한 숙청은 시진핑 주석의 권력 강화와 관련된 것으로 보인다.\n• **영상 메시지:** 해당 영상은 중국 군 관계자들이 CIA에 정보를 제공하도록 설득하는 내용을 담고 있다.",
+    "source": "Nikkei Asia",
+    "date": "2026-02-14 14:49",
+    "timestamp": 1771047190,
+    "link": "https://asia.nikkei.com/politics/international-relations/us-china-tensions/cia-courts-chinese-military-spies-with-video-after-zhang-youxia-purge",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
+    "id": "news_1771048156_17",
+    "title": "캐나다, 미국 관계 악화 속 중국 통해 EV 산업 부활 모색",
+    "summary": "캐나다 정부가 전기차 판매를 촉진하고 국내 제조를 재건하기 위한 야심찬 자동차 전략을 발표했다. 중국과의 합작 투자를 장려하며 중국산 전기차에 문호를 개방하고 있다.\n\n📊 코멘트\n미국과의 관계 악화가 캐나다의 대중국 경제 협력 확대로 이어지는 모습이다.",
+    "content": "캐나다 정부가 전기차 판매를 활성화하고 국내 제조업을 재건하기 위해 자동차 산업 전략을 발표했다. 해당 전략은 공급망 강화를 위한 세금 공제, 보조금 및 소비자 인센티브를 포함한다.\n• **자동차 전략:** 정부는 전기차 판매를 촉진하고 국내 제조를 재건하기 위해 세금 공제, 보조금, 소비자 인센티브 등을 제공한다.\n• **중국 협력:** 지난달 베이징 방문 후 중국 전기차에 대한 개방 정책을 추진하고 있으며, 합작 투자를 장려하고 있다.\n• **배경:** 미국과의 관계가 악화되면서 중국과의 경제 협력을 모색하는 것으로 분석된다.",
+    "source": "Nikkei Asia",
+    "date": "2026-02-14 14:49",
+    "timestamp": 1771047136,
+    "link": "https://asia.nikkei.com/business/automobiles/electric-vehicles/canada-turns-to-china-to-revive-ev-sector-as-us-ties-fray",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
+    "id": "news_1771048168_18",
+    "title": "싱가포르, '성장' IPO 유치 경쟁…홍콩은 AI 기업 상장",
+    "summary": "싱가포르가 IPO를 통해 자본 유치를 확대하기 위해 적극적으로 민간 기업과 금융기관을 유치하고 있다. 이는 홍콩이 기술 기업들의 IPO를 유치하는 것과 대비된다. 싱가포르 Straits Times Index는 목요일 처음으로 5,000선을 돌파했다.",
+    "content": "싱가포르가 경쟁 금융 허브인 홍콩이 기술 기업들의 IPO를 통해 자금 조달을 유치하는 가운데, 자본 유치를 늘리기 위해 민간 기업과 금융 기관을 적극적으로 유치하고 있다.\n• **싱가포르 Straits Times Index:** 목요일 처음으로 5,000선을 돌파했다.",
+    "source": "Nikkei Asia",
+    "date": "2026-02-14 14:49",
+    "timestamp": 1771047088,
+    "link": "https://asia.nikkei.com/business/markets/singapore-chases-growth-ipos-as-hong-kong-attracts-ai-listings",
+    "tickers": [
+      "T"
+    ],
+    "importance": "medium"
+  },
+  {
+    "id": "news_1771048179_19",
+    "title": "일본 중도개혁연합, 참패 후 오가와 준야 신임 대표 선출",
+    "summary": "일본 하원 제1야당인 중도개혁연합(CRA)이 지난 금요일 도쿄에서 열린 총회에서 오가와 준야를 신임 대표로 선출했다. 이는 최근 선거 참패 이후 당의 쇄신을 위한 결정이다.\n\n📊 코멘트\n일본 정치 지형 변화 가능성에 주목해야 한다.",
+    "content": "중도개혁연합(CRA)은 도쿄에서 열린 총회에서 오가와 준야를 신임 대표로 선출했다.\n• **선출 배경:** 이번 선출은 최근 선거에서 참패한 이후 당의 새로운 방향을 모색하기 위한 것이다.\n• **오가와 준야:** 오가와 준야는 중도개혁연합 소속 하원 의원이다.",
+    "source": "Nikkei Asia",
+    "date": "2026-02-14 14:49",
+    "timestamp": 1771047039,
+    "link": "https://asia.nikkei.com/politics/after-heavy-defeat-japan-s-centrist-reform-alliance-elects-new-leader",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
+    "id": "news_1771048191_20",
+    "title": "중국, 춘절 연휴 기간 역대 최대 규모의 여행객 예상",
+    "summary": "중국 정부는 춘절 연휴 기간 동안 역대 최대인 95억 명의 여행객이 이동할 것으로 예상하고 있다. 테마파크와 주요 관광지는 이러한 수요에 대비하고 있지만, 소비 심리 위축이 소비 지출 증가를 제한할 수 있다는 전망도 나온다.\n\n📊 코멘트\n관광 수요 증가에도 소비 심리 회복이 관건.",
+    "content": "중국 정부는 2월 2일부터 3월 1~3일까지 춘절 연휴 기간 동안 역대 최대 규모인 95억 명의 여행객이 이동할 것으로 예상하고 있다.\n• **관광 준비:** 중국 전역의 테마파크 및 기타 관광 명소는 춘절 연휴 기간 동안 예상되는 기록적인 방문객 수에 대비하고 있다.\n• **소비 심리 영향:** 다만, 약한 소비 심리가 소비 지출 증가를 제한할 수 있다는 전망도 제기되고 있다.",
+    "source": "Nikkei Asia",
+    "date": "2026-02-14 14:49",
+    "timestamp": 1771046991,
+    "link": "https://asia.nikkei.com/business/travel-leisure/china-s-tourist-hot-spots-gear-up-for-record-lunar-new-year-traffic",
+    "tickers": [],
+    "importance": "medium"
   },
   {
     "id": "news_1771047032_3",
@@ -209,18 +324,6 @@
     "importance": "medium"
   },
   {
-    "id": "news_1771046566_13",
-    "title": "방글라데시, 신정부가 변화를 이끌 수 있을까?",
-    "summary": "방글라데시 총선 이후, 새로운 정부가 국가의 변화를 이끌 수 있을지에 대한 분석이 제기되고 있다. Syed Munir Khasru IPAG 아시아 태평양 회장은 방글라데시의 경제 및 정치적 과제에 대한 의견을 제시했다.\n\n📊 코멘트\n정치적 안정과 경제 개혁이 시급한 과제.",
-    "content": "방글라데시 민족주의당 의장 Tarique Rahman이 다카의 투표소에서 투표 후 언론과 인터뷰하고 있다.\nSyed Munir Khasru는 멜버른에 본사를 둔 싱크탱크인 IPAG 아시아 태평양의 회장이다.",
-    "source": "Nikkei Asia",
-    "date": "2026-02-14 14:22",
-    "timestamp": 1771045786,
-    "link": "https://asia.nikkei.com/opinion/can-a-new-government-finally-turn-bangladesh-around",
-    "tickers": [],
-    "importance": "low"
-  },
-  {
     "id": "news_1771046578_14",
     "title": "일본 맥주, 한국 MZ세대 사로잡아 인기 부활",
     "summary": "일본 맥주가 새로운 스타일과 맛으로 한국 MZ세대의 입맛을 사로잡으며 인기를 되찾고 있다. 서울 을지로의 한 인기 바에서는 오직 삿포로 맥주만을 판매하고 있을 정도다.\n\n📊 코멘트\n한일 관계 개선과 함께 일본 제품 선호도 회복이 본격화될 가능성.",
@@ -231,18 +334,6 @@
     "link": "https://asia.nikkei.com/business/food-beverage/japan-s-beers-win-over-south-korea-s-gen-z-and-millennial-drinkers",
     "tickers": [],
     "importance": "medium"
-  },
-  {
-    "id": "news_1771046591_15",
-    "title": "스리랑카 여행: 2주간의 아름다운 우회",
-    "summary": "스리랑카는 아름다운 자연경관과 오랜 문화, 종교적 공간을 가진 나라이다. 내전과 경제 붕괴, 정치적 격변을 겪었지만, 여전히 2천 년이 넘는 문화와 신앙을 지키며 고유의 아름다움을 간직하고 있다.\n\n📊 코멘트\n스리랑카 여행 산업 회복에 대한 간접적 시사.",
-    "content": "스리랑카는 세계에서 가장 아름다운 곳 중 하나로 꼽히지만, 내전과 경제 붕괴, 정치적 격변의 상처를 안고 있다.\n• **문화 유산:** 스리랑카는 2천 년이 넘는 문화, 신앙, 성스러운 공간을 보존하고 있다.\n• **여행의 중요성:** 스리랑카의 진정한 가치는 여행을 통해 더 깊이 이해할 수 있다.\n• **지리적 특징:** 이하라코테 역 근처의 철도 터널에서 바라보는 안개 덮인 언덕과 들판이 인상적이다.",
-    "source": "Nikkei Asia",
-    "date": "2026-02-14 14:23",
-    "timestamp": 1771045691,
-    "link": "https://asia.nikkei.com/life-arts/life/destinations/road-tripping-sri-lanka-two-weeks-of-delightful-detours",
-    "tickers": [],
-    "importance": "low"
   },
   {
     "id": "news_1771046604_16",
@@ -267,21 +358,6 @@
     "link": "https://asia.nikkei.com/business/electronics/japan-s-bear-scaring-wolf-robot-to-get-80-decibel-plush-version",
     "tickers": [],
     "importance": "medium"
-  },
-  {
-    "id": "news_1771046628_18",
-    "title": "태국, 발렌타인데이 초콜릿 인기",
-    "summary": "태국에서 발렌타인데이에 초콜릿 수요가 증가하고 있다. 특히, 치앙마이 지방에 위치한 MarkRin Chocolate 농장의 카카오 열매 건조 모습이 눈길을 끈다.\n\n📊 코멘트\n태국 초콜릿 시장 성장 가능성에 주목할 필요가 있다.",
-    "content": "Rawisara \"Irin\" La-ongsri는 MarkRin Chocolate 설립자 Sanh La-ongsri의 딸이며, 태국 북부 치앙마이 지방에 있는 회사 농장에서 카카오 열매를 건조하는 모습이 포착되었다.\n많은 사람들이 초콜릿을 좋아하며, 이는 전 세계적으로 가장 인기 있는 맛 중 하나이다.",
-    "source": "Nikkei Asia",
-    "date": "2026-02-14 14:23",
-    "timestamp": 1771045548,
-    "link": "https://asia.nikkei.com/life-arts/life/chocolate-hits-the-spot-on-valentine-s-day-in-thailand",
-    "tickers": [
-      "035720.KS",
-      "VALE"
-    ],
-    "importance": "low"
   },
   {
     "id": "news_1771046640_19",
@@ -578,78 +654,6 @@
     "tickers": [
       "BIDU"
     ],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771045182_20",
-    "title": "AI 공포 확산: 부동산, 운송, 물류 주식 급락",
-    "summary": "인공지능(AI)에 대한 우려가 부동산, 운송, 물류 주식으로 확산되면서 해당 주식들이 급락했다. 이는 앞서 금융 및 소프트웨어 주식에서 나타난 하락세와 유사한 움직임이다.\n\n📊 코멘트\nAI가 산업 전반에 미치는 잠재적 영향에 대한 투자자들의 불안감이 커지고 있다.",
-    "content": "• **AI 공포 확산:** 부동산, 운송, 물류 관련 주식들이 AI에 대한 우려로 급락하며, 금융 및 소프트웨어 주식에 이어 하락세를 보였다.\nAI 기술 발전이 전통 산업에 미칠 영향에 대한 불확실성이 투자 심리를 위축시키고 있다.",
-    "source": "CNBC",
-    "date": "2026-02-14 13:59",
-    "timestamp": 1771043982,
-    "link": "https://www.cnbc.com/2026/02/13/cnbc-daily-open-the-ai-fear-spreads-real-estate-trucking-and-logistics-are-its-latest-victims.html",
-    "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771044621_14",
-    "title": "부동산세 연체 후 은퇴 임박: 지금 집을 파는 것이 최악의 선택일까?",
-    "summary": "코로나1~9 해고 후 소득 문제로 부동산세를 수년간 연체하여 월 모기지 상환액이 4,000달러 증가한 상황에서 은퇴를 앞둔 사람이 집 판매 여부를 고민하고 있다. 연체 기록이 신용에 미칠 영향과 집 판매 시점에 대한 질문에 대해 재정 전문가의 조언이 필요한 상황이다.\n\n📊 코멘트\n재정 상황 악화 시 전문가의 조언을 구하고 신중한 의사결정이 필요하다.",
-    "content": "• **재정 상황:** 코로나1~9 해고 후 소득 문제로 수년간 부동산세를 납부하지 못해 현재 월 모기지 상환액에 추가되어 월 4,000달러가 증가함.\n• **고민 사항:** 모기지 연체는 없었으나, 부동산세 연체로 인한 신용도 하락 우려와 함께 임박한 은퇴 시점에 집을 판매하는 것이 적절한지 고민 중.\n• **남편의 입장:** 모기지 연체에 대해 크게 걱정하지 않지만, 임대 가능성에 미칠 영향에 대한 우려가 있음.\n• **선택지:** 집을 판매하여 부채를 상환하고 임대하는 것, 또는 연체 위험을 감수하며 신용 기록에 영향을 받은 후 판매 및 임대하는 것 중 선택을 고민 중.\n• **전문가 자문:** 현재 집을 파는 것이 좋지 않은 시기인지, 부동산세 연체가 임대 능력에 영향을 미칠 수 있는지에 대한 전문가의 조언을 구함.",
-    "source": "MarketWatch",
-    "date": "2026-02-14 13:50",
-    "timestamp": 1771043781,
-    "link": "https://www.marketwatch.com/story/im-close-to-retiring-im-behind-on-my-property-taxes-is-this-a-bad-time-to-sell-my-house-40954efd?mod=mw_rss_topstories",
-    "tickers": [],
-    "importance": "NOT_RELEVANT"
-  },
-  {
-    "id": "news_1771044626_15",
-    "title": "대다수 미국 노동자, 직업에서 만족 찾기 어렵다고 느껴",
-    "summary": "최근 시장 변동성과 물가 상승으로 인해 대다수의 미국 노동자들이 직업에서 만족을 느끼는 것이 불가능하다고 생각하는 것으로 나타났다. Glassdoor 설문조사에 따르면 응답자의 3/4이 현재의 직업 시장에서 좋아하는 일을 하는 것이 불가능하다고 응답했다.\n\n📊 코멘트\n직업 만족도 하락은 생산성 저하로 이어질 수 있다.",
-    "content": "대다수의 미국 노동자들은 수년간의 노동 시장 변동성과 급증하는 비용으로 인해 직업에서 만족을 느끼는 것이 불가능하다고 느끼고 있다.\n• **설문 조사 결과:** Glassdoor의 설문 조사에서 노동자의 3/4이 오늘날의 직업 시장에서 사람들이 좋아하는 일을 하는 것이 가능하다고 믿지 않는다고 응답했다.\n• **베네사 웡(Venessa Wong)의 의견:** MarketWatch의 개인 금융 기자 베네사 웡은 뉴욕시에 거주하며, 이전에 BuzzFeed News에서 비즈니스, 불평등 및 문화를 다루었고 Bloomberg에서 식품 산업에 대해 보도했다. 그녀는 컬럼비아 저널리즘 스쿨과 미들버리 칼리지를 졸업했다.",
-    "source": "MarketWatch",
-    "date": "2026-02-14 13:50",
-    "timestamp": 1771043726,
-    "link": "https://www.marketwatch.com/story/hate-your-job-good-loving-your-job-costs-people-real-money-d2f1e5d5?mod=mw_rss_topstories",
-    "tickers": [],
-    "importance": "low"
-  },
-  {
-    "id": "news_1771044637_16",
-    "title": "유럽, 미국 디지털 인프라에 85% 의존",
-    "summary": "시너지 리서치 그룹 데이터에 따르면 유럽 클라우드 시장의 85%를 미국 기업이 장악하고 있다. 이는 유럽의 디지털 인프라가 미국에 크게 의존하고 있음을 보여준다.\n\n📊 코멘트\n디지털 주권 확보를 위한 유럽의 노력이 필요하다.",
-    "content": "미국 기업들은 유럽 클라우드 시장의 85%를 점유하고 있다. 이는 시장 분석 회사인 시너지 리서치 그룹의 데이터에 따른 것이다.\n미국 기업의 유럽 클라우드 시장 점유율이 압도적으로 높음을 시사한다.",
-    "source": "CNBC",
-    "date": "2026-02-14 13:50",
-    "timestamp": 1771043677,
-    "link": "https://www.cnbc.com/2026/02/13/four-charts-europes-reliance-us-digital-infrastructure.html",
-    "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771044651_17",
-    "title": "AI 공포 재점화: 운송 및 부동산 주식 하락세",
-    "summary": "AI에 대한 투자자들의 우려가 커지면서 목요일 주식 시장이 하락세를 보였다. 특히 운송 및 부동산 주식이 큰 타격을 입으며 모멘텀을 잃었다.\n\n📊 코멘트\nAI발 투자 심리 위축, 특정 섹터에 집중적으로 나타나는 양상.",
-    "content": "AI에 대한 공포가 다시 한번 주식 시장을 덮치면서 목요일 새로운 매도세가 촉발되었다. 특히 운송 및 부동산 주식이 이번 하락세의 주요 피해자로 나타났다.\n• **하락 요인:** AI 기술 발전으로 인한 잠재적 일자리 감소 및 산업 구조 변화에 대한 우려가 투자 심리를 위축시켰다.\n• **주요 섹터 영향:** 트럭 운송 산업은 자율 주행 기술 발전의 직접적인 영향을 받을 것이라는 전망에 하락세를 보였으며, 부동산 시장 역시 AI 기반 부동산 관리 및 투자 플랫폼 등장에 대한 불확실성이 투자 심리를 악화시켰다.",
-    "source": "CNBC",
-    "date": "2026-02-14 13:50",
-    "timestamp": 1771043631,
-    "link": "https://www.cnbc.com/2026/02/13/trucking-real-estate-stocks-latest-victims-of-ai-fears.html",
-    "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771044659_18",
-    "title": "제약업계, 가격·파이프라인·특허만료 3중고 직면",
-    "summary": "2025년의 급격한 변화 이후 제약업계는 새해에 가격 압박, 파이프라인 문제, 특허 만료라는 3가지 주요 도전 과제에 직면하며 중요한 변화기를 맞이할 것으로 예상된다. 이러한 도전은 작년의 개발 상황이 구체화되면서 더욱 뚜렷해질 전망이다.\n\n📊 코멘트\n제약사들은 혁신적인 신약 개발과 효율적인 비용 관리 전략을 통해 생존을 모색해야 할 것이다.",
-    "content": "새해는 극적인 변화를 겪었던 2025년 이후 제약업계에 중요한 해가 될 것으로 보인다. 작년의 개발 상황이 구체화되면서 그 영향력이 더욱 명확해질 것이다.\n• **가격 압박:** 제네릭 의약품 및 바이오시밀러의 경쟁 심화로 인한 약가 인하 압력이 더욱 거세질 것으로 예상된다. 이는 수익성 감소로 이어져 제약사들의 혁신 투자 여력을 제약할 수 있다.\n• **파이프라인 문제:** 신약 개발의 성공률은 여전히 낮고, 임상 시험의 비용은 계속 증가하고 있다. 많은 제약사들이 블록버스터 신약의 부재로 인해 어려움을 겪고 있으며, 새로운 성장 동력을 찾기 위해 고심하고 있다.\n• **특허 만료:** 주요 블록버스터 약품들의 특허 만료가 임박하면서 제네릭 의약품의 시장 진입이 가속화될 것으로 예상된다. 이는 해당 약품을 판매하는 제약사들의 매출 감소로 이어질 것이다.",
-    "source": "CNBC",
-    "date": "2026-02-14 13:50",
-    "timestamp": 1771043579,
-    "link": "https://www.cnbc.com/2026/02/13/pharma-earnings-stock-novo-lilly-drug-prices-pipelines-take-aways.html",
-    "tickers": [],
     "importance": "medium"
   }
 ]
