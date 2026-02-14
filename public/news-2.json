@@ -1,5 +1,122 @@
 [
   {
+    "id": "news_1771045647_18",
+    "title": "물류주, AI 공포에 급락... 시가총액 600만 달러 기업 충격",
+    "summary": "물류 관련 주식들이 AI의 위협에 대한 투자자들의 우려로 인해 급락했다. 특히, 시가총액이 600만 달러에 불과한 작은 회사가 촉발한 매도세가 큰 영향을 미쳤다. 이 회사의 주가 급등이 전체 물류 sector에 미친 파급력이 매우 크다.\n\n📊 코멘트\nAI 관련 작은 움직임에도 과민 반응하는 시장, 옥석 가리기가 필요하다.",
+    "content": "물류 주식들이 목요일 인공지능(AI) '공포 거래'의 희생양이 되면서 급락했다.\n• **매도세의 중심:** 과거 노래방 사업을 했던 회사로, 주식 시장 가치가 600만 달러에 불과한 작은 회사가 매도세의 중심에 있었다.\n• **꼬리가 몸통을 흔드는 격:** AI가 초래할 수 있는 아주 작은 위협에도 투자자들이 공포에 질려 주식을 던지면서, 이 회사의 가치가 다른 회사들의 가치를 떨어뜨리는 결과를 초래했다. 한 분석가는 이를 두고 '꼬리가 몸통을 흔드는 가장 큰 사례'라고 평가했다.\n• **Algorhythm 주가 급등:** Algorhythm의 주가는 30% 상승한 1.2~9달러로 마감하여 시가총액은 약 1,200만 달러가 되었다. 이 회사가 촉발한 화물 운송 부문 전반의 매도세는 매우 거셌다.\n• **전통 금융 서비스 기업의 위협:** 트레이더들은 잘 알려지지 않은 스타트업의 개발에 주목하면서 Charles Schwab에서 CBRE에 이르기까지 전통적인 금융 서비스 산업의 기존 플레이어들의 주식 매도를 촉발했다.\n• **물류 산업의 우려:** 트럭 운송 주식도 화물 중개 사업에 대한 위협으로 인해 매도세에 동참했다.\n• **플랫폼의 긍정적 효과:** 한 관계자는 자사 플랫폼이 모든 물류 플레이어(화주, 운송업체, 제3자 물류 및 물류 서비스 제공업체)에게 긍정적이라며, 빈 마일리지를 줄여 화주의 비용을 절감하고 운송업체의 생산성을 높일 수 있다고 설명했다. 또한 CO2 배출량과 도로 혼잡을 줄이는 추가적인 이점도 있다고 덧붙였다.",
+    "source": "Financial Times",
+    "date": "2026-02-14 14:07",
+    "timestamp": 1771044567,
+    "link": "https://www.ft.com/content/d52b97ba-8199-4877-b210-e7575cbdcaf2",
+    "tickers": [
+      "SCHW",
+      "CBRE"
+    ],
+    "importance": "medium"
+  },
+  {
+    "id": "news_1771045657_19",
+    "title": "AI 챗봇에 광고 도입 가능성 시사",
+    "summary": "AI 챗봇 서비스에 광고가 도입될 가능성이 제기되고 있다. 이는 사용자 증가에 따른 운영 비용 상승과 수익 모델 부재를 해결하기 위한 방안으로 보인다.\n\n📊 코멘트\nAI 챗봇 서비스의 수익화 모델 실험은 불가피한 수순.",
+    "content": "AI 챗봇 서비스 운영 비용 증가와 수익 모델 부족으로 광고 도입 가능성이 커지고 있다.\n• **광고 도입 배경:** 사용자 증가에 따른 인프라 비용 증가와 현재 구독 모델 외 뚜렷한 수익 창출 방안의 부재가 광고 도입 논의를 촉발하고 있다.\n• **수익 모델 다변화:** 광고 외에도 프리미엄 기능, 데이터 판매 등 다양한 수익 모델이 검토되고 있지만, 사용자 경험 저해 없이 수익을 확보하는 것이 관건이다.\n• **시장 경쟁 심화:** AI 챗봇 시장 경쟁 심화로 인해 기업들은 사용자 확보와 수익성 개선이라는 과제에 직면해 있다.",
+    "source": "Financial Times",
+    "date": "2026-02-14 14:07",
+    "timestamp": 1771044517,
+    "link": "https://www.ft.com/content/c9acd1f7-4864-4bd7-9ada-d2e13f05b906",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
+    "id": "news_1771045665_20",
+    "title": "캐나다, '느슨해진' 환경 정책으로 기후 목표 달성 실패",
+    "summary": "캐나다가 환경 정책 약화로 인해 2026년 중간 배출량 감축 목표, 2030년 파리 협정 목표, 2050년 탄소 중립 목표 모두 달성에 실패할 것으로 예상된다. 캐나다 기후 연구소 보고서는 정책 약화의 원인으로 자동차 및 화석 연료 산업 부양책을 지목했다.\n\n📊 코멘트\n환경 정책 후퇴가 경제 부양책의 대가인가?",
+    "content": "캐나다 기후 연구소의 보고서에 따르면, 캐나다는 지난 1년간의 '느슨해진' 환경 정책으로 인해 기후 목표 달성에 실패할 것으로 예상된다.\n• **목표 달성 실패:** 2026년 중간 배출량 감축 목표, 2030년 파리 협정 목표, 2050년 탄소 중립 목표 모두 달성 불가능할 것으로 전망된다.\n• **정책 변화 배경:** 마크 카니 총리가 미국의 무역 전쟁에 대응하기 위해 자동차 및 화석 연료 산업을 부양하는 정책을 추진하면서 환경 정책이 약화되었다.\n• **카니 총리 비판:** 과거 녹색 에너지 전환과 기후 금융을 옹호했던 카니 총리는 도널드 트럼프 미국 대통령의 관세 부과와 관계 악화에 대응하여 석유 및 가스 부문을 옹호한다는 비판을 받고 있다.\n• **정책 약화 사례:** 카니 총리 취임 이후 캐나다의 소비자 탄소세 폐지, 전기 자동차 및 주택 개조 보조금 삭감, 앨버타 석유 부문 유치를 위한 산업 탄소 가격 책정 완화 등이 이루어졌다.\n• **과거 정부 성과:** 전 트뤼도 정부 하에서 캐나다는 2030년까지 오염을 3~6% 감축할 수 있을 것으로 예상되었으나, 2023년 최신 데이터에 따르면 G7 국가 중 최저 수준인 9% 감축에 그쳤다. G7 국가 평균 감축률은 30%였다.\n• **미국과의 비교:** 미국은 2005년 대비 1~7%의 배출량 감축을 기록하여 캐나다의 감축률의 거의 두 배에 달한다.\n• **자동차 전략 변화:** 카니 총리는 캐나다 자동차 산업 보호를 위한 새로운 전략을 발표했지만, 이 정책은 배출 정책을 완화하고 전기 자동차 채택 목표를 기존의 100%(기존 목표)에서 2035년까지 75%로 낮췄다.",
+    "source": "Financial Times",
+    "date": "2026-02-14 14:07",
+    "timestamp": 1771044465,
+    "link": "https://www.ft.com/content/429b24c1-995b-4735-9f2a-2d16ada1432f",
+    "tickers": [
+      "TGT"
+    ],
+    "importance": "high"
+  },
+  {
+    "id": "news_1771045108_14",
+    "title": "1월 소비자물가 2.4% 상승, 예상치 하회",
+    "summary": "1월 소비자물가지수(CPI)가 전년 동월 대비 2.4% 상승하며 다우존스 예상치인 2.5% 상승을 밑돌았다. 이는 인플레이션 둔화 추세를 시사한다.\n\n📊 코멘트\n연준의 금리 인상 중단 및 인하 시점 논의에 더욱 힘이 실릴 전망.",
+    "content": "1월 소비자물가지수는 전년 동월 대비 2.4% 상승했다. 다우존스 컨센서스 예상치는 2.5% 상승이었다.\n소비자물가 상승률 둔화는 연준의 통화 정책 결정에 중요한 영향을 미칠 수 있다.",
+    "source": "CNBC",
+    "date": "2026-02-14 13:58",
+    "timestamp": 1771044268,
+    "link": "https://www.cnbc.com/2026/02/13/cpi-inflation-report-january-2026.html",
+    "tickers": [],
+    "importance": "high"
+  },
+  {
+    "id": "news_1771045121_15",
+    "title": "미국과 멀어지고 중국으로 회귀하는 세계 경제",
+    "summary": "세계 경제가 중국 중심으로 재편되고 있으며, 이는 과거 WTO 가입 당시와 달리 미국으로부터 멀어지는 현상이다. 미국 주도의 경제 질서 약화와 중국의 영향력 확대를 시사한다.\n\n📊 코멘트\n미국 기업들의 대중국 전략 수정 불가피.",
+    "content": "세계 경제는 중국 중심으로 회귀하고 있으며, 이는 중국이 세계무역기구(WTO)에 가입하던 시기와는 달리 미국으로부터 멀어지는 움직임이다.\n• **세계 경제 질서 변화:** 세계 경제가 미국 중심에서 중국 중심으로 이동하는 추세가 나타나고 있다.\n• **과거와의 차이점:** 과거 중국의 WTO 가입은 미국 주도의 세계 경제 질서에 편입되는 과정이었으나, 현재는 미국으로부터 이탈하는 양상을 보인다.",
+    "source": "CNBC",
+    "date": "2026-02-14 13:58",
+    "timestamp": 1771044221,
+    "link": "https://www.cnbc.com/2026/02/13/us-china-trump-xi-jinping-global-economy-international-order-rupture.html",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
+    "id": "news_1771045133_16",
+    "title": "중국 투기 세력이 금 시장 변동성 확대 주범?",
+    "summary": "금 가격 변동성이 커지고 있는 가운데, 일부 분석가들은 중국의 투기적 거래자들이 이러한 변동성을 부추기고 있다고 분석한다. 급격한 가격 변동이 중국 투기 세력과 연관되어 있다는 것이다.\n\n📊 코멘트\n금 시장 투자 시 중국 시장 변동성 주의 필요.",
+    "content": "금 가격 변동성이 이례적으로 커지고 있으며, 일부 분석가들은 이러한 금 가격의 급격한 변동이 중국의 투기적 거래자들과 연관되어 있다고 보고 있다.",
+    "source": "CNBC",
+    "date": "2026-02-14 13:58",
+    "timestamp": 1771044173,
+    "link": "https://www.cnbc.com/2026/02/13/china-gold-volatility-bessent-etfs-leverage-margin.html",
+    "tickers": [
+      "GLD"
+    ],
+    "importance": "medium"
+  },
+  {
+    "id": "news_1771045147_17",
+    "title": "유럽 안보 포럼 대표, 트럼프-푸틴 '파괴 정치'에 유럽 '실패'",
+    "summary": "유럽 최대 안보 포럼 대표는 주요 논의에서 유럽 국가들이 '완전히 소외'되었다고 비판하며, 이는 '자신들의 잘못'이라고 지적했다. 트럼프와 푸틴의 정치적 영향력 확대에 유럽이 제대로 대응하지 못했다는 의미다.\n\n📊 코멘트\n유럽의 안보 위기 의식 고조, 자체적인 방위력 강화 필요성 대두.",
+    "content": "유럽 최대 안보 포럼 대표는 유럽 국가들이 주요 논의에서 '완전히 소외'되었으며, 이는 '자신들의 잘못'이라고 밝혔다.\n• **주요 발언:** 유럽 지역 강대국들이 트럼프와 푸틴의 '파괴 정치'에 직면하여 '실패'했다고 평가했다.\n• **상황 분석:** 유럽 국가들이 주요 국제 문제에 대한 논의에서 주도적인 역할을 하지 못하고 주변부에 머물고 있음을 비판했다.\n• **책임 소재:** 유럽의 소외는 외부 요인뿐 아니라 유럽 자체의 대응 부족에서 비롯되었다고 지적했다.",
+    "source": "CNBC",
+    "date": "2026-02-14 13:59",
+    "timestamp": 1771044127,
+    "link": "https://www.cnbc.com/2026/02/13/europe-trump-putin-defense-munich-security-conference.html",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
+    "id": "news_1771045158_18",
+    "title": "유럽 Stoxx 600, AI발 매도세에 하락 마감",
+    "summary": "유럽 Stoxx 600 지수는 금요일, AI 관련 우려로 인한 매도세에 하락 마감했다. 이는 목요일 월스트리트 주식 시장에 영향을 미친 요인과 동일하다.\n\n📊 코멘트\nAI 테마 투자, 단기 변동성 확대에 유의.",
+    "content": "Stoxx 600 지수는 금요일 하락 마감했는데, 투자자들이 목요일 월스트리트 주식에 타격을 준 AI 관련 우려를 주시했기 때문이다.",
+    "source": "CNBC",
+    "date": "2026-02-14 13:59",
+    "timestamp": 1771044078,
+    "link": "https://www.cnbc.com/2026/02/13/europe-markets-stoxx-600-ftse-100-metals-ai-sell-off.html",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
+    "id": "news_1771045170_19",
+    "title": "바이두, 춘절 앞두고 7억 사용자 대상 검색 앱에 OpenClaw AI 추가",
+    "summary": "중국 검색 엔진 바이두가 춘절을 앞두고 7억 명의 스마트폰 앱 사용자를 대상으로 OpenClaw AI를 검색 앱에 통합한다. 사용자들은 OpenClaw AI에게 직접 작업을 지시할 수 있게 된다.\n\n📊 코멘트\nAI 경쟁 심화 속 바이두의 사용자 경험 개선 전략.",
+    "content": "• **OpenClaw AI 통합:** 바이두는 금요일부터 스마트폰 앱 사용자들에게 OpenClaw AI를 통해 직접 작업을 수행할 수 있도록 지원할 예정이다.\n• **대상 사용자:** 이번 업데이트는 바이두 검색 앱을 사용하는 7억 명의 사용자에게 적용된다.",
+    "source": "CNBC",
+    "date": "2026-02-14 13:59",
+    "timestamp": 1771044030,
+    "link": "https://www.cnbc.com/2026/02/13/baidu-openclaw-ai-search-app-integration-china-lunar-new-year.html",
+    "tickers": [
+      "BIDU"
+    ],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771045182_20",
     "title": "AI 공포 확산: 부동산, 운송, 물류 주식 급락",
     "summary": "인공지능(AI)에 대한 우려가 부동산, 운송, 물류 주식으로 확산되면서 해당 주식들이 급락했다. 이는 앞서 금융 및 소프트웨어 주식에서 나타난 하락세와 유사한 움직임이다.\n\n📊 코멘트\nAI가 산업 전반에 미치는 잠재적 영향에 대한 투자자들의 불안감이 커지고 있다.",
@@ -518,121 +635,5 @@
     "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQWHg0U1l2WVo3emthcGVfcjZKUDlvVzB3OUxnY2phVXVhZU9VWUhIT3QzZU5yS0ljQVNLaWkzQXBab0Z5cWlBMzF0N2lCd182SXd2cURMYTc5VmxTanBWYlZSWnFCMk9KTnBoVlFBZFNGYkZGREJfZ2FqMF9XRzE1akQyOWsxUEN4MmNjbzZaMkxzUmpUMjg1WHdzcw?oc=5",
     "tickers": [],
     "importance": "NOT_RELEVANT"
-  },
-  {
-    "id": "news_1771042300_20",
-    "title": "유나이티드 항공, 롤스로이스 엔진 문제로 A350 주문 차질",
-    "summary": "유나이티드 항공의 A350 항공기 주문이 롤스로이스 엔진 관련 문제로 인해 불확실성에 직면했다. 롤스로이스의 엔진 공급 지연 가능성이 제기되면서 주문 재검토 가능성이 커지고 있다.\n\n📊 코멘트\n항공기 엔진 기술 경쟁 심화, 롤스로이스 리스크 확대 가능성.",
-    "content": "유나이티드 항공의 에어버스 A350 항공기 주문이 롤스로이스 엔진 문제로 인해 차질을 빚을 가능성이 제기됐다.\n• **주요 문제:** 롤스로이스 엔진의 공급 지연 가능성\n• **유나이티드 항공 입장:** 롤스로이스와 엔진 문제 해결을 위해 협력 중이며, 필요시 주문 재검토 가능성 시사\n• **배경:** 차세대 엔진 개발 경쟁 심화 및 롤스로이스의 기술적 문제 발생\n• **영향:** 유나이티드 항공의 항공기 도입 계획 차질 및 롤스로이스의 재정적 부담 증가 가능성\n엔진 공급 안정성 확보가 항공기 제조업체의 중요한 경쟁 요소로 부상.",
-    "source": "Reuters",
-    "date": "2026-02-14 13:11",
-    "timestamp": 1771041100,
-    "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQa0lfT0FrN1RiOFNoaG9FeldJZGJ3NHAwZ1VnZzZubVFZeUd6ZXdWNjlkOHR5d0RWQVdFbmZTb0VDaEg4Wjk4LXdxbVZPMWdlbmhQYWRVM2hlNFdvNWpVWXJDcm5XQ3hXdTJ0YTJMbUpueGhiMEhwSUhOLWNwT0ZuR3ZZYmluXzBpYWowVXJsV2VaM2Q1Q2I2WGpGaU1zbEM0ODBXY3NoejhMNmdZVG4xNXdROFFjY2h2Xzk2Y3N6cWhzcnNvbk9fcEhaQnlSQQ?oc=5",
-    "tickers": [
-      "UAL",
-      "RYCEY"
-    ],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771041739_14",
-    "title": "인도, 에어버스 사건 관련 에어인디아에 11만 350달러 벌금 부과",
-    "summary": "인도 당국은 에어버스 항공기 관련 사고와 관련하여 에어인디아에 11만 350달러의 벌금을 부과했다. 이번 조치는 안전 불이행으로 인해 대중의 신뢰를 훼손했다는 판단에 따른 것이다.\n\n📊 코멘트\n항공 안전 관리 소홀은 기업 이미지에 치명적인 타격을 줄 수 있음을 시사.",
-    "content": "인도 당국이 에어인디아에 11만 350달러의 벌금을 부과했다.\n• **사건 배경:** 에어버스 항공기 관련 안전 문제 발생\n• **벌금 이유:** 안전 불이행으로 대중의 신뢰 훼손\n이번 벌금 부과는 에어인디아의 안전 관리 시스템에 대한 경종을 울리는 계기가 될 것으로 보인다.",
-    "source": "Reuters",
-    "date": "2026-02-14 13:02",
-    "timestamp": 1771040899,
-    "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPZXk5UU1SM3dFZ2p0Y2kya0dVMzFBMEtDbC1qUzZ0ZEM3am5qdmwxZ0o3Q3BYVXhHbV9DUVdmVzRIekNwTVJMdjdEZll0blFlcVlIM0hRUHpyNUlOeFZfZUZ3cFdvcFotZmQzOUk0eXRBVGNjRlVMb1dxSzBwb1dPSzl2cEJtNk9zRWUxQjJmZUxUVEpZVUV5aEstUzIwckJaTEQ0VHU1dXBRUjUtQTNjUTNDYl9jY3pLRnk1cjVVMnR3QXd4b19PQ0pQSGhrVkEyOElTWXNHNElqQWpRUTAtalZwcXN4eTh0RmZYaw?oc=5",
-    "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771041749_15",
-    "title": "머스크의 스페이스X, 베이조스의 블루 오리진, 미국 억만장자들이 중국과의 달 경쟁에 박차",
-    "summary": "일론 머스크의 스페이스X와 제프 베이조스의 블루 오리진이 미국의 달 탐사 경쟁을 주도하며 중국과의 경쟁에 속도를 내고 있다. 이는 정부 지원과 민간 투자가 결합된 새로운 우주 개발 시대의 단면을 보여준다.\n\n📊 코멘트\n우주 산업 경쟁 심화, 관련 기술 및 기업 투자 기회 확대.",
-    "content": "• **경쟁 구도:** 스페이스X는 스타십 로켓 개발에 집중, 블루 오리진은 달 착륙선 개발에 주력하며 중국과의 달 탐사 경쟁에 참여.\n• **주요 기업:**\n   - 스페이스X: 스타십 시험 비행 성공 및 NASA의 아르테미스 프로그램 참여.\n   - 블루 오리진: NASA와 달 착륙선 개발 계약 체결, 상업 우주 정거장 건설 추진.\n• **중국의 도전:** 중국은 독자적인 우주 정거장 건설 및 달 탐사 계획을 추진하며 미국과의 경쟁 심화.\n• **시장 전망:** 우주 탐사 및 기술 개발에 대한 투자 증가 예상, 관련 기업들의 성장 잠재력 확대.",
-    "source": "Reuters",
-    "date": "2026-02-14 13:02",
-    "timestamp": 1771040849,
-    "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOX0ZqNmdVQmdUUlRvUy1lb1JUM1dfaHJraVBNaGhHWUlrdnNia1A3NndpaHJnMVg3a0xieEJJOFBOcVgxTkM5eGE2bjBMRFpNYW5xU2h4UkItTE45V1BfUnZQcUhNYmdCX0RIYW05amIybTNIZ3BUbXhkeFpnUHRJUmNSYTdJWDlDUjRyQVVBWVRzR1F1c2xrVjBzZHpyM2E5UE9QYUJvLTVoSVpPV3FLQnMtUF9YRENFbkJzU242T2lPZHFBcktySC1ZS3pzR1Raa3M2Z3RnMA?oc=5",
-    "tickers": [
-      ""
-    ],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771041761_16",
-    "title": "마이크로소프트-에릭슨, 디지털 신뢰 위한 글로벌 기술 동맹 주도",
-    "summary": "마이크로소프트와 에릭슨이 디지털 신뢰 강화를 위한 글로벌 기술 동맹을 주도한다. 이는 데이터 보안과 신뢰성 확보를 목표로 한다.\n\n📊 코멘트\n보안 기술 관련 기업에 주목할 필요가 있다.",
-    "content": "마이크로소프트와 에릭슨이 디지털 신뢰를 위한 글로벌 기술 동맹을 이끌고 있다.\n• **주요 목표:** 데이터 보안, 신뢰성 확보, 디지털 생태계 전반의 신뢰 구축\n• **주요 참여사:** 마이크로소프트, 에릭슨 외 다수 글로벌 기술 기업 참여\n• **기대 효과:** 사이버 공격 방어, 데이터 유출 방지, 사용자 신뢰도 향상\n디지털 신뢰 관련 기술 투자가 확대될 전망이다.",
-    "source": "Reuters",
-    "date": "2026-02-14 13:02",
-    "timestamp": 1771040801,
-    "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNU2ducXZVWl9kSGo0eE9UclJwMWVreFVoNzJhbXo3aDl6ang1dHRFdUU3N200U015ejdUUHdISDY2M3dnS0pyVnFJUGtZZlZ1SXQ5czF2bE41UlE3VjQ0OVBIM0Y3X1NGNTEzRndqUXJrel9sTXZGRmVwdjhQdGNQVVZaLUZoby1xUU5qaXRHZ2xRV19zUFpWR0pac0pibGpRdkpvelNR?oc=5",
-    "tickers": [
-      "MSFT",
-      "ERIC"
-    ],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771041767_17",
-    "title": "바이트댄스, 게임 부문 Moonton 60억 달러 이상에 매각 협상 중",
-    "summary": "바이트댄스가 자사의 게임 개발사 Moonton을 60억 달러 이상에 매각하기 위한 협상을 진행 중이다. 이번 매각은 바이트댄스의 게임 사업 전략 변화를 시사한다.\n\n📊 코멘트\n바이트댄스의 핵심 사업 집중 전략, 게임 시장 재편 가능성 주목.",
-    "content": "바이트댄스가 게임 부문 Moonton을 60억 달러 이상에 매각하기 위한 협상을 진행 중이다.\n• **매각 규모:** 60억 달러 이상\n• **배경:** 바이트댄스는 핵심 사업에 집중하기 위해 게임 사업 전략을 재검토하고 있는 것으로 보인다.\n• **Moonton:** 'Mobile Legends: Bang Bang' 개발사로 동남아시아 시장에서 높은 인기를 얻고 있다.\n• **잠재적 인수 후보:** 아직 구체적인 인수 후보는 밝혀지지 않았다.\n이번 매각은 게임 시장 경쟁 구도에 영향을 미칠 수 있으며, 바이트댄스의 사업 전략 변화를 보여주는 사례이다.",
-    "source": "Reuters",
-    "date": "2026-02-14 13:02",
-    "timestamp": 1771040747,
-    "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOTlVKdFRpVHQ3S19xcmpKdV95cmNHSlcxcVFReFEzU3BrMlIxTExtMm01REJOLTZQbEpwbUpDRFhqQXBUQVdGUW1DMlhxS1p4ek1ybmZsYXZYYjcyY290T1lBVkpwNkFnN0l0ZHJZVjNCMGJIbW95YTZwY1FiN28xLUpUOG1KR2dVYUZ0MWVLSi1VWnpNMzN6YzdFT1dyOGhjQVQwY0Y4b2J1czFnTjVSQkpnNmtBRjNFZF9ad2lwTXFXTXRJb2c?oc=5",
-    "tickers": [],
-    "importance": "high"
-  },
-  {
-    "id": "news_1771041780_18",
-    "title": "유엔, 팔레스타인 인권 전문가 옹호...유럽 비판에 맞서",
-    "summary": "유엔은 팔레스타인 인권 관련 특별 보고관에 대한 유럽의 비판에 대해 해당 전문가를 옹호했다. 이는 특정 발언에 대한 논란에서 비롯되었다.\n\n📊 코멘트\n국제 사회의 복잡한 지정학적 긴장 지속.",
-    "content": "유엔은 팔레스타인 인권 상황에 대한 특별 보고관의 역할을 옹호하며, 최근 유럽 국가들의 비판에 대응했다.\n• **논란 배경:** 특별 보고관의 특정 발언에 대한 유럽 국가들의 이견 제기.\n• **유엔 입장:** 특별 보고관의 독립적인 역할과 책무 강조하며 옹호.\n• **향후 전망:** 국제 사회의 팔레스타인 관련 논의에 지속적인 영향 예상.",
-    "source": "Reuters",
-    "date": "2026-02-14 13:03",
-    "timestamp": 1771040700,
-    "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQnRZTHU2R1dFMzBZTHl1Y3JCdzBmZ0dmbG9JMURTODI4VXoxVXU3NHdBcEhkTDlvNi00cUZVMXZoRk1BdDdiUTlrZmhTNmNmQk1NMXIyUU5DS1VOMlYtTjFVbHNCWW5MNHAtcVdGdmF1QjY1dlZGSG9UNVVZeHE2LVc2OWprUzZlZmU5c2E0bVJqNVhGb1gyMUpSZnVTdDk3TjNHSy1keW92aW5iN09XVjZ3?oc=5",
-    "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771041794_19",
-    "title": "영국 법원, 팔레스타인 행동 단체 테러 금지 조치 위법 판결",
-    "summary": "영국 법원은 팔레스타인 행동(Palestine Action) 단체에 대한 테러 금지 조치가 위법하다고 판결했다. 항소 후 내려진 이번 판결은 정부의 결정에 제동을 걸었다.\n\n📊 코멘트\n정치적 논쟁을 야기할 수 있는 판결.",
-    "content": "영국 법원이 팔레스타인 행동 단체에 대한 테러 금지 조치가 위법하다고 판결했다.\n• **주요 내용:** 항소 법원은 정부의 테러 금지 조치가 부적절하다고 판단.\n• **배경:** 팔레스타인 행동 단체는 이스라엘 무기 제조업체 Elbit Systems에 대한 시위를 벌여왔음.\n이번 판결은 정부의 안보 정책에 대한 비판적 시각을 보여준다.",
-    "source": "Reuters",
-    "date": "2026-02-14 13:03",
-    "timestamp": 1771040654,
-    "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxORlhOcmFvWlRTQ0ltWTB4RWlXVjhGemdzNHhMQ1J0WTZTS2hLU2JHbGMzdGZ2TUQ1YTJrVDM1WExIcnJUYUVEVjd5UnU2bExLSlY3RVJRMlYwbnc0NWJaQ1YwRXpWV2lqOTNFWjdSaFptamxVaGlabHkyOFg3dnN4S1JhMk5ERkdrN0hzTlJISzdOV2JyWTJJTHdQM0t5Q25HaC10eTNxVkJMTklKLWlDNGYxWnlLSkhxR2J0a2NxdXpsempLTlI2LVhn?oc=5",
-    "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771041808_20",
-    "title": "미국, 30년 만에 최악의 홍역 발생...의료진 부담 가중",
-    "summary": "미국에서 '의료 자유' 운동 확산으로 30년 만에 최악의 홍역이 발생하여 의료진의 부담이 가중되고 있다. 백신 접종 거부로 인한 홍역 확산이 심각한 상황이다.\n\n📊 코멘트\n백신 거부 운동의 사회적 비용 증가, 관련 정책 강화 필요.",
-    "content": "미국에서 '의료 자유'를 주장하는 움직임으로 인해 30년 만에 최악의 홍역 발병 사태가 발생, 의료진의 부담이 커지고 있다.\n• **홍역 확산 원인:** 백신 접종에 대한 불신과 거부감 확산\n• **의료 시스템 영향:** 의료 자원 부족 및 의료진의 피로도 증가\n• **공중 보건 위기:** 홍역 확산 방지를 위한 긴급 대응 필요",
-    "source": "Reuters",
-    "date": "2026-02-14 13:03",
-    "timestamp": 1771040608,
-    "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPUng3c0hXMDRzTElSRU5qM0FoNXFHeWxJVDh2TXB1dEM1VXA2QUI3ZVZ0SHN5RTBGM0l2eXVGVklCeElnTGszMGNJU250WVRCaEpBNThJNUdweTZUSjcyZFhuQU54Nk5LSlZ4Q01LUk14bTlXYzRrdDRQbC1qakllRWpfV3gwbzNSY1RINmx2MVFtc2tVMVdDc2pPMjJEUXJ0ZUNmY1loZ1MwRGFXd29lUnM1TU1oV1B0aEFDekluTlRxdzFCWWNwQWNBUW1CVXdma0I5dHdJNkZoLTZaZTNxQm53?oc=5",
-    "tickers": [],
-    "importance": "high"
-  },
-  {
-    "id": "news_1771041246_14",
-    "title": "미국 법원, 추방된 대학생의 귀국 지원 명령 (트럼프 행정부)",
-    "summary": "미국 법원이 트럼프 행정부에 의해 추방된 대학생의 귀국을 지원하라는 명령을 내렸다. 해당 학생은 과거 불법 체류 경력이 있는 것으로 알려졌다.\n\n📊 코멘트\n이번 판결이 유사 사례에 미칠 영향 주목.",
-    "content": "미국 법원이 트럼프 행정부에 추방된 대학생의 귀국을 용이하게 하도록 명령했다.\n• **대상:** 과거 불법 체류 전력이 있는 대학생\n• **배경:** 법원의 구체적인 판결 사유는 공개되지 않음\n향후 유사한 추방 사례에 대한 법원의 판단 기준에 영향을 미칠 수 있다.",
-    "source": "Reuters",
-    "date": "2026-02-14 12:54",
-    "timestamp": 1771040406,
-    "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOSmY2SXdOa2FEV3ktOWJjSXFmbHFUY29SUEdYdUd6RjJCU3lvNTc2aEtSNDNLQW0tZnhxVHVfNUJja2t0MGNBY0pyb0p4MlFUdmJqNHlrb1RneFFXcFVEMGVEbjYyZ21qc2ZWTU8wRmZGaXRFOGJEUWgxb2dha3VtY1RqdV94b3NuMnZXZEhLMm90UDYwQ3Vjejg0MUJJZ1VEaEk2S1ZLSUxnSDhZbzJ3b2l0OXcwQWxUYUxhdlQ4Yw?oc=5",
-    "tickers": [],
-    "importance": "low"
   }
 ]
