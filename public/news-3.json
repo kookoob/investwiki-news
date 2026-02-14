@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771043689_18",
+    "title": "트럼프 정부, 철강·알루미늄 관세 개편 검토…소비재 감세 가능성",
+    "summary": "트럼프 정부가 철강 및 알루미늄 관세 개편을 검토 중이며, 이는 일부 소비재에 대한 관세 인하로 이어질 수 있다. 현재 미국은 대부분의 수입품에 포함된 철강 및 알루미늄에 대해 50%의 관세를 부과하고 있다.\n\n📊 코멘트\n관세 개편이 미국 제조업과 수입 물가에 미칠 영향 주시 필요.",
+    "content": "트럼프 정부가 철강 및 알루미늄 관세 개편을 고려하고 있으며, 이는 많은 소비재에 대한 관세 인하를 포함할 가능성이 있다.\n• **현행 관세:** 미국은 현재 대부분의 수입 제품에 포함된 철강 및 알루미늄에 대해 50%의 관세를 부과하고 있다.\n• **개편안 내용:** 검토 중인 새로운 계획에 따르면, 철강 및 알루미늄 제품은 금속 함량에 따라 다른 세율이 적용되는 그룹으로 분류될 것이다.\n• **관세 부과 기준 변경:** 또한, 이 계획은 관세를 수입품 전체 비용에 적용하도록 할 것이다. 현재 관세는 제품 내 철강 및 알루미늄의 가치에만 적용된다.",
+    "source": "WSJ Economy",
+    "date": "2026-02-14 13:34",
+    "timestamp": 1771042609,
+    "link": "https://www.wsj.com/economy/trade/trumps-team-considers-overhaul-to-steel-and-aluminum-tariffs-5e54d947",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771043702_19",
     "title": "1월 연간 물가 상승률 둔화, 전문가 예상치 하회",
     "summary": "1월 연간 물가 상승률이 휘발유 및 중고차 가격 하락에 힘입어 전문가 예상보다 크게 둔화되었다. 전반적인 물가 상승세 둔화는 경제에 긍정적인 신호이며, 트럼프 행정부의 관세가 광범위한 인플레이션으로 이어질 것이라는 우려를 완화한다.\n\n📊 코멘트\n인플레이션 둔화는 긍정적이나, 품목별 가격 상승은 지속적인 부담으로 작용할 수 있음.",
@@ -627,18 +639,6 @@
     "date": "2026-02-14 12:38",
     "timestamp": 1771039190,
     "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPNGRrWklFQUNtYlFiSWxxQWRVenJVVWdwTFlmUlZLZ1FLWGJxbXZicFE4aVhKZG5yQld1TTNSekFKaEEyMzRoXzZrUkxhd1FrYldReFBqZmVXbXNsektwT203X28tSXJESVJPd2pHZnp5Uk43cDhtUm5SUmtTVzBPSG5NclNpZ0NPSGJYZjZ0N0dJYkFHeVdYOENQaw?oc=5",
-    "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771040343_20",
-    "title": "트럼프 행정부, 하버드대 입학 사정 조사 방해 혐의로 소송 제기",
-    "summary": "트럼프 행정부가 하버드 대학교를 입학 사정 조사 방해 혐의로 제소했다. 소송은 하버드 대학이 입학 사정 과정에서 인종을 고려하는지에 대한 조사와 관련되어 있다.\n\n📊 코멘트\n소송 결과에 따라 향후 대학 입시 정책에 큰 변화 예상.",
-    "content": "트럼프 행정부가 하버드 대학교를 상대로 입학 사정 조사에 대한 비협조를 이유로 소송을 제기했다.\n• **주요 쟁점:** 하버드 대학의 입학 사정 과정에서 인종 차별 여부 조사 방해.\n• **배경:** 트럼프 행정부는 하버드 대학이 입학 사정 시 인종을 고려하는 관행에 대해 지속적으로 문제 제기.\n• **법적 근거:** 교육부는 하버드 대학이 조사에 필요한 자료 제출을 거부하며 연방 법률을 위반했다고 주장.\n이번 소송은 미국 대학 입시 제도에 대한 논쟁을 더욱 심화시킬 것으로 예상된다.",
-    "source": "Reuters",
-    "date": "2026-02-14 12:39",
-    "timestamp": 1771039143,
-    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcUJFSktBRkk0ejA2dFdjenZVSUJZOEVBQV9zZ29NNy1Ha3JOVlhhOXBEQ0FXYU5RTm5EZXROU0NGVEhzcEdnWl9FVXd0VUQ3S3Rkb1N4dEY4OExUNGxNY0R3WENFaThJbmRxVXdsVzN1d0x5OEdCWkxEanoyRmpJM1lJenJ1WjYxWDktUVBINHoyWWJaQWZaNkctQ1ZfcUFyZjFvS0xuclJDeDM3VzQ4STUzb0pBZw?oc=5",
     "tickers": [],
     "importance": "medium"
   }

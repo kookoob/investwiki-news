@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1770830003_4",
+    "title": "트럼프, 1월 고용 보고서 호조로 주식 시장 '호재' 얻어",
+    "summary": "1월 고용 보고서가 예상보다 강세를 보이면서 트럼프 대통령의 경제적 목표 달성에 긍정적인 영향을 줄 것으로 예상된다.\n\n구체적인 수치는 제시되지 않았지만, 긍정적인 고용 지표가 주식 시장에 활력을 불어넣을 수 있다는 분석이다.\n\n📊 📈 긍정적 고용 지표는 기업 실적 개선 기대로 이어져 주가 상승을 견인할 수 있다.\n\n거시 경제 지표 호조에 따른 투자 심리 개선 효과를 기대해볼 만하다.\n\n단기적 시장 반응은 긍정적이나, 금리 인상 가능성 등 잠재적 리스크 요인도 고려해야 함",
+    "content": "도널드 트럼프 대통령은 예상보다 강력한 1월 고용 보고서로부터 적어도 그의 주요 경제적 야망 중 하나가 힘을 얻을 수 있다는 것을 알게 될 것이다.",
+    "source": "Barrons.com",
+    "date": "2026-02-12 02:13",
+    "timestamp": 1770829763,
+    "link": "https://www.barrons.com/articles/trump-gets-good-news-stock-market-kind-of-12665934?siteid=yhoof2&yptr=yahoo",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1770830008_5",
     "title": "견조한 홀리데이 분기에 SharkNinja 주가 상승",
     "summary": "SharkNinja는 예상치를 상회하는 홀리데이 분기 실적을 발표하며 주가가 상승했다.\n\n구체적인 수치는 제시되지 않았으나, CEO는 향후 더 강력한 실적을 기대해도 좋다고 밝혔다.\n\n🚀 닌자 블렌더로 유명한 SharkNinja, 홀리데이 시즌 매출 급증!📊 코멘트\n소형 가전 시장 경쟁 심화 속에서 브랜드 파워와 제품 혁신이 지속적인 성장 동력, 틈새 시장 공략 전략 유효!",
@@ -628,20 +640,6 @@
     "timestamp": 1770814829,
     "link": "https://finance.yahoo.com/news/dutch-court-orders-investigation-nexperia-114016996.html",
     "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1770814495_1",
-    "title": "T-Mobile, 예상보다 적은 무선 가입자 증가: 치열한 경쟁 속",
-    "summary": "T-Mobile은 4분기에 96만 2천 명의 월별 요금 납부 휴대폰 가입자를 추가했지만, 이는 FactSet의 애널리스트 예상치인 98만 1330명에 미치지 못하는 수치다.\n\n연간 조정 잉여현금흐름은 180억 달러에서 187억 달러 사이로 예상되는데, 이는 Visible Alpha에서 분석가들이 예상한 평균 189억 달러보다 낮은 수치다.\n\n📉 경쟁 심화 + 가이던스 하향\n경쟁사 공격적인 마케팅으로 가입자 확보에 어려움, 잉여현금흐름 가이던스 하향은 투자 심리 위축 요인",
-    "content": "T-Mobile은 10월에서 1~2월 기간 동안 블랙프라이데이와 사이버 먼데이를 맞아 대대적인 프로모션을 진행했지만, 경쟁 심화로 인해 예상보다 적은 무선 가입자 증가를 기록했다. T-Mobile의 CFO인 Peter Osvaldik은 로이터와의 인터뷰에서 주요 경쟁사 중 한 곳이 대대적인 기기 중심 경쟁을 펼쳤다고 언급했다. \n\nT-Mobile의 해지율은 후불 서비스의 경우 1.0~2%로, 전년 동기의 0.9~2%에 비해 증가했다.\n\n총 매출은 LSEG에서 집계한 예상치인 241억 1천만 달러를 상회하는 243억 3천만 달러를 기록했다.\n\nOsvaldik은 신규 고객 계정의 프리미엄 요금제 가입률이 60%라고 밝혔다.",
-    "source": "Reuters",
-    "date": "2026-02-11 21:54",
-    "timestamp": 1770814435,
-    "link": "https://finance.yahoo.com/news/t-mobile-adds-fewer-wireless-124002650.html",
-    "tickers": [
-      "TMUS"
-    ],
     "importance": "medium"
   }
 ]

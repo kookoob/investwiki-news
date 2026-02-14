@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771040343_20",
+    "title": "트럼프 행정부, 하버드대 입학 사정 조사 방해 혐의로 소송 제기",
+    "summary": "트럼프 행정부가 하버드 대학교를 입학 사정 조사 방해 혐의로 제소했다. 소송은 하버드 대학이 입학 사정 과정에서 인종을 고려하는지에 대한 조사와 관련되어 있다.\n\n📊 코멘트\n소송 결과에 따라 향후 대학 입시 정책에 큰 변화 예상.",
+    "content": "트럼프 행정부가 하버드 대학교를 상대로 입학 사정 조사에 대한 비협조를 이유로 소송을 제기했다.\n• **주요 쟁점:** 하버드 대학의 입학 사정 과정에서 인종 차별 여부 조사 방해.\n• **배경:** 트럼프 행정부는 하버드 대학이 입학 사정 시 인종을 고려하는 관행에 대해 지속적으로 문제 제기.\n• **법적 근거:** 교육부는 하버드 대학이 조사에 필요한 자료 제출을 거부하며 연방 법률을 위반했다고 주장.\n이번 소송은 미국 대학 입시 제도에 대한 논쟁을 더욱 심화시킬 것으로 예상된다.",
+    "source": "Reuters",
+    "date": "2026-02-14 12:39",
+    "timestamp": 1771039143,
+    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcUJFSktBRkk0ejA2dFdjenZVSUJZOEVBQV9zZ29NNy1Ha3JOVlhhOXBEQ0FXYU5RTm5EZXROU0NGVEhzcEdnWl9FVXd0VUQ3S3Rkb1N4dEY4OExUNGxNY0R3WENFaThJbmRxVXdsVzN1d0x5OEdCWkxEanoyRmpJM1lJenJ1WjYxWDktUVBINHoyWWJaQWZaNkctQ1ZfcUFyZjFvS0xuclJDeDM3VzQ4STUzb0pBZw?oc=5",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771039823_16",
     "title": "트럼프, '좋은 관계' 맺었던 베네수엘라 임시 대통령과 만남 후 방문 의사 밝혀",
     "summary": "도널드 트럼프 전 미국 대통령이 베네수엘라 방문 의사를 밝혔다. 그는 임시 대통령과의 '매우 좋은' 관계를 언급하며 방문 가능성을 시사했다. 구체적인 방문 시기나 계획은 공개되지 않았다.\n\n📊 코멘트\n미국과 베네수엘라 관계 변화 가능성. 에너지 시장 및 지정학적 영향 주시 필요.",
@@ -647,18 +659,6 @@
     "tickers": [
       "FARM"
     ],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1770995433_4",
-    "title": "노르웨이 항공, 2025년 4분기 매출 85.2억 NOK (+3.5%) 기록",
-    "summary": "노르웨이 항공(Norwegian Air Shuttle ASA)은 2025년 4분기 매출 85.2억 노르웨이 크로네(NOK)를 기록했다. 이는 전년 동기 대비 3.5% 증가한 수치다. 영업이익(EBIT)은 2,100만 NOK를 달성했다. 영업 마진은 9.9%로 집계되었다.\n\n📊 코멘트\n노르웨이 항공, 매출 성장에도 불구하고 낮은 영업이익률 개선이 필요해 보임.",
-    "content": "노르웨이 항공은 2025년 4분기 실적을 발표했다.\n매출은 85.2억 NOK로, 전년 동기 대비 3.5% 증가했다.\n영업이익(EBIT)은 2,100만 NOK를 기록했다.\n영업 마진은 9.9%를 나타냈다.\n추가적인 정보는 실적 발표 통화 기록 및 관련 링크에서 확인할 수 있다.",
-    "source": "Seeking Alpha",
-    "date": "2026-02-14 00:10",
-    "timestamp": 1770995193,
-    "link": "https://seekingalpha.com/news/4551936-norwegian-air-shuttle-asa-reports-q4-2025-results?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-    "tickers": [],
     "importance": "medium"
   }
 ]
