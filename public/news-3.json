@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771043201_15",
+    "title": "유럽 은행, AI 경쟁 우려 속 연간 상승분 반납",
+    "summary": "유럽 은행 주식이 금요일 급격한 하락세를 보이며 올해 상승분을 모두 반납했다. 인공지능 경쟁에 대한 우려가 은행 섹터에 영향을 미친 것으로 분석된다.\n\n📊 코멘트\nAI 경쟁 심화에 따른 금융 섹터 투자 리스크 확대.",
+    "content": "유럽 은행들이 금요일 급격한 섹터 침체 속에서 올해의 이익을 잃었다.\n• **주요 하락:** 유럽 은행 주식 바스켓은 3% 하락 (목요일 마감 기준 올해 1.3% 상승). 소시에테 제네랄은 파리에서 5.3% 하락, Commerzbank와 Deutsche Bank는 각각 5.2%, 3.6% 하락.\n• **지역별 하락:** 스페인의 Santander와 BBVA는 각각 2.5%, 3.2% 하락, 이탈리아의 UniCredit은 3.7~5% 하락. 런던의 Barclays는 2.3% 하락.\n• **하락 원인:** Panmure Liberum의 Joachim Klement는 인공지능 경쟁에 대한 우려가 은행으로 확산되었다고 분석. AI 경쟁 패자 테마가 은행으로 확산되면서 투자자들이 투매에 나섰다고 진단.",
+    "source": "WSJ Markets",
+    "date": "2026-02-14 13:26",
+    "timestamp": 1771042301,
+    "link": "https://www.wsj.com/business/financial-services-roundup-market-talk-24fb1d21?mod=rss_markets_main",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771043207_16",
     "title": "NatWest, 자산 관리 확대로 수익 및 수익성 증대 목표",
     "summary": "NatWest는 자산 관리 사업 확장을 통해 신규 고객 유치 및 수익 다각화를 추진하며, 올해 및 향후 지속적인 수입 증가와 수익성 향상을 예상한다. 2026년 총수입은 172억~176억 파운드 목표다.\n\n📊 코멘트\n금리 인하 시대, 자산 관리 경쟁력 확보가 은행의 생존 전략.",
@@ -625,21 +637,6 @@
     "timestamp": 1771038757,
     "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPYlpIcnByOVNtTnFpeDhBZFJSYmJwd0F5MF9rajl1Nkg2NHBITE1GS0NQdXJzZFVDMXI0VWZpd2ZuYlFMWXJLUG9hU256N295RFhibFdZeXREQkJzU0lwaUxOcFhicEJqRDh3bGNmQjhtekZBOHhZa21jVWs5UG9uRGxYWWJJQ2xIUWI1aXNLb0tqdEw3YWpyeWZoaFJCSlRQRW5RVW5ORElqeE4wTmtVMTdpVzllOVVidXBvT1lxZl91T19JNWUxdw?oc=5",
     "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771039858_20",
-    "title": "미국, 베네수엘라 석유 부문 제재 완화... 주요 석유 기업 활동 범위 확대",
-    "summary": "미국이 베네수엘라에서 활동하는 주요 석유 기업에 대한 제재를 완화했다. 이번 조치로 쉐브론, BP 등은 베네수엘라에서 더 넓은 범위의 사업을 진행할 수 있게 되었다.\n\n📊 코멘트\n베네수엘라 석유 생산량 증가 기대. 글로벌 에너지 시장에 미칠 영향 주시 필요.",
-    "content": "미국 정부가 베네수엘라 석유 부문에 대한 제재를 완화하면서, 쉐브론, BP와 같은 주요 석유 기업들이 베네수엘라 내에서 더 폭넓게 활동할 수 있게 되었다. 이번 조치는 베네수엘라의 석유 생산량 증가를 목표로 한다.\n이번 제재 완화는 특정 거래에 대한 승인을 용이하게 하고, 기업들이 베네수엘라 국영 석유 회사 PDVSA와 협력할 수 있는 범위를 넓혀준다. 다만, 새로운 투자를 허용하는 것은 아니다.\n일부 분석가들은 이번 조치가 베네수엘라의 석유 생산량에 즉각적이고 큰 영향을 미치지는 않을 것으로 예상한다. 하지만 장기적으로는 생산량 증가에 기여할 수 있다는 전망도 나온다. 러시아-우크라이나 전쟁으로 인한 에너지 시장의 불안정성이 지속되는 가운데, 이번 제재 완화가 글로벌 에너지 공급에 어떤 영향을 미칠지 주목된다.",
-    "source": "Reuters",
-    "date": "2026-02-14 12:30",
-    "timestamp": 1771038658,
-    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNWXAxX1JoREhpWXNuMGJkeW5LdE0yZXp4MkVZal9LSlVFcnVKY2tOYXlBbW1KM28za3F1VkxVaTljVXRVaWpyMVhLNE5uTHI4Uzk3aHFmeDhLMXNVdl9rYUs2bS1PdlFHcVlRU0FqYXAydmFwSV9qT3RMRGRMb0ExdFdTdWFiZUpwekRlV3pMX1lQbzdaazVxSnpVQ2F3VEZmYTNGUFJYT0FPQmplZVg2ZWE5YjNzblhLWnY1eF90S0RWc0k?oc=5",
-    "tickers": [
-      "CVX",
-      "BP"
-    ],
     "importance": "medium"
   }
 ]

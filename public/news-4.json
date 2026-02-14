@@ -1,5 +1,20 @@
 [
   {
+    "id": "news_1771039858_20",
+    "title": "미국, 베네수엘라 석유 부문 제재 완화... 주요 석유 기업 활동 범위 확대",
+    "summary": "미국이 베네수엘라에서 활동하는 주요 석유 기업에 대한 제재를 완화했다. 이번 조치로 쉐브론, BP 등은 베네수엘라에서 더 넓은 범위의 사업을 진행할 수 있게 되었다.\n\n📊 코멘트\n베네수엘라 석유 생산량 증가 기대. 글로벌 에너지 시장에 미칠 영향 주시 필요.",
+    "content": "미국 정부가 베네수엘라 석유 부문에 대한 제재를 완화하면서, 쉐브론, BP와 같은 주요 석유 기업들이 베네수엘라 내에서 더 폭넓게 활동할 수 있게 되었다. 이번 조치는 베네수엘라의 석유 생산량 증가를 목표로 한다.\n이번 제재 완화는 특정 거래에 대한 승인을 용이하게 하고, 기업들이 베네수엘라 국영 석유 회사 PDVSA와 협력할 수 있는 범위를 넓혀준다. 다만, 새로운 투자를 허용하는 것은 아니다.\n일부 분석가들은 이번 조치가 베네수엘라의 석유 생산량에 즉각적이고 큰 영향을 미치지는 않을 것으로 예상한다. 하지만 장기적으로는 생산량 증가에 기여할 수 있다는 전망도 나온다. 러시아-우크라이나 전쟁으로 인한 에너지 시장의 불안정성이 지속되는 가운데, 이번 제재 완화가 글로벌 에너지 공급에 어떤 영향을 미칠지 주목된다.",
+    "source": "Reuters",
+    "date": "2026-02-14 12:30",
+    "timestamp": 1771038658,
+    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNWXAxX1JoREhpWXNuMGJkeW5LdE0yZXp4MkVZal9LSlVFcnVKY2tOYXlBbW1KM28za3F1VkxVaTljVXRVaWpyMVhLNE5uTHI4Uzk3aHFmeDhLMXNVdl9rYUs2bS1PdlFHcVlRU0FqYXAydmFwSV9qT3RMRGRMb0ExdFdTdWFiZUpwekRlV3pMX1lQbzdaazVxSnpVQ2F3VEZmYTNGUFJYT0FPQmplZVg2ZWE5YjNzblhLWnY1eF90S0RWc0k?oc=5",
+    "tickers": [
+      "CVX",
+      "BP"
+    ],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771039344_14",
     "title": "미군, 이란 작전 준비…수 주 지속 가능성 대비",
     "summary": "미군이 이란 관련 작전을 수 주 동안 수행할 가능성에 대비하고 있다고 로이터 통신이 보도했다. 이번 준비는 이스라엘과 하마스 간의 분쟁이 확대될 가능성에 대한 우려 속에서 진행되고 있다.\n\n📊 코멘트\n중동 지역 긴장 고조가 유가 및 관련 산업에 미칠 영향 주시.",
@@ -647,20 +662,6 @@
     "link": "https://seekingalpha.com/news/4551938-rivian-automotive-gains-as-analysts-point-to-long-term-upside?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
     "tickers": [
       "RIVN"
-    ],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1770995408_2",
-    "title": "주요 주가 변동: Corsair Gaming 54% 급등, AMAT, PINS, ROKU 등",
-    "summary": "금요일 주식 선물은 목요일 매도세 이후 엇갈린 모습을 보였다. 예상보다 낮은 인플레이션 보고서가 연준 금리 인상에 대한 우려를 완화했기 때문이다. Corsair Gaming(CRSR)은 견조한 실적 발표 후 54% 급등했다.\n\n📊 코멘트\n인플레이션 완화 기대 속 개별 종목 실적에 따른 주가 변동성 확대.",
-    "content": "금요일 주식 선물은 혼조세를 보였다.\n이는 목요일의 매도세 이후 나타난 현상이다.\n둔화된 인플레이션 보고서가 연준의 금리 인상에 대한 우려를 다소 해소한 덕분이다.\n가장 큰 상승폭을 보인 종목 중 하나는 Corsair Gaming(CRSR)이다.\n이 회사의 주가는 견조한 실적 발표 이후 54%나 급등했다.\n투자자들은 Corsair Gaming의 실적에 긍정적으로 반응한 것으로 보인다.\n이 외에도 AMAT, PINS, ROKU, TPH 등 다양한 종목에서 주가 변동이 있었다.\n투자자들은 개별 기업의 실적 발표와 경제 지표에 따라 투자 결정을 내리는 경향을 보였다.",
-    "source": "Seeking Alpha",
-    "date": "2026-02-14 00:10",
-    "timestamp": 1770995288,
-    "link": "https://seekingalpha.com/news/4551780-biggest-stock-movers-friday?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-    "tickers": [
-      "CRSR"
     ],
     "importance": "medium"
   }
