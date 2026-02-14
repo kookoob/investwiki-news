@@ -1,5 +1,20 @@
 [
   {
+    "id": "news_1771046554_12",
+    "title": "혼다, 토요타, EU의 '메이드 인 유럽' 계획에 우려 표명",
+    "summary": "혼다와 토요타를 비롯한 일본 및 영국 자동차 제조업체들이 유럽연합(EU)의 '메이드 인 유럽' 계획에 대해 우려를 표명했다. 이 계획은 EU가 자국 내 제조를 강화하기 위해 새로운 현지 콘텐츠 요건을 도입하는 것을 목표로 하고 있어, 이들 기업의 시장 접근을 제한할 수 있다는 우려가 제기되고 있다.\n\n📊 코멘트\n보호무역주의 심화로 글로벌 자동차 시장 경쟁 환경이 더욱 복잡해질 전망이다.",
+    "content": "유럽연합 집행위원회의 스테판 세주르네 부위원장은 '메이드 인 유럽' 계획을 주도하고 있다.\n• **우려 표명:** 일본 및 영국 자동차 제조업체들은 EU의 '메이드 인 유럽' 계획이 새로운 현지 콘텐츠 요건을 통해 자국 내 제조를 강화하려는 EU의 목표로 인해 시장 접근이 제한될 수 있다고 우려한다.\n• **계획 목표:** 브뤼셀은 '메이드 인 유럽' 계획을 통해 EU 내 제조 산업을 강화하고자 한다.\n• **잠재적 영향:** 이 계획은 EU 시장에 대한 일본 및 영국 자동차 제조업체들의 접근을 제한할 수 있다는 우려를 낳고 있다.",
+    "source": "Nikkei Asia",
+    "date": "2026-02-14 14:22",
+    "timestamp": 1771045834,
+    "link": "https://asia.nikkei.com/business/automobiles/honda-toyota-voice-concerns-over-eu-s-made-in-europe-plan2",
+    "tickers": [
+      "HMC",
+      "TM"
+    ],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771046578_14",
     "title": "일본 맥주, 한국 MZ세대 사로잡아 인기 부활",
     "summary": "일본 맥주가 새로운 스타일과 맛으로 한국 MZ세대의 입맛을 사로잡으며 인기를 되찾고 있다. 서울 을지로의 한 인기 바에서는 오직 삿포로 맥주만을 판매하고 있을 정도다.\n\n📊 코멘트\n한일 관계 개선과 함께 일본 제품 선호도 회복이 본격화될 가능성.",
@@ -631,19 +646,5 @@
     "link": "https://www.wsj.com/business/financial-services-roundup-market-talk-24fb1d21?mod=rss_markets_main",
     "tickers": [],
     "importance": "medium"
-  },
-  {
-    "id": "news_1771043207_16",
-    "title": "NatWest, 자산 관리 확대로 수익 및 수익성 증대 목표",
-    "summary": "NatWest는 자산 관리 사업 확장을 통해 신규 고객 유치 및 수익 다각화를 추진하며, 올해 및 향후 지속적인 수입 증가와 수익성 향상을 예상한다. 2026년 총수입은 172억~176억 파운드 목표다.\n\n📊 코멘트\n금리 인하 시대, 자산 관리 경쟁력 확보가 은행의 생존 전략.",
-    "content": "NatWest는 자산 관리 사업 확대를 통해 금리 인하 영향을 상쇄하고 수익성 개선을 목표로 하고 있다.\n• **수익 목표:** 2026년 총수입 172억~176억 파운드 예상 (Evelyn Partners 인수 효과 제외)\n• **인수:** Evelyn Partners를 2~7억 파운드($3~6.8억)에 인수 (정부 지분 완전 매각 후 첫 주요 인수)\n• **CEO 발언:** Paul Thwaite CEO는 “2026년을 강력한 위치에서 시작하며, 목표를 높이고 전략적 초점을 맞추고 있다”고 언급\n• **배경:** 중앙은행의 금리 인하로 인해 은행들이 전통적인 대출 수입에 대한 의존도를 줄이기 위해 수수료 기반 수익 엔진을 강화하고 있음\n• **시장 영향:** Evelyn Partners 인수를 통해 고액 자산가 시장 점유율 확대 기대",
-    "source": "WSJ Markets",
-    "date": "2026-02-14 13:26",
-    "timestamp": 1771042247,
-    "link": "https://www.wsj.com/business/earnings/natwest-sets-out-performance-targets-after-quarterly-beat-4b672a57?mod=rss_markets_main",
-    "tickers": [
-      "NWG"
-    ],
-    "importance": "high"
   }
 ]

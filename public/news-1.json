@@ -12,6 +12,20 @@
     "importance": "high"
   },
   {
+    "id": "news_1771053205_12",
+    "title": "한화자산운용 K-ETF,  '올해의 ETF' 후보 선정",
+    "summary": "한화자산운용의 KDEF(PLUS Korea Defense Industry Index ETF)가 미국 ETF 전문 플랫폼 'ETF.com'의 '올해의 ETF' 베스트 인터내셔널 부문 후보에 올랐다. KDEF는 상장 5개월 만에 94.7%의 수익률을 기록하며 2025년 상반기 미국 내 ETF 수익률 1위를 차지했고, 올해 1월에는 순자산 총액 1억 달러를 돌파했다.\n\n📊 코멘트\n한국 방산 산업에 대한 글로벌 투자자들의 높은 관심이 K-ETF의 성공적인 미국 시장 안착을 이끌었다.",
+    "content": "한화자산운용의 KDEF(PLUS Korea Defense Industry Index ETF)가 미국 상장지수펀드(ETF) 전문 플랫폼 'ETF.com'의 '올해의 ETF' 시상식에서 '베스트 인터내셔널 부문' 후보에 선정되었다.\n• **후보 선정:** KDEF는 뱅가드, 반에크, 라자드 등 주요 글로벌 자산운용사들과 함께 후보에 올랐으며, 전략 차별성, 투자자 유용성, 시장 영향력 등을 평가받았다.\n• **KDEF 개요:** 한화자산운용이 지수를 개발하고 미국 ETC(Exchange Traded Concepts)가 운용하는 ETF로, 한화자산운용의 'PLUS K방산' ETF를 벤치마크로 한다.\n• **성과:** KDEF는 상장 5개월 만에 94.7%의 수익률을 기록하며 2025년 상반기 미국 내 ETF(레버리지·인버스 제외) 수익률 1위를 차지했으며, 올해 1월에는 순자산 총액 1억 달러를 돌파했다. 모닝스타에 따르면 미국 ETF 시장에서 순자산 1억 달러 이상은 '안정적 운용 규모'로 평가된다.\n• **성공 요인:** 미국 내 유일한 한국 방산 투자처라는 희소성이 있으며, ETF.com은 '한국 방위산업 기업들을 순수하게 담아낸 상품'이라는 점을 선정 사유로 꼽았다.\n• **시장 상황:** 영어권 최대 온라인 커뮤니티 '레딧'에서 SK하이닉스 주식 매매 방법을 묻는 글이 연일 올라오는 등 글로벌 시장에서 한국 증시에 대한 관심이 뜨겁다.",
+    "source": "연합인포맥스",
+    "date": "2026-02-14 16:13",
+    "timestamp": 1771052485,
+    "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4399048",
+    "tickers": [
+      "096770.KS"
+    ],
+    "importance": "high"
+  },
+  {
     "id": "news_1771051959_2",
     "title": "중국 AI 모델, 미국 추격 가속화",
     "summary": "중국 주요 기업들이 새로운 AI 모델을 출시하며 미국과의 기술 격차를 좁히고 있다. 이는 중국 AI 산업의 빠른 발전 속도를 보여주는 사례다.\n\n📊 코멘트\n중국 AI 기술, 이제 무시할 수 없는 수준.",
@@ -619,21 +633,6 @@
     "timestamp": 1771045973,
     "link": "https://asia.nikkei.com/politics/international-relations/japan-china-tensions/japan-hotel-cancellations-by-chinese-tourists-top-50-for-lunar-new-year",
     "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771046554_12",
-    "title": "혼다, 토요타, EU의 '메이드 인 유럽' 계획에 우려 표명",
-    "summary": "혼다와 토요타를 비롯한 일본 및 영국 자동차 제조업체들이 유럽연합(EU)의 '메이드 인 유럽' 계획에 대해 우려를 표명했다. 이 계획은 EU가 자국 내 제조를 강화하기 위해 새로운 현지 콘텐츠 요건을 도입하는 것을 목표로 하고 있어, 이들 기업의 시장 접근을 제한할 수 있다는 우려가 제기되고 있다.\n\n📊 코멘트\n보호무역주의 심화로 글로벌 자동차 시장 경쟁 환경이 더욱 복잡해질 전망이다.",
-    "content": "유럽연합 집행위원회의 스테판 세주르네 부위원장은 '메이드 인 유럽' 계획을 주도하고 있다.\n• **우려 표명:** 일본 및 영국 자동차 제조업체들은 EU의 '메이드 인 유럽' 계획이 새로운 현지 콘텐츠 요건을 통해 자국 내 제조를 강화하려는 EU의 목표로 인해 시장 접근이 제한될 수 있다고 우려한다.\n• **계획 목표:** 브뤼셀은 '메이드 인 유럽' 계획을 통해 EU 내 제조 산업을 강화하고자 한다.\n• **잠재적 영향:** 이 계획은 EU 시장에 대한 일본 및 영국 자동차 제조업체들의 접근을 제한할 수 있다는 우려를 낳고 있다.",
-    "source": "Nikkei Asia",
-    "date": "2026-02-14 14:22",
-    "timestamp": 1771045834,
-    "link": "https://asia.nikkei.com/business/automobiles/honda-toyota-voice-concerns-over-eu-s-made-in-europe-plan2",
-    "tickers": [
-      "HMC",
-      "TM"
-    ],
     "importance": "medium"
   }
 ]

@@ -1,5 +1,19 @@
 [
   {
+    "id": "news_1771043207_16",
+    "title": "NatWest, 자산 관리 확대로 수익 및 수익성 증대 목표",
+    "summary": "NatWest는 자산 관리 사업 확장을 통해 신규 고객 유치 및 수익 다각화를 추진하며, 올해 및 향후 지속적인 수입 증가와 수익성 향상을 예상한다. 2026년 총수입은 172억~176억 파운드 목표다.\n\n📊 코멘트\n금리 인하 시대, 자산 관리 경쟁력 확보가 은행의 생존 전략.",
+    "content": "NatWest는 자산 관리 사업 확대를 통해 금리 인하 영향을 상쇄하고 수익성 개선을 목표로 하고 있다.\n• **수익 목표:** 2026년 총수입 172억~176억 파운드 예상 (Evelyn Partners 인수 효과 제외)\n• **인수:** Evelyn Partners를 2~7억 파운드($3~6.8억)에 인수 (정부 지분 완전 매각 후 첫 주요 인수)\n• **CEO 발언:** Paul Thwaite CEO는 “2026년을 강력한 위치에서 시작하며, 목표를 높이고 전략적 초점을 맞추고 있다”고 언급\n• **배경:** 중앙은행의 금리 인하로 인해 은행들이 전통적인 대출 수입에 대한 의존도를 줄이기 위해 수수료 기반 수익 엔진을 강화하고 있음\n• **시장 영향:** Evelyn Partners 인수를 통해 고액 자산가 시장 점유율 확대 기대",
+    "source": "WSJ Markets",
+    "date": "2026-02-14 13:26",
+    "timestamp": 1771042247,
+    "link": "https://www.wsj.com/business/earnings/natwest-sets-out-performance-targets-after-quarterly-beat-4b672a57?mod=rss_markets_main",
+    "tickers": [
+      "NWG"
+    ],
+    "importance": "high"
+  },
+  {
     "id": "news_1771043213_17",
     "title": "미국 물가 상승률 둔화에 국채 금리 하락",
     "summary": "미국 소비자물가지수(CPI) 상승폭이 예상보다 둔화되면서 미국 국채 금리가 하락했다. 1월 CPI는 2.4%로 둔화되었지만, 노동 시장은 여전히 견조한 상황이다.\n\n📊 코멘트\n연준의 금리 인하 시점은 여전히 불확실.",
@@ -626,18 +640,6 @@
       "CVX",
       "BP"
     ],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771039344_14",
-    "title": "미군, 이란 작전 준비…수 주 지속 가능성 대비",
-    "summary": "미군이 이란 관련 작전을 수 주 동안 수행할 가능성에 대비하고 있다고 로이터 통신이 보도했다. 이번 준비는 이스라엘과 하마스 간의 분쟁이 확대될 가능성에 대한 우려 속에서 진행되고 있다.\n\n📊 코멘트\n중동 지역 긴장 고조가 유가 및 관련 산업에 미칠 영향 주시.",
-    "content": "미군이 이란과 관련된 작전을 수 주 동안 수행할 가능성에 대비하고 있다고 로이터 통신이 독점 보도했다. 익명의 미국 관리는 이러한 준비가 특정 사건에 대한 반응이 아니라, 중동 지역의 전반적인 긴장 고조에 따른 것이라고 밝혔다.\n현재 미국은 이스라엘과 하마스 간의 분쟁이 더 넓은 지역으로 확산될 가능성에 대해 우려하고 있다. 이러한 상황에 대비하여 미군은 필요한 자원과 인력을 배치하고 있으며, 잠재적인 작전 시나리오를 검토하고 있다.\n이번 준비는 이란의 활동에 대한 직접적인 대응이라기보다는, 지역 내 불안정성이 증가함에 따라 필요한 예방 조치로 해석된다. 미국은 이란의 잠재적인 개입 가능성을 주시하며, 역내 안정을 유지하기 위한 노력을 지속할 것으로 보인다.",
-    "source": "Reuters",
-    "date": "2026-02-14 12:22",
-    "timestamp": 1771038504,
-    "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOdmtIQ3RocVRvbFBIaEJqMjJiVTJaSmNKNTYtSEozZXUyMHpiRlFldmRqTm94Q1JWV0Q0R1VmSmM0WXdHN2xsdHU3NWJxSlFVb3dpS05wX2lHaTZPd1ozRlNoSkJNZV9KYzRrRmN4NGstRExsQTNWdWduTW1OS1hkMkhuS25ycUdxM01JczJwTTJXUTY4ZFlFRmNYUnltRHB5QXJEWUVNQVhmbTZVVmNEbWl4Mm4?oc=5",
-    "tickers": [],
     "importance": "medium"
   }
 ]

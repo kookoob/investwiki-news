@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771039344_14",
+    "title": "미군, 이란 작전 준비…수 주 지속 가능성 대비",
+    "summary": "미군이 이란 관련 작전을 수 주 동안 수행할 가능성에 대비하고 있다고 로이터 통신이 보도했다. 이번 준비는 이스라엘과 하마스 간의 분쟁이 확대될 가능성에 대한 우려 속에서 진행되고 있다.\n\n📊 코멘트\n중동 지역 긴장 고조가 유가 및 관련 산업에 미칠 영향 주시.",
+    "content": "미군이 이란과 관련된 작전을 수 주 동안 수행할 가능성에 대비하고 있다고 로이터 통신이 독점 보도했다. 익명의 미국 관리는 이러한 준비가 특정 사건에 대한 반응이 아니라, 중동 지역의 전반적인 긴장 고조에 따른 것이라고 밝혔다.\n현재 미국은 이스라엘과 하마스 간의 분쟁이 더 넓은 지역으로 확산될 가능성에 대해 우려하고 있다. 이러한 상황에 대비하여 미군은 필요한 자원과 인력을 배치하고 있으며, 잠재적인 작전 시나리오를 검토하고 있다.\n이번 준비는 이란의 활동에 대한 직접적인 대응이라기보다는, 지역 내 불안정성이 증가함에 따라 필요한 예방 조치로 해석된다. 미국은 이란의 잠재적인 개입 가능성을 주시하며, 역내 안정을 유지하기 위한 노력을 지속할 것으로 보인다.",
+    "source": "Reuters",
+    "date": "2026-02-14 12:22",
+    "timestamp": 1771038504,
+    "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOdmtIQ3RocVRvbFBIaEJqMjJiVTJaSmNKNTYtSEozZXUyMHpiRlFldmRqTm94Q1JWV0Q0R1VmSmM0WXdHN2xsdHU3NWJxSlFVb3dpS05wX2lHaTZPd1ozRlNoSkJNZV9KYzRrRmN4NGstRExsQTNWdWduTW1OS1hkMkhuS25ycUdxM01JczJwTTJXUTY4ZFlFRmNYUnltRHB5QXJEWUVNQVhmbTZVVmNEbWl4Mm4?oc=5",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771039351_15",
     "title": "이란-우크라이나/러시아, 화요일 제네바에서 별도 회담 예정",
     "summary": "로이터 통신에 따르면 이란과 우크라이나-러시아 간의 별도 회담이 화요일 제네바에서 열릴 예정이다. 이번 회담의 구체적인 의제와 참석자는 아직 공개되지 않았다.\n\n📊 코멘트\n중동 및 동유럽 지역의 지정학적 리스크 완화 기대감 형성될 수 있을지 주목.",
@@ -649,20 +661,6 @@
     "link": "https://seekingalpha.com/news/4551780-biggest-stock-movers-friday?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
     "tickers": [
       "CRSR"
-    ],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1770995418_3",
-    "title": "Farmer Bros. Co., 금요일 장 마감 후 주요 실적 발표 예정",
-    "summary": "Farmer Bros. Co.(FARM)가 금요일 장 마감 후 실적 발표를 앞두고 있다. 자세한 내용은 Seeking Alpha의 전체 실적 발표 일정에서 확인할 수 있다.\n\n📊 코멘트\n커피 및 관련 제품 시장 경쟁 심화. Farmer Bros. Co.의 실적 개선 여부가 주가 향방 가를 듯.",
-    "content": "Farmer Bros. Co.(FARM)는 금요일 장 마감 후 주요 실적 발표를 진행할 예정이다.\n투자자들은 이번 실적 발표를 통해 회사의 재무 상태와 향후 전망에 대한 정보를 얻을 수 있을 것으로 기대하고 있다.\nSeeking Alpha는 투자자들을 위해 전체 실적 발표 일정을 제공하고 있다.\n이를 통해 투자자들은 Farmer Bros. Co.\n외에도 다양한 기업들의 실적 발표 일정을 확인하고 투자 전략을 수립하는 데 도움을 받을 수 있다.\n투자자들은 Farmer Bros. Co.의 실적 발표에 주목하며, Seeking Alpha의 실적 발표 일정과 뉴스레터를 활용하여 투자 결정을 내릴 수 있을 것이다.",
-    "source": "Seeking Alpha",
-    "date": "2026-02-14 00:10",
-    "timestamp": 1770995238,
-    "link": "https://seekingalpha.com/news/4551094-here-are-the-major-earnings-after-the-close-friday?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-    "tickers": [
-      "FARM"
     ],
     "importance": "medium"
   }
