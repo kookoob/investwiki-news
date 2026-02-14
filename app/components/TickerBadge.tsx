@@ -31,9 +31,9 @@ export default function TickerBadge({ ticker, displayName }: TickerBadgeProps) {
     <span
       className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium ${
         isPositive
-          ? 'bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400'
+          ? 'bg-green-100 text-green-600 dark:bg-green-950 dark:text-green-300'
           : isNegative
-          ? 'bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400'
+          ? 'bg-red-100 text-red-600 dark:bg-red-950 dark:text-red-300'
           : 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
       }`}
     >

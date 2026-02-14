@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771075255_6",
+    "title": "ByteDance, Doubao-Seed-2.0 출시: Pro 모델, GPT 5.2 및 Gemini 3 Pro에 도전",
+    "summary": "ByteDance가 Doubao 대형 언어 모델 시리즈의 최신 버전인 Doubao-Seed-2.0을 출시했다. 특히 Pro 버전은 GPT 5.2 및 Gemini 3 Pro를 벤치마킹하여 장쇄 추론 및 에이전트 기반 작업에 최적화되었다. ByteDance는 Doubao 2.0 Pro가 멀티모달, 수학 및 코딩 벤치마크에서 선도적인 결과를 달성했다고 밝혔다.\n\n📊 코멘트\n중국 AI 모델 경쟁 심화, 글로벌 시장 도전 본격화될까?",
+    "content": "ByteDance는 Doubao 대형 언어 모델 시리즈의 최신 버전인 Doubao-Seed-2.0을 출시했다.  • ✅ Pro 버전 성능: ByteDance에 따르면 Doubao 2.0 Pro는 GPT 5.2 및 Gemini 3 Pro와 비교하여 장쇄 추론 및 에이전트 기반 작업을 위해 설계되었다.  • ✅ 벤치마크 결과: ByteDance는 Doubao 2.0 Pro가 다양한 멀티모달, 수학 및 코딩 벤치마크에서 선도적인 결과를 달성했다고 주장했다.",
+    "source": "TechNode",
+    "date": "2026-02-14 22:20",
+    "timestamp": 1771074895,
+    "link": "https://technode.com/2026/02/14/bytedance-releases-doubao-seed-2-0-positions-pro-model-against-gpt-5-2-and-gemini-3-pro/",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771071206_8",
     "title": "미국, 유라시아에 걸친 친미 국가 벨트 형성 추진",
     "summary": "도널드 트럼프 미국 대통령이 유라시아 지역에 친미 국가 벨트 형성을 추진하고 있다. 트럼프 대통령은 목요일 워싱턴에서 평화위원회 출범 회의를 개최하여 이들 국가의 대표들을 초청할 예정이다.\n\n📊 코멘트\n미국의 지정학적 영향력 확대 시도, 관련국 경제 협력 강화 전망.",
@@ -631,17 +643,5 @@
       "JPM"
     ],
     "importance": "high"
-  },
-  {
-    "id": "news_1771047644_16",
-    "title": "미쓰이부동산, 인도 벵갈루루에 콘도미니엄 건설 프로젝트 착수",
-    "summary": "일본 부동산 개발업체 미쓰이부동산이 인도 대기업 마힌드라 그룹과 합작하여 벵갈루루에 콘도미니엄 단지를 건설한다. 건설은 2030년 완공될 예정이다.\n\n📊 코멘트\n인도 부동산 시장의 성장 가능성에 주목해야 한다.",
-    "content": "미쓰이부동산은 인도 현지 대기업인 마힌드라 그룹과의 합작 프로젝트를 통해 벵갈루루에 콘도미니엄 단지를 건설할 예정이다.\n• **건설 완료 예정:** 2030년",
-    "source": "Nikkei Asia",
-    "date": "2026-02-14 14:40",
-    "timestamp": 1771046684,
-    "link": "https://asia.nikkei.com/business/construction/japan-builder-mitsui-fudosan-to-launch-india-condominium-project",
-    "tickers": [],
-    "importance": "medium"
   }
 ]
