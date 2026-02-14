@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771039823_16",
+    "title": "트럼프, '좋은 관계' 맺었던 베네수엘라 임시 대통령과 만남 후 방문 의사 밝혀",
+    "summary": "도널드 트럼프 전 미국 대통령이 베네수엘라 방문 의사를 밝혔다. 그는 임시 대통령과의 '매우 좋은' 관계를 언급하며 방문 가능성을 시사했다. 구체적인 방문 시기나 계획은 공개되지 않았다.\n\n📊 코멘트\n미국과 베네수엘라 관계 변화 가능성. 에너지 시장 및 지정학적 영향 주시 필요.",
+    "content": "도널드 트럼프 전 미국 대통령이 베네수엘라를 방문할 의향을 밝혔다. 그는 후안 과이도 임시 대통령과의 관계가 '매우 좋았다'고 언급하며 방문 가능성을 시사했다. 트럼프 전 대통령의 발언은 로이터 통신을 통해 보도되었다.\n트럼프 전 대통령은 재임 기간 동안 베네수엘라에 대한 강력한 제재를 가하며 니콜라스 마두로 대통령을 압박했다. 과이도 임시 대통령을 인정하고 지지했지만, 마두로 대통령은 여전히 권력을 유지하고 있다.\n이번 트럼프 전 대통령의 발언은 미국과 베네수엘라 관계에 변화가 있을 수 있음을 시사한다. 하지만 구체적인 방문 시기나 계획은 아직 알려지지 않았다.",
+    "source": "Reuters",
+    "date": "2026-02-14 12:30",
+    "timestamp": 1771038863,
+    "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOVG8xc1J4LTVFa05BTFhjamVsSklUQ2p2ejA0d0JpeWxZMFVrZWZoblhuRjdYSENIcEZuTm9YUExLVFhHTzY5SWZyNFM0NG43U2VhVDM5QTZvSGJKMVNGM0JCRno5S180YVp3QUtMOFBjeVQybXdBX0kxNVFSMmU0dVFDMmdVazVZNk0ySkthbDdEaUxuOHBKMy1CQnRMR3poRVJCbDlBY3NSMmhYZDlOVFh5aDFTZ2xHNFptcG1zVWtLeTZ4LWc?oc=5",
+    "tickers": [],
+    "importance": "low"
+  },
+  {
     "id": "news_1771039830_17",
     "title": "존슨앤드존슨, 탈크 관련 암 소송에서 배상 책임 평결 받아",
     "summary": "펜실베이니아주 배심원단은 존슨앤드존슨이 탈크 제품과 관련된 암 발병에 책임이 있다는 평결을 내렸다. 이번 평결로 존슨앤드존슨은 손해배상금을 지급해야 할 가능성이 커졌다. 존슨앤드존슨은 즉각 항소할 계획이다.\n\n📊 코멘트\n존슨앤드존슨의 탈크 관련 소송 리스크 지속. 추가적인 소송 결과에 따라 주가 변동성 확대 가능성.",
@@ -647,19 +659,5 @@
       "TGT"
     ],
     "importance": "medium"
-  },
-  {
-    "id": "news_1770995582_3",
-    "title": "엘란코, 이사회 구성원 2명 재선 불출마로 이사회 규모 축소",
-    "summary": "엘란코 동물 건강(Elanco Animal Health)은 이사회 구성원 2명이 올해 임기 만료 후 재선에 나서지 않기로 결정했다고 발표했다. 이에 따라 이사회 규모는 9명으로 축소될 예정이다.\n\n📊 코멘트\n이사회의 변화가 엘란코의 경영 전략에 미칠 영향 주목.",
-    "content": "엘란코 동물 건강(Elanco Animal Health)은 금요일, 이사회 구성원 2명이 올해 임기 종료 후 재선에 나서지 않기로 했다고 밝혔다.\n이로 인해 이사회의 규모는 9명으로 줄어들게 된다.\n이번 결정은 이사회 구성원들의 경험과 전문성을 고려할 때 엘란코의 향후 경영 전략에 영향을 미칠 수 있다.\n엘란코는 수의학 제품 제조업체로서, 이번 이사회 변화를 통해 새로운 기회를 모색하고 있다.\n엘란코는 이번 변화를 통해 더욱 효율적인 의사 결정을 내릴 수 있을 것으로 기대하고 있다. 또한, 새로운 이사진 구성에 대한 기대감도 나타내고 있다.",
-    "source": "Seeking Alpha",
-    "date": "2026-02-14 00:13",
-    "timestamp": 1770995402,
-    "link": "https://seekingalpha.com/news/4551928-elanco-says-two-members-opt-out-reelection?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-    "tickers": [
-      "ELAN"
-    ],
-    "importance": "low"
   }
 ]

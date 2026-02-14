@@ -1,5 +1,20 @@
 [
   {
+    "id": "news_1771065340_3",
+    "title": "오젬픽 제네릭 등장에 제약업계 '냅스터' 순간 직면",
+    "summary": "트럼프 행정부가 텔레헬스 회사 Hims & Hers Health에 대해 강력한 제재를 가하고, 법무부에 연방 위반 가능성을 조사하도록 의뢰했다. 노보 노디스크는 오젬픽과 위고비 특허 침해를 이유로 Hims & Hers를 제소했다.\n\n📊 코멘트\n제약업계, 특허 보호 및 제네릭 의약품과의 경쟁 심화에 대비해야.",
+    "content": "• ✅ 규제 동향: 트럼프 행정부는 텔레헬스 회사인 Hims & Hers Health HIMS 3.1~6%에 대해 강경한 입장을 취하며, 보건 당국은 해당 회사를 잠재적인 연방 법규 위반 혐의로 법무부에 회부했다.\n• ✅ GLP-1 약물 복제: 약국에서 동일한 활성 성분을 사용하여 복제약을 대량으로 판매하는 GLP-1 약물 복제 행위는 쉽게 사라지지 않을 것으로 보인다. 대규모 복제약 판매는 더욱 위험한 상황으로 인식되고 있다.\n• ✅ 소송 진행: 노보 노디스크는 Hims & Hers를 상대로 오젬픽과 위고비 특허 침해 소송을 제기했다.\n• ✅ 음악 산업과의 비교: 음반사들은 과거 불법 복제 테이프에도 불구하고 수십 년간 시장을 장악했지만, 냅스터의 온라인 파일 공유 등장으로 인터넷 연결만 있으면 누구나 모든 음악을 영구적으로 무료로 이용할 수 있는 상황이 도래했다.",
+    "source": "WSJ Markets",
+    "date": "2026-02-14 19:35",
+    "timestamp": 1771065160,
+    "link": "https://www.wsj.com/health/pharma/how-ozempic-brought-a-napster-moment-to-big-pharma-b38339f0?mod=rss_markets_main",
+    "tickers": [
+      "NVO",
+      "HIMS"
+    ],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771059621_3",
     "title": "루비오, 미국-유럽 관계 '불가분'",
     "summary": "뮌헨 안보 회의에서 미국 국무장관은 유럽과의 협력 중요성을 강조했다. 그는 미국과 유럽의 이익이 '불가분' 관계에 있다고 발언했다.\n\n📊 코멘트\n미국-유럽 관계 강화 모멘텀 지속될 전망.",
@@ -624,18 +639,6 @@
     "date": "2026-02-14 14:41",
     "timestamp": 1771046544,
     "link": "https://asia.nikkei.com/business/business-deals/bain-to-take-japan-mobile-charging-startup-private-in-327m-buyout",
-    "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771047698_20",
-    "title": "탁신 지지 푸에타이당, 태국 총선 승리 ภูมิใจไทย당과 연립 정부 참여",
-    "summary": "탁신 시나와트라 전 총리의 지지를 받는 푸에타이당이 총선에서 승리한 ภูมิใจไทย당이 주도하는 연립 정부에 참여하기로 결정했다. 이로써 현 총리 아누틴 차른비라쿨은 의회 다수 의석을 확보하고 재선에 유리한 고지를 점하게 되었다.\n\n📊 코멘트\n태국 정치 불안정 해소 기대.",
-    "content": "푸에타이당은 총선 승리 정당인 ภูมิใจไทย당이 이끄는 연립 정부에 합류하기로 했다. 이로써 아누틴 차른비라쿨 현 총리는 의회에서 다수 의석을 확보하며 재선에 성공할 가능성이 커졌다.\n• **주요 인물:** 푸에타이당 총리 후보인 Yodchanan Wongsawat는 2월 1~3일 방콕에 위치한 ภูมิใจไทย당 본부에서 아누틴 차른비라쿨 총리와 악수했다.\n• **배경:** 푸에타이당은 탁신 시나와트라 전 총리의 지지를 받고 있다.",
-    "source": "Nikkei Asia",
-    "date": "2026-02-14 14:41",
-    "timestamp": 1771046498,
-    "link": "https://asia.nikkei.com/politics/thai-election/thaksin-backed-party-to-join-thai-election-winner-s-coalition",
     "tickers": [],
     "importance": "medium"
   }
