@@ -110,30 +110,30 @@ export default function MarketsPage() {
                 <div className="text-right">
                   {isPositive && (
                     <>
-                      <div className="text-base font-semibold text-green-600 dark:text-green-300">
+                      <div className="text-base font-semibold text-green-600 dark:!text-green-300">
                         {item.loading ? '...' : item.price}
                       </div>
-                      <div className="text-sm font-medium text-green-600 dark:text-green-300">
+                      <div className="text-sm font-medium text-green-600 dark:!text-green-300">
                         {item.loading ? '...' : `▲ ${item.changePercent}`}
                       </div>
                     </>
                   )}
                   {isNegative && (
                     <>
-                      <div className="text-base font-semibold text-red-600 dark:text-red-300">
+                      <div className="text-base font-semibold text-red-600 dark:!text-red-300">
                         {item.loading ? '...' : item.price}
                       </div>
-                      <div className="text-sm font-medium text-red-600 dark:text-red-300">
+                      <div className="text-sm font-medium text-red-600 dark:!text-red-300">
                         {item.loading ? '...' : `▼ ${item.changePercent}`}
                       </div>
                     </>
                   )}
                   {!isPositive && !isNegative && (
                     <>
-                      <div className="text-base font-semibold text-gray-900 dark:text-gray-100">
+                      <div className="text-base font-semibold text-gray-900 dark:!text-gray-100">
                         {item.loading ? '...' : item.price}
                       </div>
-                      <div className="text-sm font-medium text-gray-600 dark:text-gray-300">
+                      <div className="text-sm font-medium text-gray-600 dark:!text-gray-300">
                         {item.loading ? '...' : item.changePercent}
                       </div>
                     </>
