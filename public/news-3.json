@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771043667_15",
+    "title": "온화한 겨울 전망에 천연가스 가격 하락",
+    "summary": "미국 해양대기청(NOAA)의 온화한 겨울 전망 발표에 따라 천연가스 가격이 하락했다. 엘니뇨 발생 가능성이 높아지면서 난방 수요 감소에 대한 우려가 반영된 결과이며, 이번 주에만 5.2% 하락했다.\n\n📊 코멘트\n기후 변화가 에너지 시장에 미치는 영향력 확대.",
+    "content": "미국 해양대기청(NOAA)의 기후 예측 센터는 올 가을/겨울에 엘니뇨가 발생할 가능성이 있으며, 이는 미국 대부분 지역에 온화한 겨울을 가져올 수 있다고 전망했다. 이는 천연가스 난방 수요를 제한할 수 있다.\n• **엘니뇨 전망:** NOAA는 9월부터 엘니뇨가 시작될 가능성을 61%로 제시했다.\n• **전문가 분석:** Gelber & Associates는 시장 참여자들이 이러한 기상 패턴과 관련된 온화한 기온이 겨울까지 이어질 가능성에 대비하고 있다고 분석했다.\n• **가격 변동:** 천연가스는 0.8% 상승하여 mmBtu당 $3.243로 마감했지만, 이번 주 전체적으로는 5.2% 하락하여 2주 연속 하락세를 기록했다.\n• **향후 전망:** EBW Analytics의 Eli Rubin은 캐나다 서부와 태평양 북서부의 찬 공기가 미국으로 이동할 가능성이 지지 요인이라고 언급하며, 만약 이러한 위협이 현실화되지 않으면 mmBtu당 $3.00 미만으로 하락할 수 있다고 전망했다. Nymex 가스는 2% 하락한 mmBtu당 $3.152를 기록했다.",
+    "source": "WSJ Markets",
+    "date": "2026-02-14 13:34",
+    "timestamp": 1771042767,
+    "link": "https://www.wsj.com/opinion/low-storage-levels-weigh-on-european-gas-market-1854ab07?mod=rss_markets_main",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771043674_16",
     "title": "국제 유가, 주간 기준 하락 마감",
     "summary": "국제 유가는 소폭 상승 마감했으나, 주간 기준으로는 하락세를 보였다. WTI는 배럴당 $62.89로 1% 하락했으며, OPEC+의 생산량 증가 재개 발표와 미국-이란 간 군사 작전 관련 뉴스가 영향을 미쳤다.\n\n📊 코멘트\n 지정학적 리스크 완화 및 공급 증가 우려가 유가 상승을 제한.",
@@ -632,17 +644,5 @@
     "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNVDIyTktwak9jOUN6dXY0aWE2SWpwSl9abFAxb2hHcko1akhmVlRnak9UR2NoWEJILW5KcmNYT1lqWEJkdXZuVEJueS1QaUUzWlRScTRIS3h1cWt1SXJIamJHamUxT1Jvamlzck03bXhYV2xLSkV6eVBxVjNZZjloU3VLZ2RFOGdVUWt1aUFCLVBtcVVUSjA3X2NSaFRyTVktVnc?oc=5",
     "tickers": [],
     "importance": "NOT_RELEVANT"
-  },
-  {
-    "id": "news_1771040304_17",
-    "title": "AI 공포 확산: 소프트웨어~부동산, 미국 산업 전반 'AI 스케어 트레이드' 영향",
-    "summary": "미국 시장에서 AI 기술 발전으로 인한 기존 산업의 위축 우려, 즉 'AI 스케어 트레이드'가 확산되고 있다. 소프트웨어, 부동산 등 다양한 산업군에서 투자 심리가 위축되는 현상이 나타나고 있다.\n\n📊 코멘트\nAI 시대, 산업 지형 변화에 따른 투자 전략 재점검 필요.",
-    "content": "• **소프트웨어 산업:** AI 기반 솔루션 등장으로 기존 소프트웨어 기업의 경쟁력 약화 우려가 제기되며 투자 심리 위축.\n• **부동산 산업:** AI 기반 부동산 분석 및 관리 플랫폼 확산으로 전통적인 부동산 중개 및 관리업체의 입지 축소 가능성 대두.\n• **전반적인 시장 분위기:** AI 기술 발전 속도가 빨라지면서 기존 산업의 변화에 대한 불확실성이 커지고 있으며, 투자자들은 AI 관련 기술을 적극적으로 도입하지 못하는 기업에 대해 투자 회피 경향을 보임.\n• **투자 전략 변화:** AI 기술을 적극적으로 활용하여 새로운 가치를 창출하는 기업에 대한 투자가 증가하는 반면, 기존 산업에 머물러 있는 기업에 대한 투자는 감소하는 추세.",
-    "source": "Reuters",
-    "date": "2026-02-14 12:38",
-    "timestamp": 1771039284,
-    "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOTUU1VkFxaUlIeTJMMDJ3YzNWaEtXOXNtcEJTSUZlVFc1TWVtVnZYZG1ENjNreEhwR2hhcFg3Z0xvNllzUkRpMDlfWXZ4b0N6ZTdHS1RzOEo2WkNXVWQ1RlZQOVRkeFBZQzdYNHByU0JWOWUzaDFmaGY1R1FLblJuR0dzN3dQRzBJVVZSQTJtRzZfMHFUWkF5QS1KbS0zYU1zR2lzQQ?oc=5",
-    "tickers": [],
-    "importance": "medium"
   }
 ]

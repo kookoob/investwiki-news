@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771040304_17",
+    "title": "AI 공포 확산: 소프트웨어~부동산, 미국 산업 전반 'AI 스케어 트레이드' 영향",
+    "summary": "미국 시장에서 AI 기술 발전으로 인한 기존 산업의 위축 우려, 즉 'AI 스케어 트레이드'가 확산되고 있다. 소프트웨어, 부동산 등 다양한 산업군에서 투자 심리가 위축되는 현상이 나타나고 있다.\n\n📊 코멘트\nAI 시대, 산업 지형 변화에 따른 투자 전략 재점검 필요.",
+    "content": "• **소프트웨어 산업:** AI 기반 솔루션 등장으로 기존 소프트웨어 기업의 경쟁력 약화 우려가 제기되며 투자 심리 위축.\n• **부동산 산업:** AI 기반 부동산 분석 및 관리 플랫폼 확산으로 전통적인 부동산 중개 및 관리업체의 입지 축소 가능성 대두.\n• **전반적인 시장 분위기:** AI 기술 발전 속도가 빨라지면서 기존 산업의 변화에 대한 불확실성이 커지고 있으며, 투자자들은 AI 관련 기술을 적극적으로 도입하지 못하는 기업에 대해 투자 회피 경향을 보임.\n• **투자 전략 변화:** AI 기술을 적극적으로 활용하여 새로운 가치를 창출하는 기업에 대한 투자가 증가하는 반면, 기존 산업에 머물러 있는 기업에 대한 투자는 감소하는 추세.",
+    "source": "Reuters",
+    "date": "2026-02-14 12:38",
+    "timestamp": 1771039284,
+    "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOTUU1VkFxaUlIeTJMMDJ3YzNWaEtXOXNtcEJTSUZlVFc1TWVtVnZYZG1ENjNreEhwR2hhcFg3Z0xvNllzUkRpMDlfWXZ4b0N6ZTdHS1RzOEo2WkNXVWQ1RlZQOVRkeFBZQzdYNHByU0JWOWUzaDFmaGY1R1FLblJuR0dzN3dQRzBJVVZSQTJtRzZfMHFUWkF5QS1KbS0zYU1zR2lzQQ?oc=5",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771040317_18",
     "title": "미국, 중국 군 지원 의혹 기업 목록 업데이트 철회",
     "summary": "미국 정부가 중국 군을 지원하는 것으로 의심되는 기업 목록 업데이트를 철회했다. 이번 조치는 미중 관계에 미묘한 영향을 줄 수 있다.\n\n📊 코멘트\n미중 관계 변화에 따른 시장 변동성 확대에 주의.",
@@ -640,20 +652,6 @@
     "tickers": [
       "NVDA",
       "TGT"
-    ],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1770995401_1",
-    "title": "리비안, 4분기 실적 발표 후 장기 성장 전망에 상승세",
-    "summary": "리비안 오토모티브(RIVN)는 4분기 실적 발표 이후 초기 거래에서 상승세를 보였다. 단기적으로는 혼조세이지만, 장기적으로는 긍정적인 전망이 제시되었다. 2025년에는 약 1억 4,400만 달러의 총 이익을 기록할 것으로 예상된다. 이는 약 1~2억 달러의 손실과 비교된다.\n\n📊 코멘트\n리비안의 장기 성장 가능성에 대한 분석가들의 긍정적 평가가 주가 상승을 견인. 2025년 흑자 전환 여부가 투자 결정의 핵심 요소.",
-    "content": "리비안 오토모티브(RIVN)는 금요일 4분기 실적 발표 후 초기 거래에서 상승세를 나타냈다. 4분기 실적은 단기적으로는 혼조세를 보였으나, 장기적으로는 건설적인 전망을 제시했다.\n리비안은 2025년에 약 1억 4,400만 달러의 총 이익을 달성할 것으로 예상했다.\n이는 2024년의 약 1~2억 달러 손실과 비교된다.\n분석가들은 리비안의 장기적인 잠재력에 주목하며 투자의견을 제시했다.\n리비안의 주가 상승은 긍정적인 장기 전망과 분석가들의 지지에 힘입은 것으로 보인다.\n투자자들은 리비안의 2025년 흑자 전환 가능성과 향후 성장세를 주시할 필요가 있다.",
-    "source": "Seeking Alpha",
-    "date": "2026-02-14 00:10",
-    "timestamp": 1770995341,
-    "link": "https://seekingalpha.com/news/4551938-rivian-automotive-gains-as-analysts-point-to-long-term-upside?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-    "tickers": [
-      "RIVN"
     ],
     "importance": "medium"
   }
