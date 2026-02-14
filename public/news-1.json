@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771059621_3",
+    "title": "루비오, 미국-유럽 관계 '불가분'",
+    "summary": "뮌헨 안보 회의에서 미국 국무장관은 유럽과의 협력 중요성을 강조했다. 그는 미국과 유럽의 이익이 '불가분' 관계에 있다고 발언했다.\n\n📊 코멘트\n미국-유럽 관계 강화 모멘텀 지속될 전망.",
+    "content": "• ✅ 발언 내용: 뮌헨 안보 회의에서 미국 국무장관은 유럽과의 협력이 중요하다고 강조하며, 미국과 유럽의 이익이 '불가분' 관계에 있다고 언급했다.",
+    "source": "CNBC",
+    "date": "2026-02-14 18:00",
+    "timestamp": 1771059441,
+    "link": "https://www.cnbc.com/2026/02/14/us-and-european-interests-are-intertwined-rubio-says.html",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771056236_2",
     "title": "아마존, AWS 부활 위해 2,000억 달러 AI 투자 단행",
     "summary": "아마존이 AWS의 경쟁력 강화를 위해 사상 최대 규모인 2,000억 달러를 AI 분야에 투자한다. 데이터센터 확장, 자체 칩 개발, AI 모델 구축에 집중 투자하여 구글, 마이크로소프트 등 경쟁사와의 격차를 줄이겠다는 전략이다.\n\n📊 코멘트\nAI 경쟁에서 밀리면 생존을 위협받는다는 절박함이 느껴진다.",
@@ -624,18 +636,6 @@
     "date": "2026-02-14 14:41",
     "timestamp": 1771046498,
     "link": "https://asia.nikkei.com/politics/thai-election/thaksin-backed-party-to-join-thai-election-winner-s-coalition",
-    "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771047147_18",
-    "title": "다카이치 확장 재정 정책에 따른 엔화 및 일본 국채 시장 불안",
-    "summary": "다카이치 사나에 일본 총리의 확장적 재정 정책이 엔화 강세와 일본 국채 시장의 변동성을 야기할 수 있다는 우려가 제기되고 있다. 투자자들은 정책의 잠재적인 부작용에 주목하고 있다.\n\n📊 코멘트\n정치적 변화가 금융 시장에 미치는 영향에 대한 투자자들의 경계심이 필요하다.",
-    "content": "다카이치 사나에 총리가 이끄는 자민당이 압승을 거둔 이후 엔화는 강세를 보이고 일본 국채 시장은 비교적 안정적인 모습을 유지하고 있다.\n• **우려 사항:** 투자자들은 다카이치 총리의 확장적 재정 정책이 가져올 잠재적인 부작용에 대해 우려하고 있다.",
-    "source": "Nikkei Asia",
-    "date": "2026-02-14 14:32",
-    "timestamp": 1771046067,
-    "link": "https://asia.nikkei.com/business/markets/inflation-fears-loom-over-yen-japan-bond-markets-under-takaichi",
     "tickers": [],
     "importance": "medium"
   }
