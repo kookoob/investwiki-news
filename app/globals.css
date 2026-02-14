@@ -96,6 +96,23 @@ body {
   background-color: #2a2a2a !important;
 }
 
+/* 시장 지표 다크모드 색상 */
+.dark .text-green-600 {
+  color: #7bf1a8 !important;
+}
+
+.dark .text-red-600 {
+  color: #ff6568 !important;
+}
+
+.dark .text-gray-900 {
+  color: #f3f4f6 !important;
+}
+
+.dark .text-gray-600 {
+  color: #d1d5dc !important;
+}
+
 /* AI 요약 및 정보 박스 다크모드 배경 */
 .dark .bg-blue-50 {
   background-color: #000 !important;
