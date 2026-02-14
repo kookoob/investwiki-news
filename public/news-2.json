@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771046617_17",
+    "title": "일본, 곰 쫓는 늑대 로봇 미니 버전 출시…80데시벨 소리",
+    "summary": "일본에서 곰을 쫓는 데 사용되는 늑대 로봇의 소형 버전이 출시될 예정이다. 이 미니 몬스터 늑대 로봇은 기존 모델과 마찬가지로 큰 소리를 낼 수 있으며, 50가지 이상의 다양한 소리를 낼 수 있다.\n\n📊 코멘트\n야생 동물 피해 방지 기술의 진화는 농업 생산성 향상에 기여할 전망.",
+    "content": "일본 삿포로에서 곰을 쫓고 농작물을 감시하는 데 사용되는 큰 늑대 로봇의 더 작고 귀여운 버전이 출시될 예정이다. 이 미니 몬스터 늑대는 기존 모델만큼이나 큰 소리를 낼 수 있다.\n• **주요 기능:** 미니 몬스터 늑대는 50가지 이상의 다양한 소리를 낼 수 있으며, 80데시벨의 소리를 낼 수 있다.\n• **활용 목적:** 곰 퇴치 및 농작물 보호를 위해 사용된다.",
+    "source": "Nikkei Asia",
+    "date": "2026-02-14 14:23",
+    "timestamp": 1771045597,
+    "link": "https://asia.nikkei.com/business/electronics/japan-s-bear-scaring-wolf-robot-to-get-80-decibel-plush-version",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771046640_19",
     "title": "한국 조선 수주 급증, 미국 수수료로 중국 이탈",
     "summary": "한국이 세계 2위 조선 강국으로서 미국의 중국산 선박에 대한 규제 덕분에 중국과의 격차를 좁히고 있다. HD한국조선해양 등이 수혜를 입어 수주량이 증가했다.\n\n📊 코멘트\n미국 규제가 한국 조선업에 긍정적 모멘텀을 제공.",
@@ -632,20 +644,6 @@
     "timestamp": 1771042139,
     "link": "https://www.wsj.com/business/people-trust-humans-e37a6fa5?mod=rss_markets_main",
     "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771043230_19",
-    "title": "Anthropic, IPO 준비 속 Chris Liddell 이사 선임",
-    "summary": "AI 스타트업 Anthropic이 기업공개(IPO)를 준비하는 가운데, 제너럴 모터스(GM)의 IPO를 성공적으로 이끌었던 Chris Liddell을 이사회 멤버로 영입했다. Liddell은 트럼프 행정부에서도 고위직을 역임했다.\n\n📊 코멘트\nIPO를 위한 전략적 행보, 규제 리스크 관리 능력에 주목.",
-    "content": "Anthropic이 이사회에 Chris Liddell을 새로 임명했다고 발표했다. 그는 제너럴 모터스(GM)의 IPO를 성공적으로 이끈 바 있다.\n• **주요 이력:** Chris Liddell은 Microsoft와 General Motors 임원을 역임했으며, GM의 CFO로서 2010년 230억 달러 규모의 IPO를 성공적으로 이끌었다.\n• **정치 경력:** 트럼프 대통령 임기 초반 정책 조정 담당 비서실 부보좌관을 지냈다.\n• **Anthropic 입장:** Daniela Amodei 사장은 Liddell이 기술, 공공 서비스, 거버넌스 분야에서 쌓은 경험이 Anthropic에 큰 도움이 될 것이라고 밝혔다.\n• **과거 논란:** GM 재무 부서를 재건하는 데 기여했으나, 다른 경영진과의 갈등으로 1~4개월 만에 사임했다.",
-    "source": "WSJ Markets",
-    "date": "2026-02-14 13:27",
-    "timestamp": 1771042090,
-    "link": "https://www.wsj.com/tech/ai/anthropic-ai-board-chris-liddell-1df5545b?mod=rss_markets_main",
-    "tickers": [
-      "GM"
-    ],
     "importance": "medium"
   }
 ]

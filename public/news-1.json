@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771050079_14",
+    "title": "달러인덱스,  CPI 하회에 97 밑으로",
+    "summary": "달러 인덱스가 미국 소비자물가지수(CPI)가 예상치를 밑돌면서 97 아래로 하락했다. 이는 달러 약세로 이어져, 다른 통화 및 자산 시장에 영향을 미칠 수 있다.\n\n📊 코멘트\n인플레이션 둔화 신호에 따른 연준의 금리 인상 속도 조절 기대감이 반영된 결과.",
+    "content": "달러 인덱스는 예상보다 낮은 미국 CPI 발표 후 97 이하로 떨어졌다.\n• **CPI 발표:** 시장 예상치를 하회하는 CPI 데이터가 달러 약세를 촉발했다.\n• **달러 인덱스:** 달러 인덱스는 주요 6개 통화 대비 달러 가치를 나타내는 지표이다.",
+    "source": "연합인포맥스",
+    "date": "2026-02-14 15:21",
+    "timestamp": 1771049239,
+    "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4399002",
+    "tickers": [],
+    "importance": "high"
+  },
+  {
     "id": "news_1771049592_13",
     "title": " 국채 금리 하락: 1월 CPI 0.2% 상승, 예상치 하회",
     "summary": "미국 1월 소비자물가지수(CPI)가 전월 대비 0.2% 상승하며 시장 예상치를 밑돌자 미 국채 금리가 하락했다. 10년물 국채 금리는 3.80bp 하락한 4.06~5%를 기록했다.\n\n📊 코멘트\n인플레이션 둔화 신호에 따른 금리 인하 기대감이 시장에 반영.",
@@ -621,18 +633,6 @@
     "date": "2026-02-14 14:23",
     "timestamp": 1771045644,
     "link": "https://asia.nikkei.com/politics/international-relations/japan-china-tensions/japan-releases-chinese-fishing-boat-captain-amid-bilateral-tensions",
-    "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771046617_17",
-    "title": "일본, 곰 쫓는 늑대 로봇 미니 버전 출시…80데시벨 소리",
-    "summary": "일본에서 곰을 쫓는 데 사용되는 늑대 로봇의 소형 버전이 출시될 예정이다. 이 미니 몬스터 늑대 로봇은 기존 모델과 마찬가지로 큰 소리를 낼 수 있으며, 50가지 이상의 다양한 소리를 낼 수 있다.\n\n📊 코멘트\n야생 동물 피해 방지 기술의 진화는 농업 생산성 향상에 기여할 전망.",
-    "content": "일본 삿포로에서 곰을 쫓고 농작물을 감시하는 데 사용되는 큰 늑대 로봇의 더 작고 귀여운 버전이 출시될 예정이다. 이 미니 몬스터 늑대는 기존 모델만큼이나 큰 소리를 낼 수 있다.\n• **주요 기능:** 미니 몬스터 늑대는 50가지 이상의 다양한 소리를 낼 수 있으며, 80데시벨의 소리를 낼 수 있다.\n• **활용 목적:** 곰 퇴치 및 농작물 보호를 위해 사용된다.",
-    "source": "Nikkei Asia",
-    "date": "2026-02-14 14:23",
-    "timestamp": 1771045597,
-    "link": "https://asia.nikkei.com/business/electronics/japan-s-bear-scaring-wolf-robot-to-get-80-decibel-plush-version",
     "tickers": [],
     "importance": "medium"
   }

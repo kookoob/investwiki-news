@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771039364_17",
+    "title": "WSJ 보도: 미국, 베네수엘라 급습 작전에 Anthropic의 Claude 활용",
+    "summary": "미국이 베네수엘라 급습 작전에 Anthropic의 AI 모델 Claude를 사용했다고 월스트리트저널(WSJ)이 보도했다. 구체적인 작전 내용과 Claude가 어떤 역할을 수행했는지는 알려지지 않았다.\n\n📊 코멘트\nAI 기술이 군사 작전 영역까지 확장. 향후 AI 윤리 및 규제 논쟁 심화될 가능성.",
+    "content": "미국이 베네수엘라 급습 작전 중 Anthropic의 AI 모델 Claude를 활용했다는 월스트리트저널(WSJ)의 보도가 나왔다. 해당 보도는 익명의 소식통을 인용했으며, 작전의 구체적인 내용은 공개되지 않았다.\nClaude는 Anthropic이 개발한 대규모 언어 모델로, 텍스트 분석, 번역, 콘텐츠 생성 등 다양한 기능을 수행할 수 있다. 이번 작전에서 Claude가 어떤 특정 역할을 담당했는지는 명확히 밝혀지지 않았다.\nAI 기술이 군사 및 정보 분야에서 활용되는 사례가 늘면서, AI의 윤리적 문제와 규제 필요성에 대한 논의가 더욱 활발해질 것으로 예상된다. 특히 AI의 오용 가능성과 책임 소재에 대한 우려가 제기되고 있다.",
+    "source": "Reuters",
+    "date": "2026-02-14 12:22",
+    "timestamp": 1771038344,
+    "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNbUh5akJLMFhZbGtPcGtOTl96Z2lPcjRDSXBwdXpFVEZFQThDSDd2bEMxSnlWaG9TVk9TbDBVX0JlOHR2NVdrZ0pDeUZyUnVTLXFvOTYycExwbWhtVzQ3ODhZV3BNNUxob2dOcWhhVnZKLWxEZUV0TmZ3cjdxblVJMHN4QlVOWjMxbjN1RkdfNldCbU1hWVBsTGwtVEd5amtXclVCakxNYzdiMnU2NnkxeURNU0k?oc=5",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771039371_18",
     "title": "미국 ICE, 구금 시설에 383억 달러 투자",
     "summary": "미국 이민세관단속국(ICE)이 미국 전역의 구금 시설에 383억 달러를 투자할 계획이다. 이는 ICE가 구금 시설 운영에 상당한 예산을 투입하고 있음을 보여주는 내용이다.\n\n📊 코멘트\n구금 시설 관련 산업의 성장 가능성을 시사하지만, 관련 기업에 대한 사회적 책임 투자(ESG) 측면의 고려 필요.",
@@ -651,18 +663,6 @@
     "date": "2026-02-14 00:10",
     "timestamp": 1770995138,
     "link": "https://seekingalpha.com/news/4551932-wall-street-observes-limited-movement-after-the-latest-cpi-report?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-    "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1770995454_6",
-    "title": "마그나 인터내셔널, 분기 배당 2.1% 인상…주당 $0.49~5 지급",
-    "summary": "마그나 인터내셔널(Magna International Inc.)은 분기별 배당금을 주당 0.48~5달러에서 0.49~5달러로 2.1% 인상한다고 발표했다. 이번 배당은 3월 1~3일에 지급될 예정이다. 배당 기준일은 2월 2~7일이며, 배당락일 또한 2월 2~7일이다.\n\n📊 코멘트\n마그나 인터내셔널의 배당금 인상은 주주 환원 정책의 일환으로 해석되며, 투자 매력도를 높이는 요인으로 작용할 수 있다.",
-    "content": "마그나 인터내셔널(MG:CA)이 분기별 배당금을 주당 0.49~5달러로 결정했다.\n이는 이전 배당금인 주당 0.48~5달러에서 2.1% 인상된 수치다.\n이번 배당의 선지급 수익률은 2.1~8%이다.\n배당금은 3월 1~3일에 지급될 예정이며, 2월 2~7일 기준으로 주주 명부에 등재된 주주들에게 지급된다.\n배당락일 역시 2월 2~7일이다.\n마그나 인터내셔널은 자동차 부품 제조 기업이다.\n배당금 지급 외에도 Barclays 1~6회 연례 글로벌 자동차 및 모빌리티 기술 컨퍼런스에 참가하여 기업 전략을 발표했다. 또한, 2025년 4분기 실적에 대한 사전 전망도 발표했다.",
-    "source": "Seeking Alpha",
-    "date": "2026-02-14 00:10",
-    "timestamp": 1770995094,
-    "link": "https://seekingalpha.com/news/4551935-magna-international-inc-raises-dividend-by-21-to-0495?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
     "tickers": [],
     "importance": "medium"
   }
