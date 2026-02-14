@@ -96,6 +96,15 @@ body {
   background-color: #2a2a2a !important;
 }
 
+/* 시장 지표 라이트모드 색상 */
+.text-green-600 {
+  color: #16a34a !important;
+}
+
+.text-red-600 {
+  color: #dc2626 !important;
+}
+
 /* 시장 지표 다크모드 색상 */
 .dark .text-green-600 {
   color: #7bf1a8 !important;
