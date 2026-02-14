@@ -1,5 +1,20 @@
 [
   {
+    "id": "news_1771043680_17",
+    "title": "금, 은 가격 상승 마감, 한 주간 상승세 기록",
+    "summary": "금과 은 선물 가격이 상승하며 한 주를 마감했다. 금은 2% 상승하여 트로이온스당 5,022달러에 거래를 마쳤고, 은은 3.1% 상승하여 트로이온스당 77.581달러에 마감했다.\n\n📊 코멘트\n안전자산 선호 심리가 귀금속 가격 상승을 견인.",
+    "content": "금과 은 선물 가격이 상승하며 한 주를 마감했다. \n• **금:** 최근월물 계약은 2% 상승하여 트로이온스당 5,022달러에 마감했으며, 주간 기준으로는 1.4% 상승했다. 지난 10주 중 8주 동안 상승세를 기록했다.\n• **은:** 최근월물 계약은 3.1% 상승하여 트로이온스당 77.581달러에 마감하며 2주 연속 하락세를 끊었다. 지난 1~5주 중 11주 동안 상승 마감했다.\n• **전문가 분석:** XS.com의 안토니오 디 지아코모는 귀금속 시장의 변동성에도 불구하고 안전 자산에 대한 선호 심리가 여전하며, 이는 가격 상승을 지지하고 있다고 분석했다.\n• **금 선물:** 2월 인도분 Comex 금은 트로이온스당 70.80달러(1.4~3%) 상승한 5,022.00달러에 마감했다.",
+    "source": "WSJ Markets",
+    "date": "2026-02-14 13:34",
+    "timestamp": 1771042660,
+    "link": "https://www.wsj.com/finance/commodities-futures/gold-steady-could-undergo-technical-recovery-72e661fe?mod=rss_markets_main",
+    "tickers": [
+      "GLD",
+      "SLV"
+    ],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771043689_18",
     "title": "트럼프 정부, 철강·알루미늄 관세 개편 검토…소비재 감세 가능성",
     "summary": "트럼프 정부가 철강 및 알루미늄 관세 개편을 검토 중이며, 이는 일부 소비재에 대한 관세 인하로 이어질 수 있다. 현재 미국은 대부분의 수입품에 포함된 철강 및 알루미늄에 대해 50%의 관세를 부과하고 있다.\n\n📊 코멘트\n관세 개편이 미국 제조업과 수입 물가에 미칠 영향 주시 필요.",
@@ -627,18 +642,6 @@
     "date": "2026-02-14 12:38",
     "timestamp": 1771039237,
     "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNZHlMV19pX3VHNjhibFRSZU1GbmY1QlplMXBuQmZfLTJTN3BsaEQ4T3pldzRJeFhuOG9fVnQxbnRueFZLeXM5dVUtRU5peEZpVmNjV0J2dTdqSGhGaEp5QzNSZ2tfd1JkVldBYVRUWTg3Rlp2aG1DMmdWRHZPYnBzT1pIVHNxc19zZURUVmpDRkg3UUxteFkxSGV1dnE3Zjg0Ti1xZ3dZZmEzN01DbjNKcF81ZkE3TkdTNGFYRG9mRk5DUGoyTi0zNFN1Z3oteXh4a3VUVjV1QQ?oc=5",
-    "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771040330_19",
-    "title": "미국 소비자 물가 소폭 상승, 인플레이션 압력 지속",
-    "summary": "미국 소비자 물가가 소폭 상승했으나 인플레이션 압력이 지속되고 있다. 이는 연준의 금리 인하 시점에 대한 불확실성을 높이는 요인으로 작용한다.\n\n📊 코멘트\n연준의 신중한 통화정책 유지가 예상된다.",
-    "content": "미국 소비자 물가가 소폭 상승하며 인플레이션 압력이 지속되고 있다.\n• **물가 상승률:** 구체적인 수치 정보는 기사에 명시되지 않음.\n• **인플레이션 압력 요인:** 구체적인 내용은 기사에 상세히 언급되지 않음\n인플레이션 추이에 따른 시장 변동성 확대에 대비해야 한다.",
-    "source": "Reuters",
-    "date": "2026-02-14 12:38",
-    "timestamp": 1771039190,
-    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPNGRrWklFQUNtYlFiSWxxQWRVenJVVWdwTFlmUlZLZ1FLWGJxbXZicFE4aVhKZG5yQld1TTNSekFKaEEyMzRoXzZrUkxhd1FrYldReFBqZmVXbXNsektwT203X28tSXJESVJPd2pHZnp5Uk43cDhtUm5SUmtTVzBPSG5NclNpZ0NPSGJYZjZ0N0dJYkFHeVdYOENQaw?oc=5",
     "tickers": [],
     "importance": "medium"
   }

@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771040330_19",
+    "title": "미국 소비자 물가 소폭 상승, 인플레이션 압력 지속",
+    "summary": "미국 소비자 물가가 소폭 상승했으나 인플레이션 압력이 지속되고 있다. 이는 연준의 금리 인하 시점에 대한 불확실성을 높이는 요인으로 작용한다.\n\n📊 코멘트\n연준의 신중한 통화정책 유지가 예상된다.",
+    "content": "미국 소비자 물가가 소폭 상승하며 인플레이션 압력이 지속되고 있다.\n• **물가 상승률:** 구체적인 수치 정보는 기사에 명시되지 않음.\n• **인플레이션 압력 요인:** 구체적인 내용은 기사에 상세히 언급되지 않음\n인플레이션 추이에 따른 시장 변동성 확대에 대비해야 한다.",
+    "source": "Reuters",
+    "date": "2026-02-14 12:38",
+    "timestamp": 1771039190,
+    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPNGRrWklFQUNtYlFiSWxxQWRVenJVVWdwTFlmUlZLZ1FLWGJxbXZicFE4aVhKZG5yQld1TTNSekFKaEEyMzRoXzZrUkxhd1FrYldReFBqZmVXbXNsektwT203X28tSXJESVJPd2pHZnp5Uk43cDhtUm5SUmtTVzBPSG5NclNpZ0NPSGJYZjZ0N0dJYkFHeVdYOENQaw?oc=5",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771040343_20",
     "title": "트럼프 행정부, 하버드대 입학 사정 조사 방해 혐의로 소송 제기",
     "summary": "트럼프 행정부가 하버드 대학교를 입학 사정 조사 방해 혐의로 제소했다. 소송은 하버드 대학이 입학 사정 과정에서 인종을 고려하는지에 대한 조사와 관련되어 있다.\n\n📊 코멘트\n소송 결과에 따라 향후 대학 입시 정책에 큰 변화 예상.",
@@ -644,20 +656,6 @@
     "link": "https://seekingalpha.com/news/4551780-biggest-stock-movers-friday?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
     "tickers": [
       "CRSR"
-    ],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1770995418_3",
-    "title": "Farmer Bros. Co., 금요일 장 마감 후 주요 실적 발표 예정",
-    "summary": "Farmer Bros. Co.(FARM)가 금요일 장 마감 후 실적 발표를 앞두고 있다. 자세한 내용은 Seeking Alpha의 전체 실적 발표 일정에서 확인할 수 있다.\n\n📊 코멘트\n커피 및 관련 제품 시장 경쟁 심화. Farmer Bros. Co.의 실적 개선 여부가 주가 향방 가를 듯.",
-    "content": "Farmer Bros. Co.(FARM)는 금요일 장 마감 후 주요 실적 발표를 진행할 예정이다.\n투자자들은 이번 실적 발표를 통해 회사의 재무 상태와 향후 전망에 대한 정보를 얻을 수 있을 것으로 기대하고 있다.\nSeeking Alpha는 투자자들을 위해 전체 실적 발표 일정을 제공하고 있다.\n이를 통해 투자자들은 Farmer Bros. Co.\n외에도 다양한 기업들의 실적 발표 일정을 확인하고 투자 전략을 수립하는 데 도움을 받을 수 있다.\n투자자들은 Farmer Bros. Co.의 실적 발표에 주목하며, Seeking Alpha의 실적 발표 일정과 뉴스레터를 활용하여 투자 결정을 내릴 수 있을 것이다.",
-    "source": "Seeking Alpha",
-    "date": "2026-02-14 00:10",
-    "timestamp": 1770995238,
-    "link": "https://seekingalpha.com/news/4551094-here-are-the-major-earnings-after-the-close-friday?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-    "tickers": [
-      "FARM"
     ],
     "importance": "medium"
   }

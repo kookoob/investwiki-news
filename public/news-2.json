@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771047632_15",
+    "title": "일본, 베트남에 철도 및 가스 플랜트 건설 위해 100억 달러 규모 엔화 차관 제공",
+    "summary": "일본이 베트남의 철도 및 가스 플랜트 건설 프로젝트를 지원하기 위해 향후 5년간 100억 달러 규모의 엔화 차관을 제공할 계획이다. 이는 베트남의 급속한 성장을 뒷받침하고 일본 기업의 사업 기회를 확대하기 위한 것이다.\n\n📊 코멘트\n일본의 ODA, 동남아 인프라 투자 경쟁 심화 신호탄?",
+    "content": "하노이 – 일본은 베트남의 지하철 및 가스 화력 발전소와 같은 프로젝트를 위해 향후 5년간 100억 달러 이상의 엔화 차관을 제공할 계획이다.\n• **자금 용도:** 베트남은 호치민시의 첫 번째 지하철 노선 연장에 엔화 차관을 사용할 것으로 예상된다.\n• **목표:** 이번 차관 제공은 베트남의 빠른 성장을 지원하고 일본 기업의 사업 기회를 확대하는 것을 목표로 한다.",
+    "source": "Nikkei Asia",
+    "date": "2026-02-14 14:40",
+    "timestamp": 1771046732,
+    "link": "https://asia.nikkei.com/politics/international-relations/japan-to-issue-vietnam-10bn-in-yen-loans-for-rail-lines-gas-plant",
+    "tickers": [],
+    "importance": "high"
+  },
+  {
     "id": "news_1771047058_6",
     "title": "스탠다드차타드, CEO 승계 불확실성에 시총 2.5조원 증발",
     "summary": "스탠다드차타드(StanChart)의 CFO 디에고 데 조르기가 갑작스럽게 아폴로 글로벌 매니지먼트로 이직하면서 주가가 급락, 시가총액이 2~5억 파운드(약 4조 3천억원) 감소했다. 이는 윌리엄 윈터스 CEO의 장기 집권과 후계 구도 불확실성에 대한 투자자들의 우려를 반영한 결과다.\n\n📊 코멘트\nCEO 리스크, 장기적 관점에서 기업 가치 훼손 요인.",
@@ -629,21 +641,6 @@
     "timestamp": 1771042714,
     "link": "https://www.wsj.com/finance/commodities-futures/oil-consolidates-amid-middle-east-tensions-weaker-demand-outlook-7ebadfeb?mod=rss_markets_main",
     "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771043680_17",
-    "title": "금, 은 가격 상승 마감, 한 주간 상승세 기록",
-    "summary": "금과 은 선물 가격이 상승하며 한 주를 마감했다. 금은 2% 상승하여 트로이온스당 5,022달러에 거래를 마쳤고, 은은 3.1% 상승하여 트로이온스당 77.581달러에 마감했다.\n\n📊 코멘트\n안전자산 선호 심리가 귀금속 가격 상승을 견인.",
-    "content": "금과 은 선물 가격이 상승하며 한 주를 마감했다. \n• **금:** 최근월물 계약은 2% 상승하여 트로이온스당 5,022달러에 마감했으며, 주간 기준으로는 1.4% 상승했다. 지난 10주 중 8주 동안 상승세를 기록했다.\n• **은:** 최근월물 계약은 3.1% 상승하여 트로이온스당 77.581달러에 마감하며 2주 연속 하락세를 끊었다. 지난 1~5주 중 11주 동안 상승 마감했다.\n• **전문가 분석:** XS.com의 안토니오 디 지아코모는 귀금속 시장의 변동성에도 불구하고 안전 자산에 대한 선호 심리가 여전하며, 이는 가격 상승을 지지하고 있다고 분석했다.\n• **금 선물:** 2월 인도분 Comex 금은 트로이온스당 70.80달러(1.4~3%) 상승한 5,022.00달러에 마감했다.",
-    "source": "WSJ Markets",
-    "date": "2026-02-14 13:34",
-    "timestamp": 1771042660,
-    "link": "https://www.wsj.com/finance/commodities-futures/gold-steady-could-undergo-technical-recovery-72e661fe?mod=rss_markets_main",
-    "tickers": [
-      "GLD",
-      "SLV"
-    ],
     "importance": "medium"
   }
 ]
