@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771039837_18",
+    "title": "베네수엘라 PDVSA, 개별 라이선스 기업에만 석유 판매",
+    "summary": "로이터 통신에 따르면 베네수엘라 국영 석유회사 PDVSA가 개별 라이선스를 보유한 기업에만 석유를 판매하고 있다. 이는 미국의 제재를 회피하고 석유 수출을 통제하기 위한 조치로 풀이된다.\n\n📊 코멘트\n베네수엘라 석유 산업의 불확실성 증가, 글로벌 에너지 시장 변동성 확대 요인.",
+    "content": "베네수엘라 국영 석유회사 PDVSA가 개별 라이선스를 받은 기업에만 석유를 판매하고 있다고 로이터 통신이 보도했다. 소식통에 따르면 이는 미국의 제재를 우회하고 석유 수출에 대한 통제를 강화하기 위한 전략의 일환이다.\n이번 조치는 PDVSA의 석유 판매 방식을 근본적으로 변화시키는 것으로, 일부 기업들은 새로운 라이선스 획득에 어려움을 겪고 있는 것으로 알려졌다. PDVSA는 최근 몇 년간 미국의 제재로 인해 석유 생산 및 수출에 어려움을 겪어왔으며, 이번 조치는 이러한 어려움을 극복하기 위한 시도로 보인다.\n새로운 규정은 PDVSA와 거래하는 기업들에게 더 큰 투명성과 책임을 요구할 것으로 예상된다. 하지만 복잡한 절차와 추가적인 규제로 인해 석유 거래량 감소와 시장 혼란을 야기할 수 있다는 우려도 제기되고 있다.",
+    "source": "Reuters",
+    "date": "2026-02-14 12:30",
+    "timestamp": 1771038757,
+    "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPYlpIcnByOVNtTnFpeDhBZFJSYmJwd0F5MF9rajl1Nkg2NHBITE1GS0NQdXJzZFVDMXI0VWZpd2ZuYlFMWXJLUG9hU256N295RFhibFdZeXREQkJzU0lwaUxOcFhicEJqRDh3bGNmQjhtekZBOHhZa21jVWs5UG9uRGxYWWJJQ2xIUWI1aXNLb0tqdEw3YWpyeWZoaFJCSlRQRW5RVW5ORElqeE4wTmtVMTdpVzllOVVidXBvT1lxZl91T19JNWUxdw?oc=5",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771039858_20",
     "title": "미국, 베네수엘라 석유 부문 제재 완화... 주요 석유 기업 활동 범위 확대",
     "summary": "미국이 베네수엘라에서 활동하는 주요 석유 기업에 대한 제재를 완화했다. 이번 조치로 쉐브론, BP 등은 베네수엘라에서 더 넓은 범위의 사업을 진행할 수 있게 되었다.\n\n📊 코멘트\n베네수엘라 석유 생산량 증가 기대. 글로벌 에너지 시장에 미칠 영향 주시 필요.",
@@ -648,20 +660,6 @@
     "tickers": [
       "NVDA",
       "TGT"
-    ],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1770995401_1",
-    "title": "리비안, 4분기 실적 발표 후 장기 성장 전망에 상승세",
-    "summary": "리비안 오토모티브(RIVN)는 4분기 실적 발표 이후 초기 거래에서 상승세를 보였다. 단기적으로는 혼조세이지만, 장기적으로는 긍정적인 전망이 제시되었다. 2025년에는 약 1억 4,400만 달러의 총 이익을 기록할 것으로 예상된다. 이는 약 1~2억 달러의 손실과 비교된다.\n\n📊 코멘트\n리비안의 장기 성장 가능성에 대한 분석가들의 긍정적 평가가 주가 상승을 견인. 2025년 흑자 전환 여부가 투자 결정의 핵심 요소.",
-    "content": "리비안 오토모티브(RIVN)는 금요일 4분기 실적 발표 후 초기 거래에서 상승세를 나타냈다. 4분기 실적은 단기적으로는 혼조세를 보였으나, 장기적으로는 건설적인 전망을 제시했다.\n리비안은 2025년에 약 1억 4,400만 달러의 총 이익을 달성할 것으로 예상했다.\n이는 2024년의 약 1~2억 달러 손실과 비교된다.\n분석가들은 리비안의 장기적인 잠재력에 주목하며 투자의견을 제시했다.\n리비안의 주가 상승은 긍정적인 장기 전망과 분석가들의 지지에 힘입은 것으로 보인다.\n투자자들은 리비안의 2025년 흑자 전환 가능성과 향후 성장세를 주시할 필요가 있다.",
-    "source": "Seeking Alpha",
-    "date": "2026-02-14 00:10",
-    "timestamp": 1770995341,
-    "link": "https://seekingalpha.com/news/4551938-rivian-automotive-gains-as-analysts-point-to-long-term-upside?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-    "tickers": [
-      "RIVN"
     ],
     "importance": "medium"
   }
