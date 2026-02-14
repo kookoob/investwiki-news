@@ -25,6 +25,9 @@ const TICKER_DISPLAY_NAMES: Record<string, string> = {
 
 export default function NewsListClient({ initialNews, stats }: NewsListClientProps) {
   const [filteredNews, setFilteredNews] = useState(initialNews)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [hasMore, setHasMore] = useState(initialNews.length === 50) // 50은 bot_web.py의 PAGE_SIZE와 일치
+  const [loading, setLoading] = useState(false)
   const [tickerNames, setTickerNames] = useState<Record<string, string>>({})
 
   // 한글 종목명 매핑 로드
@@ -34,6 +37,28 @@ export default function NewsListClient({ initialNews, stats }: NewsListClientPro
       .then(names => setTickerNames(names))
       .catch(err => console.error('티커 매핑 로드 실패:', err))
   }, [])
+
+  async function fetchMoreNews() {
+    if (loading || !hasMore) return
+    setLoading(true)
+    const nextPage = currentPage + 1
+    try {
+      const response = await fetch(`/news-${nextPage}.json`, { cache: 'no-store' })
+      if (!response.ok) {
+        setHasMore(false)
+        return
+      }
+      const newNews = await response.json()
+      setFilteredNews(prevNews => [...prevNews, ...newNews])
+      setCurrentPage(nextPage)
+      setHasMore(newNews.length === 50)
+    } catch (error) {
+      console.error('Failed to fetch more news:', error)
+      setHasMore(false)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   function getTickerDisplayName(ticker: string): string {
     // 한글 종목명이 있으면 우선 사용
@@ -48,7 +73,7 @@ export default function NewsListClient({ initialNews, stats }: NewsListClientPro
     <div className="flex-1 space-y-4">
       {/* 필터/정렬 UI */}
       <NewsFilters 
-        news={initialNews} 
+        news={initialNews} // initialNews는 필터링 기준 전체 뉴스 (클라이언트 필터링)
         onFilteredNewsChange={setFilteredNews}
       />
       
@@ -146,6 +171,17 @@ export default function NewsListClient({ initialNews, stats }: NewsListClientPro
           </div>
         )
       })}
+      {hasMore && (
+        <div className="text-center py-4">
+          <button
+            onClick={fetchMoreNews}
+            disabled={loading}
+            className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {loading ? '불러오는 중...' : '더 많은 뉴스 불러오기'}
+          </button>
+        </div>
+      )}
     </div>
   )
 }
