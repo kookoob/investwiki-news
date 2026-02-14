@@ -29,13 +29,19 @@ export default function TickerBadge({ ticker, displayName }: TickerBadgeProps) {
 
   return (
     <span
-      className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium ${
-        isPositive
-          ? 'bg-green-100 text-green-600 dark:bg-green-950 dark:text-green-300'
-          : isNegative
-          ? 'bg-red-100 text-red-600 dark:bg-red-950 dark:text-red-300'
-          : 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
-      }`}
+      className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium transition-colors`}
+      style={
+        isPositive ? {
+          backgroundColor: '#1a3a1a',
+          color: '#86efac'
+        } : isNegative ? {
+          backgroundColor: '#3a1a1a',
+          color: '#fca5a5'
+        } : {
+          backgroundColor: '#2a2a2a',
+          color: '#d1d5dc'
+        }
+      }
     >
       <span className="font-semibold">{displayName}</span>
       <span>{changePercent}</span>
