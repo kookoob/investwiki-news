@@ -3,6 +3,56 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* 라이트모드 색상 변수 */
+  --light-white: #ffffff;
+  --light-gray-50: #f9fafb;
+  --light-gray-100: #f3f4f6;
+  --light-gray-200: #e5e7eb;
+  --light-gray-300: #d1d5db;
+  --light-gray-400: #9ca3af;
+  --light-gray-500: #6b7280;
+  --light-gray-600: #4b5563;
+  --light-gray-700: #374151;
+  --light-gray-800: #1f2937;
+  --light-gray-900: #111827;
+  --light-black: #000000;
+  
+  --light-blue-50: #eff6ff;
+  --light-blue-100: #dbeafe;
+  --light-blue-200: #bfdbfe;
+  --light-blue-500: #3b82f6;
+  --light-blue-600: #2563eb;
+  --light-blue-700: #1d4ed8;
+  --light-blue-900: #1e3a8a;
+  
+  --light-green-50: #f0fdf4;
+  --light-green-100: #dcfce7;
+  --light-green-400: #4ade80;
+  --light-green-500: #22c55e;
+  --light-green-600: #16a34a;
+  --light-green-700: #15803d;
+  --light-green-900: #166534;
+  
+  --light-red-50: #fef2f2;
+  --light-red-100: #fee2e2;
+  --light-red-200: #fecaca;
+  --light-red-400: #f87171;
+  --light-red-500: #ef4444;
+  --light-red-600: #dc2626;
+  --light-red-700: #b91c1c;
+  --light-red-900: #7f1d1d;
+  
+  --light-orange-50: #fff7ed;
+  --light-orange-100: #ffedd5;
+  --light-orange-600: #ea580c;
+  --light-orange-700: #c2410c;
+  --light-orange-900: #7c2d12;
+  
+  --light-yellow-50: #fefce8;
+  
+  --light-purple-100: #f3e8ff;
+  --light-indigo-100: #e0e7ff;
 }
 
 @theme inline {
@@ -34,59 +84,100 @@ body {
   color: #ededed;
 }
 
-/* 라이트모드 기본 배경색 */
-.bg-white {
-  background-color: #ffffff !important;
-}
+/* ========== 라이트모드: 배경색 ========== */
+.bg-white { background-color: #ffffff !important; }
+.bg-black { background-color: #000000 !important; }
+.bg-gray-50 { background-color: #f9fafb !important; }
+.bg-gray-100 { background-color: #f3f4f6 !important; }
+.bg-gray-200 { background-color: #e5e7eb !important; }
+.bg-gray-300 { background-color: #d1d5db !important; }
+.bg-gray-400 { background-color: #9ca3af !important; }
+.bg-gray-600 { background-color: #4b5563 !important; }
+.bg-gray-700 { background-color: #374151 !important; }
+.bg-gray-800 { background-color: #1f2937 !important; }
+.bg-gray-900 { background-color: #111827 !important; }
 
-.bg-gray-50 {
-  background-color: #f9fafb !important;
-}
+.bg-blue-50 { background-color: #eff6ff !important; }
+.bg-blue-100 { background-color: #dbeafe !important; }
+.bg-blue-500 { background-color: #3b82f6 !important; }
+.bg-blue-600 { background-color: #2563eb !important; }
+.bg-blue-700 { background-color: #1d4ed8 !important; }
+.bg-blue-900 { background-color: #1e3a8a !important; }
 
-.bg-gray-100 {
-  background-color: #f3f4f6 !important;
-}
+.bg-green-50 { background-color: #f0fdf4 !important; }
+.bg-green-100 { background-color: #dcfce7 !important; }
+.bg-green-400 { background-color: #4ade80 !important; }
+.bg-green-500 { background-color: #22c55e !important; }
+.bg-green-600 { background-color: #16a34a !important; }
+.bg-green-700 { background-color: #15803d !important; }
+.bg-green-900 { background-color: #166534 !important; }
+.bg-green-950 { background-color: #052e16 !important; }
 
-.bg-gray-200 {
-  background-color: #e5e7eb !important;
-}
+.bg-red-50 { background-color: #fef2f2 !important; }
+.bg-red-100 { background-color: #fee2e2 !important; }
+.bg-red-200 { background-color: #fecaca !important; }
+.bg-red-400 { background-color: #f87171 !important; }
+.bg-red-500 { background-color: #ef4444 !important; }
+.bg-red-600 { background-color: #dc2626 !important; }
+.bg-red-700 { background-color: #b91c1c !important; }
+.bg-red-900 { background-color: #7f1d1d !important; }
+.bg-red-950 { background-color: #450a0a !important; }
 
-/* 라이트모드 텍스트 색상 */
-.text-gray-900 {
-  color: #111827 !important;
-}
+.bg-orange-100 { background-color: #ffedd5 !important; }
+.bg-orange-600 { background-color: #ea580c !important; }
+.bg-orange-700 { background-color: #c2410c !important; }
+.bg-orange-900 { background-color: #7c2d12 !important; }
 
-.text-gray-800 {
-  color: #1f2937 !important;
-}
+.bg-yellow-50 { background-color: #fefce8 !important; }
 
-.text-gray-700 {
-  color: #374151 !important;
-}
+.bg-purple-100 { background-color: #f3e8ff !important; }
+.bg-indigo-100 { background-color: #e0e7ff !important; }
 
-.text-gray-600 {
-  color: #4b5563 !important;
-}
+/* ========== 라이트모드: 텍스트 색상 ========== */
+.text-gray-900 { color: #111827 !important; }
+.text-gray-800 { color: #1f2937 !important; }
+.text-gray-700 { color: #374151 !important; }
+.text-gray-600 { color: #4b5563 !important; }
+.text-gray-500 { color: #6b7280 !important; }
+.text-gray-400 { color: #9ca3af !important; }
+.text-gray-200 { color: #e5e7eb !important; }
 
-.text-gray-500 {
-  color: #6b7280 !important;
-}
+.text-blue-600 { color: #2563eb !important; }
+.text-blue-700 { color: #1d4ed8 !important; }
+.text-blue-900 { color: #1e3a8a !important; }
 
-.border-gray-200 {
-  border-color: #e5e7eb !important;
-}
+.text-green-600 { color: #16a34a !important; }
+.text-green-700 { color: #15803d !important; }
 
-.border-gray-300 {
-  border-color: #d1d5db !important;
-}
+.text-red-600 { color: #dc2626 !important; }
+.text-red-700 { color: #b91c1c !important; }
 
-.hover\:bg-gray-50:hover {
-  background-color: #f9fafb !important;
-}
+.text-orange-600 { color: #ea580c !important; }
+.text-orange-700 { color: #c2410c !important; }
 
-.hover\:bg-gray-100:hover {
-  background-color: #f3f4f6 !important;
-}
+/* ========== 라이트모드: 테두리 색상 ========== */
+.border-gray-200 { border-color: #e5e7eb !important; }
+.border-gray-300 { border-color: #d1d5db !important; }
+.border-gray-400 { border-color: #9ca3af !important; }
+
+.border-blue-100 { border-color: #dbeafe !important; }
+.border-blue-200 { border-color: #bfdbfe !important; }
+.border-blue-300 { border-color: #93c5fd !important; }
+
+.border-green-200 { border-color: #bbf7d0 !important; }
+.border-green-300 { border-color: #86efac !important; }
+
+.border-red-200 { border-color: #fecaca !important; }
+.border-red-300 { border-color: #fca5a5 !important; }
+
+/* ========== 라이트모드: 호버 상태 ========== */
+.hover\:bg-gray-50:hover { background-color: #f9fafb !important; }
+.hover\:bg-gray-100:hover { background-color: #f3f4f6 !important; }
+.hover\:bg-gray-200:hover { background-color: #e5e7eb !important; }
+
+.hover\:text-gray-900:hover { color: #111827 !important; }
+.hover\:text-gray-800:hover { color: #1f2937 !important; }
+.hover\:text-gray-700:hover { color: #374151 !important; }
 
 /* 다크모드 기본 요소 */
 .dark div,
