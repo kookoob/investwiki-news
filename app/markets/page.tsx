@@ -110,30 +110,30 @@ export default function MarketsPage() {
                 <div className="text-right">
                   {isPositive && (
                     <>
-                      <div className="text-base font-semibold text-green-700 dark:!text-green-300">
+                      <div className="text-base font-semibold market-positive-light">
                         {item.loading ? '...' : item.price}
                       </div>
-                      <div className="text-sm font-medium text-green-700 dark:!text-green-300">
+                      <div className="text-sm font-medium market-positive-light">
                         {item.loading ? '...' : `▲ ${item.changePercent}`}
                       </div>
                     </>
                   )}
                   {isNegative && (
                     <>
-                      <div className="text-base font-semibold text-red-700 dark:!text-red-300">
+                      <div className="text-base font-semibold market-negative-light">
                         {item.loading ? '...' : item.price}
                       </div>
-                      <div className="text-sm font-medium text-red-700 dark:!text-red-300">
+                      <div className="text-sm font-medium market-negative-light">
                         {item.loading ? '...' : `▼ ${item.changePercent}`}
                       </div>
                     </>
                   )}
                   {!isPositive && !isNegative && (
                     <>
-                      <div className="text-base font-semibold text-gray-900 dark:!text-gray-100">
+                      <div className="text-base font-semibold market-neutral-light">
                         {item.loading ? '...' : item.price}
                       </div>
-                      <div className="text-sm font-medium text-gray-900 dark:!text-gray-300">
+                      <div className="text-sm font-medium market-neutral-light">
                         {item.loading ? '...' : item.changePercent}
                       </div>
                     </>

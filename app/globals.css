@@ -250,6 +250,16 @@ body {
   color: #dc2626 !important;
 }
 
+/* 시장 지표 색상 - 라이트모드 */
+.market-positive-light { color: #15803d !important; }
+.market-negative-light { color: #b91c1c !important; }
+.market-neutral-light { color: #111827 !important; }
+
+/* 시장 지표 색상 - 다크모드 */
+.dark .market-positive-light { color: #7bf1a8 !important; }
+.dark .market-negative-light { color: #ff6568 !important; }
+.dark .market-neutral-light { color: #ededed !important; }
+
 /* 시장 지표 다크모드 색상 */
 .dark .text-green-600 {
   color: #7bf1a8 !important;
