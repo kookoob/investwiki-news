@@ -1,5 +1,19 @@
 [
   {
+    "id": "news_1770830008_5",
+    "title": "견조한 홀리데이 분기에 SharkNinja 주가 상승",
+    "summary": "SharkNinja는 예상치를 상회하는 홀리데이 분기 실적을 발표하며 주가가 상승했다.\n\n구체적인 수치는 제시되지 않았으나, CEO는 향후 더 강력한 실적을 기대해도 좋다고 밝혔다.\n\n🚀 닌자 블렌더로 유명한 SharkNinja, 홀리데이 시즌 매출 급증!📊 코멘트\n소형 가전 시장 경쟁 심화 속에서 브랜드 파워와 제품 혁신이 지속적인 성장 동력, 틈새 시장 공략 전략 유효!",
+    "content": "소형 가전 제조업체인 SharkNinja의 주가는 최근 Barron's의 긍정적인 평가 이후 예상보다 나은 홀리데이 분기 실적을 발표하면서 상승세를 보이고 있다.\n\nCEO는 투자자들이 더 강력한 실적을 기대해야 한다고 말했다.",
+    "source": "Barrons.com",
+    "date": "2026-02-12 02:13",
+    "timestamp": 1770829708,
+    "link": "https://www.barrons.com/articles/strong-holiday-quarter-boosts-sharkninja-18d80c7b?siteid=yhoof2&yptr=yahoo",
+    "tickers": [
+      "SN"
+    ],
+    "importance": "medium"
+  },
+  {
     "id": "news_1770830019_6",
     "title": "은 가격, 투자 심리 강화 및 산업 수요 약화 속 온스당 85달러 상회",
     "summary": "은 가격은 6.8% 급등하여 지난주 저점 대비 약 33% 상승했으며, Silver Institute 보고서에 따르면 은 시장은 6년 연속 공급 부족을 겪을 것으로 예상된다.\n\n이는 투자 증가가 보석 수요 감소와 태양광 부문 사용 억제 노력을 상쇄하기 때문이다.\n\n산업 수요는 2026년에 소폭 감소할 것으로 전망된다.\n\n📈 투자 심리 강화, 산업 수요 약화 📉📊 코멘트\nP/E 데이터 부재, 투자 수요 증가 추세 지속 여부 불확실성 존재",
@@ -627,20 +641,6 @@
     "link": "https://finance.yahoo.com/news/t-mobile-adds-fewer-wireless-124002650.html",
     "tickers": [
       "TMUS"
-    ],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1770814999_13",
-    "title": "Shopify, 예상 실적 하회에도 주가 급등: 이유는?",
-    "summary": "Shopify의 최근 실적 발표에서 주당 순이익(EPS)은 예상치를 하회했으나, 매출은 1~7억 달러를 기록하며 분석가들의 기대를 충족시켰다. 특히, 2024년 1분기 매출 성장률이 1~9%에 이를 것으로 예상되면서 투자자들의 긍정적인 반응을 이끌어냈다.\n\n👍 재무구조 개선 + 성장 지속\nShopify의 주가는 단기 변동성에도 불구하고 장기 성장 잠재력이 높음",
-    "content": "Shopify의 주가가 실적 발표 후 급등했다.\n\n회사의 주당 순이익(EPS)은 예상치를 하회했지만, 매출은 분석가들의 기대를 충족시켰다.\n\nShopify는 2024년 1분기 매출 성장률이 1~9%에 이를 것으로 예상했다.\n\n이러한 낙관적인 전망은 투자자들의 신뢰를 높이는 데 기여했다.\n\nShopify는 최근 몇 년 동안 전자 상거래 플랫폼으로서 상당한 성장을 이루었다.\n\n회사는 소규모 기업부터 대규모 기업까지 다양한 규모의 판매자를 지원하는 다양한 도구와 서비스를 제공한다.\n\nShopify의 플랫폼은 사용하기 쉬운 인터페이스, 다양한 사용자 정의 옵션, 강력한 마케팅 기능으로 유명하다.\n\nShopify의 주가는 변동성이 클 수 있지만, 회사의 장기적인 성장 잠재력은 상당하다.\n\n전자 상거래 시장이 계속 성장함에 따라 Shopify는 이러한 추세의 주요 수혜자가 될 것으로 예상된다.",
-    "source": "Investor's Business Daily",
-    "date": "2026-02-11 22:03",
-    "timestamp": 1770814219,
-    "link": "https://www.investors.com/news/technology/shopify-stock-shopify-earnings-news-q42025/",
-    "tickers": [
-      "SHOP"
     ],
     "importance": "medium"
   }

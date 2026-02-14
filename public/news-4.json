@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771039823_16",
+    "title": "트럼프, '좋은 관계' 맺었던 베네수엘라 임시 대통령과 만남 후 방문 의사 밝혀",
+    "summary": "도널드 트럼프 전 미국 대통령이 베네수엘라 방문 의사를 밝혔다. 그는 임시 대통령과의 '매우 좋은' 관계를 언급하며 방문 가능성을 시사했다. 구체적인 방문 시기나 계획은 공개되지 않았다.\n\n📊 코멘트\n미국과 베네수엘라 관계 변화 가능성. 에너지 시장 및 지정학적 영향 주시 필요.",
+    "content": "도널드 트럼프 전 미국 대통령이 베네수엘라를 방문할 의향을 밝혔다. 그는 후안 과이도 임시 대통령과의 관계가 '매우 좋았다'고 언급하며 방문 가능성을 시사했다. 트럼프 전 대통령의 발언은 로이터 통신을 통해 보도되었다.\n트럼프 전 대통령은 재임 기간 동안 베네수엘라에 대한 강력한 제재를 가하며 니콜라스 마두로 대통령을 압박했다. 과이도 임시 대통령을 인정하고 지지했지만, 마두로 대통령은 여전히 권력을 유지하고 있다.\n이번 트럼프 전 대통령의 발언은 미국과 베네수엘라 관계에 변화가 있을 수 있음을 시사한다. 하지만 구체적인 방문 시기나 계획은 아직 알려지지 않았다.",
+    "source": "Reuters",
+    "date": "2026-02-14 12:30",
+    "timestamp": 1771038863,
+    "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOVG8xc1J4LTVFa05BTFhjamVsSklUQ2p2ejA0d0JpeWxZMFVrZWZoblhuRjdYSENIcEZuTm9YUExLVFhHTzY5SWZyNFM0NG43U2VhVDM5QTZvSGJKMVNGM0JCRno5S180YVp3QUtMOFBjeVQybXdBX0kxNVFSMmU0dVFDMmdVazVZNk0ySkthbDdEaUxuOHBKMy1CQnRMR3poRVJCbDlBY3NSMmhYZDlOVFh5aDFTZ2xHNFptcG1zVWtLeTZ4LWc?oc=5",
+    "tickers": [],
+    "importance": "low"
+  },
+  {
     "id": "news_1771039830_17",
     "title": "존슨앤드존슨, 탈크 관련 암 소송에서 배상 책임 평결 받아",
     "summary": "펜실베이니아주 배심원단은 존슨앤드존슨이 탈크 제품과 관련된 암 발병에 책임이 있다는 평결을 내렸다. 이번 평결로 존슨앤드존슨은 손해배상금을 지급해야 할 가능성이 커졌다. 존슨앤드존슨은 즉각 항소할 계획이다.\n\n📊 코멘트\n존슨앤드존슨의 탈크 관련 소송 리스크 지속. 추가적인 소송 결과에 따라 주가 변동성 확대 가능성.",
@@ -646,18 +658,6 @@
     "date": "2026-02-14 00:10",
     "timestamp": 1770995193,
     "link": "https://seekingalpha.com/news/4551936-norwegian-air-shuttle-asa-reports-q4-2025-results?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-    "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1770995438_5",
-    "title": "미국 CPI 발표 후 월가, 제한적인 움직임 보여",
-    "summary": "미국 월가는 최근 소매 인플레이션 데이터 발표 이후 제한적인 움직임을 보였다. 다우존스 산업평균지수는 0.1% 하락했다. S&P 500 지수는 보합세를 유지하고 있다.\n\n📊 코멘트\n인플레이션 데이터에 대한 시장의 신중한 반응. 금리 인상 가능성 주시 필요.",
-    "content": "미국 월가의 주요 시장 지수들은 소매 인플레이션 데이터 발표 후 제한적인 움직임을 나타냈다.\n투자자들은 발표된 데이터를 신중하게 분석하는 모습이다.\n다우존스 산업평균지수는 0.1% 하락했다.\nS&P 500 지수는 거의 변동 없이 보합세를 유지하고 있다.\n나스닥 종합지수 역시 뚜렷한 방향성을 보이지 않고 있다.\n이번 인플레이션 데이터는 연준의 금리 정책에 중요한 영향을 미칠 수 있다.\n시장은 연준의 다음 행보를 예측하며 관망세를 유지하고 있다.\n투자자들은 추가적인 경제 지표 발표와 연준의 발언에 주목할 것으로 보인다.\n변동성이 제한적인 만큼, 신중한 투자 전략이 요구된다.",
-    "source": "Seeking Alpha",
-    "date": "2026-02-14 00:10",
-    "timestamp": 1770995138,
-    "link": "https://seekingalpha.com/news/4551932-wall-street-observes-limited-movement-after-the-latest-cpi-report?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
     "tickers": [],
     "importance": "medium"
   }
