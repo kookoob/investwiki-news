@@ -34,6 +34,23 @@ body {
   color: #ededed;
 }
 
+/* 라이트모드 기본 배경색 */
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+.bg-gray-50 {
+  background-color: #f9fafb !important;
+}
+
+.bg-gray-100 {
+  background-color: #f3f4f6 !important;
+}
+
+.bg-gray-200 {
+  background-color: #e5e7eb !important;
+}
+
 /* 다크모드 기본 요소 */
 .dark div,
 .dark main,
