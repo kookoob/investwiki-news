@@ -45,6 +45,17 @@ export async function GET(request: NextRequest) {
 
           // 지수인지 확인 (^로 시작하거나 .SS로 끝남 = 주가지수)
           const isIndex = symbol.startsWith('^') || symbol.endsWith('.SS')
+          
+          // 환율 기호 매핑
+          const currencySymbols: Record<string, string> = {
+            'KRW=X': '₩',      // 달러/원
+            'EURUSD=X': '€',   // 유로/달러
+            'JPY=X': '¥',      // 달러/엔
+            'GBPUSD=X': '£',   // 파운드/달러
+          }
+          
+          const isForex = currencySymbols[symbol]
+          const forexSymbol = currencySymbols[symbol] || '$'
 
           // 변동률 포맷팅 (0이 아닐 때만 +/- 기호)
           let formattedChangePercent
@@ -57,7 +68,7 @@ export async function GET(request: NextRequest) {
           }
 
           results[symbol] = {
-            price: isIndex ? formatPrice(currentPrice) : `$${formatPrice(currentPrice)}`,
+            price: isIndex ? formatPrice(currentPrice) : isForex ? `${forexSymbol}${formatPrice(currentPrice)}` : `$${formatPrice(currentPrice)}`,
             change: change >= 0 ? `+${formatPrice(Math.abs(change))}` : `-${formatPrice(Math.abs(change))}`,
             changePercent: formattedChangePercent,
           }
