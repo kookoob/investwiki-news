@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771040317_18",
+    "title": "미국, 중국 군 지원 의혹 기업 목록 업데이트 철회",
+    "summary": "미국 정부가 중국 군을 지원하는 것으로 의심되는 기업 목록 업데이트를 철회했다. 이번 조치는 미중 관계에 미묘한 영향을 줄 수 있다.\n\n📊 코멘트\n미중 관계 변화에 따른 시장 변동성 확대에 주의.",
+    "content": "미국 정부가 중국 군을 지원하는 것으로 알려진 기업 목록 업데이트를 철회했다.\n• **배경:** 이번 결정의 구체적인 이유는 공개되지 않았으나, 미중 관계의 미묘한 변화를 반영하는 것으로 해석됨\n• **영향:** 목록에 포함된 기업들은 미국의 투자 제한 및 수출 통제 대상이 될 수 있었음\n• **향후 전망:** 이번 조치가 미중 관계 개선의 신호탄이 될지, 아니면 단순한 정책 조정에 그칠지 주목할 필요가 있음",
+    "source": "Reuters",
+    "date": "2026-02-14 12:38",
+    "timestamp": 1771039237,
+    "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNZHlMV19pX3VHNjhibFRSZU1GbmY1QlplMXBuQmZfLTJTN3BsaEQ4T3pldzRJeFhuOG9fVnQxbnRueFZLeXM5dVUtRU5peEZpVmNjV0J2dTdqSGhGaEp5QzNSZ2tfd1JkVldBYVRUWTg3Rlp2aG1DMmdWRHZPYnBzT1pIVHNxc19zZURUVmpDRkg3UUxteFkxSGV1dnE3Zjg0Ti1xZ3dZZmEzN01DbjNKcF81ZkE3TkdTNGFYRG9mRk5DUGoyTi0zNFN1Z3oteXh4a3VUVjV1QQ?oc=5",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771040330_19",
     "title": "미국 소비자 물가 소폭 상승, 인플레이션 압력 지속",
     "summary": "미국 소비자 물가가 소폭 상승했으나 인플레이션 압력이 지속되고 있다. 이는 연준의 금리 인하 시점에 대한 불확실성을 높이는 요인으로 작용한다.\n\n📊 코멘트\n연준의 신중한 통화정책 유지가 예상된다.",
@@ -642,20 +654,6 @@
     "link": "https://seekingalpha.com/news/4551938-rivian-automotive-gains-as-analysts-point-to-long-term-upside?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
     "tickers": [
       "RIVN"
-    ],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1770995408_2",
-    "title": "주요 주가 변동: Corsair Gaming 54% 급등, AMAT, PINS, ROKU 등",
-    "summary": "금요일 주식 선물은 목요일 매도세 이후 엇갈린 모습을 보였다. 예상보다 낮은 인플레이션 보고서가 연준 금리 인상에 대한 우려를 완화했기 때문이다. Corsair Gaming(CRSR)은 견조한 실적 발표 후 54% 급등했다.\n\n📊 코멘트\n인플레이션 완화 기대 속 개별 종목 실적에 따른 주가 변동성 확대.",
-    "content": "금요일 주식 선물은 혼조세를 보였다.\n이는 목요일의 매도세 이후 나타난 현상이다.\n둔화된 인플레이션 보고서가 연준의 금리 인상에 대한 우려를 다소 해소한 덕분이다.\n가장 큰 상승폭을 보인 종목 중 하나는 Corsair Gaming(CRSR)이다.\n이 회사의 주가는 견조한 실적 발표 이후 54%나 급등했다.\n투자자들은 Corsair Gaming의 실적에 긍정적으로 반응한 것으로 보인다.\n이 외에도 AMAT, PINS, ROKU, TPH 등 다양한 종목에서 주가 변동이 있었다.\n투자자들은 개별 기업의 실적 발표와 경제 지표에 따라 투자 결정을 내리는 경향을 보였다.",
-    "source": "Seeking Alpha",
-    "date": "2026-02-14 00:10",
-    "timestamp": 1770995288,
-    "link": "https://seekingalpha.com/news/4551780-biggest-stock-movers-friday?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-    "tickers": [
-      "CRSR"
     ],
     "importance": "medium"
   }

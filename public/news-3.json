@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771043674_16",
+    "title": "국제 유가, 주간 기준 하락 마감",
+    "summary": "국제 유가는 소폭 상승 마감했으나, 주간 기준으로는 하락세를 보였다. WTI는 배럴당 $62.89로 1% 하락했으며, OPEC+의 생산량 증가 재개 발표와 미국-이란 간 군사 작전 관련 뉴스가 영향을 미쳤다.\n\n📊 코멘트\n 지정학적 리스크 완화 및 공급 증가 우려가 유가 상승을 제한.",
+    "content": "국제 유가는 일중 소폭 상승했으나, 주간 기준으로는 하락 마감했다. \n• **WTI:** 배럴당 $62.89로 1% 하락 마감.\n• **브렌트유:** 배럴당 $67.75로 0.3% 상승 마감했으나, 주간 기준으로는 0.4% 하락.\n• **베이커 휴즈 보고서:** 미국의 석유 시추공 수는 소폭 감소했으나, 가스 시추공 수 증가로 상쇄됨.\n• **미즈호 증권:** OPEC+의 생산량 증가 재개 의도와 미국-이란 간 군사 작전 관련 뉴스가 거래에 영향을 미쳤다고 분석.\n• **BOK 파이낸셜:** 이란과의 협상 재개 및 러시아-우크라이나 평화 회담이 리스크를 완화시키는 요인으로 작용하며, 단기적으로 글로벌 원유 공급은 충분하고 지정학적 리스크 프리미엄은 배럴당 $5~$7 수준이라고 분석.\n• **StoneX:** WTI 원유 선물 가격의 상승 모멘텀이 약화되는 것으로 보인다고 분석. 수요일에 하락세 캔들 패턴과 함께 더 낮은 고점이 형성되었고, 목요일에는 추세선 지지선 아래로 마감.",
+    "source": "WSJ Markets",
+    "date": "2026-02-14 13:34",
+    "timestamp": 1771042714,
+    "link": "https://www.wsj.com/finance/commodities-futures/oil-consolidates-amid-middle-east-tensions-weaker-demand-outlook-7ebadfeb?mod=rss_markets_main",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771043680_17",
     "title": "금, 은 가격 상승 마감, 한 주간 상승세 기록",
     "summary": "금과 은 선물 가격이 상승하며 한 주를 마감했다. 금은 2% 상승하여 트로이온스당 5,022달러에 거래를 마쳤고, 은은 3.1% 상승하여 트로이온스당 77.581달러에 마감했다.\n\n📊 코멘트\n안전자산 선호 심리가 귀금속 가격 상승을 견인.",
@@ -630,18 +642,6 @@
     "date": "2026-02-14 12:38",
     "timestamp": 1771039284,
     "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOTUU1VkFxaUlIeTJMMDJ3YzNWaEtXOXNtcEJTSUZlVFc1TWVtVnZYZG1ENjNreEhwR2hhcFg3Z0xvNllzUkRpMDlfWXZ4b0N6ZTdHS1RzOEo2WkNXVWQ1RlZQOVRkeFBZQzdYNHByU0JWOWUzaDFmaGY1R1FLblJuR0dzN3dQRzBJVVZSQTJtRzZfMHFUWkF5QS1KbS0zYU1zR2lzQQ?oc=5",
-    "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771040317_18",
-    "title": "미국, 중국 군 지원 의혹 기업 목록 업데이트 철회",
-    "summary": "미국 정부가 중국 군을 지원하는 것으로 의심되는 기업 목록 업데이트를 철회했다. 이번 조치는 미중 관계에 미묘한 영향을 줄 수 있다.\n\n📊 코멘트\n미중 관계 변화에 따른 시장 변동성 확대에 주의.",
-    "content": "미국 정부가 중국 군을 지원하는 것으로 알려진 기업 목록 업데이트를 철회했다.\n• **배경:** 이번 결정의 구체적인 이유는 공개되지 않았으나, 미중 관계의 미묘한 변화를 반영하는 것으로 해석됨\n• **영향:** 목록에 포함된 기업들은 미국의 투자 제한 및 수출 통제 대상이 될 수 있었음\n• **향후 전망:** 이번 조치가 미중 관계 개선의 신호탄이 될지, 아니면 단순한 정책 조정에 그칠지 주목할 필요가 있음",
-    "source": "Reuters",
-    "date": "2026-02-14 12:38",
-    "timestamp": 1771039237,
-    "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNZHlMV19pX3VHNjhibFRSZU1GbmY1QlplMXBuQmZfLTJTN3BsaEQ4T3pldzRJeFhuOG9fVnQxbnRueFZLeXM5dVUtRU5peEZpVmNjV0J2dTdqSGhGaEp5QzNSZ2tfd1JkVldBYVRUWTg3Rlp2aG1DMmdWRHZPYnBzT1pIVHNxc19zZURUVmpDRkg3UUxteFkxSGV1dnE3Zjg0Ti1xZ3dZZmEzN01DbjNKcF81ZkE3TkdTNGFYRG9mRk5DUGoyTi0zNFN1Z3oteXh4a3VUVjV1QQ?oc=5",
     "tickers": [],
     "importance": "medium"
   }
