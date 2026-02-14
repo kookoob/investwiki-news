@@ -100,17 +100,17 @@ export default function MarketsPage() {
           const isPositive = changePercent.startsWith('+')
           const isNegative = changePercent.startsWith('-')
           
-          // 색상 클래스 분리 (다크모드 문제 해결)
+          // 색상 클래스 분리 (다크모드에서도 명확하게)
           const priceColorClass = isPositive 
-            ? 'text-green-600 dark:text-green-400' 
+            ? 'text-green-600 dark:text-green-300' 
             : isNegative 
-            ? 'text-red-600 dark:text-red-400' 
+            ? 'text-red-600 dark:text-red-300' 
             : 'text-gray-900 dark:text-gray-100'
           
           const changeColorClass = isPositive 
-            ? 'text-green-600 dark:text-green-400' 
+            ? 'text-green-600 dark:text-green-300' 
             : isNegative 
-            ? 'text-red-600 dark:text-red-400' 
+            ? 'text-red-600 dark:text-red-300' 
             : 'text-gray-600 dark:text-gray-300'
           
           return (

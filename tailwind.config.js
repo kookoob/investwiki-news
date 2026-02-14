@@ -12,6 +12,13 @@ module.exports = {
       pattern: /dark:(bg|text|border)-(gray|blue|red|green|yellow|white|black)-(50|100|200|300|400|500|600|700|800|900)/,
     },
     'dark:prose-invert',
+    // 시장 지표 색상 강제 포함
+    'text-green-600',
+    'dark:text-green-300',
+    'text-red-600',
+    'dark:text-red-300',
+    'text-gray-600',
+    'dark:text-gray-300',
   ],
   theme: {
     extend: {},
