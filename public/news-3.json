@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771043213_17",
+    "title": "미국 물가 상승률 둔화에 국채 금리 하락",
+    "summary": "미국 소비자물가지수(CPI) 상승폭이 예상보다 둔화되면서 미국 국채 금리가 하락했다. 1월 CPI는 2.4%로 둔화되었지만, 노동 시장은 여전히 견조한 상황이다.\n\n📊 코멘트\n연준의 금리 인하 시점은 여전히 불확실.",
+    "content": "미국 소비자물가지수(CPI) 상승폭 둔화에 따라 국채 금리가 하락했다.  \n• **주요 지표:** 1월 CPI는 2.4%로 둔화 (1~2월 2.7% 대비). WSJ 예상치는 2.5%였다.\n• **핵심 CPI:** 핵심 CPI는 2.5%로 둔화 (이전 2.6% 대비). WSJ 예상치와 일치.\n• **금리 변화:** 10년 만기 국채 금리는 0.150%p 하락한 4.05~5% 기록. 2년 만기 국채 금리는 0.08~5%p 하락한 3.40~9% 기록.\n• **향후 전망:** 1~2월 PCE(개인소비지출)와 4분기 GDP(국내총생산) 속보치 발표 예정.",
+    "source": "WSJ Markets",
+    "date": "2026-02-14 13:26",
+    "timestamp": 1771042193,
+    "link": "https://www.wsj.com/finance/jgbs-rise-amid-japanese-stock-market-weakness-3ec49b7a?mod=rss_markets_main",
+    "tickers": [],
+    "importance": "high"
+  },
+  {
     "id": "news_1771043219_18",
     "title": "고객, 온라인 업무 처리 시 '사람과 대화' 옵션 제공에 신뢰도 증가",
     "summary": "온라인 금융/보험 업무 처리 시 고객은 스트레스를 받지만, 회사 측에서 '사람과 대화' 옵션을 제공하는 것만으로도 고객 만족도를 높일 수 있다. 실제 신용 조합 실험 결과, 담당자 연락처가 포함된 문자 메시지를 받은 고객의 대출 승낙률이 80%로 가장 높았다.\n\n📊 코멘트\n디지털 전환 시대에도 '인간적인 연결'이 고객 신뢰 확보에 중요.",
@@ -625,18 +637,6 @@
     "date": "2026-02-14 12:22",
     "timestamp": 1771038504,
     "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOdmtIQ3RocVRvbFBIaEJqMjJiVTJaSmNKNTYtSEozZXUyMHpiRlFldmRqTm94Q1JWV0Q0R1VmSmM0WXdHN2xsdHU3NWJxSlFVb3dpS05wX2lHaTZPd1ozRlNoSkJNZV9KYzRrRmN4NGstRExsQTNWdWduTW1OS1hkMkhuS25ycUdxM01JczJwTTJXUTY4ZFlFRmNYUnltRHB5QXJEWUVNQVhmbTZVVmNEbWl4Mm4?oc=5",
-    "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771039351_15",
-    "title": "이란-우크라이나/러시아, 화요일 제네바에서 별도 회담 예정",
-    "summary": "로이터 통신에 따르면 이란과 우크라이나-러시아 간의 별도 회담이 화요일 제네바에서 열릴 예정이다. 이번 회담의 구체적인 의제와 참석자는 아직 공개되지 않았다.\n\n📊 코멘트\n중동 및 동유럽 지역의 지정학적 리스크 완화 기대감 형성될 수 있을지 주목.",
-    "content": "로이터 통신은 소식통을 인용하여 이란과 우크라이나-러시아 간의 별도 회담이 화요일 제네바에서 개최될 예정이라고 보도했다. 회담의 구체적인 의제와 참석자 정보는 아직 알려지지 않았다.\n이번 회담은 각기 다른 지역의 긴장 완화를 목표로 하는 외교적 노력의 일환으로 보인다. 특히 우크라이나 전쟁과 이란 핵 프로그램 관련 논의가 이루어질 가능성이 제기되고 있다.\n이번 회담 결과에 따라 해당 지역의 정치 및 경제 상황에 상당한 영향을 미칠 수 있다는 분석이 나온다. 특히 에너지 시장과 국제 관계에 대한 잠재적 파급 효과에 대한 관심이 집중될 것으로 예상된다.",
-    "source": "Reuters",
-    "date": "2026-02-14 12:22",
-    "timestamp": 1771038451,
-    "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxORVRWUl9DVWxBTzZGNzNaNGpfbVBMaVd5Zmh2YlNIUkJYcG03TWJyN2EyOHJLeHU2SldQeE91TGtVZFE2bmNPODBLNEZpWW5VTW5hRFdFYl9ITWJBc2JVakpNclMyeWVYR2x2dzFNajdmNGdDWS12aVNHcUoyYVFXeTk3aXBvbjdKX1BtcFY1WWlfcXpqSUtfaEJ5RE10Y0NkT2dJY2t4QV9QN3FsaC1XRC1IekQ?oc=5",
     "tickers": [],
     "importance": "medium"
   }
