@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771051959_2",
+    "title": "중국 AI 모델, 미국 추격 가속화",
+    "summary": "중국 주요 기업들이 새로운 AI 모델을 출시하며 미국과의 기술 격차를 좁히고 있다. 이는 중국 AI 산업의 빠른 발전 속도를 보여주는 사례다.\n\n📊 코멘트\n중국 AI 기술, 이제 무시할 수 없는 수준.",
+    "content": "중국 최대 기업들이 출시한 새로운 AI 모델은 중국 기업들이 미국을 따라잡고 있음을 보여준다.\n• **기술 경쟁:** 중국 기업들은 새로운 AI 모델 출시를 통해 미국과의 기술 경쟁에서 뒤쳐지지 않기 위해 노력하고 있다.\n• **시장 반응:** 중국 AI 모델의 발전은 글로벌 AI 시장에 새로운 경쟁 구도를 형성할 것으로 예상된다.",
+    "source": "CNBC",
+    "date": "2026-02-14 15:52",
+    "timestamp": 1771051839,
+    "link": "https://www.cnbc.com/2026/02/14/new-china-ai-models-alibaba-bytedance-seedance-kuaishou-kling.html",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771050079_14",
     "title": "달러인덱스,  CPI 하회에 97 밑으로",
     "summary": "달러 인덱스가 미국 소비자물가지수(CPI)가 예상치를 밑돌면서 97 아래로 하락했다. 이는 달러 약세로 이어져, 다른 통화 및 자산 시장에 영향을 미칠 수 있다.\n\n📊 코멘트\n인플레이션 둔화 신호에 따른 연준의 금리 인상 속도 조절 기대감이 반영된 결과.",
@@ -621,18 +633,6 @@
     "date": "2026-02-14 14:22",
     "timestamp": 1771045738,
     "link": "https://asia.nikkei.com/business/food-beverage/japan-s-beers-win-over-south-korea-s-gen-z-and-millennial-drinkers",
-    "tickers": [],
-    "importance": "medium"
-  },
-  {
-    "id": "news_1771046604_16",
-    "title": "일본, 양국 긴장 속 중국 어선 선장 석방",
-    "summary": "일본 당국이 일본 해역에서 검문 회피 혐의로 체포한 중국 어선 선장을 석방했다. 이번 석방은 양국 간 긴장이 고조된 가운데 이루어졌다.\n\n📊 코멘트\n외교적 긴장 완화의 신호탄일지 주목된다.",
-    "content": "일본 수산청은 금요일 늦게, 일본 해역에서 검문을 피하려 한 혐의로 구금했던 중국 어선 선장을 석방했다고 발표했다.\n• **사건 발생:** 일본 당국은 2월 1~2일 검문 정지 명령에 불응한 혐의로 중국 어선을 나포했다.\n• **당국 발표:** 일본 수산청은 선장이 석방되었음을 공식 발표했다.",
-    "source": "Nikkei Asia",
-    "date": "2026-02-14 14:23",
-    "timestamp": 1771045644,
-    "link": "https://asia.nikkei.com/politics/international-relations/japan-china-tensions/japan-releases-chinese-fishing-boat-captain-amid-bilateral-tensions",
     "tickers": [],
     "importance": "medium"
   }

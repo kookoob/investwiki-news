@@ -1,5 +1,17 @@
 [
   {
+    "id": "news_1771043219_18",
+    "title": "고객, 온라인 업무 처리 시 '사람과 대화' 옵션 제공에 신뢰도 증가",
+    "summary": "온라인 금융/보험 업무 처리 시 고객은 스트레스를 받지만, 회사 측에서 '사람과 대화' 옵션을 제공하는 것만으로도 고객 만족도를 높일 수 있다. 실제 신용 조합 실험 결과, 담당자 연락처가 포함된 문자 메시지를 받은 고객의 대출 승낙률이 80%로 가장 높았다.\n\n📊 코멘트\n디지털 전환 시대에도 '인간적인 연결'이 고객 신뢰 확보에 중요.",
+    "content": "온라인으로 민감한 업무(금융, 건강 보험 등)를 처리할 때 고객은 스트레스를 받기 쉽지만, 간단한 해결책이 존재한다.\n• **핵심 발견:** 고객에게 '사람과 대화'할 기회를 제공하는 것만으로도 만족도 증가. 실제로 많은 고객이 해당 옵션을 사용하지 않더라도 효과적임.\n• **신용 조합 실험:** 300명의 대출 신청자를 세 그룹으로 나눔.\n  *  **그룹 1 (통제):** 대출 신청 후 승인 여부만 통보 (진행 상황 업데이트 없음). 승인 고객의 6~8%가 대출 수락.\n  *  **그룹 2:** 진행 상황 업데이트 문자 메시지 발송 (담당자 정보 없음). 승인 고객의 64%가 대출 수락.\n  *  **그룹 3:** 진행 상황 업데이트 문자 메시지 + 담당자 이름/전화번호 제공. 승인 고객의 80%가 대출 수락.\n'인간적인 요소'가 온라인 서비스의 신뢰도와 고객 만족도에 미치는 영향이 크다.",
+    "source": "WSJ Markets",
+    "date": "2026-02-14 13:26",
+    "timestamp": 1771042139,
+    "link": "https://www.wsj.com/business/people-trust-humans-e37a6fa5?mod=rss_markets_main",
+    "tickers": [],
+    "importance": "medium"
+  },
+  {
     "id": "news_1771043230_19",
     "title": "Anthropic, IPO 준비 속 Chris Liddell 이사 선임",
     "summary": "AI 스타트업 Anthropic이 기업공개(IPO)를 준비하는 가운데, 제너럴 모터스(GM)의 IPO를 성공적으로 이끌었던 Chris Liddell을 이사회 멤버로 영입했다. Liddell은 트럼프 행정부에서도 고위직을 역임했다.\n\n📊 코멘트\nIPO를 위한 전략적 행보, 규제 리스크 관리 능력에 주목.",
@@ -627,17 +639,5 @@
     "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxORVRWUl9DVWxBTzZGNzNaNGpfbVBMaVd5Zmh2YlNIUkJYcG03TWJyN2EyOHJLeHU2SldQeE91TGtVZFE2bmNPODBLNEZpWW5VTW5hRFdFYl9ITWJBc2JVakpNclMyeWVYR2x2dzFNajdmNGdDWS12aVNHcUoyYVFXeTk3aXBvbjdKX1BtcFY1WWlfcXpqSUtfaEJ5RE10Y0NkT2dJY2t4QV9QN3FsaC1XRC1IekQ?oc=5",
     "tickers": [],
     "importance": "medium"
-  },
-  {
-    "id": "news_1771039358_16",
-    "title": "트럼프, 의회와 관계없이 중간선거 유권자 ID 요구 추진",
-    "summary": "도널드 트럼프 전 미국 대통령이 의회의 동의 없이도 중간선거에서 유권자 ID 제시를 의무화하는 방안을 추진하겠다고 밝혔다. 구체적인 실행 방안은 제시되지 않았으나, 선거 보안 강화를 명분으로 내세웠다.\n\n📊 코멘트\n정치적 논쟁 재점화 가능성. 선거 관련 불확실성 확대로 이어질 수 있어 투자 심리 위축 우려.",
-    "content": "도널드 트럼프 전 대통령이 중간선거에서 유권자 ID 제시를 의무화하는 방안을 추진할 것이라고 밝혔다. 이는 의회의 동의 여부와 관계없이 진행될 것이라고 강조했다.\n트럼프 전 대통령은 구체적인 실행 계획을 밝히지 않았지만, 선거 보안을 강화한다는 명분을 내세웠다. 과거에도 그는 선거 부정 주장을 펼치며 유권자 ID 의무화 필요성을 주장해왔다.\n이번 발표는 다가오는 중간선거를 앞두고 선거 관련 논쟁을 다시 불러일으킬 수 있다는 분석이 나온다. 민주당 측은 유권자 ID 의무화가 투표 참여를 제한할 수 있다고 비판하고 있어, 향후 격렬한 정치적 공방이 예상된다.",
-    "source": "Reuters",
-    "date": "2026-02-14 12:22",
-    "timestamp": 1771038398,
-    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPWm1kd2p4Zk5CaUtTdHJ4bjAxUHVIZW93cXB0VFZjV0Jkd096aU9kMzREY0tGSjRIa19KUHRBR3JrSktPeERpZEV0TW5fWmltQjdYYkNRN1ZQUGJYay0zNmFCdXFTZTZOVmtZd2wydGtWQS0ySmhKNER6ZGRuQlJZUFYtYVNoYmExZ2drZVdVVDU0cTVDWHoxRUctSGJHQjJQaWNFQ01fUW8wOGdnTHc?oc=5",
-    "tickers": [],
-    "importance": "low"
   }
 ]
